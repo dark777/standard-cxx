@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo cp -r ../include/StrSet /usr/include
+sudo cp -r ../include/strset /usr/include 
