@@ -2,7 +2,7 @@ SUB=%
 OBJ=*.o
 EOBJ=%.o
 
-CXX=g++7
+CXX=g++
 SRC=*.c*
 ESRC=%.c*
 
