@@ -19,3 +19,6 @@ static void __exit lkp_cleanup(void)
  module_exit(lkp_cleanup);
  
  MODULE_LICENSE("GPL v2");
+ MODULE_AUTHOR("Jean Zonta");
+ MODULE_DESCRIPTION("A Simple Hello World module");
+ MODULE_VERSION ("0.1");
