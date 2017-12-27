@@ -116,16 +116,9 @@ mamifero *getDetails(void)
    
   }while(resposta != "n" || resposta != "N");
   
-  if(ecossistema.size() > 1)
+  if(ecossistema.size() > 0)
    {
     std::cout << "\n\tAo final, o ecossistema tinha " << ecossistema.size() << " mamífero(s).\n";
-    for(const auto &animal: ecossistema)
-    std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
-   }
-  else
-  if(ecossistema.size() > 0 || ecossistema.size() == 1)
-   {
-    std::cout << "\n\tAo final, o ecossistema tinha " << ecossistema.size() << " mamífero.\n";
     for(const auto &animal: ecossistema)
     std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
    }
