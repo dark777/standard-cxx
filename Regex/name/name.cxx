@@ -12,7 +12,7 @@ struct name
     if(_nome.length() != 0)_nome.clear();    
    }
    
-   bool validName()
+   bool isName()
    {
     std::smatch name_smatch;
     const std::regex pattern(
@@ -26,7 +26,7 @@ struct name
    
    name* print()
    {
-    std::cout<<"\n\tNome: "<<this._nome<<(name(this._nome).validName()?" is Valid\n":" is Invalid\n");
+    std::cout<<"\n\tNome: "<<this._nome<<(name(this._nome).isName()?" is Valid\n":" is Invalid\n");
    }
    
    private:
@@ -48,7 +48,7 @@ int main()
     name(strname).print();
     std::cout<<"\n";
     
-  }while(name(strname).validName() == 0);
+  }while(name(strname).isName() == 0);
   
   return 0;
 }
