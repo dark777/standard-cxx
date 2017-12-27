@@ -30,6 +30,7 @@ struct phone
   std::smatch phone_smatch;
    
   const std::regex pattern("^(\\(\\d{2}\\)) 9?\\d{4}-?\\d{4}$");
+  
   return std::regex_match(this._tel, phone_smatch, pattern);
  }
  
