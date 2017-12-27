@@ -1,6 +1,5 @@
-#include <iostream>
 #include <vector>
-#include <cctype>
+#include <iostream>
 
 class mamifero 
 {
