@@ -7,18 +7,20 @@ class date
    std::string diatmp;
    std::string mestmp;
    std::string anotmp;
+   time_t _tm;
+   tm *curtime;
    
    public:  
 
    date( unsigned int d, unsigned int m, unsigned int a, std::string sep=(".") ):
    _dia(d), _mes(m), _ano(a), _sep(sep)
    {
-     time_t now = time(0);
-     tm *ltm = localtime(&now);
+     _tm = time(0);
+     curtime = localtime(&_tm);
      
-     _dia = ltm->tm_mday;
-     _mes = ltm->tm_mon+1;
-     _ano = ltm->tm_year+1900;
+     _dia = curtime->tm_mday;
+     _mes = curtime->tm_mon+1;
+     _ano = curtime->tm_year+1900;
    }
    
    std::string day()
@@ -47,8 +49,8 @@ class date
    
    std::string datetime()
    {
-    time_t _tm = time(NULL);
-    struct tm *curtime = localtime( &_tm );
+    _tm = time(NULL);
+    curtime = localtime( &_tm );
     return asctime(curtime);
    }
    
