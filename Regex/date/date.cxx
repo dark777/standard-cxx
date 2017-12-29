@@ -4,7 +4,7 @@
 int main()
 {
   std::tm _tm;
-  std::smatch result
+  std::smatch result;
    
   std::string data("On 12.01.2015, the shop will be closed, but on 2016-01-03, it will be open. Invalid date: 2016-13-32. ID: 1022015-12-233333.");
   const std::regex pattern("(\\b\\d{2}[-|.|/]\\d{2}[-|.|/]\\d{4}\\b)|(\\b\\d{4}[-|.|/]\\d{2}[-|.|/]\\d{2}\\b)");
