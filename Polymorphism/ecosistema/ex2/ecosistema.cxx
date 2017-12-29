@@ -1,133 +1,135 @@
-#include <vector>
 #include <iostream>
-
-class mamifero 
-{
-  public: //Class is private by default then it is necessary to use public so that other classes or structs have access to the members
-    mamifero(){}
-    virtual mamifero *reproduz() = 0; // Pure virtual constructor (and abstract, to enforce reimplementation in each derived class).
-    virtual std::string nome() = 0;
-    virtual std::string som() = 0;
-};
-
-//Class is private by default so it is necessary to use public
-class cachorro: public mamifero 
-{
-  public:
-    cachorro *reproduz(){ return new cachorro; }
-    std::string nome(){ return "cachorro"; }
-    std::string som() { return "latido"; }
-};
-
-class gato: public mamifero 
-{
-  public:
-    gato *reproduz() { return new gato; }
-    std::string nome(){ return "gato"; }
-    std::string som() { return "miado"; }
-};
-
-class homem: public mamifero 
-{
-  public:
-    homem *reproduz() { return new homem; }
-    std::string nome(){ return "homem"; }
-    std::string som() { return "fala"; }
-};
-
-class cavalo: public mamifero 
-{
-  public:
-    cavalo *reproduz() { return new cavalo; }
-    std::string nome(){ return "cavalo"; }
-    std::string som() { return "relincho"; }
-};
-
-class cabra: public mamifero 
-{
-  public:
-    cabra *reproduz() { return new cabra; }
-    std::string nome(){ return "cabra"; }
-    std::string som() { return "berro"; }
-};
-
-class leao: public mamifero 
-{
-  public:
-    leao *reproduz() { return new leao; }
-    std::string nome(){ return "leao"; }
-    std::string som() { return "rugido"; }
-};
-
-class boi: public mamifero 
-{
-  public:
-    boi *reproduz() { return new boi; }
-    std::string nome(){ return "boi"; }
-    std::string som() { return "sturro"; }
-};
-
-std::vector<mamifero *> opcoes
-{
-  new cachorro,  
-  new gato,  
-  new homem,
-  new cavalo,
-  new cabra,
-  new leao,
-  new boi
-};
-
-std::vector<mamifero *> ecossistema;
-
-mamifero *menu(void)
-{
-  int n=0;
-  std::cout << "\n\tDiga qual animal vai se reproduzir: ";
-  for(const auto &animal: opcoes)
-  std::cout << "\n\t" << n++ << ": " << animal->nome() << "";
-  std::cout << "\n\t--> ";
-  std::cin >> n;
-  std::cin.ignore(1, '\n');
-  return opcoes[n]->reproduz();
-}
-
-mamifero *getDetails(void)
-{
-  std::string resposta;
-
-  do
-  {
-   std::cout << "\n\tO ecossistema tem " << ecossistema.size() << " mamífero(s).\n";
-   if(ecossistema.size() > 0)
-   for(const auto &animal: ecossistema)
-   std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
-   std::cout << "\n\tQuer inserir um novo mamífero no ecossistema?\n\tDigite [s]-Sim ou [n]-Não: ";
-   getline(std::cin, resposta);
-   std::cout << std::endl;
+     
+    class Mamifero
+    {
+     public:
+       Mamifero(){}
+       ~Mamifero(){}
+       //void somMamifero() const // Error:
+       virtual void somMamifero()const  //Polimorfism Efect
+       {
+         std::cout<<"\n\tSom de mamifero.\n";
+       }
+       
+      void menu();
+    };
+     
+    class Boi: public Mamifero
+    {
+     public:
+       void somMamifero()
+       {
+        std::cout<<"\n\tMuu ..! Muu..!!\n";
+       }
+    };
+     
+    class Gato: public Mamifero
+    {
+     public:
+       void somMamifero()
+       {
+        std::cout<<"\n\tMiAu ..! MiAu..!!\n";
+       }
+    };
+     
+    class Porco: public Mamifero
+    {
+     public:
+       void somMamifero()
+       {
+        std::cout<<"\n\tOinc ..! Oinc..!!\n";
+       }
+    };
+     
+    class Cachorro: public Mamifero
+    {
+     public:
+       void somMamifero() const
+       {
+        std::cout<<"\n\tAu ..! Au..!!\n";
+       }
+    };
     
-   if(resposta == "s" || resposta == "S")
-   ecossistema.push_back(menu());
-   else
-   if(resposta == "n" || resposta == "N")break;
-   else
-   if(resposta != "s" || resposta != "S")
-   std::cout<<"\n\tOpção Inválida\n";  
-   
-  }while(resposta != "n" || resposta != "N");
-  
-  if(ecossistema.size() > 0)
-   {
-    std::cout << "\n\tAo final, o ecossistema tinha " << ecossistema.size() << " mamífero(s).\n";
-    for(const auto &animal: ecossistema)
-    std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
-   }
-  else
-  std::cout << "\n\tAo final, o ecossistema tem " << ecossistema.size() << " mamífero.\n\n";
-  return 0;
-}
-
-int main()
-{
-  getDetails();
-}
+    void emitirSom(Mamifero* animais)
+    {
+    /*
+    Em C++ não temos a palavra-chave instanceof, mas podemos usar a função typeid().
+    Segundo [1], se o argumento dessa função for uma referência ou um ponteiro 
+    de-referenciado para uma classe polimórfica, 
+    ela retornará um type_info correspondendo ao 
+    tipo do objeto em tempo de execução.
+    */      
+     if(typeid(*animais) == typeid(Boi))
+     {
+      Boi *boi = dynamic_cast<Boi *>(animais);
+      boi->somMamifero();
+     }
+     else 
+     if(typeid(*animais) == typeid(Gato))
+     {
+      Gato *gato = dynamic_cast<Gato *>(animais);
+      gato->somMamifero();
+     }
+     if(typeid(*animais) == typeid(Porco))
+     {
+        Porco *porco = dynamic_cast<Porco *>(animais);
+        porco->somMamifero();
+     }
+     else
+     if(typeid(*animais) == typeid(Cachorro))
+     {
+        Cachorro *cachorro = dynamic_cast<Cachorro *>(animais);
+        cachorro->somMamifero();
+     }   
+    }
+     
+     void Mamifero::menu()
+     {
+      Mamifero* mamPtr;
+      int op;
+     while(op != 5)
+     {
+       std::cout<<"\n\t(1) Boi"
+                <<"\n\t(2) Gato"
+                <<"\n\t(3) Porco"
+                <<"\n\t(4) Cachorro"
+                <<"\n\t(5) Sair"
+                <<"\n\tDigite: ";
+        std::cin>>op;
+      switch(op)
+       {
+        case 1:
+          mamPtr = new Boi();
+          emitirSom(mamPtr);  
+          break;
+        
+        case 2:
+          mamPtr = new Gato();
+          emitirSom(mamPtr);
+          break;
+        
+        case 3:
+          mamPtr = new Porco();
+          emitirSom(mamPtr);
+          break;
+        
+        case 4:
+          mamPtr = new Cachorro();
+          emitirSom(mamPtr);
+          break;
+          
+        case 5:
+         std::cout<<"\n\tGood Bye ...!!!\n\n";
+         break;
+        
+        default:
+        std::cout<<"\n\tOpção Inválida ..!!!\n";
+       }
+      }
+     }
+    
+    int main()
+    {
+      Mamifero m = *new Mamifero();
+      m.menu();
+    }
