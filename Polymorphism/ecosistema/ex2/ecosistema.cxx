@@ -70,6 +70,7 @@
       Gato *gato = dynamic_cast<Gato *>(animais);
       gato->somMamifero();
      }
+     else
      if(typeid(*animais) == typeid(Porco))
      {
       Porco *porco = dynamic_cast<Porco *>(animais);
