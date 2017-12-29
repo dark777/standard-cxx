@@ -1,6 +1,6 @@
 SUB=%
 OBJ=*.o
-EOBJ=%.
+EOBJ=%.o
 
 CXX=g++
 SRC=*.c*
