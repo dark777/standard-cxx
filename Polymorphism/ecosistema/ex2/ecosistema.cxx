@@ -72,14 +72,14 @@
      }
      if(typeid(*animais) == typeid(Porco))
      {
-        Porco *porco = dynamic_cast<Porco *>(animais);
-        porco->somMamifero();
+      Porco *porco = dynamic_cast<Porco *>(animais);
+      porco->somMamifero();
      }
      else
      if(typeid(*animais) == typeid(Cachorro))
      {
-        Cachorro *cachorro = dynamic_cast<Cachorro *>(animais);
-        cachorro->somMamifero();
+      Cachorro *cachorro = dynamic_cast<Cachorro *>(animais);
+      cachorro->somMamifero();
      }   
     }
      
