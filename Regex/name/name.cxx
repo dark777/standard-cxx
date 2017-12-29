@@ -26,7 +26,7 @@ struct name
    
    name* print()
    {
-    std::cout<<"\n\tNome: "<<this._nome<<(name(this._nome).isName()?" is Valid\n":" is Invalid\n");
+    std::cout<<"\n\tNome: "<<this._nome<<(name(this._nome).isName()?"\n":" is Invalid\n");
    }
    
    private:
