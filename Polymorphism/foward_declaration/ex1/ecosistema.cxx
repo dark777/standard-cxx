@@ -5,7 +5,6 @@ struct Boi;
 struct Gato;
 struct Porco;
 struct Cachorro;
- 
 
 struct AnimalVisitor 
 {
