@@ -24,12 +24,12 @@ int main()
 {
     StringSmartPointer str(new std::string("Testando Smart Pointers"));
     
-    std::cout << "StringSmartPointer: "<<*str.getString()<< "\n\n";
+    std::cout << "\n\tStringSmartPointer: "<<*str.getString();
     
     //Ponteiro normal:    
     std::string *nmptr = new std::string("Testando Default Pointers");
     
-    std::cout << "StringDefaultPointer: "<<*nmptr<< "\n\n";
+    std::cout << "\n\tStringDefaultPointer: "<<*nmptr<< "\n\n";
     delete nmptr;
     
     return 0;
