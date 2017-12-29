@@ -48,9 +48,7 @@ class date
    std::string datetime()
    {
     time_t _tm = time(NULL);
-    
-     struct tm *curtime = localtime( &_tm );
-    
+    struct tm *curtime = localtime( &_tm );
     return asctime(curtime);
    }
    
