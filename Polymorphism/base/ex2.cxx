@@ -11,7 +11,7 @@ struct Base
  virtual void DisplayAction() = 0;
 };
 
-struct Derived1 : public Base
+struct Derived1 : Base
 {
  Derived1()
  {
@@ -29,7 +29,7 @@ struct Derived1 : public Base
  }
 };
 
-struct Derived2 : public Base
+struct Derived2 : Base
 {
  Derived2()
  {
