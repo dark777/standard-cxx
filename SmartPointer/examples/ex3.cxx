@@ -24,7 +24,7 @@ int main()
 
     std::cout << "IntSmartPointer Valor: " << *ptr.getValue() << std::endl;
   
-      //Ponteiro normal:
+    //Ponteiro normal:
     int* intstr = new int(6);
     std::cout << "IntNormalPointer Valor: "  << *intstr<< std::endl;
     delete intstr;
