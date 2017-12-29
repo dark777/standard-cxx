@@ -1,6 +1,6 @@
 #ifndef _STRJST_C
 #define _STRJST_C
-
+//Esta função remove todos os espacos em escesso de uma frase
 #include <StrSet/include/strset.h>
 
 char *strjst(char* string)

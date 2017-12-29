@@ -20,3 +20,21 @@ void add(const char* s)
 } 
 
 #endif
+
+
+// Create and append to dinamyc length string - Alez 
+char *str_add(char *dst, const char *src) 
+{  
+  if (dst == NULL) 
+  { 
+    dst = (char *) malloc(strlen(src) + 1);
+    strcpy(dst, src); 
+  }
+  else
+  { 
+    dst = (char *) realloc(dst, strlen(dst) + strlen(src) + 1);
+    strcat(dst, src); 
+  };
+  
+  return dst;
+}

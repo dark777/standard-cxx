@@ -1,6 +1,6 @@
 #ifndef _RMSPC_C
 #define _RMSPC_C
-
+//esta função remove todos os espaços em branco de uma frase
 #include <StrSet/include/strset.h>
 
 char rmspc(char* string)

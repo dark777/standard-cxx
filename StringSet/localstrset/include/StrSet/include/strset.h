@@ -1,5 +1,5 @@
-#ifndef __STRSET_H
-#define __STRSET_H
+#ifndef _STRSET_H
+#define _STRSET_H
 
 #include <stdio.h>
 #include <malloc.h>
@@ -12,6 +12,8 @@ char rmspc(char*); //OK
 char *rdspc(char*); //OK
 char *strjst(char*); //OK
 void iostr(char*); //OK
+void histogram(char*); //ok 
+char* rvrs(char*); //ok
 
 #include "../src/rdspc/rdspc.c"
 #include "../src/iostr/iostr.c"
@@ -19,5 +21,6 @@ void iostr(char*); //OK
 #include "../src/rmspc/rmspc.c"
 #include "../src/space/space.c"
 #include "../src/add/add.c"
-
+#include "../src/histogram/histograma.c"
+#include "../src/rvrs/rvrs.c"
 #endif 
