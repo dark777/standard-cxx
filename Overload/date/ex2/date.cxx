@@ -4,6 +4,9 @@ class date
 {  
    unsigned int _dia , _mes , _ano;
    std::string _sep;
+   std::string diatmp;
+   std::string mestmp;
+   std::string anotmp;
    
    public:  
 
@@ -20,32 +23,26 @@ class date
    
    std::string day()
    {
-    std::string diaString = "", diatmp = "";
     diatmp = std::to_string(_dia);
     if(diatmp.length() == 1)
     diatmp.insert(0, "0");
-    diaString += diatmp;
-    return diaString;
+    return diatmp;
    }
-
+   
    std::string month()
    {
-    std::string monthString = "", mestmp = "";
     mestmp = std::to_string(_mes);
     if(mestmp.length() == 1)
     mestmp.insert(0, "0"); 
-    monthString += mestmp;
-    return monthString;
+    return mestmp;
    }
-
+   
    std::string year()
    {
-    std::string yearString = "", anotmp = "";
     anotmp = std::to_string(_ano);
     if(anotmp.length() == 1)
     anotmp.insert(0, "0");
-    yearString += anotmp;
-    return yearString; 
+    return anotmp;
    }
    
    std::string datetime()
@@ -79,7 +76,7 @@ class date
        
     os << diaString.c_str() << dt._sep << monthString.c_str()
        << dt._sep << yearString.c_str() << "\n\n";
-       
+           
     return os ;
    }
 };
