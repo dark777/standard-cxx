@@ -1,7 +1,7 @@
 #include <regex>
 #include <iostream>
 
-#define this (*this)
+#define this (*this
 
 struct email
 {
