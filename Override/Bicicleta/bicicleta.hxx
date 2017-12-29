@@ -11,7 +11,8 @@ struct Bicicleta
   Bicicleta(){}
  
   // Construtor Override
-  Bicicleta(std::string bmodelo, std::string bquadro, std::string bfreios, std::string brodas): modelo(bmodelo),quadro(bquadro),rodas(brodas),freios(bfreios){}
+  Bicicleta(std::string bmodelo, std::string bquadro, std::string bfreios, std::string brodas): 
+  modelo(bmodelo),quadro(bquadro),rodas(brodas),freios(bfreios){}
  
   void bicicleta()
   {
