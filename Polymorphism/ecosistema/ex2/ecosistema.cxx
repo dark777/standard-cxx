@@ -124,6 +124,7 @@ mamifero *getDetails(void)
    }
   else
   std::cout << "\n\tAo final, o ecossistema tem " << ecossistema.size() << " mamífero.\n\n";
+  return 0;
 }
 
 int main()
