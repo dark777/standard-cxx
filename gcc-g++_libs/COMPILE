@@ -30,6 +30,3 @@ bash-4.4$ g++ -static prog.cxx -lteste -o prog-static
 
 # Dinamic executable
 bash-4.4$ g++ prog.cxx -lteste -o prog-dynamic
-
-SOURCE:
-https://www.vivaolinux.com.br/topico/C-C++/Criando-e-instalando-bibliotecas-dinamicas-e-estaticas-no-linuxDUVIDA
