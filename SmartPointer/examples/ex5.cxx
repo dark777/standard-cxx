@@ -6,23 +6,19 @@ struct SmartPointer
     
   ~SmartPointer() 
    {
-    if((*p_Str).length() != 0)delete p_Str;
+    delete p_Str;
      
-    if(p_Int != NULL)delete p_Int;
+    delete p_Int;
    }
     
   std::string *getString()
   {
-   if(p_Str != NULL)return p_Str;
-   else
-   p_Str=NULL;
+   return p_Str;
   }
    
   int *getInt()
   {
-   if(p_Int != NULL)return p_Int;
-   else
-   p_Int=NULL;  
+   return p_Int;  
   }
   
  private:
