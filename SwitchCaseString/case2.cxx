@@ -19,7 +19,7 @@ int main()
    std::cout<<"\n\tDigite uma string: ";
    std::cin>>str;
   
-   switch( hash(str.c_str()) ) // run-time
+   switch(hash(str.c_str())) // run-time
    {
     case hash("teste1"): // compile-time
     std::cout << "\n\tHello Teste 1 ..!\n";
