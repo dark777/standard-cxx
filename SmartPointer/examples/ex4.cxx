@@ -16,8 +16,7 @@ class Person
 
    void display()
    {
-    if(sName->length() != 0)
-      std::cout<<"\n\tName: "<<*sName<<"  Age: "<<*pAge<<"\n\n";
+    std::cout<<"\n\tName: "<<*sName<<"  Age: "<<*pAge<<"\n\n";
    }
         
    void Shout()
