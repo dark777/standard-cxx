@@ -1,27 +1,23 @@
+#include <cstring>
 #include <iostream>
 
 
 class Person
 {
- int age;
- const char* pName;
+ int *pAge;
  std::string* sName; 
 
   public:
-   Person(): pName(0),sName(0),age(0){}
+   Person(): sName(0),pAge(0){}
    
-   Person(const char* pName, int age): pName(pName), age(age){}
-   
-   Person(std::string* sName, int age): sName(sName), age(age){}
+   Person(std::string* sName, int *age): sName(sName), pAge(age){}
    
    ~Person(){}
 
    void display()
    {
     if(sName->length() != 0)
-      std::cout<<"\n\tName: "<<*sName<<" Age: "<<age<<"\n\n";
-    else
-      std::cout<<"\n\tName: "<<pName<<" Age: "<<age<<"\n\n";
+      std::cout<<"\n\tName: "<<*sName<<"  Age: "<<*pAge<<"\n\n";
    }
         
    void Shout()
@@ -59,10 +55,10 @@ int main()
 {
   int idade;
   std::string str;
-  
+
   std::cout<<"Digite um nome e idade: ";
   std::cin>>str>>idade;
   
-  GenericSmartPointer<Person> gsp(new Person(new std::string(str), idade));
+  GenericSmartPointer<Person> gsp(new Person(new std::string(str), new int(idade)));
   gsp->display(); // Não precisa apagar o ponteiro da pessoa.
 }
