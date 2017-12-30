@@ -1,7 +1,6 @@
 #include <cstring>
 #include <iostream>
 
-
 class Person
 {
  int *pAge;
@@ -18,11 +17,6 @@ class Person
    {
     std::cout<<"\n\tName: "<<*sName<<"  Age: "<<*pAge<<"\n\n";
    }
-        
-   void Shout()
-   {
-    printf("Ooooooooooooooooo");
-   } 
 };
 
 template < typename T >
