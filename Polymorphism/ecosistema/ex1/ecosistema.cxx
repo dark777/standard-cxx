@@ -2,7 +2,7 @@
      
     struct Mamifero
     {
-       Mamifero(){}
+      Mamifero(){}
        ~Mamifero(){}
        //void somMamifero() const // Polimorfism no Efect
        virtual void somMamifero() const //Polimorfism Efect
@@ -18,6 +18,8 @@
     //The struct is a public class by default does not need to use public equal in class
     struct Boi: Mamifero
     {
+      Boi(){}
+      ~Boi(){}
        void somMamifero() const
        {
         std::cout<<"\n\tMuu ..! Muu..!!\n";
@@ -26,6 +28,8 @@
      
     struct Gato: Mamifero
     {
+      Gato(){}
+      ~Gato(){}
        void somMamifero() const
        {
         std::cout<<"\n\tMiAu ..! MiAu..!!\n";
@@ -34,6 +38,8 @@
      
     struct Porco: Mamifero
     {
+      Porco(){}
+      ~Porco(){}
        void somMamifero() const
        {
         std::cout<<"\n\tOinc ..! Oinc..!!\n";
@@ -42,6 +48,8 @@
      
     struct Cachorro: Mamifero
     {
+      Cachorro(){}
+      ~Cachorro(){}
        void somMamifero() const
        {
         std::cout<<"\n\tAu ..! Au..!!\n";
@@ -166,4 +174,4 @@
       //m.menu1(); //OK
       m.menu2(); //OK
       //m.menu3(); //OK
-    } 
+    }
