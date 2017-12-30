@@ -4,14 +4,26 @@ class date
 {  
    unsigned int _dia , _mes , _ano;
    std::string _sep;
-   std::string diatmp;
-   std::string mestmp;
-   std::string anotmp;
+   std::string diatmp="";
+   std::string mestmp="";
+   std::string anotmp="";
    time_t _tm;
    tm *curtime;
    
-   public:  
-
+   public:
+   
+   ~date(){}
+   
+   date()
+   {
+    _tm = time(0);
+    curtime = localtime(&_tm);
+     
+    _dia = curtime->tm_mday;
+    _mes = curtime->tm_mon+1;
+    _ano = curtime->tm_year+1900;    
+   }
+   
    date( unsigned int d, unsigned int m, unsigned int a, std::string sep=(".") ):
    _dia(d), _mes(m), _ano(a), _sep(sep)
    {
@@ -83,12 +95,9 @@ class date
 
 int main(void) 
 { 
-  time_t mt = time(0);
-  tm* tms = localtime(&mt);
-  
-  unsigned int dia = tms->tm_mday;
-  unsigned int mes = tms->tm_mon+1;
-  unsigned int ano = tms->tm_year+1900;
+  unsigned int dia;
+  unsigned int mes;
+  unsigned int ano;
     
    
   date sepdate( dia, mes, ano , "-" );
