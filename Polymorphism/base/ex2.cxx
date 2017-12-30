@@ -3,8 +3,7 @@
 //// LIBRARY START
 struct Base
 {
- Base() { }
-
+ Base(){}
  virtual  ~Base() { } // Ensures to invoke actual object destructor
  
  // An interface Polymorphism Dinamic

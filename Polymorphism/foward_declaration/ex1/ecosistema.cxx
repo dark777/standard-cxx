@@ -8,6 +8,8 @@ struct Cachorro;
 
 struct AnimalVisitor 
 {
+  AnimalVisitor(){}
+  ~AnimalVisitor(){}
   virtual void visit(Boi *boi) = 0;
   virtual void visit(Gato *gato) = 0;
   virtual void visit(Porco *porco) = 0;
@@ -16,11 +18,16 @@ struct AnimalVisitor
 
 struct Animal 
 {
+  Animal(){}
+  ~Animal(){}
   virtual void accept(AnimalVisitor *visitor) = 0;
 };
 
-struct EmissorDeSom : public AnimalVisitor 
+struct EmissorDeSom: AnimalVisitor 
 {
+  EmissorDeSom(){}
+ ~EmissorDeSom(){}
+  
     void visit(Boi *boi)
     {
      std::cout<<"\n\tMuu ..! Muu..!!\n";
@@ -46,6 +53,8 @@ struct EmissorDeSom : public AnimalVisitor
 
 struct Boi: Animal
 {
+  Boi(){}
+  ~Boi(){}
     void accept(AnimalVisitor *visitor){
         visitor->visit(this);
     }
@@ -53,6 +62,8 @@ struct Boi: Animal
     
 struct Gato: Animal 
 {
+  Gato(){}
+  ~Gato(){}
     void accept(AnimalVisitor *visitor){
         visitor->visit(this);
     }
@@ -60,6 +71,8 @@ struct Gato: Animal
 
 struct Porco: Animal
 {
+  Porco(){}
+  ~Porco(){}
     void accept(AnimalVisitor *visitor){
         visitor->visit(this);
     }
@@ -67,6 +80,8 @@ struct Porco: Animal
 
 struct Cachorro: Animal 
 {
+  Cachorro(){}
+  ~Cachorro(){}
     void accept(AnimalVisitor *visitor){
         visitor->visit(this);
     }

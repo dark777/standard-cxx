@@ -17,6 +17,8 @@
     class Boi: public Mamifero
     {
      public:
+       Boi(){}
+       ~Boi(){}
        void somMamifero()
        {
         std::cout<<"\n\tMuu ..! Muu..!!\n";
@@ -26,6 +28,8 @@
     class Gato: public Mamifero
     {
      public:
+       Gato(){}
+       ~Gato(){}
        void somMamifero()
        {
         std::cout<<"\n\tMiAu ..! MiAu..!!\n";
@@ -35,6 +39,8 @@
     class Porco: public Mamifero
     {
      public:
+       Porco(){}
+       ~Porco(){}
        void somMamifero()
        {
         std::cout<<"\n\tOinc ..! Oinc..!!\n";
@@ -44,6 +50,8 @@
     class Cachorro: public Mamifero
     {
      public:
+       Cachorro(){}
+       ~Cachorro(){}
        void somMamifero() const
        {
         std::cout<<"\n\tAu ..! Au..!!\n";

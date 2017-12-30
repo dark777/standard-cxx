@@ -5,6 +5,7 @@ class mamifero
 {
   public: //Class is private by default then it is necessary to use public so that other classes or structs have access to the members
     mamifero(){}
+    ~mamifero(){}
     virtual mamifero *reproduz() = 0; // Pure virtual constructor (and abstract, to enforce reimplementation in each derived class).
     virtual std::string nome() = 0;
     virtual std::string som() = 0;
@@ -14,6 +15,8 @@ class mamifero
 class cachorro: public mamifero 
 {
   public:
+    cachorro(){}
+    ~cachorro(){}
     cachorro *reproduz(){ return new cachorro; }
     std::string nome(){ return "cachorro"; }
     std::string som() { return "latido"; }
@@ -22,6 +25,8 @@ class cachorro: public mamifero
 class gato: public mamifero 
 {
   public:
+    gato(){}
+    ~gato(){}
     gato *reproduz() { return new gato; }
     std::string nome(){ return "gato"; }
     std::string som() { return "miado"; }
@@ -30,6 +35,8 @@ class gato: public mamifero
 class homem: public mamifero 
 {
   public:
+    homem(){}
+    ~homem(){}
     homem *reproduz() { return new homem; }
     std::string nome(){ return "homem"; }
     std::string som() { return "fala"; }
@@ -38,6 +45,8 @@ class homem: public mamifero
 class cavalo: public mamifero 
 {
   public:
+    cavalo(){}
+    ~cavalo(){}
     cavalo *reproduz() { return new cavalo; }
     std::string nome(){ return "cavalo"; }
     std::string som() { return "relincho"; }
@@ -46,6 +55,8 @@ class cavalo: public mamifero
 class cabra: public mamifero 
 {
   public:
+    cabra(){}
+    ~cabra(){}
     cabra *reproduz() { return new cabra; }
     std::string nome(){ return "cabra"; }
     std::string som() { return "berro"; }
@@ -54,6 +65,8 @@ class cabra: public mamifero
 class leao: public mamifero 
 {
   public:
+    leao(){}
+    ~leao(){}
     leao *reproduz() { return new leao; }
     std::string nome(){ return "leao"; }
     std::string som() { return "rugido"; }
@@ -62,6 +75,8 @@ class leao: public mamifero
 class boi: public mamifero 
 {
   public:
+    boi(){}
+    ~boi(){}
     boi *reproduz() { return new boi; }
     std::string nome(){ return "boi"; }
     std::string som() { return "sturro"; }

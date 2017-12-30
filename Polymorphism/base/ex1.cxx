@@ -4,12 +4,15 @@
 
 struct Base
 {
+  Base(){}
   virtual ~Base() { }
   virtual void method() { std::cout << "Base"; }
 };
 
 struct Derived : Base
 {
+ Derived(){}
+ ~Derived(){}
  virtual void method() 
  { 
    std::cout << "\n Derived\n\n"; 
@@ -18,8 +21,9 @@ struct Derived : Base
 
 int main()
 {
-    Base *pBase = new Derived;
-    pBase->method(); //outputs "Derived"
-    delete pBase;
-    return 0;
-} 
+ Base *pBase = new Derived;
+ pBase->method(); //outputs "Derived"
+ 
+ delete pBase;
+ return 0;
+}
