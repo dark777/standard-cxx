@@ -18,7 +18,7 @@ void Initialize()
  mapStringValues["Third Value"]  = evStringValue3;
  mapStringValues["end"] = evEnd;
  
- std::cout << "\n\ts_mapStringValues contains " 
+ std::cout << "\n\tmapStringValues contains " 
            << mapStringValues.size() 
            << " entries.\n";
 }
