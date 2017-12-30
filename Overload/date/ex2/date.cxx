@@ -104,10 +104,11 @@ int main(void)
   std::cout << "\n\tThe date sep "
             << sepdate << std::flush;
    
-  date dt( dia, mes, ano);
+  date data( dia, mes, ano);
   std::cout << "\n\tThe date default "
-            << dt << std::flush;
-    
+            << data << std::flush;
+  
+  date dt;
   std::cout<<"\n\tDay......: "<<dt.day()
            <<"\n\tMonth....: "<<dt.month()     
            <<"\n\tYear.....: "<<dt.year()
