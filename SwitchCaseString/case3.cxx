@@ -61,11 +61,11 @@ int main(int argc, char* argv[])
       default:
             std::cout << "\n\t\"" << szInput 
                       << "\" is an invalid string."
-                      << "\n\ts_mapStringValues now contains "
+                      << "\n\tmapStringValues now contains "
                       << mapStringValues.size() 
                       << " entries.\n";
       
-         for( int st = evStringValue1; st<evEnd; st++)
+         for(int st = evStringValue1; st<evEnd; st++)
           {
            StringValue str = static_cast<StringValue>(st);
            std::cout<<"\n\tDigite: "<<strings[str-1]<<"\n";   
