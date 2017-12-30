@@ -1,5 +1,4 @@
-﻿#include <iostream>
-#include "carro.hxx"
+﻿#include "carro.hxx"
 
 int main(void)
 {   
