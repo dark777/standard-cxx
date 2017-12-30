@@ -2,7 +2,6 @@
 
 constexpr unsigned int strToInt(const char* str, int h = 0)
 {
-    // DJB Hash function
     // not my code but can't remember where I got it from
     return !str[h] ? 5381 : (strToInt(str, h+1)*33) ^ str[h];
 }
