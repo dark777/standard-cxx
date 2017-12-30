@@ -10,11 +10,6 @@ uint64_t constexpr hash(const char * m)
   return (*m) ? mix(*m,hash(m+1)) : 0;
  }
  
- void switch_test(const char * str)
- {
-
- }
- 
 int main()
  {
   
