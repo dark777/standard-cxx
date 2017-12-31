@@ -109,8 +109,8 @@ mamifero *menu(void)
 
 constexpr unsigned int strToInt(const char* str, int h = 0)
 {
-    // not my code but can't remember where I got it from
-    return !str[h] ? 5381 : (strToInt(str, h+1)*33) ^ str[h];
+ // not my code but can't remember where I got it from
+ return !str[h] ? 5381 : (strToInt(str, h+1)*33) ^ str[h];
 }
 
 mamifero *getStrDetails(void)
