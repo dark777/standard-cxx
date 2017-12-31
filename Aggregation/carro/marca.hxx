@@ -2,9 +2,9 @@
 
 struct Marca
 {
-  Marca() { }
-
+ Marca(){}
+  ~Marca(){}
   int idMarca;
-  std::string descriMarca;
+ std::string descriMarca;
 };
 

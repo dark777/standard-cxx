@@ -13,7 +13,7 @@ int main(void)
     std::cout<<"\n\tDESCRICAO DA MARCA: ";
     getline(std::cin,varDescriMarca);
     
-   }while(varDescriMarca.length() == 0 || varDescriMarca == " ");
+   }while(varDescriMarca.length() == 0);
  
  Marca marc = *new Marca();
  marc.idMarca = varIdMarca;
@@ -50,7 +50,7 @@ int main(void)
      std::cout<<"\n\tDESCRICAO DO MOTOR: ";
      getline(std::cin,varDescriMotor);
  
-    }while(varDescriMotor.length() == 0 || varDescriMotor == " ");
+    }while(varDescriMotor.length() == 0);
  
  do{
    

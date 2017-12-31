@@ -2,9 +2,9 @@
 
 struct Motor
 {
-  Motor() { }
-
+ Motor(){}
+ ~Motor(){}
   int idMotor;
   std::string descriMotor;
-  std::string descriPotencia;
+ std::string descriPotencia;
 };
