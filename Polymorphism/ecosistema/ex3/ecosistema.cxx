@@ -107,6 +107,51 @@ mamifero *menu(void)
   return opcoes[n]->reproduz();
 }
 
+constexpr unsigned int strToInt(const char* str, int h = 0)
+{
+    // not my code but can't remember where I got it from
+    return !str[h] ? 5381 : (strToInt(str, h+1)*33) ^ str[h];
+}
+
+mamifero *getStrDetails(void)
+{
+  std::string resposta;
+
+  do
+  {
+   std::cout << "\n\tO ecossistema tem " << ecossistema.size() << " mamífero(s).\n";
+   if(ecossistema.size() > 0)
+   for(const auto &animal: ecossistema)
+   std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";   
+   std::cout << "\n\tQuer inserir um novo mamífero no ecossistema?\n\tDigite [s]-Sim ou [n]-Não: ";
+   
+   getline(std::cin, resposta);
+   std::cout << std::endl;
+
+    switch(strToInt(resposta.c_str()))
+     {
+      case strToInt("s"):
+      case strToInt("S"):
+       ecossistema.push_back(menu());
+      break;
+      
+      case strToInt("n"):
+      case strToInt("N"):
+       std::cout << "\n\tGoodbye!\n";
+       std::cout << "\n\tAo final, o ecossistema tinha " << ecossistema.size() << " mamífero(s).\n";
+       for(const auto &animal: ecossistema)
+       std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
+      return 0; 
+      break;
+      
+      default:
+       std::cout << "\n\tOpção Invalida!\n\n";
+     }
+  
+  }while(1);
+  return 0;
+}
+/*
 mamifero *getDetails(void)
 {
   std::string resposta;
@@ -116,7 +161,7 @@ mamifero *getDetails(void)
    std::cout << "\n\tO ecossistema tem " << ecossistema.size() << " mamífero(s).\n";
    if(ecossistema.size() > 0)
    for(const auto &animal: ecossistema)
-   std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
+   std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";   
    std::cout << "\n\tQuer inserir um novo mamífero no ecossistema?\n\tDigite [s]-Sim ou [n]-Não: ";
    getline(std::cin, resposta);
    std::cout << std::endl;
@@ -141,8 +186,9 @@ mamifero *getDetails(void)
   std::cout << "\n\tAo final, o ecossistema tem " << ecossistema.size() << " mamífero.\n\n";
   return 0;
 }
-
+*/
 int main()
 {
-  getDetails();
+  //getDetails();
+  getStrDetails();
 }
