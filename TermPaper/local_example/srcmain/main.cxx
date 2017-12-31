@@ -12,7 +12,8 @@ int main()
 
   trmppr->GetDetails();
   trmppr->PrintDetails();
-    
+  
+  delete trmppr;  
  return 0;
 } 
 

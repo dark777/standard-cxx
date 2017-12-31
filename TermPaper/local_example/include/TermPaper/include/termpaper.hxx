@@ -6,7 +6,6 @@
 
 class TermPaper
 {
-   private:
      std::string fName; // first name
      std::string lName; // last name
      std::string subject; // subject of the paper
@@ -23,10 +22,10 @@ class TermPaper
      void PrintDetails();
      char getLetterGrade();
      
-     void setFName(std::string fN);
-     void setLName(std::string lN);
-     void setSubject(std::string sub);
-     void setLetterGrade(char grade);
+     void setFName(std::string);
+     void setLName(std::string);
+     void setSubject(std::string);
+     void setLetterGrade(char);
 };
 
 #if !defined(_TERMPAPER_INC) && defined(_TERMPAPER_HXX) || defined(_TERMPAPER_CXX)
