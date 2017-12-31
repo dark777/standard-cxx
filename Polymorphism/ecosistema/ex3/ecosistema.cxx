@@ -137,11 +137,12 @@ mamifero *getStrDetails(void)
       
       case strToInt("n"):
       case strToInt("N"):
-       std::cout << "\n\tGoodbye!\n";
        std::cout << "\n\tAo final, o ecossistema tinha " << ecossistema.size() << " mamífero(s).\n";
        for(const auto &animal: ecossistema)
        std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
-      return 0; 
+       std::cout << "\n\tGoodbye!\n\n";
+       return 0;
+      
       break;
       
       default:
@@ -181,6 +182,7 @@ mamifero *getDetails(void)
     std::cout << "\n\tAo final, o ecossistema tinha " << ecossistema.size() << " mamífero(s).\n";
     for(const auto &animal: ecossistema)
     std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
+    std::cout << "\n\tGoodbye!\n\n";
    }
   else
   std::cout << "\n\tAo final, o ecossistema tem " << ecossistema.size() << " mamífero.\n\n";
