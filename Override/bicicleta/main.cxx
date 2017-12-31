@@ -30,7 +30,7 @@ int main(void)
   bike3.marchas = "18 Velocidades";
   bike3.gps = "Discovery 2.5";
  
-  // Metodo Override
+  // Metodo Overload e Override
   bike3.bicicleta();
   
   return 0;
