@@ -9,10 +9,8 @@
 int main()
 {
  TermPaper *trmppr = new TermPaper();
-
   trmppr->GetDetails();
   trmppr->PrintDetails();
-  
   delete trmppr;  
  return 0;
 } 
