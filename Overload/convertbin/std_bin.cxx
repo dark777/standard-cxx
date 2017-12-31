@@ -58,21 +58,22 @@ namespace std
 
 int main()
 {
-  std::cout << "\n\t127 em binario:     " << std::bin << 127
-            << "\n\t127 em octal:       " << std::oct << 127
-            << "\n\t127 em binario:     " << std::bin << 127
-            << "\n\t127 em hexadecimal: " << std::hex << 127
-            << "\n\t127 em binario:     " << std::bin << 127
-            << "\n\t127 em decimal:     " << std::dec << 127
-            << "\n\t127 em binario:     " << std::bin << 127 
+  std::cout << "\n\t127 em binario.....: " << std::bin << 127
+            << "\n\t127 em octal.......: " << std::oct << 127
+            << "\n\t127 em binario.....: " << std::bin << 127
+            << "\n\t127 em hexadecimal.: " << std::hex << 127
+            << "\n\t127 em binario.....: " << std::bin << 127
+            << "\n\t127 em decimal.....: " << std::dec << 127
+            << "\n\t127 em binario.....: " << std::bin << 127 
             << std::line;
    
 /*
-        127 em binario:     0001111111
-        127 em octal:       177
-        127 em binario:     0001111111
-        127 em hexadecimal: 7f
-        127 em decimal:     127
-        127 em binario:     0001111111
+        127 em binario.....: 0001111111
+        127 em octal.......: 177
+        127 em binario.....: 0001111111
+        127 em hexadecimal.: 7f
+        127 em binario.....: 0001111111
+        127 em decimal.....: 127
+        127 em binario.....: 0001111111
 */
 }
