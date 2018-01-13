@@ -21,8 +21,8 @@ struct Date
      
   friend std::ostream& operator<<(std::ostream&, const Date&);
   
-  time_t currentTime=0;
-  tm * timeInfo;
+  time_t currentTime = time(NULL);
+  tm * timeInfo = localtime(&currentTime);
 };
 
 

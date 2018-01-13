@@ -36,7 +36,7 @@ int main()
  int op;
   do
    {
-    std::cout << "\n\n\tPILHA COMO ESTRUTURA DINAMICA"
+    std::cout << "\n\n\tPILHA DESEMPLILHA COMO ESTRUTURA DINAMICA"
                  "\n\tMENU DE ESCOLHA DA PILHA"
                  "\n\t1 - INSERIR NA PILHA"
                  "\n\t2 - CONSULTAR TODA PILHA"

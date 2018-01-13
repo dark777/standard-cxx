@@ -1,55 +1,111 @@
-#ifndef _DATE_CXX
-#define _DATE_CXX
+#include <iostream>
 
-#include "date.hxx"
+class date 
+{  
+   unsigned int _dia , _mes , _ano;
+   std::string _sep;
+   std::string diatmp="";
+   std::string mestmp="";
+   std::string anotmp="";
+   
+   time_t _tm = time(NULL);
+   tm* curtime = localtime(&_tm);
+   
+   public:
+   
+   ~date(){}
+   
+   date()
+   {
+    _dia = curtime->tm_mday;
+    _mes = curtime->tm_mon+1;
+    _ano = curtime->tm_year+1900;    
+   }
+   
+   date( unsigned int d, unsigned int m, unsigned int a, std::string sep=(".") ):
+   _dia(d), _mes(m), _ano(a), _sep(sep)
+   { 
+     _dia = curtime->tm_mday;
+     _mes = curtime->tm_mon+1;
+     _ano = curtime->tm_year+1900;
+   }
+   
+   std::string day()
+   {
+    diatmp = std::to_string(_dia);
+    if(diatmp.length() == 1)
+    diatmp.insert(0, "0");
+    return diatmp;
+   }
+   
+   std::string month()
+   {
+    mestmp = std::to_string(_mes);
+    if(mestmp.length() == 1)
+    mestmp.insert(0, "0"); 
+    return mestmp;
+   }
+   
+   std::string year()
+   {
+    anotmp = std::to_string(_ano);
+    if(anotmp.length() == 1)
+    anotmp.insert(0, "0");
+    return anotmp;
+   }
+   
+   std::string datetime()
+   {
+    return asctime(curtime);
+   }
+   
+   friend std::ostream& operator<<( std::ostream& os , const date& dt ) 
+   {
+    std::string diaString = "", diatmp = "";
+    diatmp = std::to_string(dt._dia);
+    if(diatmp.length() == 1)
+    diatmp.insert(0, "0");
+    diaString += diatmp;
 
-   std::string Date::currentDateTime()
-   {
-    time( &currentTime );
-    timeInfo = localtime( &currentTime );
-    return asctime(timeInfo);
-   }
-   
-   Date::Date()
-   {
-    time( &currentTime );
-    timeInfo = localtime( &currentTime );
-    
-    day   = std::to_string(timeInfo->tm_mday);   
-    month = std::to_string(timeInfo->tm_mon+1);
-    year  = std::to_string(timeInfo->tm_year+1900);
-   }
-   
-   Date::~Date()
-   {
-    if(day.length() != 0)
-    day.clear();
+    std::string monthString = "", mestmp = "";
+    mestmp = std::to_string(dt._mes);
+    if(mestmp.length() == 1)
+    mestmp.insert(0, "0"); 
+    monthString += mestmp;
      
-    if(month.length() != 0)
-    month.clear();
-     
-    if(year.length() != 0)
-    year.clear();
+    std::string yearString = "", anotmp = "";
+    anotmp = std::to_string(dt._ano);
+    if(anotmp.length() == 1)
+    anotmp.insert(0, "0");
+    yearString += anotmp;
+       
+    os << diaString.c_str() << dt._sep << monthString.c_str()
+       << dt._sep << yearString.c_str() << "\n\n";
+           
+    return os ;
    }
-    
-   std::string Date::toString()
-   {
-    if(day.length() == 1)
-    day.insert(0,"0");
-    
-    if(month.length() == 1)
-    month.insert(0,"0");
-    
-    if(year.length() == 1)
-    year.insert(0,"0");
-    
-    return std::string(day+"/"+month+"/"+year);  
-   }
+};
+
+int main(void) 
+{ 
+  unsigned int dia;
+  unsigned int mes;
+  unsigned int ano;
+  
+  
+  date sepdate( dia, mes, ano , "-" );
+  std::cout << "\n\tThe date sep "
+            << sepdate << std::flush;
    
-   std::ostream& operator<<(std::ostream& os, const Date& d)
-   {
-    os << d.day << "/" << d.month << "/" << d.year;
-    return os;
-   }
-   
-#endif
+  date data( dia, mes, ano);
+  std::cout << "\n\tThe date default "
+            << data << std::flush;
+  
+  date dt;
+  std::cout<<"\n\tDay......: "<<dt.day()
+           <<"\n\tMonth....: "<<dt.month()     
+           <<"\n\tYear.....: "<<dt.year()
+           <<"\n\tDateTime.: "<<dt.datetime()
+           <<"\n\n";
+   return 0;     
+}

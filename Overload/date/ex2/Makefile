@@ -23,4 +23,4 @@ $(EBIN):$(EOBJ)
 $(SUB):$(EBIN)               
 
 	./$(BIN)   
-	rm -rf $*
+	rm -rf $* $(OBJ)
