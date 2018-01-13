@@ -92,7 +92,6 @@ int main(void)
   unsigned int mes;
   unsigned int ano;
   
-  
   date sepdate( dia, mes, ano , "-" );
   std::cout << "\n\tThe date sep "
             << sepdate << std::flush;
