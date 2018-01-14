@@ -21,7 +21,6 @@
  * 
  * @end @section author Author
  *
- * PS: para desemplihar é preciso remover o ultimo elemento inserido no topo da pilha.
  */
 struct pilha
 {
@@ -85,18 +84,23 @@ int main()
         }
                 
        if(op == 4)
-        {
+        {         
          if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
          else
           {
-           std::cout<<"\n\tTOPO: "<<topo->num;
-           aux = topo->prox;
-	   
-           while(aux != NULL)
-           {
-            aux = aux->prox;
-            topo->prox--;
-           }
+           //aux = NULL;
+           //std::cout<<"\n\tTOPO: "<<topo->num;    
+           pilha *removido = new pilha();
+   
+           if(topo->prox != NULL)
+            {
+             if(topo->prox->prox)
+              removido = topo->prox;
+              aux = topo->prox->prox;
+              std::cout << "\n\tNUMERO: " << removido->num << " REMOVIDO COM SUCESSO!!!";
+              delete topo->prox;     
+             topo->prox = aux;
+            }
           }
         }
         
