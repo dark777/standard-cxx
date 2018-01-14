@@ -49,10 +49,10 @@ int main()
        if(op == 1)
         {
          std::cout << "\n\tINSIRA NUMERO NA PILHA: ";
-         pilha *novo = new pilha();
-         std::cin >> novo->num;
-         novo->prox = topo;
-         topo = novo;
+          pilha *novo = new pilha();
+           std::cin >> novo->num;
+           novo->prox = topo;
+          topo = novo;
          std::cout << "\n\tNUMERO "<<novo->num<<" INSERIDO COM SUCESSO!!!";
         }
         
