@@ -91,7 +91,6 @@ int main()
            //aux = NULL;
            //std::cout<<"\n\tTOPO: "<<topo->num;    
            pilha *removido = new pilha();
-   
            if(topo->prox != NULL)
             {
              if(topo->prox->prox)
