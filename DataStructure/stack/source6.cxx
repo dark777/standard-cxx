@@ -39,7 +39,7 @@ int main()
                  "\n\tMENU DE ESCOLHA DA PILHA"
                  "\n\t1 - INSERIR NA PILHA"
                  "\n\t2 - CONSULTAR TODA PILHA"
-                 "\n\t3 - REMOVER DA PILHA"
+                 "\n\t3 - REMOVER DO TOPO"
                  "\n\t4 - DESEMPILHAR E REMOVER"
                  "\n\t5 - ESVAZIAR A PILHA" 
                  "\n\t6 - SAIR"
