@@ -12,16 +12,16 @@
  * 
  * @begin @section author Author
  * 
- * @file       source6
+ * @file       source7
  * @version    0.1
- * @brief      Pilha como estrutura dinamica.
+ * @brief      Pilha Desempliha como estrutura dinamica.
  * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo.pdf
  * @author     Jean Zonta
  * @Copyright (C) 2013 Jean Zonta.
  * 
  * @end @section author Author
  *
-*/
+ */
 struct pilha
 {
  int num;
@@ -35,24 +35,25 @@ int main()
  int op;
   do
    {
-    std::cout << "\n\n\tPILHA COMO ESTRUTURA DINAMICA"
+    std::cout << "\n\n\tPILHA DESEMPLILHA COMO ESTRUTURA DINAMICA"
                  "\n\tMENU DE ESCOLHA DA PILHA"
                  "\n\t1 - INSERIR NA PILHA"
                  "\n\t2 - CONSULTAR TODA PILHA"
                  "\n\t3 - REMOVER DA PILHA"
-                 "\n\t4 - ESVAZIAR A PILHA"
-                 "\n\t5 - SAIR"
+                 "\n\t4 - DESEMPILHAR E REMOVER"
+                 "\n\t5 - ESVAZIAR A PILHA" 
+                 "\n\t6 - SAIR"
                  "\n\tESCOLHA: ";
     std::cin >> op;
     
        if(op == 1)
         {
          std::cout << "\n\tINSIRA NUMERO NA PILHA: ";
-         pilha *novo = new pilha();
-         std::cin >> novo->num;
-         novo->prox = topo;
-         topo = novo;
-         std::cout << "\n\tINSERIDO COM SUCESSO!!!";
+          pilha *novo = new pilha();
+           std::cin >> novo->num;
+           novo->prox = topo;
+          topo = novo;
+         std::cout << "\n\tNUMERO "<<novo->num<<" INSERIDO COM SUCESSO!!!";
         }
         
        if(op == 2)
@@ -81,8 +82,26 @@ int main()
            delete(aux);
           }
         }
-        
+                
        if(op == 4)
+        {         
+         if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
+         else
+          {
+           aux = NULL;
+           //std::cout<<"\n\tTOPO: "<<topo->num;
+           if(topo->prox != NULL)
+            {
+             if(topo->prox->prox)
+              aux = topo->prox->prox;
+              std::cout << "\n\tNUMERO: " << topo->prox->num << " REMOVIDO COM SUCESSO!!!";
+              delete topo->prox;     
+             topo->prox = aux;
+            }
+          }
+        }
+        
+       if(op == 5)
         {
          if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
          else
@@ -97,11 +116,11 @@ int main()
            std::cout << "\n\tPILHA ESVAZIADA COM SUCESSO!!!!";
           }
         }
-
-       if(op<1 || op>5)std::cout << "\n\tOPCAO INVALIDA!!!";
+        
+       if(op<1 || op>6)std::cout << "\n\tOPCAO INVALIDA!!!";
        else
-       if(op == 5)std::cout<<"\n\tGOOD BYE ...!!\n\n";
+       if(op == 6)std::cout<<"\n\tGOOD BYE ...!!\n\n";
 
-   }while(op != 5);
+   }while(op != 6);
  return 0;
 }
