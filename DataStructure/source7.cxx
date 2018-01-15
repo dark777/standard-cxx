@@ -88,15 +88,13 @@ int main()
          if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
          else
           {
-           //aux = NULL;
-           //std::cout<<"\n\tTOPO: "<<topo->num;    
-           pilha *removido = new pilha();
+           aux = NULL;
+           //std::cout<<"\n\tTOPO: "<<topo->num;
            if(topo->prox != NULL)
             {
              if(topo->prox->prox)
-              removido = topo->prox;
               aux = topo->prox->prox;
-              std::cout << "\n\tNUMERO: " << removido->num << " REMOVIDO COM SUCESSO!!!";
+              std::cout << "\n\tNUMERO: " << topo->prox->num << " REMOVIDO COM SUCESSO!!!";
               delete topo->prox;     
              topo->prox = aux;
             }
