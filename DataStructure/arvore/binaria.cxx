@@ -2,7 +2,7 @@
 
 struct Node
 {
-  Node(int valor): valor(valor), esquerda(NULL),direita(NULL){}
+  Node(int valor): valor(valor), esquerda(NULL), direita(NULL){}
   
   Node* getEsquerda()
   {
