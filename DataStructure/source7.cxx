@@ -40,7 +40,7 @@ int main()
                  "\n\t1 - INSERIR NA PILHA"
                  "\n\t2 - CONSULTAR TODA PILHA"
                  "\n\t3 - REMOVER DA PILHA"
-                 "\n\t4 - DESEMPILHAR A PILIHA"
+                 "\n\t4 - DESEMPILHAR E REMOVER"
                  "\n\t5 - ESVAZIAR A PILHA" 
                  "\n\t6 - SAIR"
                  "\n\tESCOLHA: ";
