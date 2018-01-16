@@ -1,14 +1,19 @@
-#include "arv.hxx"
+/*
+  Autor: Marcos Augusto
+  Email: marcosccp04@gmail.com
+*/
+# include "arv.hxx"
 
 int main()
 {
  int num;
- char Nome[100],op[2];
+ char op[2];
+ char Nome[100];
       
  Arvore *raiz;
  raiz = NULL;
       
- while(num != 6)
+ while(num != 6) 
  {
   menu(&num);
   switch(num)
@@ -29,7 +34,7 @@ int main()
            printf(
                   "\n\n\t*-----------------*"
                   "\n\t|  VIEW CONTACTS  |"
-                  "\n\t*-----------------*\n"
+                  "\n\t*-----------------*"
                  );
            ordem(raiz);
            getchar();
@@ -42,6 +47,7 @@ int main()
                  );
            ler_string(Nome);
            busca(raiz,Nome);
+           getchar();
            break;
     case 4:
          do{
@@ -54,7 +60,7 @@ int main()
            opcao(op);
            if(*op == 'n' || *op =='N')break;
             excluir(&raiz,Nome);break;
-           }while(*op =='s' || *op =='S');           
+           }while(*op =='y' || *op =='Y');           
             break;
     case 5:
            printf(
@@ -67,7 +73,8 @@ int main()
            break;
     case 6:
            printf("\n\tGood Bye.\n\n");
-           break;
-  }
+           break;   
+  };
  }
+ return 0;
 }

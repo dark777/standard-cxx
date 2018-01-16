@@ -11,19 +11,13 @@ void inserir(Arvore **raiz ,char string[])
   (*raiz)->telefone = telefone;
   (*raiz)->esq = NULL;
   (*raiz)->dir = NULL;              
- }
- else
- {
-  if(strcasecmp((*raiz)->Nome,string)>0)
-  inserir(&(*raiz)->esq,string);                     
+  }
   else
-  if(strcasecmp((*raiz)->Nome,string)<0)
-  inserir(&(*raiz)->dir,string);
+  if(strcasecmp((*raiz)->Nome,string)>0)inserir(&(*raiz)->esq,string);                     
   else
-  if(strcmp((*raiz)->Nome,string)==0)
-  printf("\n\tName already registered");
-  getchar();
- }
+  if(strcasecmp((*raiz)->Nome,string)<0)inserir(&(*raiz)->dir,string);
+  else
+  if(strcmp((*raiz)->Nome,string)==0)printf("\n\tName already registered");
 }
                                                                
 void ordem(Arvore *raiz)
@@ -31,12 +25,10 @@ void ordem(Arvore *raiz)
  if(raiz!=NULL) 
  {
   ordem((raiz)->esq);
-  printf(
-         "\n\tName: %s"
-         "\n\tPhone: %s",
-         (raiz)->Nome,(raiz)->telefone
-        );
-      
+  printf("\n\n\tName: ");
+  printf("%s",(raiz)->Nome);
+  printf("\tPhone: ");
+  printf("%d",(raiz)->telefone);
   ordem((raiz)->dir);
  }
 }
@@ -44,131 +36,107 @@ void ordem(Arvore *raiz)
 void busca(Arvore *raiz,char string[])
 {
  if(raiz!=NULL)
- {
-   if(strcasecmp((raiz)->Nome,string)>0)
-    busca((raiz)->esq,string);
-    else
-     if(strcasecmp((raiz)->Nome,string)<0)
-     busca((raiz)->dir,string);
-    else
-     if(strcmp((raiz)->Nome,string)==0)
-     {
+  {
+   if(strcasecmp((raiz)->Nome,string)>0)busca((raiz)->esq,string);
+   else
+   if(strcasecmp((raiz)->Nome,string)<0)busca((raiz)->dir,string);
+   else
+   if(strcmp((raiz)->Nome,string)==0)
+    {
       printf(
              "\n\tRecord Found!!"
-             "\n\tName: %s"
-             "\n\tPhone: %s",
-             (raiz)->Nome,(raiz)->telefone
+             "\n\tName: "
             );
-      getchar();
-     }
-  }  
- else
- {
+     printf("%s",(raiz)->Nome);
+     printf("\tPhone: ");
+     printf("%d",(raiz)->telefone);
+    }
+  }
+  else
   printf(
          "\n\t*------------------*"
          "\n\t| Name not found!! |"
          "\n\t*------------------*\n"
         );
-  getchar();
- }
 }
 
 void alterar( Arvore **raiz, char *string)
 {
   if((*raiz)!=NULL)
   {
-   if(strcasecmp((*raiz)->Nome,string)>0)
-    alterar(&(*raiz)->esq,string);
+   if(strcasecmp((*raiz)->Nome,string)>0)alterar(&(*raiz)->esq,string);
     else
-   if(strcasecmp((*raiz)->Nome,string)<0)
-    alterar(&(*raiz)->dir,string);
+     if(strcasecmp((*raiz)->Nome,string)<0)alterar(&(*raiz)->dir,string);
     else
-   if(strcmp((*raiz)->Nome,string)==0)
-   {
-    int telefone;
-    printf(
-           "\n\tRecord Found!!"
-           "\n\tName: %s",
-           (*raiz)->Nome
-          );
-    
-    printf("\n\tNew Phone: ");
-    scanf("%d",&telefone);
-    (*raiz)->telefone= telefone;
-    printf(
-           "\n\n\t*-----------------*"
-           "\n\t| Changed data!! |"
-           "\n\t*-----------------*\n"
-          );
-    getchar();
-   }
-  }
+     if(strcmp((*raiz)->Nome,string)==0)
+      {
+       int telefone;
+      printf(
+             "\n\tRecord Found!!"
+             "\n\tName: "
+            );
+       printf("%s",(*raiz)->Nome);
+       printf("\tPhone: ");
+       scanf("%d",&telefone);
+       (*raiz)->telefone= telefone;
+       printf(
+              "\n\t*-----------------*"
+              "\n\t| Changed data!! |"
+              "\n\t*-----------------*"
+             );
+      }
+    }
   else
-  {
-   printf(
-          "\n\t*------------------*"
-          "\n\t| Name not found!! |"
-          "\n\t*------------------*\n"
-         );
-  }
+  printf(
+         "\n\t*------------------*"
+         "\n\t| Name not found!! |"
+         "\n\t*------------------*"
+        );
 }
 
 void excluir(Arvore **raiz,char string[])
 {
  Arvore **aux2, *aux3;     
- if(*raiz!=NULL)
- {
-  if( strcasecmp((*raiz)->Nome , string)==0 )
+ if(*raiz!=NULL) 
   {
-   if((*raiz)->esq == (*raiz)->dir)
+   if( strcasecmp((*raiz)->Nome , string)==0 )
    {
-    free(*raiz);
-    *raiz = NULL;
-   }
+    if((*raiz)->esq == (*raiz)->dir)
+    {
+     free(*raiz);
+     *raiz = NULL;
+    }
    else
-   {
     if((*raiz)->esq != NULL)
-    {
-     aux2 = maior_esq(*raiz);
-     aux3 = *aux2;
-     (*aux2) = (*aux2)->esq;
-    }
-    else
-    {
-     aux2 = menor_dir(*raiz);
-     aux3 = *aux2;
-     (*aux2) = (*aux2)->dir;
-    }
-    strcpy((*raiz)->Nome, aux3->Nome);
-    free(aux3); aux3 = NULL;
-   }
-  }
-  else
-  {
-   if(strcasecmp(string,(*raiz)->Nome)<0)
-   {
-    excluir(&(*raiz)->esq,string);
+     {
+      aux2 = maior_esq(*raiz);
+      aux3 = *aux2;
+      (*aux2) = (*aux2)->esq;
+     }
+     else
+     {
+      aux2 = menor_dir(*raiz);
+      aux3 = *aux2;
+      (*aux2) = (*aux2)->dir;
+     }
+     strcpy((*raiz)->Nome, aux3->Nome);
+     free(aux3); aux3 = NULL;
    }
    else
-   {
-    excluir(&(*raiz)->dir,string);
-   }
+   if(strcasecmp(string,(*raiz)->Nome)<0)excluir(&(*raiz)->esq,string);
+   else
+   excluir(&(*raiz)->dir,string);
   }
- }
  else
- {
   printf(
-         "\n\n\t*----------------*"
+         "\n\t*------------------*"
          "\n\t| Name not found!! |"
          "\n\t*------------------*\n"
         );
-  
-  getchar();
- } 
 }
 
-Arvore** maior_esq(Arvore *raiz)
-{
+Arvore** maior_esq (Arvore *raiz)
+{ 
  Arvore **aux = &(raiz);
  if((*aux)->esq != NULL)
  {
@@ -176,21 +144,21 @@ Arvore** maior_esq(Arvore *raiz)
    while( (*aux)->dir != NULL )
    {
     aux = &(*aux)->dir;
-   }
+   }  
  }
  return aux;
 }
 
 Arvore** menor_dir(Arvore *raiz)
 {
-  Arvore **aux = &(raiz);
+ Arvore **aux = &(raiz);
   if((*aux)->dir != NULL)
   {
-    aux = &(*aux)->dir;
-    while((*aux)->esq != NULL)
-    {
-      aux=&(*aux)->esq;
-    }
+   aux = &(*aux)->dir;
+   while((*aux)->esq != NULL)
+   {
+    aux=&(*aux)->esq;
+   }
   }
  return aux;
 }
@@ -214,7 +182,6 @@ void menu(int *num)
         "\n\t*---------------------------*"
         "\n\tDigite: "
        );
- 
  scanf("%d",num);
  getchar();
 }
@@ -227,11 +194,11 @@ void ler_telefone(int *telefone)
 
 void ler_string(char string[])
 {
- printf("\n\tEnter the name: ");
- fflush(stdin);
+     printf("\n\tEnter the name: ");
+     fflush(stdin);
 
- fgets(string,100,stdin);
- maiuscula(string);
+     fgets(string,100,stdin);
+     maiuscula(string);
 }
 
 void maiuscula(char string[])
@@ -242,15 +209,12 @@ void maiuscula(char string[])
   if((string[i]>='a') && (string[i]<='z'))
   {
    string[i]-=32;
-  } 
- } 
+  }
+ }
 }
 
 void opcao(char op[])
 {
- int num; 
  printf("\n\tDo you want to continue (y)es or (n)o: ");
  scanf(" %s",&op);
- fflush(stdin);
- //if(*op == 'n' || *op == 'N')menu(&num);
 }
