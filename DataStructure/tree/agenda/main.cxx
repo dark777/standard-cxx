@@ -1,8 +1,10 @@
 /*
   Autor: Marcos Augusto
   Email: marcosccp04@gmail.com
+  Modified: Jean Zonta
+  Email: wiki.anon@yahoo.com.br
 */
-# include "arv.hxx"
+#include "arv.hxx"
 
 int main()
 {
@@ -10,8 +12,7 @@ int main()
  char op[2];
  char Nome[100];
       
- Arvore *raiz;
- raiz = NULL;
+ Arvore *raiz = NULL;
       
  while(num != 6) 
  {

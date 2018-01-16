@@ -2,7 +2,6 @@
 #include <cstring>
 #include <cstdlib>
 
-
 struct Arvore
 {
  char Nome[100];
