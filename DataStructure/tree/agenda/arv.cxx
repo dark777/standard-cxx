@@ -32,8 +32,8 @@ void ordem(Arvore *raiz)
  {
   ordem((raiz)->esq);
   printf(
-         "\n\tName: "
-         "\n\tPhone: ",
+         "\n\tName: %s"
+         "\n\tPhone: %s",
          (raiz)->Nome,(raiz)->telefone
         );
       
@@ -55,8 +55,8 @@ void busca(Arvore *raiz,char string[])
      {
       printf(
              "\n\tRecord Found!!"
-             "\n\tName: "
-             "\n\tPhone: ",
+             "\n\tName: %s"
+             "\n\tPhone: %s",
              (raiz)->Nome,(raiz)->telefone
             );
       getchar();
@@ -88,10 +88,10 @@ void alterar( Arvore **raiz, char *string)
     int telefone;
     printf(
            "\n\tRecord Found!!"
-           "\n\tName: "
+           "\n\tName: %s",
+           (*raiz)->Nome
           );
     
-    printf("%s",(*raiz)->Nome);
     printf("\n\tNew Phone: ");
     scanf("%d",&telefone);
     (*raiz)->telefone= telefone;
@@ -219,51 +219,6 @@ void menu(int *num)
  getchar();
 }
 
-void Menu_1()
-{
- printf(
-        "\n\n\t*-------------------*"
-        "\n\t|  INSERT CONTACTS  |"
-        "\n\t*-------------------*\n"
-       );
-}
-
-void Menu_2()
-{
- printf(
-        "\n\n\t*-----------------*"
-        "\n\t|  VIEW CONTACTS  |"
-        "\n\t*-----------------*\n"
-       );
-}
-
-void Menu_3()
-{
- printf(
-        "\n\n\t*------------------*"
-        "\n\t|  SEARCH CONTACT  |"
-        "\n\t*------------------*\n"
-       );
-}
-
-void Menu_4()
-{
- printf(
-        "\n\n\t*------------------*"
-        "\n\t|  REMOVE CONTACT  |"
-        "\n\t*------------------*\n"
-       );
-}
-
-void Menu_5()
-{
- printf(
-        "\n\n\t*-----------------*"
-        "\n\t|  ALTER CONTACT  |"
-        "\n\t*-----------------*\n"
-       );
-}
-
 void ler_telefone(int *telefone)
 {
  printf("\n\tEnter phone number: ");
@@ -275,7 +230,7 @@ void ler_string(char string[])
  printf("\n\tEnter the name: ");
  fflush(stdin);
 
- fgets(string,50,stdin);
+ fgets(string,100,stdin);
  maiuscula(string);
 }
 
@@ -293,6 +248,9 @@ void maiuscula(char string[])
 
 void opcao(char op[])
 {
+ int num; 
  printf("\n\tDo you want to continue (y)es or (n)o: ");
- scanf(" %d",&op);
+ scanf(" %s",&op);
+ fflush(stdin);
+ //if(*op == 'n' || *op == 'N')menu(&num);
 }

@@ -16,20 +16,16 @@ struct Arvore
  Arvore *dir;
 };
 
-void inserir(Arvore**,char*);
-void ordem(Arvore*);
-void busca(Arvore*,char*);
-void alterar( Arvore**, char*);
-void excluir(Arvore**,char*);
-Arvore** menor_dir(Arvore*);
-Arvore** maior_esq(Arvore*);
-void ler_string(char*);
-void ler_telefone(int*);
-void maiuscula(char*);
-void menu(int*);
-void opcao(char*);
-void Menu_1();
-void Menu_2();
-void Menu_3();
-void Menu_4();
-void Menu_5();
+
+ void inserir(Arvore**,char*);
+ void ordem(Arvore*);
+ void busca(Arvore*,char*);
+ void alterar( Arvore**, char*);
+ void excluir(Arvore**,char*);
+ Arvore** menor_dir(Arvore*);
+ Arvore** maior_esq(Arvore*);
+ void ler_string(char*);
+ void ler_telefone(int*);
+ void maiuscula(char*);
+ void menu(int*);
+ void opcao(char*);
