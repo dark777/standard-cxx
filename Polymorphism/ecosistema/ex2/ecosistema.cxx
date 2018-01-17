@@ -6,7 +6,7 @@
        Mamifero(){}
        ~Mamifero(){}
        //void somMamifero() const // Error:
-       virtual void somMamifero()const  //Polimorfism Efect
+       virtual void somMamifero() const  //Polimorfism Efect
        {
          std::cout<<"\n\tSom de mamifero.\n";
        }
@@ -19,7 +19,7 @@
      public:
        Boi(){}
        ~Boi(){}
-       void somMamifero()
+       void somMamifero() const
        {
         std::cout<<"\n\tMuu ..! Muu..!!\n";
        }
@@ -30,7 +30,7 @@
      public:
        Gato(){}
        ~Gato(){}
-       void somMamifero()
+       void somMamifero() const
        {
         std::cout<<"\n\tMiAu ..! MiAu..!!\n";
        }
@@ -41,7 +41,7 @@
      public:
        Porco(){}
        ~Porco(){}
-       void somMamifero()
+       void somMamifero() const
        {
         std::cout<<"\n\tOinc ..! Oinc..!!\n";
        }
