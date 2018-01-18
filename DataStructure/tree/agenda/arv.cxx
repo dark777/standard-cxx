@@ -97,36 +97,41 @@ void alterar( Arvore **raiz, char *string)
 void excluir(Arvore **raiz,char string[])
 {
  Arvore **aux2, *aux3;     
- if(*raiz!=NULL) 
+ if(*raiz!=NULL)
+ {
+  if( strcasecmp((*raiz)->Nome , string)==0 )
   {
-   if( strcasecmp((*raiz)->Nome , string)==0 )
+   if((*raiz)->esq == (*raiz)->dir)
    {
-    if((*raiz)->esq == (*raiz)->dir)
-    {
-     free(*raiz);
-     *raiz = NULL;
-    }
-   else
-    if((*raiz)->esq != NULL)
-     {
-      aux2 = maior_esq(*raiz);
-      aux3 = *aux2;
-      (*aux2) = (*aux2)->esq;
-     }
-     else
-     {
-      aux2 = menor_dir(*raiz);
-      aux3 = *aux2;
-      (*aux2) = (*aux2)->dir;
-     }
-     strcpy((*raiz)->Nome, aux3->Nome);
-     free(aux3); aux3 = NULL;
+    free(*raiz);
+    *raiz = NULL;
    }
    else
-   if(strcasecmp(string,(*raiz)->Nome)<0)excluir(&(*raiz)->esq,string);
-   else
-   excluir(&(*raiz)->dir,string);
+   {
+    if((*raiz)->esq != NULL)
+    {
+     aux2 = maior_esq(*raiz);
+     aux3 = *aux2;
+     (*aux2) = (*aux2)->esq;
+    }
+    else
+    {
+     aux2 = menor_dir(*raiz);
+     aux3 = *aux2;
+     (*aux2) = (*aux2)->dir;
+    }
+    strcpy((*raiz)->Nome, aux3->Nome);
+    free(aux3); aux3 = NULL;
+   }
   }
+  else
+  {
+   if(strcasecmp(string,(*raiz)->Nome)<0)
+    excluir(&(*raiz)->esq,string);
+   else
+    excluir(&(*raiz)->dir,string);
+  }
+ }
  else
   printf(
          "\n\t*------------------*"

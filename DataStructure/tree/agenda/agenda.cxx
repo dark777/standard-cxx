@@ -38,13 +38,25 @@ int main()
            printf(
                   "\n\n\t*-----------------*"
                   "\n\t|  VIEW CONTACTS  |"
-                  "\n\t*-----------------*"
+                  "\n\t*-----------------*\n"
                  );   
-           if(raiz == NULL)menu(&num);
+           if(raiz == NULL)
+            {
+             printf("\n\tContacts not found!!");
+             printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+             scanf(" %s",&op);     
+             if(*op == 'y' || *op == 'Y')menu(&num);
+             else
+             return 0;
+           }
            else
            {
             ordem(raiz);
-            menu(&num);
+             printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+             scanf(" %s",&op);     
+             if(*op == 'y' || *op == 'Y')menu(&num);
+             else
+             return 0;
            }
            break;
     case 3:
