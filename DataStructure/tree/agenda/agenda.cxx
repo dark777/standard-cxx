@@ -1,11 +1,30 @@
-/*
-  Autor: Marcos Augusto
-  Email: marcosccp04@gmail.com
-  Modified: Jean Zonta
-  Email: wiki.anon@yahoo.com.br
-*/
 #include "arv.hxx"
-
+/*!
+ *
+ * @begin @section terms_of_use Terms of Use
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ *
+ * @end @section terms_of_use Terms of Use
+ * 
+ * @begin @section author Author
+ * 
+ * @file     agenda.cxx
+ * @version  0.3
+ * @brief    Árvore binária.
+ * @Utilit   Agenda telefonica.
+ * @Original_Consult https://www.vivaolinux.com.br/script/Agenda-feita-em-C-usando-arvore-binaria
+ * @Autor: Marcos Augusto
+ * @Email_Autor: marcosccp04@gmail.com
+ * @Modified: Jean Zonta
+ * @Copyright (C) 2017 Marcos Augusto, Jean Zonta.
+ * 
+ * @end @section author Author
+ *
+ */
 int main()
 {
  int num;
@@ -27,7 +46,7 @@ int main()
                    "\n\t|  INSERT CONTACTS  |"
                    "\n\t*-------------------*\n"
                   );
-           getChars(Nome);
+           getNames(Nome);
            inserir(&raiz,Nome);
            printf("\n\tDo you want to continue (y)es or (n)o: ");
            scanf(" %s",&op);
@@ -66,7 +85,7 @@ int main()
                   "\n\t|  SEARCH CONTACT  |"
                   "\n\t*------------------*\n"
                  );
-           getChars(Nome);
+           getNames(Nome);
            busca(raiz,Nome);
            printf("\n\n\tDo you want to continue (y)es or (n)o: ");
            scanf(" %s",&op);
@@ -82,7 +101,7 @@ int main()
                    "\n\t|  REMOVE CONTACT  |"
                    "\n\t*------------------*\n"
                   );
-           getChars(Nome);
+           getNames(Nome);
            busca(raiz,Nome);
            printf("\n\n\tDo you want to continue (y)es or (n)o: ");
            scanf(" %s",&op);
@@ -101,7 +120,7 @@ int main()
                   "\n\t|  ALTER CONTACT  |"
                   "\n\t*-----------------*\n"
                  );
-           getChars(Nome);
+           getNames(Nome);
            busca(raiz,Nome);
            printf("\n\n\tDo you want to continue (y)es or (n)o: ");
            scanf(" %s",&op);

@@ -1,5 +1,30 @@
 #include "arv.hxx"
-
+/*!
+ *
+ * @begin @section terms_of_use Terms of Use
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ *
+ * @end @section terms_of_use Terms of Use
+ * 
+ * @begin @section author Author
+ * 
+ * @file     arv.cxx
+ * @version  0.3
+ * @brief    Árvore binária.
+ * @Utilit   Agenda telefonica.
+ * @Original_Consult https://www.vivaolinux.com.br/script/Agenda-feita-em-C-usando-arvore-binaria
+ * @Autor: Marcos Augusto
+ * @Email_Autor: marcosccp04@gmail.com
+ * @Modified: Jean Zonta
+ * @Copyright (C) 2017 Marcos Augusto, Jean Zonta.
+ * 
+ * @end @section author Author
+ *
+ */
 void inserir(Arvore **raiz ,char string[])
 {
  int telefone;
@@ -197,7 +222,7 @@ void getPhones(int *telefone)
  scanf(" %d",telefone);
 }
 
-void getChars(char string[])
+void getNames(char string[])
 {
      printf("\n\tEnter the name: ");
      scanf(" %[^\n]s",string); // Lê String até encontrar o ENTER.
