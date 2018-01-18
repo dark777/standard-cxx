@@ -17,7 +17,7 @@ void inserir(Arvore **raiz ,char string[])
   else
   if(strcasecmp((*raiz)->Nome,string)<0)inserir(&(*raiz)->dir,string);
   else
-  if(strcmp((*raiz)->Nome,string)==0)printf("\n\tName already registered");
+  if(strcmp((*raiz)->Nome,string)==0)printf("\n\tName already registered\n");
 }
                                                                
 void ordem(Arvore *raiz)
@@ -80,9 +80,9 @@ void alterar( Arvore **raiz, char *string)
        scanf(" %d",&telefone);
        (*raiz)->telefone= telefone;
        printf(
-              "\n\t*-----------------*"
+              "\n\t*----------------*"
               "\n\t| Changed data!! |"
-              "\n\t*-----------------*"
+              "\n\t*----------------*"
              );
       }
     }
