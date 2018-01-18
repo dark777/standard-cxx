@@ -77,7 +77,7 @@ void alterar( Arvore **raiz, char *string)
             );
        printf("%s",(*raiz)->Nome);
        printf("\tPhone: ");
-       scanf("%d",&telefone);
+       scanf(" %d",&telefone);
        (*raiz)->telefone= telefone;
        printf(
               "\n\t*-----------------*"
@@ -182,22 +182,20 @@ void menu(int *num)
         "\n\t*---------------------------*"
         "\n\tDigite: "
        );
- scanf("%d",num);
+ scanf(" %d",num);
  getchar();
 }
 
 void ler_telefone(int *telefone)
 {
  printf("\n\tEnter phone number: ");
- scanf("%d",telefone);
+ scanf(" %d",telefone);
 }
 
 void ler_string(char string[])
 {
      printf("\n\tEnter the name: ");
-     fflush(stdin);
-
-     fgets(string,100,stdin);
+     scanf(" %[^\n]s",string); // Lê String até encontrar o ENTER.
      maiuscula(string);
 }
 
