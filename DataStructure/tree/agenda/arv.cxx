@@ -103,7 +103,7 @@ void alterar( Arvore **raiz, char *string)
        printf("%s",(*raiz)->Nome);
        printf("\tPhone: ");
        scanf(" %d",&telefone);
-       (*raiz)->telefone= telefone;
+       (*raiz)->telefone = telefone;
        printf(
               "\n\t*----------------*"
               "\n\t| Changed data!! |"
