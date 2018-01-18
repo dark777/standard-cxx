@@ -90,7 +90,6 @@ int main()
            else
            {
             excluir(&raiz,Nome);
-            menu(&num);
             break;
            }
            }while(*op == 'y' || *op == 'Y');       
@@ -106,13 +105,17 @@ int main()
            busca(raiz,Nome);
            printf("\n\n\tDo you want to continue (y)es or (n)o: ");
            scanf(" %s",&op);
-           if(*op == 'n' || *op == 'N')menu(&num);
-           else
+           if(*op == 'y' || *op == 'Y')
            {
             alterar(&raiz,Nome);
-            menu(&num);
+            printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+            scanf(" %s",&op);
+   
+            if(*op == 'n' || *op == 'N')menu(&num);
             break;
            }
+           else
+           menu(&num);  
            }while(*op == 'y' || *op == 'Y');   
            break;
     case 6:
