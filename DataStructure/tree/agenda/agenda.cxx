@@ -13,10 +13,11 @@ int main()
  char Nome[100];
       
  Arvore *raiz = NULL;
-      
+ 
+ menu(&num);
+ 
  while(num != 6) 
  {
-  menu(&num);
   switch(num)
   {
     case 1:
@@ -26,9 +27,11 @@ int main()
                    "\n\t|  INSERT CONTACTS  |"
                    "\n\t*-------------------*\n"
                   );
-           ler_string(Nome);
+           getChars(Nome);
            inserir(&raiz,Nome);
-           opcao(op);
+           printf("\n\tDo you want to continue (y)es or (n)o: ");
+           scanf(" %s",&op);
+           if(*op == 'n' || *op =='N')menu(&num);
           }while(*op == 'y' || *op =='Y');
            break;
     case 2:
@@ -37,18 +40,24 @@ int main()
                   "\n\t|  VIEW CONTACTS  |"
                   "\n\t*-----------------*"
                  );
-           ordem(raiz);
-           getchar();
+           if(raiz != NULL)ordem(raiz);
+           menu(&num);
            break;
     case 3:
+          do{
            printf(
                   "\n\n\t*------------------*"
                   "\n\t|  SEARCH CONTACT  |"
                   "\n\t*------------------*\n"
                  );
-           ler_string(Nome);
+           getChars(Nome);
            busca(raiz,Nome);
-           getchar();
+           printf("\n\tDo you want to continue (y)es or (n)o: ");
+           scanf(" %s",&op);
+           if(*op == 'n' || *op =='N')menu(&num);
+           else
+           break;
+           }while(*op =='y' || *op =='Y'); 
            break;
     case 4:
          do{
@@ -57,20 +66,33 @@ int main()
                    "\n\t|  REMOVE CONTACT  |"
                    "\n\t*------------------*\n"
                   );
-           ler_string(Nome);
-           opcao(op);
-           if(*op == 'n' || *op =='N')break;
-            excluir(&raiz,Nome);break;
-           }while(*op =='y' || *op =='Y');           
-            break;
+           getChars(Nome);
+           printf("\n\tDo you want to continue (y)es or (n)o: ");
+           scanf(" %s",&op);
+           if(*op == 'n' || *op =='N')menu(&num);
+            else
+           excluir(&raiz,Nome);
+           }while(*op =='y' || *op =='Y');            
+           break;
     case 5:
+           do{
            printf(
                   "\n\n\t*-----------------*"
                   "\n\t|  ALTER CONTACT  |"
                   "\n\t*-----------------*\n"
                  );
-           ler_string(Nome);
-           alterar(&raiz,Nome);
+           getChars(Nome);
+           busca(raiz,Nome);
+           printf("\n\tDo you want to continue (y)es or (n)o: ");
+           scanf(" %s",&op);
+           if(*op =='n' || *op =='N')menu(&num);
+	   else
+           {
+            alterar(&raiz,Nome);
+            menu(&num);
+            break;
+           }
+           }while(*op =='y' || *op =='Y');   
            break;
     case 6:
            printf("\n\tGood Bye.\n\n");

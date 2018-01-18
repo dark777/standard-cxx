@@ -7,7 +7,7 @@ void inserir(Arvore **raiz ,char string[])
  {
   *raiz = new Arvore();
   strcpy((*raiz)->Nome,string);
-  ler_telefone(&telefone);
+  getPhones(&telefone);
   (*raiz)->telefone = telefone;
   (*raiz)->esq = NULL;
   (*raiz)->dir = NULL;              
@@ -186,13 +186,13 @@ void menu(int *num)
  getchar();
 }
 
-void ler_telefone(int *telefone)
+void getPhones(int *telefone)
 {
  printf("\n\tEnter phone number: ");
  scanf(" %d",telefone);
 }
 
-void ler_string(char string[])
+void getChars(char string[])
 {
      printf("\n\tEnter the name: ");
      scanf(" %[^\n]s",string); // Lê String até encontrar o ENTER.
