@@ -210,9 +210,3 @@ void maiuscula(char string[])
   }
  }
 }
-
-void opcao(char op[])
-{
- printf("\n\tDo you want to continue (y)es or (n)o: ");
- scanf(" %s",&op);
-}

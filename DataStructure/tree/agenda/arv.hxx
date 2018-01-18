@@ -21,4 +21,3 @@ void getChars(char*);
 void getPhones(int*);
 void maiuscula(char*);
 void menu(int*);
-void opcao(char*);
