@@ -82,7 +82,7 @@ class date
     os << diaString.c_str() << dt._sep << monthString.c_str()
        << dt._sep << yearString.c_str() << "\n\n";
            
-    return os ;
+    return os;
    }
 };
 
