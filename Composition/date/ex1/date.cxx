@@ -42,7 +42,12 @@ struct Date
      if(month.length() != 0)month.clear();
      if(year.length() != 0)year.clear();     
     }
-    
+   
+   std::string toInt()
+   {
+    return std::string(day+"/"+month+"/"+year);  
+   }
+   
    std::string toString()
    {
     return std::string(sday+"/"+smonth+"/"+syear);  
@@ -55,6 +60,7 @@ int main()
                 << "\n\tThe day is "   << date.day      
                 << "\n\tThe month is " << date.month
                 << "\n\tThe year is "  << date.year
+                << "\n\tThe date Int Format "  << date.toInt()
                 << "\n\n\tThe date is Str "
                 << "\n\tThe day is "   << date.sday      
                 << "\n\tThe month is " << date.smonth
