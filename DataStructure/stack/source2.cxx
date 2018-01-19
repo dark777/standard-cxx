@@ -22,18 +22,18 @@
  * @end @section author Author
  *
 */
-struct LISTA
+struct lista
 {
  int num;
- LISTA *prox;
- LISTA *ant;
+ lista *prox;
+ lista *ant;
 };
 
 int main()
 {
-  LISTA *inicio = NULL;
-  LISTA *fim = NULL;
-  LISTA *aux;
+  lista *inicio = NULL;
+  lista *fim = NULL;
+  lista *aux;
   int i, op, numero, achou;
 
 do{
@@ -51,7 +51,7 @@ do{
       if(op == 1)
        {
          std::cout << "\n\tINSIRA UM NUMERO NA LISTA: ";
-         LISTA *novo = new LISTA();
+         lista *novo = new lista();
          std::cin >> novo->num;
           
          if(inicio == NULL)

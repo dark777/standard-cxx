@@ -22,18 +22,18 @@
  * @end @section author Author
  *
 */
-struct LISTA
+struct lista
 {
  int num;
- LISTA *prox;
+ lista *prox;
 };
 
 int main()
 {
- LISTA *inicio = NULL;
- LISTA *fim = NULL;
- LISTA *aux;
- LISTA *ant;
+ lista *inicio = NULL;
+ lista *fim = NULL;
+ lista *aux;
+ lista *ant;
  int op, numero, achou;
 
  do{
@@ -51,7 +51,7 @@ int main()
       if(op == 1)
        {
         printf("\n\tINSIRA NUMERO NO INICIO: ");
-        LISTA *novo = new LISTA();
+        lista *novo = new lista();
         std::cin >> novo->num;
 
         if(inicio == NULL)
@@ -72,7 +72,7 @@ int main()
       if(op == 2)
        {
         printf("\n\tINSIRA NO FIM: ");
-        LISTA *novo = new LISTA;
+        lista *novo = new lista();
         std::cin >> novo->num;
         
         if(inicio == NULL)
