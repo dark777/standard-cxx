@@ -206,7 +206,8 @@ Arvore** menor_dir(Arvore *raiz)
 void menu(int *num)
 {
  printf(
-        "\n\n\tPHONEBOOK"   
+        "\n\n\t     *-----------*"
+        "\n\t     | PHONEBOOK |"   
         "\n\t|---------------------|"
         "\n\t| 1 - Insert Contacts |"
         "\n\t|---------------------|"
