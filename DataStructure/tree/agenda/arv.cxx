@@ -221,7 +221,7 @@ void menu(int *num)
         "\n\t|---------------------|"
         "\n\t| 6 - Exit            |"
         "\n\t*---------------------*"
-        "\n\tDigite: "
+        "\n\tEnter: "
        );
  scanf(" %d",num);
  getchar();
