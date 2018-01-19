@@ -66,8 +66,10 @@ int main()
             << "\n\t127 em decimal.....: " << std::dec << 127
             << "\n\t127 em binario.....: " << std::bin << 127 
             << std::line;
-   
+  return 0;
+}
 /*
+  Output:
         127 em binario.....: 0001111111
         127 em octal.......: 177
         127 em binario.....: 0001111111
@@ -76,4 +78,3 @@ int main()
         127 em decimal.....: 127
         127 em binario.....: 0001111111
 */
-}
