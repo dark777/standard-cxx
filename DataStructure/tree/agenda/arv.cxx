@@ -74,7 +74,9 @@ void busca(Arvore *raiz,char string[])
    if(strcmp((raiz)->Nome,string) == 0)
     {
      printf(
-            "\n\tRecord Found!!"
+            "\n\t*----------------*"
+            "\n\t| RECORD FOUND!! |"
+            "\n\t*----------------*"    
             "\n\tName: "
            );
      printf("%s",(raiz)->Nome);
@@ -85,7 +87,7 @@ void busca(Arvore *raiz,char string[])
   else
   printf(
          "\n\t*------------------*"
-         "\n\t| Name not found!! |"
+         "\n\t| NAME NOT FOUND!! |"
          "\n\t*------------------*\n"
         );
 }
@@ -102,7 +104,9 @@ void alterar( Arvore **raiz, char *string)
       {
        int telefone;
        printf(
-              "\n\tRecord Found!!"
+              "\n\t*----------------*"
+              "\n\t| RECORD FOUND!! |"
+              "\n\t*----------------*" 
               "\n\tName: "
              );
        printf("%s",(*raiz)->Nome);
@@ -111,7 +115,7 @@ void alterar( Arvore **raiz, char *string)
        (*raiz)->telefone = telefone;
        printf(
               "\n\t*----------------*"
-              "\n\t| Changed data!! |"
+              "\n\t| CHANGED DATA!! |"
               "\n\t*----------------*"
              );
       }
@@ -119,7 +123,7 @@ void alterar( Arvore **raiz, char *string)
   else
   printf(
          "\n\t*------------------*"
-         "\n\t| Name not found!! |"
+         "\n\t| NAME NOT FOUND!! |"
          "\n\t*------------------*"
         );
 }
@@ -166,7 +170,7 @@ void excluir(Arvore **raiz,char string[])
  else
   printf(
          "\n\t*------------------*"
-         "\n\t| Name not found!! |"
+         "\n\t| NAME NOT FOUND!! |"
          "\n\t*------------------*\n"
         );
 }
