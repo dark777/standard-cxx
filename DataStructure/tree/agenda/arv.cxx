@@ -165,7 +165,7 @@ void excluir(Arvore **raiz,char string[])
         );
 }
 
-Arvore** maior_esq (Arvore *raiz)
+Arvore** maior_esq(Arvore *raiz)
 { 
  Arvore **aux = &(raiz);
  if((*aux)->esq != NULL)
@@ -224,9 +224,9 @@ void getPhones(int *telefone)
 
 void getNames(char string[])
 {
-     printf("\n\tEnter the name: ");
-     scanf(" %[^\n]s",string); // Lê String até encontrar o ENTER.
-     maiuscula(string);
+ printf("\n\tEnter the name: ");
+ scanf(" %[^\n]s",string); // Lê String até encontrar o ENTER.
+ maiuscula(string);
 }
 
 void maiuscula(char string[])
