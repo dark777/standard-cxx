@@ -36,18 +36,18 @@ void inserir(Arvore **raiz ,char string[])
   (*raiz)->telefone = telefone;
   (*raiz)->esq = NULL;
   (*raiz)->dir = NULL;              
-  }
-  else
-  if(strcasecmp((*raiz)->Nome,string) > 0)inserir(&(*raiz)->esq,string);                     
-  else
-  if(strcasecmp((*raiz)->Nome,string) < 0)inserir(&(*raiz)->dir,string);
-  else
-  if(strcmp((*raiz)->Nome,string) == 0)
-  printf(
-         "\n\t*---------------------------*"
-         "\n\t| NAME ALREADY REGISTERED!! |"
-         "\n\t*---------------------------*\n" 
-        );
+ }
+ else
+ if(strcasecmp((*raiz)->Nome,string) > 0)inserir(&(*raiz)->esq,string);                     
+ else
+ if(strcasecmp((*raiz)->Nome,string) < 0)inserir(&(*raiz)->dir,string);
+ else
+ if(strcmp((*raiz)->Nome,string) == 0)
+ printf(
+        "\n\t*---------------------------*"
+        "\n\t| NAME ALREADY REGISTERED!! |"
+        "\n\t*---------------------------*\n" 
+       );
 }
                                                                
 void ordem(Arvore *raiz)
