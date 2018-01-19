@@ -17,7 +17,7 @@
  * @file     arv.hxx
  * @version  0.3
  * @brief    Árvore binária.
- * @Utilit   Agenda telefonica.
+ * @utility  Agenda telefonica.
  * @Original_Consult https://www.vivaolinux.com.br/script/Agenda-feita-em-C-usando-arvore-binaria
  * @Autor: Marcos Augusto
  * @Email_Autor: marcosccp04@gmail.com
