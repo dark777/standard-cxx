@@ -40,28 +40,27 @@ int main()
   switch(num)
   {
     case 1:
-         do{
-            printf(
-                   "\n\n\t*-------------------*"
-                   "\n\t|  INSERT CONTACTS  |"
-                   "\n\t*-------------------*\n"
-                  );
-           getNames(Nome);
-           inserir(&raiz,Nome);
-           printf("\n\tDo you want to continue (y)es or (n)o: ");
-           scanf(" %s",&op);
-           if(*op == 'n' || *op == 'N')menu(&num);
-          }while(*op == 'y' || *op == 'Y');
-           break;
-    case 2:
-           printf(
-                  "\n\n\t*-----------------*"
-                  "\n\t|  VIEW CONTACTS  |"
-                  "\n\t*-----------------*\n"
-                 );   
+          do{
+             printf(
+                    "\n\n\t*-------------------*"
+                    "\n\t|  INSERT CONTACTS  |"
+                    "\n\t*-------------------*\n"
+                   );
+             getNames(Nome);
+             inserir(&raiz,Nome);
+             printf("\n\tDo you want to continue (y)es or (n)o: ");
+             scanf(" %s",&op);
+             if(*op == 'n' || *op == 'N')menu(&num);
+            }while(*op == 'y' || *op == 'Y');
+            break;
+    case 2:  
            if(raiz == NULL)
             {
-             printf("\n\tContacts not found!!");
+             printf(
+                    "\n\n\t*------------------------*"
+                    "\n\t|  CONTACTS NOT FOUND!!  |"
+                    "\n\t*------------------------*"
+                   ); 
              printf("\n\n\tDo you want to continue (y)es or (n)o: ");
              scanf(" %s",&op);     
              if(*op == 'y' || *op == 'Y')menu(&num);
@@ -70,73 +69,83 @@ int main()
            }
            else
            {
+            printf(
+                   "\n\n\t*-----------------*"
+                   "\n\t|  VIEW CONTACTS  |"
+                   "\n\t*-----------------*"
+                  );  
             ordem(raiz);
-             printf("\n\n\tDo you want to continue (y)es or (n)o: ");
-             scanf(" %s",&op);     
-             if(*op == 'y' || *op == 'Y')menu(&num);
-             else
-             return 0;
+            printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+            scanf(" %s",&op);     
+            if(*op == 'y' || *op == 'Y')menu(&num);
+            else
+            return 0;
            }
            break;
     case 3:
           do{
-           printf(
-                  "\n\n\t*------------------*"
-                  "\n\t|  SEARCH CONTACT  |"
-                  "\n\t*------------------*\n"
-                 );
-           getNames(Nome);
-           busca(raiz,Nome);
-           printf("\n\n\tDo you want to continue (y)es or (n)o: ");
-           scanf(" %s",&op);
-   
-           if(*op == 'n' || *op == 'N')menu(&num);
+             printf(
+                    "\n\n\t*------------------*"
+                    "\n\t|  SEARCH CONTACT  |"
+                    "\n\t*------------------*\n"
+                   );
+             getNames(Nome);
+             busca(raiz,Nome);
+             printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+             scanf(" %s",&op);
+             if(*op == 'n' || *op == 'N')menu(&num);
       
            }while(*op == 'y' || *op == 'Y'); 
            break;
     case 4:
           do{
-            printf(
-                   "\n\n\t*------------------*"
-                   "\n\t|  REMOVE CONTACT  |"
-                   "\n\t*------------------*\n"
-                  );
-           getNames(Nome);
-           busca(raiz,Nome);
-           printf("\n\n\tDo you want to continue (y)es or (n)o: ");
-           scanf(" %s",&op);
-           if(*op == 'n' || *op == 'N')menu(&num);
-           else
-           {
-            excluir(&raiz,Nome);
-            break;
-           }
+             printf(
+                    "\n\n\t*------------------*"
+                    "\n\t|  REMOVE CONTACT  |"
+                    "\n\t*------------------*\n"
+                   );
+             getNames(Nome);
+             busca(raiz,Nome);
+             printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+             scanf(" %s",&op);
+             if(*op == 'n' || *op == 'N')menu(&num);
+             else
+             {
+              excluir(&raiz,Nome);
+              printf(
+                     "\n\n\t*-------------------*"
+                     "\n\t|  CONTACT REMOVED  |"
+                     "\n\t*-------------------*\n"
+                    );    
+              printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+              scanf(" %s",&op);    
+              if(*op == 'n' || *op == 'N')menu(&num);
+             }
            }while(*op == 'y' || *op == 'Y');       
            break;
     case 5:
-           do{
-           printf(
-                  "\n\n\t*-----------------*"
-                  "\n\t|  ALTER CONTACT  |"
-                  "\n\t*-----------------*\n"
-                 );
-           getNames(Nome);
-           busca(raiz,Nome);
-           printf("\n\n\tDo you want to continue (y)es or (n)o: ");
-           scanf(" %s",&op);
-           if(*op == 'y' || *op == 'Y')
-           {
-            alterar(&raiz,Nome);
-            printf("\n\n\tDo you want to continue (y)es or (n)o: ");
-            scanf(" %s",&op);
-   
-            if(*op == 'n' || *op == 'N')menu(&num);
+          do{
+             printf(
+                    "\n\n\t*-----------------*"
+                    "\n\t|  ALTER CONTACT  |"
+                    "\n\t*-----------------*\n"
+                   );
+             getNames(Nome);
+             busca(raiz,Nome);
+             printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+             scanf(" %s",&op);
+             if(*op == 'y' || *op == 'Y')
+              {
+               alterar(&raiz,Nome);
+               printf("\n\n\tDo you want to continue (y)es or (n)o: ");
+               scanf(" %s",&op);
+               if(*op == 'n' || *op == 'N')menu(&num);
+               break;
+              }
+             else
+             menu(&num);  
+            }while(*op == 'y' || *op == 'Y');   
             break;
-           }
-           else
-           menu(&num);  
-           }while(*op == 'y' || *op == 'Y');   
-           break;
     case 6:
            printf("\n\tGood Bye.\n\n");
            break;   
