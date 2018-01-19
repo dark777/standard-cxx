@@ -72,7 +72,7 @@ int main()
             printf(
                    "\n\n\t*-----------------*"
                    "\n\t|  VIEW CONTACTS  |"
-                   "\n\t*-----------------*"
+                   "\n\t*-----------------*\n"
                   );  
             ordem(raiz);
             printf("\n\n\tDo you want to continue (y)es or (n)o: ");

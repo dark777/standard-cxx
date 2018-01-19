@@ -55,7 +55,7 @@ void ordem(Arvore *raiz)
  if(raiz!=NULL) 
  {
   ordem((raiz)->esq);
-  printf("\n\n\tName: ");
+  printf("\n\tName: ");
   printf("%s",(raiz)->Nome);
   printf("\tPhone: ");
   printf("%d",(raiz)->telefone);
