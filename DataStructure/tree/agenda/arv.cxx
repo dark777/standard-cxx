@@ -44,9 +44,9 @@ void inserir(Arvore **raiz ,char string[])
   else
   if(strcmp((*raiz)->Nome,string) == 0)
   printf(
-         "\n\t*-------------------------*"
-         "\n\t| NAME ALREADY REGISTERED |"
-         "\n\t*-------------------------*\n" 
+         "\n\t*---------------------------*"
+         "\n\t| NAME ALREADY REGISTERED!! |"
+         "\n\t*---------------------------*\n" 
         );
 }
                                                                
