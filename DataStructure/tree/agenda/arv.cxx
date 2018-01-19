@@ -38,11 +38,11 @@ void inserir(Arvore **raiz ,char string[])
   (*raiz)->dir = NULL;              
   }
   else
-  if(strcasecmp((*raiz)->Nome,string)>0)inserir(&(*raiz)->esq,string);                     
+  if(strcasecmp((*raiz)->Nome,string) > 0)inserir(&(*raiz)->esq,string);                     
   else
-  if(strcasecmp((*raiz)->Nome,string)<0)inserir(&(*raiz)->dir,string);
+  if(strcasecmp((*raiz)->Nome,string) < 0)inserir(&(*raiz)->dir,string);
   else
-  if(strcmp((*raiz)->Nome,string)==0)printf("\n\tName already registered\n");
+  if(strcmp((*raiz)->Nome,string) == 0)printf("\n\tName already registered\n");
 }
                                                                
 void ordem(Arvore *raiz)
@@ -62,16 +62,16 @@ void busca(Arvore *raiz,char string[])
 {
  if(raiz!=NULL)
   {
-   if(strcasecmp((raiz)->Nome,string)>0)busca((raiz)->esq,string);
+   if(strcasecmp((raiz)->Nome,string) > 0)busca((raiz)->esq,string);
    else
-   if(strcasecmp((raiz)->Nome,string)<0)busca((raiz)->dir,string);
+   if(strcasecmp((raiz)->Nome,string) < 0)busca((raiz)->dir,string);
    else
-   if(strcmp((raiz)->Nome,string)==0)
+   if(strcmp((raiz)->Nome,string) == 0)
     {
-      printf(
-             "\n\tRecord Found!!"
-             "\n\tName: "
-            );
+     printf(
+            "\n\tRecord Found!!"
+            "\n\tName: "
+           );
      printf("%s",(raiz)->Nome);
      printf("\tPhone: ");
      printf("%d",(raiz)->telefone);
@@ -89,17 +89,17 @@ void alterar( Arvore **raiz, char *string)
 {
   if((*raiz)!=NULL)
   {
-   if(strcasecmp((*raiz)->Nome,string)>0)alterar(&(*raiz)->esq,string);
+   if(strcasecmp((*raiz)->Nome,string) > 0)alterar(&(*raiz)->esq,string);
     else
-     if(strcasecmp((*raiz)->Nome,string)<0)alterar(&(*raiz)->dir,string);
+     if(strcasecmp((*raiz)->Nome,string) < 0)alterar(&(*raiz)->dir,string);
     else
-     if(strcmp((*raiz)->Nome,string)==0)
+     if(strcmp((*raiz)->Nome,string) == 0)
       {
        int telefone;
-      printf(
-             "\n\tRecord Found!!"
-             "\n\tName: "
-            );
+       printf(
+              "\n\tRecord Found!!"
+              "\n\tName: "
+             );
        printf("%s",(*raiz)->Nome);
        printf("\tPhone: ");
        scanf(" %d",&telefone);
@@ -124,7 +124,7 @@ void excluir(Arvore **raiz,char string[])
  Arvore **aux2, *aux3;     
  if(*raiz!=NULL)
  {
-  if( strcasecmp((*raiz)->Nome , string)==0 )
+  if(strcasecmp((*raiz)->Nome , string) == 0)
   {
    if((*raiz)->esq == (*raiz)->dir)
    {
@@ -151,7 +151,7 @@ void excluir(Arvore **raiz,char string[])
   }
   else
   {
-   if(strcasecmp(string,(*raiz)->Nome)<0)
+   if(strcasecmp(string,(*raiz)->Nome) < 0)
     excluir(&(*raiz)->esq,string);
    else
     excluir(&(*raiz)->dir,string);
