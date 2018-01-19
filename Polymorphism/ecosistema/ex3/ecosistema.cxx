@@ -97,6 +97,7 @@ std::vector<mamifero *> ecossistema;
 
 mamifero *menu(void)
 {
+  char op;
   int n=0;
   std::cout << "\n\tDiga qual animal vai se reproduzir: ";
   for(const auto &animal: opcoes)
@@ -104,9 +105,19 @@ mamifero *menu(void)
   std::cout << "\n\t--> ";
   std::cin >> n;
   std::cin.ignore(1, '\n');
-  return opcoes[n]->reproduz();
+  if (n >= 0 && n < opcoes.size())return opcoes[n]->reproduz();
+  else
+  {
+   std::cout<<"\n\tEcosistema não encontrado.\n\tDeseja continuar? (s)im ou n(ão): ";
+   std::cin>>op;
+   if(op == 's' || op == 'S')
+   return menu();
+   
+   else
+   std::cout << "\n\tGoodbye!\n\n";
+  }
+  return 0;
 }
-
 constexpr unsigned int strToInt(const char* str, int h = 0)
 {
  // not my code but can't remember where I got it from
