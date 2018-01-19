@@ -56,15 +56,16 @@ struct Date
 
 int main()
 {
-       std::cout << "\n\tThe date is Int "
-                << "\n\tThe day is "   << date.day      
-                << "\n\tThe month is " << date.month
-                << "\n\tThe year is "  << date.year
-                << "\n\tThe date Int Format "  << date.toInt()
-                << "\n\n\tThe date is Str "
-                << "\n\tThe day is "   << date.sday      
-                << "\n\tThe month is " << date.smonth
-                << "\n\tThe year is "  << date.syear
-                << "\n\tThe date String Format "  << date.toString() 
-                << "\n\n";
+ std::cout << "\n\tThe date is Int "
+           << "\n\tThe day is "   << date.day      
+           << "\n\tThe month is " << date.month
+           << "\n\tThe year is "  << date.year
+           << "\n\tThe date Int Format "  << date.toInt()
+           << "\n\n\tThe date is Str "
+           << "\n\tThe day is "   << date.sday      
+           << "\n\tThe month is " << date.smonth
+           << "\n\tThe year is "  << date.syear
+           << "\n\tThe date String Format "  << date.toString() 
+           << "\n\n";
+ return 0;   
 }
