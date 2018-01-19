@@ -32,25 +32,22 @@ struct Date
 
 std::ostream& operator<<(std::ostream& os, const Date& dt)  
 {
-  std::string diaString = "", diatmp = "";
+  std::string diatmp = "";
   diatmp = std::to_string(dt.dia);
   if (diatmp.length() == 1)
   diatmp.insert(0, "0");
-  diaString += diatmp;
   
-  std::string monthString = "", mestmp = "";
+  std::string mestmp = "";
   mestmp = std::to_string(dt.mes);
   if(mestmp.length() == 1)
-  mestmp.insert(0, "0"); 
-  monthString += mestmp;
+  mestmp.insert(0, "0");
      
-  std::string yearString = "", anotmp = "";
+  std::string anotmp = "";
   anotmp = std::to_string(dt.ano);
   if(anotmp.length() == 1)
   anotmp.insert(0, "0");
-  yearString += anotmp;
     
-  os << diaString.c_str() << "/" << monthString.c_str() << "/" << yearString.c_str() << "\n";  
+  os << diatmp.c_str() << "/" << mestmp.c_str() << "/" << anotmp.c_str() << "\n";  
   return os;  
 }
 
