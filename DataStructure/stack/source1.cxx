@@ -96,8 +96,9 @@ int main()
                     std::cout << "\n\tNUMERO ENCONTRADO NA POSICAO: " << i + 1 << "\n\t";
                 }while(!achou);
             }
-           if(op != 3)std::cout<<"\n\tOPCAO INVALIDA ..!!!\n";
-             else
-           std::cout<<"\n\tGOOD BYE ...!!\n\n";
+           if(op != 3)
+           std::cout << "\n\tOPCAO INVALIDA ..!!!\n";
+            else
+           std::cout << "\n\tGOOD BYE ...!!\n\n";
           }
 }

@@ -194,9 +194,10 @@ do{
           }
        }
        
-      if(op > 6 || op < 1)std::cout<<"\n\tOPCAO INVALIDA ..!!!\n";
+      if(op != 6)
+      std::cout << "\n\tOPCAO INVALIDA ..!!!\n";
        else
-      if(op == 6)std::cout<<"\n\tGOOD BYE ...!!\n\n";
+      std::cout << "\n\tGOOD BYE ...!!\n\n";
       
    }while(op != 6);
  return 0;

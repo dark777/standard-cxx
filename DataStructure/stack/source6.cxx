@@ -117,9 +117,10 @@ int main()
           }
         }
         
-       if(op<1 || op>6)std::cout << "\n\tOPCAO INVALIDA!!!";
-       else
-       if(op == 6)std::cout<<"\n\tGOOD BYE ...!!\n\n";
+       if(op !=6)
+       std::cout << "\n\tOPCAO INVALIDA!!!";
+        else
+       std::cout << "\n\tGOOD BYE ...!!\n\n";
 
    }while(op != 6);
  return 0;
