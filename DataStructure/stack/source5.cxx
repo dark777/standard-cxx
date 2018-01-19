@@ -110,10 +110,11 @@ int main()
           }
        }
        
-      if(op != 5)
-      std::cout << "\n\tOPCAO INVALIDA ..!!!\n";
-       else
-      std::cout << "\n\tGOOD BYE ...!!\n\n";
+       if(op < 1 || op > 5)
+       std::cout << "\n\tOPCAO INVALIDA!!!";
+        else
+       if(op == 5)  
+       std::cout << "\n\tGOOD BYE ...!!\n\n";
       
    }while(op != 5);
  return 0;

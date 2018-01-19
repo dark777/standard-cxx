@@ -225,10 +225,11 @@ int main()
         }
      }
      
-      if(op != 8)
-      std::cout << "\n\tOPCAO INVALIDA ..!!!\n";
-       else
-      std::cout << "\n\tGOOD BYE ...!!\n\n";
+     if(op < 1 || op > 8)
+     std::cout << "\n\tOPCAO INVALIDA!!!";
+      else
+     if(op == 8)  
+     std::cout << "\n\tGOOD BYE ...!!\n\n";
       
    }while(op != 8);
  return 0;
