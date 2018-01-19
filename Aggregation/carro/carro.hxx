@@ -3,8 +3,8 @@
 
 struct Carro
 {
-  Carro() { }
-
+  Carro(){}
+  ~Carro(){}
   int idCarro;
   std::string descriCarro;
   

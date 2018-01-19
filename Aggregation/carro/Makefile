@@ -6,7 +6,7 @@ CXX=g++
 SRC=*.c*
 ESRC=%.c*
 
-NAME=main
+NAME=carro
 EBIN=%$(NAME)
 BIN=$(NAME)
 
