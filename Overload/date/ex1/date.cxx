@@ -102,5 +102,5 @@ int main(void)
            <<"\n\tYear.....: "<<dt.year()
            <<"\n\tDateTime.: "<<dt.datetime()
            <<"\n\n";
-   return 0;     
+  return 0;
 }
