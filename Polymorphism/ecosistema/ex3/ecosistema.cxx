@@ -112,7 +112,6 @@ mamifero *menu(void)
    std::cin>>op;
    if(op == 's' || op == 'S')
    return menu();
-   
    else
    std::cout << "\n\tGoodbye!\n\n";
   }
