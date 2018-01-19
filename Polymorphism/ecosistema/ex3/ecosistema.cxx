@@ -114,8 +114,8 @@ mamifero *menu(void)
    return menu();
    else
    std::cout << "\n\tGoodbye!\n\n";
+   return 0;
   }
-  return 0;
 }
 constexpr unsigned int strToInt(const char* str, int h = 0)
 {
