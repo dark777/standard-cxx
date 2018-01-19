@@ -42,7 +42,12 @@ void inserir(Arvore **raiz ,char string[])
   else
   if(strcasecmp((*raiz)->Nome,string) < 0)inserir(&(*raiz)->dir,string);
   else
-  if(strcmp((*raiz)->Nome,string) == 0)printf("\n\tName already registered\n");
+  if(strcmp((*raiz)->Nome,string) == 0)
+  printf(
+         "\n\t*-------------------------*"
+         "\n\t| NAME ALREADY REGISTERED |"
+         "\n\t*-------------------------*\n" 
+        );
 }
                                                                
 void ordem(Arvore *raiz)
@@ -146,7 +151,8 @@ void excluir(Arvore **raiz,char string[])
      (*aux2) = (*aux2)->dir;
     }
     strcpy((*raiz)->Nome, aux3->Nome);
-    free(aux3); aux3 = NULL;
+    free(aux3);
+    aux3 = NULL;
    }
   }
   else
