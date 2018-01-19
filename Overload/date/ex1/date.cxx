@@ -1,7 +1,7 @@
 #include <iostream>
 
 class date 
-{  
+{
    unsigned int _dia , _mes , _ano;
    std::string _sep;
    std::string diatmp="";
