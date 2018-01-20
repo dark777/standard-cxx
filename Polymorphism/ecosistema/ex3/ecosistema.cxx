@@ -152,7 +152,6 @@ mamifero *getStrDetails(void)
        std::cout << "\tUm " << animal->nome() << ", que emite " << animal->som() << ".\n";
        std::cout << "\n\tGoodbye!\n\n";
        return 0;
-      
       break;
       
       default:
