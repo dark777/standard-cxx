@@ -15,26 +15,27 @@
  * @file       source4
  * @version    0.1
  * @brief      Lista circular duplamente encadeada nao ordenada.
- * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo.pdf
+ * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo
  * @author     Jean Zonta
- * @Copyright (C) 2013 Jean Zonta.
+ * @Copyright (C) 2013 2017 Jean Zonta.
  * 
  * @end @section author Author
  *
 */
 struct lista
 {
+ int op;
  int num;
-  lista *prox;
+ lista *prox;
  lista *ant;
 };
 
 int main()
 {
- lista *inicio = NULL;
- lista *fim = NULL;
+ lista opt;
  lista *aux;
- int op, numero, achou;
+ lista *fim = NULL;
+ lista *inicio = NULL;
  
  do{
     std::cout << "\n\n\tLISTA CIRCULAR DUPLAMENTE\n\tENCADEADA NAO ORDENADA"
@@ -47,58 +48,70 @@ int main()
                  "\n\t[6]-REMOVER DA LISTA"
                  "\n\t[7]-ESVAZIAR A LISTA"
                  "\n\t[8]-SAIR"
-                 "\n\tMENU: ";
-     std::cin >> op;
+                 "\n\tESCOLHA: ";
+     std::cin >> opt.op;
      
-    if(op == 1)
+    if(opt.op == 1)
      {
-      std::cout << "\n\tINSIRA NO INICIO DA LISTA: ";
-       lista *novo = new lista();
-       std::cin >> novo->num;
+      std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR NO INICIO?\n\tDIGITE: ";
+      std::cin>>opt.num;
        
-       if(inicio == NULL)
-        {
-         inicio = novo;
-          fim = novo;
+      for(int i=0;i<opt.num;i++)
+       {
+        std::cout << "\n\tINSIRA NO INICIO O NUMERO "<<i+1<<": ";
+        lista *novo = new lista();
+        std::cin >> novo->num;
+       
+        if(inicio == NULL)
+         {
+          inicio = novo;
+           fim = novo;
+           novo->prox = inicio;
+          novo->ant = inicio;
+         }
+        else
+         {
           novo->prox = inicio;
-         novo->ant = inicio;
-        }
-       else
-        {
-         novo->prox = inicio;
-          inicio->ant = novo;
-          novo->ant = fim;
-          fim->prox = novo;
-         inicio = novo;
-        }   
-       std::cout << "\n\tNUMERO " << novo->num << " INSERIDO NO INICIO COM SUCESSO ..!!!\n";
+           inicio->ant = novo;
+           novo->ant = fim;
+           fim->prox = novo;
+          inicio = novo;
+         }   
+        std::cout << "\n\tNUMERO " << novo->num << " INSERIDO NO INICIO COM SUCESSO ..!!!\n";
+       }
      }
      
-    if(op == 2)
+    if(opt.op == 2)
      {
-      std::cout << "\n\tINSIRA NO FIM DA LISTA: ";
-      lista *novo = new lista();
-      std::cin >> novo->num;
+      std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR NO FIM?\n\tDIGITE: ";
+      std::cin>>opt.num;
+       
+      for(int i=0;i<opt.num;i++)
+       {
+        std::cout << "\n\tINSIRA NO FIM O NUMERO "<<i+1<<": ";
+        lista *novo = new lista();
+        std::cin >> novo->num;
       
-       if(inicio == NULL)
-        {
-         inicio = novo;
-          fim = novo;
-          novo->prox = inicio;
-         novo->ant = inicio;
-        }
-       else
-        {
-         fim->prox = novo;
-          novo->ant = fim;
-          fim = novo;
-          fim->prox = inicio;
-         inicio->ant = fim;
-        }
-      std::cout << "\n\tNUMERO " << novo->num << " INSERIDO NO FIM COM SUCESSO ..!!!\n";
+        if(inicio == NULL)
+         {
+          inicio = novo;
+           fim = novo;
+           novo->prox = inicio;
+          novo->ant = inicio;
+         }
+        else
+         {
+          fim->prox = novo;
+           novo->ant = fim;
+           fim = novo;
+           fim->prox = inicio;
+          inicio->ant = fim;
+         }
+        std::cout << "\n\tNUMERO " << novo->num << " INSERIDO NO FIM COM SUCESSO ..!!!\n";
+       }
      }
      
-    if(op == 3)
+    if(opt.op == 3)
      {
       if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
       else
@@ -112,7 +125,7 @@ int main()
        }                                     
      }                                        
     
-    if(op == 4)
+    if(opt.op == 4)
      {
       if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
       else
@@ -126,7 +139,7 @@ int main()
        }
      }
      
-    if(op == 5)
+    if(opt.op == 5)
      {
       if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!!\n";
       else
@@ -139,16 +152,18 @@ int main()
         }while(aux != fim);
      }
   
-    if(op == 6)
+    if(opt.op == 6)
      {
+      int achou = 0;  
+      int numero = 0;
+      int quantidade = 0;      
+      
       if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
       else
        {
         std::cout << "\n\tREMOVA UM ELEMENTO INSERIDO: ";
         std::cin >> numero;
         aux = inicio;
-        achou = 0;
-        int quantidade = 0;
 
         do{
            quantidade = quantidade + 1;
@@ -201,13 +216,14 @@ int main()
          elemento = elemento + 1;
         }while(elemento <= quantidade);
 
-        if(achou == 0)std::cout << "\n\tNUMERO " << numero << " NAO ENCONTRADO ..!!!\n";
-        else
-        if(achou == 1)std::cout << "\n\tNUMERO " << numero << " REMOVIDO " << achou <<" VEZ ..!!!\n";
+        if(achou == 0)
+        std::cout << "\n\tNUMERO " << numero << " NÃO ENCONTRADO ..!!!\n";
+         else
+        std::cout << "\n\tNUMERO " << numero << " REMOVIDO " << achou << " VEZ ..!!!\n";
        }
      }
     
-    if(op == 7)
+    if(opt.op == 7)
      {
       if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ...!!!!\n";
        else
@@ -215,8 +231,8 @@ int main()
          aux = inicio;  
          do{
             inicio = inicio->prox;
-            delete(aux);
-            aux = inicio;
+             delete(aux);
+             aux = inicio;
            }while(aux != fim);
 
            delete(fim);
@@ -225,12 +241,12 @@ int main()
         }
      }
      
-     if(op < 1 || op > 8)
-     std::cout << "\n\tOPCAO INVALIDA!!!";
+     if(opt.op < 1 || opt.op > 8)
+     std::cout << "\n\tOPÇÃO INVÁLIDA!!!";
       else
-     if(op == 8)  
+     if(opt.op == 8)  
      std::cout << "\n\tGOOD BYE ...!!\n\n";
       
-   }while(op != 8);
+   }while(opt.op != 8);
  return 0;
 }

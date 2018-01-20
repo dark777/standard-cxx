@@ -15,15 +15,16 @@
  * @file       source2
  * @version    0.1
  * @brief      Lista duplamente encadeada e ordenada.
- * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo.pdf
+ * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo
  * @author     Jean Zonta
- * @Copyright (C) 2013 Jean Zonta.
+ * @Copyright (C) 2013 2017 Jean Zonta.
  * 
  * @end @section author Author
  *
 */
 struct lista
 {
+ int op; 
  int num;
  lista *prox;
  lista *ant;
@@ -31,175 +32,180 @@ struct lista
 
 int main()
 {
-  lista *inicio = NULL;
-  lista *fim = NULL;
-  lista *aux;
-  int i, op, numero, achou;
-
-do{
+ lista opt;
+ lista *aux;
+ lista *fim = NULL;
+ lista *inicio = NULL;
+ 
+ do{
     std::cout << "\n\n\tLISTA DUPLAMENTE ENCADEADA E ORDENADA\n"
-                 "\n\tMENU DE OPCOES"
-                 "\n\t[1]-Inserir na Lista"
-                 "\n\t[2]-Consultar a Lista de inicio ao fim"
-                 "\n\t[3]-Consultar a Lista do fim ao inicio"
-                 "\n\t[4]-Remover da Lista"
-                 "\n\t[5]-Esvaziar a Lista"
-                 "\n\t[6]-Sair"
-                 "\n\tOPCAO: ";
-     std::cin >> op;
-
-      if(op == 1)
+                 "\n\tMENU DE ESCOLHA"
+                 "\n\t[1]-INSERIR NA LISTA"
+                 "\n\t[2]-CONSULTAR LISTA DO INICIO AO FIM"
+                 "\n\t[3]-CONSULTAR LISTA DO FIM AO INICIO"
+                 "\n\t[4]-REMOVER DA LISTA"
+                 "\n\t[5]-ESVAZIAR A LISTA"
+                 "\n\t[6]-SAIR"
+                 "\n\tESCOLHA: ";
+    std::cin >> opt.op;
+    
+    if(opt.op == 1)
+     {
+      std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
+      std::cin>>opt.num;
+       
+      for(int i=0;i<opt.num;i++)
        {
-         std::cout << "\n\tINSIRA UM NUMERO NA LISTA: ";
-         lista *novo = new lista();
-         std::cin >> novo->num;
+        std::cout << "\n\tINSIRA NA LISTA O NUMERO "<<i+1<<": ";
+        lista *novo = new lista();
+        std::cin >> novo->num;
           
-         if(inicio == NULL)
-          {
-           novo->prox = NULL;
-            novo->ant = NULL;
+        if(inicio == NULL)
+         {
+          novo->prox = NULL;
+           novo->ant = NULL;
+           inicio = novo;
+          fim = novo;
+         }
+        else
+         {
+          aux = inicio;
+          while(aux != NULL && novo->num > aux->num)aux = aux->prox;
+
+          if(aux == inicio)
+           {
+            novo->prox = inicio;
+             novo->ant = NULL;
+             inicio->ant = novo;
             inicio = novo;
-           fim = novo;
-          }
-         else
-          {
-           aux = inicio;
-           while(aux != NULL && novo->num > aux->num)aux = aux->prox;
-
-            if(aux == inicio)
-             {
-              novo->prox = inicio;
-               novo->ant = NULL;
-               inicio->ant = novo;
-              inicio = novo;
-             }
-            else
-            if(aux == NULL)
-             {
-               fim->prox = novo;
-                novo->ant = fim;
-                fim = novo;
-               fim->prox = NULL;
-             }
-            else
-             {
-              novo->prox = aux;
-               aux->ant->prox = novo;
-               novo->ant = aux->ant;
-              aux->ant = novo;
-             }
            }
-          std::cout << "\n\tNUMERO " << novo->num << " INSERIDO NA LISTA COM SUCESSO..!!!\n";
-       }
-       
-      if(op == 2)
-       {
-        if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
-       else
-        {
-         std::cout << "\n\tCONSULTANDO A LISTA DO INICIO PARA O FIM: ";
-         aux = inicio;
-
-         while(aux != NULL)
-          {
-           std::cout << aux->num << " ";
-           aux = aux->prox;
+          else
+          if(aux == NULL)
+           {
+            fim->prox = novo;
+             novo->ant = fim;
+             fim = novo;
+            fim->prox = NULL;
+           }
+          else
+           {
+            novo->prox = aux;
+             aux->ant->prox = novo;
+             novo->ant = aux->ant;
+            aux->ant = novo;
+           }
           }
+         std::cout << "\n\tNUMERO " << novo->num << " INSERIDO NA LISTA COM SUCESSO..!!!\n";
         }
        }
        
-      if(op == 3)
+    if(opt.op == 2)
+     {
+      if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
+      else
        {
-        if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
-       else
-        {
-         std::cout << "\n\tCONSULTANDO A LISTA DO FIM PARA O INICIO: "; 
-         aux = fim;
-
-         while(aux != NULL)
-          {
-           std::cout << aux->num << " ";
-           aux = aux->ant;
-          }
-        }
+        std::cout << "\n\tCONSULTANDO A LISTA DO INICIO PARA O FIM: ";
+        aux = inicio;
+        
+        while(aux != NULL)
+         {
+          std::cout << aux->num << " ";
+          aux = aux->prox;
+         }
        }
+     }
        
-      if(op == 4)
+    if(opt.op == 3)
+     {
+      if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
+      else
        {
-        if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
-       else
-        {
-         std::cout << "\n\tREMOVA UM ELEMENTO DA LISTA: ";
-         std::cin >> numero;
+        std::cout << "\n\tCONSULTANDO A LISTA DO FIM PARA O INICIO: "; 
+        aux = fim;
+
+        while(aux != NULL)
+         {
+          std::cout << aux->num << " ";
+          aux = aux->ant;
+         }
+       }
+     }
+       
+    if(opt.op == 4)
+     {
+      int achou = 0; 
+      int numero = 0; 
+      if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ..!!!\n";
+      else
+       {
+        std::cout << "\n\tREMOVA UM ELEMENTO DA LISTA: ";
+        std::cin >> numero;
          
-         aux = inicio;
-         achou = 0;
-         while(aux != NULL)
+        aux = inicio;
+        while(aux != NULL)
+         {
+          if(aux->num == numero)
           {
-           if(aux->num == numero)
-            {
-             achou = achou + 1;
+           achou = achou + 1;
              
-             if(aux == inicio)
-              {
-               inicio = aux->prox;
-                if(inicio!=NULL)
-                 {
-                  inicio->ant = NULL;
-                 }
-                delete(aux);
-               aux = inicio;
-              }
-             else
-             if(aux == fim)
-              {
-               fim = fim->ant;
-                fim->prox = NULL;
-                delete(aux);
-               aux = NULL;
-              }
-             else
-              {
-               aux->ant->prox = aux->prox;
-                aux->prox->ant = aux->ant;
-                LISTA *aux2;
-                aux2 = aux->prox;
-                delete(aux);
-               aux = aux2;
-              }
+           if(aux == inicio)
+            {
+             inicio = aux->prox;
+              if(inicio != NULL)
+              inicio->ant = NULL;
+              delete(aux);
+             aux = inicio;
+            }
+           else
+           if(aux == fim)
+            {
+             fim = fim->ant;
+              fim->prox = NULL;
+              delete(aux);
+             aux = NULL;
+            }
+           else
+            {
+             aux->ant->prox = aux->prox;
+              aux->prox->ant = aux->ant;
+              lista *aux2;
+              aux2 = aux->prox;
+              delete(aux);
+             aux = aux2;
+            }
             }
            else(aux = aux->prox);
           }
           
          if(achou == 0)
-           std::cout << "\n\tNUMERO " << numero << " NAO ENCONTRADO ..!!!\n";
-           else
-           std::cout << "\n\tNUMERO: " << numero << " REMOVIDO ..!!\n";
+         std::cout << "\n\tNUMERO " << numero << " NÃO ENCONTRADO ..!!!\n";
+          else
+         std::cout << "\n\tNUMERO: " << numero << " REMOVIDO " << achou << " VEZ..!!\n";
         }
        }
        
-      if(op == 5)
+      if(opt.op == 5)
        {
         if(inicio == NULL)std::cout << "\n\tLISTA VAZIA ...!!!!\n";
          else
           {
            aux = inicio;
-             while (aux != NULL)
+             while(aux != NULL)
               {
                inicio = inicio -> prox;
-               delete(aux);
+                delete(aux);
                aux = inicio;
               }    
             std::cout << "\n\tLISTA ESVAZIADA ..!!!\n";
           }
        }
        
-       if(op < 1 || op > 6)
-       std::cout << "\n\tOPCAO INVALIDA!!!";
+       if(opt.op < 1 || opt.op > 6)
+       std::cout << "\n\tOPÇÃO INVÁLIDA!!!";
         else
-       if(op == 6)  
+       if(opt.op == 6)  
        std::cout << "\n\tGOOD BYE ...!!\n\n";
       
-   }while(op != 6);
+   }while(opt.op != 6);
  return 0;
 }

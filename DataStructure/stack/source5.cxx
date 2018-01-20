@@ -15,107 +15,114 @@
  * @file       source5
  * @version    0.1
  * @brief      Lista do tipo fila dinamica.
- * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo.pdf
+ * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo
  * @author     Jean Zonta
- * @Copyright (C) 2013 Jean Zonta.
+ * @Copyright (C) 2013 2017 Jean Zonta.
  * 
  * @end @section author Author
  *
 */
 struct fila
 {
+ int op; 
  int num;
  fila *prox;
 };
 
 int main()
 {
- fila *inicio = NULL;
- fila *fim = NULL;
+ fila opt;
  fila *aux;
- int op;
+ fila *fim = NULL;
+ fila *inicio = NULL;
  
  do{
-    std::cout << "\n\n\tLISTA DO TIPO FILA DINAMICA"
+    std::cout << "\n\tLISTA DO TIPO FILA DINAMICA"
                  "\n\tMENU DE ESCOLHA"
                  "\n\t[1]-INSERIR NA FILA"
                  "\n\t[2]-CONSULTAR TODA A FILA"
                  "\n\t[3]-REMOVER DA FILA"
                  "\n\t[4]-ESVAZIAR A FILA"
                  "\n\t[5]-SAIR"
-                 "\n\tMENU: ";
-     std::cin >> op;
+                 "\n\tESCOLHA: ";
+     std::cin >> opt.op;
      
-      if(op == 1)
-       {
-        std::cout << "\n\tINSIRA NUMERO NA FILA: ";
-        fila *novo = new fila();
-        std::cin >> novo->num;
-
-        novo->prox = NULL;
-        
-        if(inicio == NULL)
-         {
-          inicio = novo;
-          fim = novo;
-         }
-        else
-         {
-          fim->prox = novo;
-          fim = novo;
-         }
-        std::cout << "\n\tNUMERO " << novo->num << " INSERIDO COM SUCESSO ..!!!\n";
-       }
+     if(opt.op == 1)
+      {
+       std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
+       std::cin>>opt.num;
        
-      if(op == 2)
-       {
-        if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
-        else
-         {
-          std::cout << "\n\tFILA COMPLETA: ";
-          aux = inicio;
-          while (aux != NULL)
-           {
-            std::cout << aux->num << " ";
-            aux = aux->prox;
-           }
-         }
-       }
-       
-      if(op == 3)
-       {
-        if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
-        else
-         {
-          aux = inicio;
-           std::cout << "\n\tNUMERO " << inicio->num << " REMOVIDO COM SUCESSO ..!!!\n";
-           inicio = inicio->prox;
-          delete(aux);
-         }
-       }
-       
-      if(op == 4)
-       {
-        if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
+       for(int i=0;i<opt.num;i++)
+        {
+         std::cout << "\n\tINSIRA NA FILA O NUMERO "<<i+1<<": ";
+         fila *novo = new fila();
+         std::cin >> novo->num;
+         novo->prox = NULL;
+          
+         if(inicio == NULL)
+          {
+           inicio = novo;
+           fim = novo;
+          }
          else
           {
-           aux = inicio;
-           while (aux != NULL)
-            {
-             inicio = inicio->prox;
-             delete(aux);
-             aux = inicio;
-            }
-           std::cout << "\n\tFILA ESVAZIADA COM SUCESSO ...!!!!\n";
+           fim->prox = novo;
+           fim = novo;
           }
-       }
+         std::cout << "\n\tNUMERO " << novo->num << " INSERIDO COM SUCESSO ..!!!\n";
+        } 
+      }
        
-       if(op < 1 || op > 5)
-       std::cout << "\n\tOPCAO INVALIDA!!!";
-        else
-       if(op == 5)  
-       std::cout << "\n\tGOOD BYE ...!!\n\n";
+     if(opt.op == 2)
+      {
+       if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
+       else
+        {
+         std::cout << "\n\tFILA COMPLETA: ";
+         aux = inicio;
+         while (aux != NULL)
+          {
+           std::cout << aux->num << " ";
+           aux = aux->prox;
+          }
+         std::cout<<std::endl; 
+        }
+      }
+       
+     if(opt.op == 3)
+      {
+       if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
+       else
+        {
+         aux = inicio;
+          std::cout << "\n\tNUMERO " << inicio->num << " REMOVIDO COM SUCESSO ..!!!\n";
+          inicio = inicio->prox;
+         delete(aux);
+        }
+      }
+       
+     if(opt.op == 4)
+      {
+       if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
+       else
+        {
+         aux = inicio;
+         while (aux != NULL)
+          {
+           inicio = inicio->prox;
+            delete(aux);
+           aux = inicio;
+          }
+         std::cout << "\n\tFILA ESVAZIADA COM SUCESSO ...!!!!\n";
+        }
+      }
+       
+      if(opt.op < 1 || opt.op > 5)
+      std::cout << "\n\tOPÇÃO INVÁLIDA!!!";
+       else
+      if(opt.op == 5)  
+      std::cout << "\n\tGOOD BYE ...!!\n\n";
       
-   }while(op != 5);
+   }while(opt.op != 5);
  return 0;
 }

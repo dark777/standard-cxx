@@ -15,48 +15,56 @@
  * @file       source6
  * @version    0.1
  * @brief      Pilha Desempliha como estrutura dinamica.
- * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo.pdf
+ * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo
  * @author     Jean Zonta
- * @Copyright (C) 2013 Jean Zonta.
+ * @Copyright (C) 2013 2017 Jean Zonta.
  * 
  * @end @section author Author
  *
  */
+
 struct pilha
 {
+ int op; 
  int num;
  pilha *prox;
 };
 
 int main()
 {
- pilha *topo = NULL;
+ pilha opt; 
  pilha *aux;
- int op;
+ pilha *topo = NULL;
+ 
   do
    {
     std::cout << "\n\n\tPILHA DESEMPLILHA COMO ESTRUTURA DINAMICA"
-                 "\n\tMENU DE ESCOLHA DA PILHA"
-                 "\n\t1 - INSERIR NA PILHA"
-                 "\n\t2 - CONSULTAR TODA PILHA"
-                 "\n\t3 - REMOVER DO TOPO"
-                 "\n\t4 - DESEMPILHAR E REMOVER"
-                 "\n\t5 - ESVAZIAR A PILHA" 
-                 "\n\t6 - SAIR"
+                 "\n\tMENU DE ESCOLHA"
+                 "\n\t[1]-INSERIR NA PILHA"
+                 "\n\t[2]-CONSULTAR TODA PILHA"
+                 "\n\t[3]-REMOVER DO TOPO"
+                 "\n\t[4]-DESEMPILHAR E REMOVER"
+                 "\n\t[5]-ESVAZIAR A PILHA" 
+                 "\n\t[6]-SAIR"
                  "\n\tESCOLHA: ";
-    std::cin >> op;
+    std::cin >> opt.op;
     
-       if(op == 1)
+       if(opt.op == 1)
         {
-         std::cout << "\n\tINSIRA NUMERO NA PILHA: ";
-          pilha *novo = new pilha();
-           std::cin >> novo->num;
-           novo->prox = topo;
-          topo = novo;
-         std::cout << "\n\tNUMERO "<<novo->num<<" INSERIDO COM SUCESSO!!!";
+         std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
+         std::cin>>opt.num;
+         for(int i=0;i<opt.num;i++)
+         {
+          std::cout << "\n\tINSIRA NA PILHA O NUMERO "<<i+1<<": ";
+           pilha *novo = new pilha();
+            std::cin >> novo->num;
+            novo->prox = topo;
+           topo = novo;
+          std::cout << "\n\tNUMERO "<<novo->num<<" INSERIDO COM SUCESSO!!!\n";
+         }
         }
         
-       if(op == 2)
+       if(opt.op == 2)
         {
          if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
          else
@@ -64,27 +72,27 @@ int main()
            std::cout << "\n\tPILHA COMPLETA: ";
            aux = topo;
            while(aux != NULL)
-           {
+           {   
             std::cout << aux->num << " ";
             aux = aux->prox;
            }
           }
         }
         
-       if(op == 3)
+       if(opt.op == 3)
         {
          if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
          else
           {
            aux = topo;
-           std::cout << "\n\tNUMERO: " << topo->num << " REMOVIDO COM SUCESSO!!!";
-           topo = topo->prox;
+            std::cout << "\n\tNUMERO: " << topo->num << " REMOVIDO COM SUCESSO!!!";
+            topo = topo->prox;
            delete(aux);
           }
         }
                 
-       if(op == 4)
-        {         
+       if(opt.op == 4)
+        {
          if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
          else
           {
@@ -101,7 +109,7 @@ int main()
           }
         }
         
-       if(op == 5)
+       if(opt.op == 5)
         {
          if(topo == NULL)std::cout << "\n\tPILHA VAZIA!!!";
          else
@@ -110,19 +118,19 @@ int main()
            while(aux != NULL)
            {
             topo = topo->prox;
-            delete(aux);
+             delete(aux);
             aux = topo;
            }
            std::cout << "\n\tPILHA ESVAZIADA COM SUCESSO!!!!";
           }
         }
         
-       if(op < 1 || op > 6)
-       std::cout << "\n\tOPCAO INVALIDA!!!";
-        else
-       if(op == 6)  
-       std::cout << "\n\tGOOD BYE ...!!\n\n";
-
-   }while(op != 6);
+        if(opt.op < 1 || opt.op > 6)
+        std::cout << "\n\tOPÇÃO INVÁLIDA!!!";
+         else
+        if(opt.op == 6)  
+        std::cout << "\n\tGOOD BYE ...!!\n\n";
+        
+   }while(opt.op != 6);
  return 0;
 }

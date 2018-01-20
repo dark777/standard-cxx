@@ -77,7 +77,7 @@ void busca(Arvore *raiz,char string[])
             "\n\t*----------------*"
             "\n\t| RECORD FOUND!! |"
             "\n\t*----------------*"    
-            "\n\tName: "
+            "\n\n\tName: "
            );
      printf("%s",(raiz)->Nome);
      printf("\tPhone: ");
@@ -107,7 +107,7 @@ void alterar( Arvore **raiz, char *string)
               "\n\t*----------------*"
               "\n\t| RECORD FOUND!! |"
               "\n\t*----------------*" 
-              "\n\tName: "
+              "\n\n\tName: "
              );
        printf("%s",(*raiz)->Nome);
        printf("\tPhone: ");
@@ -181,10 +181,7 @@ Arvore** maior_esq(Arvore *raiz)
  if((*aux)->esq != NULL)
  {
    aux = &(*aux)->esq;
-   while( (*aux)->dir != NULL )
-   {
-    aux = &(*aux)->dir;
-   }  
+   while( (*aux)->dir != NULL )aux = &(*aux)->dir;
  }
  return aux;
 }
@@ -195,10 +192,7 @@ Arvore** menor_dir(Arvore *raiz)
   if((*aux)->dir != NULL)
   {
    aux = &(*aux)->dir;
-   while((*aux)->esq != NULL)
-   {
-    aux=&(*aux)->esq;
-   }
+   while((*aux)->esq != NULL)aux=&(*aux)->esq;
   }
  return aux;
 }
