@@ -31,15 +31,15 @@ int main()
   const std::regex pattern("(\\b\\d{2}[-|.|/]\\d{2}[-|.|/]\\d{4}\\b)|(\\b\\d{4}[-|.|/]\\d{2}[-|.|/]\\d{2}\\b)");
   
 
-        while (std::regex_search(data, result, pattern)) 
-        {
-            if (strptime(result[0].str().c_str(), "%d.%m.%Y", &_tm) != NULL)
-              std::cout << result[0] << std::endl;
-            else
-            if (strptime(result[0].str().c_str(), "%Y-%m-%d", &_tm) != NULL)
-              std::cout << result[0] << std::endl;
+  while(std::regex_search(data, result, pattern)) 
+   {
+    if(strptime(result[0].str().c_str(), "%d.%m.%Y", &_tm) != NULL)
+     std::cout << result[0] << std::endl;
+    else
+    if(strptime(result[0].str().c_str(), "%Y-%m-%d", &_tm) != NULL)
+    std::cout << result[0] << std::endl;
             
-            data = result.suffix().str();
-        }
+    data = result.suffix().str();
+   }
  return 0;      
 }
