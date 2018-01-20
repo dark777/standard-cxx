@@ -30,20 +30,20 @@ struct Grafo
  Grafo *prox;
 };
 
-Grafo *criaNo(int v1, Grafo *p)
+Grafo *criaNo(int vertice, Grafo *p)
 {
  Grafo *x = new Grafo();
  
- x->verticeGr = v1;
+ x->verticeGr = vertice;
  x->prox = p;
  return x;
 }
 
-Grafo *criaGrafoNo(int v1, Grafo *p, Grafo *g)
+Grafo *criaGrafoNo(int vertice, Grafo *p, Grafo *g)
 {
  Grafo *x = new Grafo();
  
- x->verticeGr = v1;
+ x->verticeGr = vertice;
  x->adj = p;
  x->prox = g;
  return x;
@@ -61,14 +61,14 @@ void inserirAdj(Grafo *g)
   std::cout << "\n\tInforme o numero de ligacoes\n\tpartindo da cidade " << g->verticeGr << ": ";
   std::cin >> qtd;
   std::cout << std::endl;
-  for(i=0;i<qtd;i++)
+  for(i=0;i < qtd; i++)
   {
    std::cout<<"\n\tCodigo da cidade de chegada: ";
    std::cin>>vertice;
-   l=criaNo(vertice,l);
+   l = criaNo(vertice,l);
   }
-  g->adj=l;
-  g=g->prox;
+  g->adj = l;
+  g = g->prox;
  }
 }
 
@@ -83,7 +83,7 @@ void percorrerListaAdj(Grafo *g)
      std::cout << "\n\tDe cidade " << g->verticeGr << " para " << g->adj->verticeGr;
      g->adj = g->adj->prox;
     }
-   g=g->prox;
+   g = g->prox;
   }
 }
 
@@ -102,7 +102,7 @@ int main()
  {
   std::cout << "\n\tInforme o codigo da cidade: ";
   std::cin >> vertice;
-  g=criaGrafoNo(vertice,NULL,g);
+  g = criaGrafoNo(vertice,NULL,g);
  }
  
  inserirAdj(g);
