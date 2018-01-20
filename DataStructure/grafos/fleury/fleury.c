@@ -44,7 +44,7 @@ int main (int argc, char *argv[])
  }
  
  arqent = fopen(argv[1], "r");
- arqsai = fopen("saidas.txt", "a");
+ arqsai = fopen("resultados.txt", "a");
  
  fscanf(arqent, "%i", &nvertices);
  fscanf(arqent, "%i", &narestas);
@@ -125,7 +125,7 @@ int main (int argc, char *argv[])
           "\nTodos os vertices possuem grau par,"
           " portanto existe um Circuito Euleriano.\n"
           "Este programa achara este circuito e gerara um\n"
-          "arquivo chamado saidas.txt contendo este circuito."
+          "arquivo chamado resultados.txt contendo este circuito."
          );
   }
  else
@@ -136,7 +136,7 @@ int main (int argc, char *argv[])
             "\nExistem 2 vertices com grau impar, portanto "
             "nao existe Circuito Euleriano,\nmas existe um Caminho Euleriano."
             "\nEste programa achara este caminho e gerara um\n"
-            "arquivo chamado saidas.txt contendo este caminho."
+            "arquivo chamado resultados.txt contendo este caminho."
            );
     }
    else
