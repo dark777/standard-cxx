@@ -17,7 +17,7 @@
  * @brief      Lista Circular Simples Nao Ordenada.
  * @consult    estruturas de dados algoritmos, análise da complexidade e implementações em java e cc++ - ana fernanda gomes ascencio & graziela santos araújo
  * @author     Jean Zonta
- * @Copyright (C) 2013 2017 Jean Zonta.
+ * @Copyright (C) 2013-2017 Jean Zonta.
  * 
  * @end @section author Author
  *
