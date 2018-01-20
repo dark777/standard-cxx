@@ -37,7 +37,7 @@ int main()
      std::cout << result[0] << std::endl;
     else
     if(strptime(result[0].str().c_str(), "%Y-%m-%d", &_tm) != NULL)
-    std::cout << result[0] << std::endl;
+     std::cout << result[0] << std::endl;
             
     data = result.suffix().str();
    }
