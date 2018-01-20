@@ -78,62 +78,70 @@ int PilhaE::vazia(void)
 
 int PilhaE::Insere(int v)
 {
-  if ( topo == N )  return 0;  //estouro de pilha
+ if ( topo == N )  return 0;  //estouro de pilha
   topo++;
   pilha[topo]=v;
-  return 1;
+ return 1;
 }
 
 int PilhaE::Tamanho(void) const
 {
-  return topo+1;
+ return topo+1;
 }
 
 int PilhaE::Tiratopo(void)
 {
-  return pilha[topo--];
+ return pilha[topo--];
 }
 
 
 struct Vertice
 {
  char nome[10];
- PilhaE adjacentes;
- int grau_entrada;
+  PilhaE adjacentes;
+  int grau_entrada;
  int grau_saida;
 };
 
 
-class listavertice{
-  public:
-        Vertice lista[N];
-        int ult;  //ultimo vertice adicionado
-        listavertice(void){ult=-1;};
-         //retornar a posicao do vertice na lista
-        int Inserevertice(Vertice v);
-};
-int listavertice::Inserevertice(Vertice v)
+struct lstVertice
 {
-   int i =0;
-   if (ult<0) //lista vazia
+ int ult;  //ultimo vertice adicionado 
+ Vertice lista[N];
+ 
+ lstVertice(void): ult(-1){};
+};
+ 
+ //retornar a posicao do vertice na lista
+ int Inserevertice(Vertice v);
+};
+
+int lstVertice::Inserevertice(Vertice v)
+{
+ int i = 0;
+ 
+  if(ult < 0) //lista vazia
    {
-     lista[++ult]=v;
-     return ult;
+    lista[++ult]=v;
+    return ult;
    }
-   while( i<=ult)
+   while(i <= ult)
    {
-      if ( strcmp(lista[i].nome,v.nome) == 0 )  return i;
-      i++;
+    if(strcmp(lista[i].nome,v.nome) == 0)return i;
+    i++;
    }
-   if (i>N) return -1;
-   else{
+   
+  if(i > N)
+  return -1;
+  else
+   {
     lista[++ult]=v;
     return ult;
    }
 }
 
 //variaveis globais
-listavertice listav;
+lstVertice listav;
 //fim das variaveis globais
 
 void help(void)
@@ -170,7 +178,7 @@ int main(int argc,char *argv[])
    if((pt = fopen(argv[1],"r")) == NULL)
    {
     help(); 
-    printf("\tErro ao abrir arquivo..\n");
+    printf("\n\tErro ao abrir arquivo..\n");
     return 0;
    }
    //verificar opcao de preprocessamento
@@ -182,50 +190,56 @@ int main(int argc,char *argv[])
    //fim da verificacao do preprocessamento
    if (lerarq() == 0)  //ler arquivo de dados
    {
-    printf("Erro no arquivo de entrada...\n");
+    printf("\n\tErro no arquivo de entrada...\n");
     return 0;
    }
    fclose(pt);
-  /*  Preprocessamento 
+   
+   /*
+    Preprocessamento 
+    O usuario pode optar por fazer o pre-processamento,
+    antes da execucao do algoritmo de HierHolzer que determinara um trajeto Euleriano.
+    Esse pre-processamento visa identificar se o digrafo ou os componentes,
+    de um digrafo desconexo sao ou nao Eulerianos,
+    ou seja, se satisfazem a equacao abaixo.
+    
+    Gs(vi) = Ge(vi) , onde
+    G = grau
+    s = saida
+    e = entrada
+    Para identificar se o grau de saida e igual
+    ao grau de entrada de todos os vertices,
+    o programa percorre a lista de vertices e verifica os campos:
+    grau de saida e grau de entrada de cada vertice existente na lista.
+   */
 
-O usuario pode optar por fazer o pre-processamento, antes da execucao do algoritmo de HierHolzer que determinara um trajeto Euleriano. Esse pre-processamento visa identificar se o digrafo ou os componentes de um digrafo desconexo sao ou nao Eulerianos, ou seja, se satisfazem a equacao abaixo.
-
-	Gs(vi) = Ge(vi) , onde
-
-G = grau
-s = saida
-e = entrada
-
-Para identificar se o grau de saida e igual ao grau de entrada de todos os vertices, o programa percorre a lista de vertices e verifica os campos: grau de saida e grau de entrada de cada vertice existente na lista.
- */
-
-  if(preprocessamento == 1)
-  {
-    printf("\nIniciando Pre-processamento...\n");
-    while(vert_inic<=N)
+   if(preprocessamento == 1)
+   {
+    printf("\n\tIniciando Pre-processamento...\n");
+    while(vert_inic <= N)
     {
       if(listav.lista[vert_inic].grau_entrada != listav.lista[vert_inic].grau_saida)
       {
-        printf("\t\nO Digrafo nao e' Euleriano..\n\n");
+        printf("\n\tO Digrafo nao e' Euleriano..\n\n");
         return 0;
       }
-      vert_inic++;
+     vert_inic++;
     }
-    printf("\nPre-processamento concluido, o Digrafo ou as componentes do Digrafo \
- sao Eulerianas.\n");
-  }
-  vert_inic=0;
-
- //fim preprocessamento
-
-   printf("\nEntre com o nome do vertice inicial: ");
+    printf("\n\tPre-processamento concluido,\n\to Digrafo ou as componentes\n\tdo Digrafo sao Eulerianas.");
+   }
+   
+   vert_inic=0;
+   
+   //fim preprocessamento
+   printf("\n\tEntre com o nome do vertice inicial: ");
    scanf("%s",inicial);
-   while(strcmp(listav.lista[vert_inic].nome,inicial) != 0 && vert_inic<=N)
-       vert_inic++;
-   if(vert_inic>N)
+   
+   while(strcmp(listav.lista[vert_inic].nome,inicial) != 0 && vert_inic <= N)vert_inic++;
+   
+   if(vert_inic > N)
    {
-      printf("O vertice escolhido nao foi identificado. O programa e' case sensitive. \n");
-      return 0;
+    printf("\n\tO vertice escolhido nao foi identificado.\n\tO programa e' case sensitive. \n");
+    return 0;
    }
 
 
@@ -244,33 +258,43 @@ Para identificar se o grau de saida e igual ao grau de entrada de todos os verti
        tail.Insere(head.Tiratopo());
      }
    }
-
-   //fim do Algoritmo de Hierholzer
-
-   /*  verificar se eh desconexo
-
-A identificacao da conectividade do digrafo e bastante simples, pois possui uma estrutura "if" dentro de um "while". Essas estruturas simplesmente percorrem a lista dos vertices verificando se houve alguma aresta nao alcancada pelo algoritmo de HierHolzer.
-
-  */
+   //fim do Algoritmo de Hierholzer.
+   
+   /*
+     Verificar se é desconexo. A identificacao da conectividade
+     do digrafo e bastante simples, pois possui uma estrutura
+     "if" dentro de um "while". Essas estruturas simplesmente
+     percorrem a lista dos vertices verificando se houve alguma
+     aresta nao alcancada pelo algoritmo de HierHolzer.
+   */
+   
    vert_inic=0;
    while(vert_inic <= listav.ult )
    {
-    if(listav.lista[vert_inic++].adjacentes.Tamanho()!=0)
+    if(listav.lista[vert_inic++].adjacentes.Tamanho() != 0)
     {
-     printf("\nO Digrafo e' desconexo, logo nao e' Euleriano. Porem suas componentes sao Eulerianas.\n");
-     printf("\nO trajeto euleriano na componente cujo vertice inicial esta contido e': \n\n");
+     printf(
+            "\n\tO Digrafo e' desconexo, logo nao é Euleriano.\n\tPorém suas componentes sao Eulerianas."
+            "\n\tO trajeto euleriano na componente cujo\n\tvertice inicial esta contido e': "
+           );
+     
      while(tail.vazia() != 1 )
         printf("%s ",listav.lista[tail.Tiratopo()].nome);
      printf("\n\n");
      return 1;
     }
    }
-   printf("\n O Digrafo e' Conexo e Euleriano \n");
-   printf("\nO trajeto euleriano a partir do vertice inicial escolhido e': \n\n");
-   while(tail.vazia() != 1 )
-       printf("%s ",listav.lista[tail.Tiratopo()].nome);
-   printf("\n\n");
-   return 1;
+   
+   printf(
+          "\n\tO Digrafo e' Conexo e Euleriano"
+          "\n\tO trajeto euleriano a partir do"
+          "\n\tvertice inicial escolhido e':"
+         );
+   
+   while(tail.vazia() != 1)
+   printf("%s ",listav.lista[tail.Tiratopo()].nome);
+  printf("\n\n");
+ return 1;
 }
 //Fim do programa Principal
 
