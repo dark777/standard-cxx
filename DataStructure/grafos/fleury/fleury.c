@@ -123,7 +123,7 @@ int main (int argc, char *argv[])
   {
    printf(
           "\nTodos os vertices possuem grau par,"
-          " portanto existe um Circuito Euleriano.\n"
+          "portanto existe um Circuito Euleriano.\n"
           "Este programa achara este circuito e gerara um\n"
           "arquivo chamado resultados.txt contendo este circuito."
          );
@@ -134,9 +134,9 @@ int main (int argc, char *argv[])
     {
      printf(
             "\nExistem 2 vertices com grau impar, portanto "
-            "nao existe Circuito Euleriano,\nmas existe um Caminho Euleriano."
-            "\nEste programa achara este caminho e gerara um\n"
-            "arquivo chamado resultados.txt contendo este caminho."
+            "\nnao existe Circuito Euleriano,\nmas existe um Caminho Euleriano."
+            "\nEste programa achara este caminho e gerara um"
+            "\narquivo chamado resultados.txt contendo este caminho."
            );
     }
    else

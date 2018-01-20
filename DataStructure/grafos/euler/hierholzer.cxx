@@ -110,7 +110,6 @@ struct lstVertice
  Vertice lista[N];
  
  lstVertice(void): ult(-1){};
-};
  
  //retornar a posicao do vertice na lista
  int Inserevertice(Vertice v);
