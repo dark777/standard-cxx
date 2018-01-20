@@ -53,12 +53,12 @@ int main()
      
     if(opt.op == 1)
      {
-      std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR NO INICIO?\n\tDIGITE: ";
-      std::cin>>opt.num;
+      std::cout << "\n\tQUANTOS NUMEROS DESEJA INSERIR NO INICIO?\n\tDIGITE: ";
+      std::cin >> opt.num;
        
-      for(int i=0;i<opt.num;i++)
+      for(int i = 0;i < opt.num; i++)
        {
-        std::cout << "\n\tINSIRA NO INICIO O NUMERO "<<i+1<<": ";
+        std::cout << "\n\tINSIRA NO INICIO O NUMERO " << i+1 << ": ";
         lista *novo = new lista();
         std::cin >> novo->num;
        
@@ -83,12 +83,12 @@ int main()
      
     if(opt.op == 2)
      {
-      std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR NO FIM?\n\tDIGITE: ";
-      std::cin>>opt.num;
+      std::cout << "\n\tQUANTOS NUMEROS DESEJA INSERIR NO FIM?\n\tDIGITE: ";
+      std::cin >> opt.num;
        
       for(int i=0;i<opt.num;i++)
        {
-        std::cout << "\n\tINSIRA NO FIM O NUMERO "<<i+1<<": ";
+        std::cout << "\n\tINSIRA NO FIM O NUMERO " << i+1 << ": ";
         lista *novo = new lista();
         std::cin >> novo->num;
       

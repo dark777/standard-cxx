@@ -51,12 +51,12 @@ int main()
     
     if(opt.op == 1)
      {
-      std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
-      std::cin>>opt.num;
+      std::cout << "\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
+      std::cin >> opt.num;
        
-      for(int i=0;i<opt.num;i++)
+      for(int i = 0;i < opt.num; i++)
        {
-        std::cout << "\n\tINSIRA NA LISTA O NUMERO "<<i+1<<": ";
+        std::cout << "\n\tINSIRA NA LISTA O NUMERO " << i+1 << ": ";
         lista *novo = new lista();
         std::cin >> novo->num;
           

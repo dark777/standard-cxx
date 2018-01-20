@@ -51,16 +51,16 @@ int main()
     
        if(opt.op == 1)
         {
-         std::cout<<"\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
-         std::cin>>opt.num;
-         for(int i=0;i<opt.num;i++)
+         std::cout << "\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
+         std::cin >> opt.num;
+         for(int i = 0;i < opt.num; i++)
          {
-          std::cout << "\n\tINSIRA NA PILHA O NUMERO "<<i+1<<": ";
+          std::cout << "\n\tINSIRA NA PILHA O NUMERO " << i+1 << ": ";
            pilha *novo = new pilha();
             std::cin >> novo->num;
             novo->prox = topo;
            topo = novo;
-          std::cout << "\n\tNUMERO "<<novo->num<<" INSERIDO COM SUCESSO!!!\n";
+          std::cout << "\n\tNUMERO " << novo->num << " INSERIDO COM SUCESSO!!!\n";
          }
         }
         

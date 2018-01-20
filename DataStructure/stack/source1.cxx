@@ -44,7 +44,7 @@ int main()
      
      for(i = 0; i < qtd; i++)
       {
-       std::cout << "\n\tDIGITE O NUMERO " << i + 1 << ": ";
+       std::cout << "\n\tDIGITE O NUMERO " << i+1 << ": ";
        std::cin >> X[i];
       }
                 
@@ -61,9 +61,10 @@ int main()
           i++;
          }
                    
-        if(achou == 0)std::cout << "\n\tNUMERO " << n << " NÃO ENCONTRADO!!!!\n";
+        if(achou == 0)
+        std::cout << "\n\tNUMERO " << n << " NÃO ENCONTRADO!!!!\n";
          else
-        std::cout << "\n\tNUMERO " << n << " ENCONTRADO NA POSIÇÃO: " << i + 1 << "\n";
+        std::cout << "\n\tNUMERO " << n << " ENCONTRADO NA POSIÇÃO: " << i+1 << "\n";
        }while(!achou);
     }
     else      
@@ -73,7 +74,7 @@ int main()
       std::cin >> qtd;
       for(i = 0; i < qtd; i++)
        {
-        std::cout << "\n\tDIGITE O NUMERO " << i + 1 << ": ";
+        std::cout << "\n\tDIGITE O NUMERO " << i+1 << ": ";
         std::cin >> X[i];
        }
                 
@@ -93,7 +94,7 @@ int main()
         if(achou == 0)
         std::cout << "\n\tNUMERO " << n << " NÃO ENCONTRADO!!!!\n";
          else
-        std::cout << "\n\tNUMERO " << n << " ENCONTRADO NA POSIÇÃO: " << i + 1 << "\n";
+        std::cout << "\n\tNUMERO " << n << " ENCONTRADO NA POSIÇÃO: " << i+1 << "\n";
        }while(!achou);
      }
      if(op < 1 || op > 3)
