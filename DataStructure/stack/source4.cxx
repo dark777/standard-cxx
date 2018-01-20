@@ -37,19 +37,25 @@ int main()
  lista *fim = NULL;
  lista *inicio = NULL;
  
+ const char *opcoes[8] =
+ {
+  "INSERIR NO INICIO",
+  "INSERIR NO FIM",
+  "CONSULTAR TUDO",
+  "CONSULTAR DO INICIO PARA FIM",
+  "CONSULTAR DO FIM PARA INICIO",
+  "REMOVER DA LISTA",
+  "ESVAZIAR A LISTA",
+  "SAIR"
+ };
+ 
  do{
-    std::cout << "\n\n\tLISTA CIRCULAR DUPLAMENTE\n\tENCADEADA NAO ORDENADA"
-                 "\n\tMENU DE ESCOLHA"
-                 "\n\t[1]-INSERIR NO INICIO"
-                 "\n\t[2]-INSERIR NO FIM"
-                 "\n\t[3]-CONSULTAR TUDO" 
-                 "\n\t[4]-CONSULTAR DO INICIO PARA FIM"
-                 "\n\t[5]-CONSULTAR DO FIM PARA INICIO"
-                 "\n\t[6]-REMOVER DA LISTA"
-                 "\n\t[7]-ESVAZIAR A LISTA"
-                 "\n\t[8]-SAIR"
-                 "\n\tESCOLHA: ";
-     std::cin >> opt.op;
+    std::cout << "\n\n\tLISTA CIRCULAR DUPLAMENTE\n\tENCADEADA NAO ORDENADA\n\tMENU DE ESCOLHA";
+    for(int i=0; i < 8; i++)
+    std::cout << "\n\t[" << i+1 << "]-" << opcoes[i];
+    std::cout << "\n\tESCOLHA: ";
+     
+    std::cin >> opt.op;
      
     if(opt.op == 1)
      {
