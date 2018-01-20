@@ -1,74 +1,148 @@
-#include <list>
-#include <iostream>
-#include <algorithm> // função find
-// Grafos - Lista de adjacência
-// https://gist.github.com/marcoscastro/76634e1d38d0d7eef2e1
-struct Grafo
-{
- Grafo(int V); // construtor
- void adicionarAresta(int v1, int v2); // adiciona uma aresta no grafo
+#include <cstdio>
+#include <cstring>
+/*!
+ *
+ * @begin @section terms_of_use Terms of Use
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ *
+ * @end @section terms_of_use Terms of Use
+ * 
+ * @begin @section author Author
+ * 
+ * @file        grafo2
+ * @version     0.1
+ * @brief       Grafo que usa fila.
+ * @aplication  Encontrar o caminho mais barato.
+ * @author      Jean Zonta
+ * @Copyright (C) 2017 Jean Zonta.
+ * 
+ * @end @section author Author
+ *
+ */
+#define MAX 10
+#define TAMANHO_NOME 30
 
- // obtém o grau de saída de um dado vértice
- // grau de saída é o número de arcos que saem de "v"
- int obterGrauDeSaida(int v);
- bool existeVizinho(int v1, int v2); // verifica se v2 é vizinho de v1
+#define SAO_PAULO 0
+#define NOVA_YORK 1
+#define LOS_ANGELES 2
+#define LONDRES 3
+#define FRANKFURT 4
+#define TOKIO 5
+#define SYDNEY 6
+
+ //globais
+ int inicio=0; //inicio fila
+ int tamanho; //fila para o modulo
+ int fila[500]; //tamanho fila (bem maior para caber as combinacoes)
  
- private:
-   int V; // número de vértices
-   std::list<int> *adj; // ponteiro para um array contendo as listas de adjacências
-};
-
-Grafo::Grafo(int V)
-{
- this->V = V; // atribui o número de vértices
- adj = new std::list<int>[V]; // cria as listas
-}
-
-void Grafo::adicionarAresta(int v1, int v2)
-{
- // adiciona vértice v2 à lista de vértices adjacentes de v1
- adj[v1].push_back(v2);
-}
-
-int Grafo::obterGrauDeSaida(int v)
-{
- // basta retornar o tamanho da lista que é a quantidade de vizinhos
- return adj[v].size();
-}
-
-bool Grafo::existeVizinho(int v1, int v2)
-{
- if(find(adj[v1].begin(), adj[v1].end(), v2) != adj[v1].end())
- return true;
- return false;
-}
+ int GrafoCidades[MAX][MAX]; //grafo
+ int CorCidades[MAX];  //cidades acessadas
+ char NomeCidades[MAX][TAMANHO_NOME]; //nome das cidades
+ void inserirFILA(int);
+ int removerFILA(void);
+ void CaminhoNoGrafo(int);
 
 int main()
 {
- // criando um grafo de 4 vértices
- Grafo grafo(4);
+ //inicia grafo com tudo -1
+ for(int i=0; i< MAX; i++)
+  for(int j=0; j< MAX; j++)
+   GrafoCidades[i][j]= -1;
+   
+ //monta o grafo
+ GrafoCidades[SAO_PAULO][NOVA_YORK]= 350;
+ GrafoCidades[SAO_PAULO][LONDRES]= 400;
+ GrafoCidades[NOVA_YORK][LOS_ANGELES]= 150;
+ //GrafoCidades[NOVA_YORK][FRANKFURT]= 250;
+ //GrafoCidades[NOVA_YORK][LONDRES]= 120;
+ GrafoCidades[LONDRES][FRANKFURT]= 80;
+ //GrafoCidades[LONDRES][SYDNEY]= 500;
+ //GrafoCidades[LONDRES][SAO_PAULO]= 400;
+ GrafoCidades[LONDRES][NOVA_YORK]= 120;
+ GrafoCidades[FRANKFURT][TOKIO]= 500;
+ GrafoCidades[LOS_ANGELES][TOKIO]= 400;
+ //GrafoCidades[LOS_ANGELES][SYDNEY]= 450;
+ GrafoCidades[TOKIO][SYDNEY]= 300;
+ GrafoCidades[SYDNEY][TOKIO]= 500;
+   
+ //monta os nomes das cidades
+ strcpy(NomeCidades[0],"Sao Paulo-GRU");
+ strcpy(NomeCidades[1],"Nova York-JFK");
+ strcpy(NomeCidades[2],"Los Angeles");
+ strcpy(NomeCidades[3],"Londres-LHR");
+ strcpy(NomeCidades[4],"Frankfurt");
+ strcpy(NomeCidades[5],"Tokio");
+ strcpy(NomeCidades[6],"Sydney");
+    
+ //imprimi todas as cidades na tela com o numero dela
+ printf("Grafo gerado com as cidades :\n");
+ for(int i=0; i < MAX; i++)
+  printf("%i : %s\n", i, NomeCidades[i]);
+  
+ printf("\n\nTodas as cidades possiveis apartir de : %s\n",NomeCidades[LONDRES]);
+   //calcula o caminho no grafo
+ CaminhoNoGrafo(LONDRES);
+ printf("\n");
+}
 
- // adicionando as arestas
- grafo.adicionarAresta(0, 1);
- grafo.adicionarAresta(0, 3);
- grafo.adicionarAresta(1, 2);
- grafo.adicionarAresta(3, 1);
- grafo.adicionarAresta(3, 2);
-
- // mostrando os graus de saída
- std::cout << "Grau de saida do vertice 1: " << grafo.obterGrauDeSaida(1)
-           << "\nGrau de saida do vertice 3: " << grafo.obterGrauDeSaida(3);
-
- // verifica se existe vizinhos
- if(grafo.existeVizinho(0, 1))
- std::cout << "\n\n1 eh vizinho de 0\n";
+void inserirFILA(int x)
+{
+ if( tamanho == MAX )printf("\nFila esta cheia\n");
  else
- std::cout << "\n\n1 NAO eh vizinho de 0\n";
+  {
+   fila[ (inicio + tamanho) % MAX] = x;    //(inicio + tamanho) % MAX eh a posicao do proximo elemento
+   tamanho++;         //incrementa o tamanho pq foi inserido mais um elemento
+  }
+}
 
- if(grafo.existeVizinho(0, 2))
- std::cout << "2 eh vizinho de 0\n";
- else
- std::cout << "2 NAO eh vizinho de 0\n";
+int removerFILA(void)
+{
+ int aux;
+ 
+ if(tamanho != 0)        //tamanho !0 = a fila nao vazia
+  {
+   aux=fila[inicio]; //quarda em aux o valor antes de removerFILA ele da fila
+    fila[inicio]=-1;  //zera o valor da fila
+     inicio++;         //incrementa o inicio para localizar o proximo com o modulo
+     inicio = inicio % MAX; //localiza o proximo elemento com o modulo
+    tamanho--;        //decrementa o tamanho pq removeu o elemento da fila
+   return(aux);      //retorna o valor removido
+  }
+ else// tamanho da fila = 0 , fila vazia
+ return(-1);    
+}
 
- return 0;
+// RotaMaisBarata
+void CaminhoNoGrafo(int cidadeInicio)
+{
+ int retFILA;
+ int cidadeBase;
+ 
+ //inicia todas as cidades com a cor branca (nao visitada)
+ for(int i = 0; i < MAX; i++)CorCidades[i]= 0;
+  cidadeBase= cidadeInicio; //cidade inicial vai para cidadebase para calcular as ligacoes
+ 
+ while(cidadeBase != -1)
+  {
+   // Marcar cidadeBase com a cor preta (ja visitada)
+   CorCidades[cidadeBase]= 2;
+   
+   for(int j = 0;j < MAX; j++)
+    if((GrafoCidades[cidadeBase][j] != -1) && (CorCidades[j]==0))
+     {
+      inserirFILA(j);
+      CorCidades[j]==2;//cor preta (ja visitada)
+     }
+    // retira da fila uma cidade base (passa para a proxima cidade com ligacao)
+   cidadeBase=removerFILA();
+  }//while
+    
+  for(int i = 0;i < MAX; i++)
+   if(CorCidades[i] == 2)
+    printf("\n%s",NomeCidades[i]);
+     printf("\n");  
 }
