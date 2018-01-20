@@ -41,4 +41,5 @@ int main()
             
             data = result.suffix().str();
         }
+ return 0;      
 }
