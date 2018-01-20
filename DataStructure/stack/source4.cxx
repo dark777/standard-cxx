@@ -25,8 +25,8 @@
 struct lista
 {
  int op;
- int num;
- lista *prox;
+  int num;
+  lista *prox;
  lista *ant;
 };
 
