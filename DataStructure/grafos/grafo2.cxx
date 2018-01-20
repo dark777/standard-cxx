@@ -1,10 +1,8 @@
-// Grafos - Lista de adjacência
-// https://gist.github.com/marcoscastro/76634e1d38d0d7eef2e1
 #include <list>
 #include <iostream>
 #include <algorithm> // função find
-
-
+// Grafos - Lista de adjacência
+// https://gist.github.com/marcoscastro/76634e1d38d0d7eef2e1
 struct Grafo
 {
  Grafo(int V); // construtor
