@@ -35,19 +35,18 @@ int main()
  pilha opt; 
  pilha *aux;
  pilha *topo = NULL;
- 
-  do
-   {
-    std::cout << "\n\n\tPILHA DESEMPLILHA COMO ESTRUTURA DINAMICA"
-                 "\n\tMENU DE ESCOLHA"
-                 "\n\t[1]-INSERIR NA PILHA"
-                 "\n\t[2]-CONSULTAR TODA PILHA"
-                 "\n\t[3]-REMOVER DO TOPO"
-                 "\n\t[4]-DESEMPILHAR E REMOVER"
-                 "\n\t[5]-ESVAZIAR A PILHA" 
-                 "\n\t[6]-SAIR"
-                 "\n\tESCOLHA: ";
-    std::cin >> opt.op;
+  
+  do{
+     std::cout << "\n\n\tPILHA DESEMPLILHA COMO ESTRUTURA DINAMICA"
+                  "\n\tMENU DE ESCOLHA"
+                  "\n\t[1]-INSERIR NA PILHA"
+                  "\n\t[2]-CONSULTAR TODA PILHA"
+                  "\n\t[3]-REMOVER DO TOPO"
+                  "\n\t[4]-DESEMPILHAR E REMOVER"
+                  "\n\t[5]-ESVAZIAR A PILHA" 
+                  "\n\t[6]-SAIR"
+                  "\n\tESCOLHA: ";
+     std::cin >> opt.op;
     
        if(opt.op == 1)
         {
@@ -131,6 +130,6 @@ int main()
         if(opt.op == 6)  
         std::cout << "\n\tGOOD BYE ...!!\n\n";
         
-   }while(opt.op != 6);
+    }while(opt.op != 6);
  return 0;
 }
