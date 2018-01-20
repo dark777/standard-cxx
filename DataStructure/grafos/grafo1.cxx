@@ -72,7 +72,7 @@ void inserirAdj(Grafo *g)
  }
 }
 
-void percorrerLista(Grafo *g)
+void percorrerAdj(Grafo *g)
 {
  while(g != NULL)
   {
@@ -106,7 +106,7 @@ int main()
  }
  
  inserirAdj(g);
- percorrerLista(g);
+ percorrerAdj(g);
  std::cout << "\n\n";
  return 0;
 }
