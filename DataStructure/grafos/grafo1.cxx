@@ -22,29 +22,24 @@
  * @end @section author Author
  *
  */
-struct No
-{
- int verticeNo;
- No *prox;
-};
 
 struct Grafo
 {
  int verticeGr;
- No *adj;
+ Grafo *adj;
  Grafo *prox;
 };
 
-No *criaNo(int v1, No *p)
+Grafo *criaNo(int v1, Grafo *p)
 {
- No *x = new No();
+ Grafo *x = new Grafo();
  
- x->verticeNo = v1;
+ x->verticeGr = v1;
  x->prox = p;
  return x;
 }
 
-Grafo *criaGrafoNo(int v1, No *p, Grafo *g)
+Grafo *criaGrafoNo(int v1, Grafo *p, Grafo *g)
 {
  Grafo *x = new Grafo();
  
@@ -56,7 +51,7 @@ Grafo *criaGrafoNo(int v1, No *p, Grafo *g)
 
 void inserirAdj(Grafo *g)
 {
- No *l = NULL;
+ Grafo *l = NULL;
  int i;
  int qtd;
  int vertice;
@@ -85,7 +80,7 @@ void percorrerListaAdj(Grafo *g)
    
    while(g->adj != NULL)
     {
-     std::cout << "\n\tDe cidade " << g->verticeGr << " para " << g->adj->verticeNo;
+     std::cout << "\n\tDe cidade " << g->verticeGr << " para " << g->adj->verticeGr;
      g->adj = g->adj->prox;
     }
    g=g->prox;
