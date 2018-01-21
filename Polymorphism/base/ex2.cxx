@@ -4,7 +4,7 @@
 struct Base
 {
  Base(){}
- virtual  ~Base() { } // Ensures to invoke actual object destructor
+ virtual ~Base(){} // Ensures to invoke actual object destructor
  
  // An interface Polymorphism Dinamic
  virtual void DisplayAction() = 0;

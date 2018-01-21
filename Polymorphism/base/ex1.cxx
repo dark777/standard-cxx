@@ -5,7 +5,7 @@
 struct Base
 {
   Base(){}
-  virtual ~Base() { }
+  virtual ~Base(){}
   virtual void method() { std::cout << "Base"; }
 };
 
@@ -13,7 +13,7 @@ struct Derived : Base
 {
  Derived(){}
  ~Derived(){}
- virtual void method() 
+ void method() 
  { 
    std::cout << "\n Derived\n\n"; 
  }
