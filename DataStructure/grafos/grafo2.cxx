@@ -23,7 +23,7 @@
  * @end @section author Author
  *
  */
-#define MAX 10
+#define MAX 11
 #define TAMANHO_NOME 30
 
 #define SAO_PAULO 0
@@ -33,7 +33,10 @@
 #define FRANKFURT 4
 #define TOKIO 5
 #define SYDNEY 6
-
+#define WASHINGTON 7
+#define KEBECK 8
+#define MOSCOU 9
+#define SINGAPURA 10
  //globais
  int inicio=0; //inicio fila
  int tamanho; //fila para o modulo
@@ -54,13 +57,16 @@ int main()
    GrafoCidades[i][j]= -1;
    
  //monta o grafo
- GrafoCidades[SAO_PAULO][NOVA_YORK]= 350;
+ //GrafoCidades[SAO_PAULO][NOVA_YORK]= 350;
  GrafoCidades[SAO_PAULO][LONDRES]= 400;
- GrafoCidades[NOVA_YORK][LOS_ANGELES]= 150;
+ //GrafoCidades[NOVA_YORK][LOS_ANGELES]= 150;
  //GrafoCidades[NOVA_YORK][FRANKFURT]= 250;
  //GrafoCidades[NOVA_YORK][LONDRES]= 120;
  GrafoCidades[LONDRES][FRANKFURT]= 80;
+ GrafoCidades[WASHINGTON][SINGAPURA]= 90;
+ GrafoCidades[KEBECK][SYDNEY]= 80;
  //GrafoCidades[LONDRES][SYDNEY]= 500;
+ GrafoCidades[SINGAPURA][MOSCOU]= 500;
  //GrafoCidades[LONDRES][SAO_PAULO]= 400;
  GrafoCidades[LONDRES][NOVA_YORK]= 120;
  GrafoCidades[FRANKFURT][TOKIO]= 500;
@@ -83,9 +89,9 @@ int main()
  for(int i=0; i < MAX; i++)
   printf("%i : %s\n", i, NomeCidades[i]);
   
- printf("\n\nTodas as cidades possiveis apartir de : %s\n",NomeCidades[LONDRES]);
+ printf("\n\nTodas as cidades possiveis apartir de : %s\n",NomeCidades[KEBECK]);
    //calcula o caminho no grafo
- CaminhoNoGrafo(LONDRES);
+ CaminhoNoGrafo(KEBECK);
  printf("\n");
 }
 
