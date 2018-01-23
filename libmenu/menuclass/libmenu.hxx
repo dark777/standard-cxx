@@ -14,7 +14,7 @@
  * 
  * @file       libmenu.hxx
  * @version    0.1
- * @brief      menu para const char* e std::string*
+ * @brief      menu const char* e std::string*
  * @author     Jean Zonta
  * @Copyright (C) 2013-2017 Jean Zonta.
  * 
