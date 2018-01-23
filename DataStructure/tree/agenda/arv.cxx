@@ -52,7 +52,7 @@ void inserir(Arvore **raiz ,char string[])
                                                                
 void ordem(Arvore *raiz)
 {
- if(raiz!=NULL) 
+ if(raiz != NULL) 
  {
   ordem((raiz)->esq);
   printf("\n\tName: ");
@@ -65,7 +65,7 @@ void ordem(Arvore *raiz)
 
 void busca(Arvore *raiz,char string[])
 {
- if(raiz!=NULL)
+ if(raiz != NULL)
   {
    if(strcasecmp((raiz)->Nome,string) > 0)busca((raiz)->esq,string);
    else
@@ -94,7 +94,7 @@ void busca(Arvore *raiz,char string[])
 
 void alterar( Arvore **raiz, char *string)
 {
-  if((*raiz)!=NULL)
+  if((*raiz) != NULL)
   {
    if(strcasecmp((*raiz)->Nome,string) > 0)alterar(&(*raiz)->esq,string);
     else
@@ -131,7 +131,7 @@ void alterar( Arvore **raiz, char *string)
 void excluir(Arvore **raiz,char string[])
 {
  Arvore **aux2, *aux3;     
- if(*raiz!=NULL)
+ if(*raiz != NULL)
  {
   if(strcasecmp((*raiz)->Nome , string) == 0)
   {
