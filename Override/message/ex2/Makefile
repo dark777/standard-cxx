@@ -12,15 +12,14 @@ BIN=$(NAME)
 
 all: $(NAME)
 
-$(EOBJ):$(ESRC)      
+$(EOBJ):$(ESRC)
 
-	$(CXX) -c $(SRC) 
+	$(CXX) -c $(SRC)
 
-$(EBIN):$(EOBJ)      
+$(EBIN):$(EOBJ)
 
-	$(CXX) -o $(BIN) $(OBJ) 
+	$(CXX) -o $(BIN) $(OBJ)
 
-$(SUB):$(EBIN)               
+$(SUB):$(EBIN)
 
-	./$(BIN)   
-	rm -rf $*
+	./$(BIN)
