@@ -16,6 +16,7 @@ int main(void)
  
  
  Marca *marc = new Marca();
+ 
  (*marc).idMarca = varIdMarca;
  (*marc).descriMarca = varDescriMarca;
  
@@ -32,6 +33,7 @@ int main(void)
  
  
  Modelo *mod = new Modelo();
+ 
  (*mod).idModelo = varIdModelo;
  (*mod).descriModelo = varDescriModelo;
  (*mod).marca = *marc;
@@ -57,6 +59,7 @@ int main(void)
  
     
  Motor *mot = new Motor();
+ 
  (*mot).idMotor = varIdMotor;
  (*mot).descriMotor = varDescriMotor;
  (*mot).descriPotencia = varPotenMotor;
@@ -73,6 +76,7 @@ int main(void)
  
  
  Carro *car = new Carro();
+ 
  (*car).idCarro = varIdCarro;
  (*car).descriCarro = varDescriCarro;
  (*car).marca = *marc;
