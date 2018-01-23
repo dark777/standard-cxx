@@ -34,8 +34,6 @@ struct name
 };
 
 
-
-
 int main()
 {    
  std::string strname;
