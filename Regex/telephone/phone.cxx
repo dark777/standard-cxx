@@ -24,11 +24,11 @@ struct phone
    * e o $ significa que precisa obrigatoriamente terminar ali.
    * https://pt.stackoverflow.com/questions/166484/validar-n%C3%BAmero-de-telefone-com-nono-d%C3%ADgito-opcional
    */
-  
+ 
  bool isPhone()
  {
   std::smatch phone_smatch;
-   
+  
   const std::regex pattern("^(\\([1-9]{2}\\)) 9?[0-9]{4}-[0-9]{4}$");
   
   return std::regex_match(this._tel, phone_smatch, pattern);
@@ -39,9 +39,9 @@ struct phone
   std::cout<<"\n\tPhone: "<<this._tel<<(phone(this._tel).isPhone()?"\n":" is Invalid\n");
  }
  
-  private:
-  std::string _tel;
-}; 
+ private:
+ std::string _tel;
+};
 
 
 int main(void)
@@ -56,7 +56,7 @@ int main(void)
      phone(strphone).print();
      std::cout<<"\n";
     
-  }while(phone(strphone).isPhone() == 0);
+    }while(phone(strphone).isPhone() == 0);
   
   return 0;
 }

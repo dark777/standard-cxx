@@ -48,7 +48,7 @@ int main()
     name(strname).print();
     std::cout<<"\n";
     
-  }while(name(strname).isName() == 0);
+   }while(name(strname).isName() == 0);
   
   return 0;
 }
