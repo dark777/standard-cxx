@@ -13,7 +13,7 @@ namespace std
    return std::bitset<sizeof(T)*3>(n).to_string();
   }
  
-  BinStream(std::ostream& os): os(os) {}
+  BinStream(std::ostream& os):os(os){}
  
   template<class T>
   BinStream& operator<<(T& value)     
