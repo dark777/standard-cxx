@@ -12,6 +12,7 @@ void menu(int opmenu, const char* opcoes[])
  else
  for(int i = 0; i<opmenu; i++)
  std::cout<<"\n\t["<<i+1<<"]-"<<opcoes[i];
+ std::cout<<"\n\tESCOLHA: ";
 }
 
 void menu(int opmenu, int maxlimits, const char* opcoes[])
@@ -24,4 +25,5 @@ void menu(int opmenu, int maxlimits, const char* opcoes[])
  else
  for(int i = 0; i<opmenu; i++)
  std::cout<<"\n\t["<<i+1<<"]-"<<opcoes[i];
+ std::cout<<"\n\tESCOLHA: ";
 }
