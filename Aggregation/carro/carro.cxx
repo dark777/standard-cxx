@@ -15,9 +15,9 @@ int main(void)
  getline(std::cin,varDescriMarca);
  
  
- Marca marc = *new Marca();
- marc.idMarca = varIdMarca;
- marc.descriMarca = varDescriMarca;
+ Marca *marc = new Marca();
+ (*marc).idMarca = varIdMarca;
+ (*marc).descriMarca = varDescriMarca;
  
  
  int varIdModelo = 0;
@@ -31,10 +31,10 @@ int main(void)
  getline(std::cin,varDescriModelo);
  
  
- Modelo mod = *new Modelo();
- mod.idModelo = varIdModelo;
- mod.descriModelo = varDescriModelo;
- mod.marca = marc;
+ Modelo *mod = new Modelo();
+ (*mod).idModelo = varIdModelo;
+ (*mod).descriModelo = varDescriModelo;
+ (*mod).marca = *marc;
  
  
  int varIdMotor = 0;
@@ -56,10 +56,10 @@ int main(void)
  getline(std::cin,varPotenMotor);
  
     
- Motor mot = *new Motor();
- mot.idMotor = varIdMotor;
- mot.descriMotor = varDescriMotor;
- mot.descriPotencia = varPotenMotor;
+ Motor *mot = new Motor();
+ (*mot).idMotor = varIdMotor;
+ (*mot).descriMotor = varDescriMotor;
+ (*mot).descriPotencia = varPotenMotor;
  
  int varIdCarro = 0;
  std::string varDescriCarro;
@@ -72,14 +72,14 @@ int main(void)
  getline(std::cin,varDescriCarro);
  
  
- Carro car = *new Carro();
- car.idCarro = varIdCarro;
- car.descriCarro = varDescriCarro;
- car.marca = marc;
- car.modelo = mod;
- car.motor = mot;
+ Carro *car = new Carro();
+ (*car).idCarro = varIdCarro;
+ (*car).descriCarro = varDescriCarro;
+ (*car).marca = *marc;
+ (*car).modelo = *mod;
+ (*car).motor = *mot;
    
- std::cout<<"\n\t"<<car.imprimeDadosCarro()<<"\n\n";
+ std::cout<<"\n\t"<<(*car).imprimeDadosCarro()<<"\n\n";
  
  return 0;    
 }
