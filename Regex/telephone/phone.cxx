@@ -29,7 +29,7 @@ struct phone
  {
   std::smatch phone_smatch;
   
-  const std::regex pattern("^(\\([1-9]{2}\\)) 9?[0-9]{4}-[0-9]{4}$");
+  const std::regex pattern("^(\\([1-9]{2}\\) 9?[0-9]{4}-[0-9]{4})$");
   
   return std::regex_match(this._tel, phone_smatch, pattern);
  }
