@@ -17,8 +17,6 @@ void enter()
 
 Usuario *_usuario;
 
-void insereUsuarios(Usuario *pUsuario, int i);
-
 void sair() 
 {
  free(_usuario);
@@ -34,7 +32,7 @@ int contadorDeLinhasDeUmArquivo()
     FILE *arq = fopen("usuarios.txt","r");
     
         //Lendo o arquivo 1 por 1
-    while(fread (&c, sizeof(char), 1, arq))
+    while(fread(&c, sizeof(char), 1, arq))
      {
       if(c == letra)vezes++;
      } 
@@ -89,9 +87,9 @@ void listarUsuarios()
     }
 
     char espaco = ' ';
-    std::cout << "============================================================================================================\n";
-    printf("| Nome %-19c | RG %-13c | CPF %-12c | Endereço %-30c |\n", espaco, espaco, espaco, espaco);
-    std::cout << "============================================================================================================\n";
+    std::cout << "====================================================================================================================================================\n";
+    printf("| Nome %-19c | RG %-13c | CPF %-13c | EMAIL %-30c | Endereço %-30c |\n", espaco, espaco, espaco, espaco, espaco);
+    std::cout << "====================================================================================================================================================\n";
 
     char linha[500];
     while(fgets(linha, 500, arquivo))
@@ -99,18 +97,20 @@ void listarUsuarios()
      linha[strlen(linha) - 1] = '\0';
 
      sscanf(
-            linha, ";%[^;];%[^;];%[^;];%[^;];",
+            linha, ";%[^;];%[^;];%[^;];%[^;];%[^;];",
             usuario->nome,
             usuario->rg,
             usuario->cpf,
+            usuario->email,    
             usuario->endereco
            );
      
      printf(
-            "|%-25s |%-17s |%-17s |%-41s|\n",
+            "|%-25s|%-17s|%-17s|%-32s|%-41s|\n",
             usuario->nome,
             usuario->rg,
             usuario->cpf,
+            usuario->email,
             usuario->endereco
            );
     }
@@ -150,7 +150,12 @@ void cadastrarUsuario()
     std::cin.clear();
     std::cout << "Digite seu CPF: ";
     std::cin.getline(usuario->cpf, 11);
-
+    
+    __fpurge(stdin);
+    std::cin.clear();
+    std::cout << "Digite seu EMAIL: ";
+    std::cin.getline(usuario->email, 50);
+    
     __fpurge(stdin);
     std::cin.clear();
     std::cout << "Digite seu Endereço: ";
@@ -167,10 +172,11 @@ void insereUsuario(Usuario *pUsuario)
     if(arquivo == NULL)std::cout << "\n\tErro ao criar o arquivo\n\n";
     else
     fprintf(
-            arquivo, ";%s;%s;%s;%s;\n",
+            arquivo, ";%s;%s;%s;%s;%s;\n",
             pUsuario->nome,
             pUsuario->rg,
             pUsuario->cpf,
+            pUsuario->email,    
             pUsuario->endereco
            );
 
@@ -196,11 +202,12 @@ void removerUltimoUsuario()
      linha[strlen(linha) - 1] = '\0';
      
      sscanf(
-            linha, ";%[^;];%[^;];%[^;];%[^;];",
+            linha, ";%[^;];%[^;];%[^;];%[^;];%[^;];",
             usuarios[i].nome,
             usuarios[i].rg,
             usuarios[i].cpf,
-            usuarios[i].endereco
+            usuarios[i].email,  
+            usuarios[i].endereco            
            );
     }
     
@@ -225,11 +232,12 @@ void insereUsuarios(Usuario *pUsuario, int numUsuarios)
     for(int i = 0; i < (numUsuarios-1); i++)
     {
      fprintf(
-             arquivo, ";%s;%s;%s;%s;\n",
-             pUsuario[i].nome,
-             pUsuario[i].rg,
-             pUsuario[i].cpf,
-             pUsuario[i].endereco
+             arquivo, ";%s;%s;%s;%s;%s;\n",
+             pUsuario->nome,
+             pUsuario->rg,
+             pUsuario->cpf,
+             pUsuario->email,    
+             pUsuario->endereco
             );
     }
 
@@ -273,7 +281,7 @@ void menu()
      case 5:
       sair();
      return;
-            
+     
      default:
       std::cout << "Opção inválida! Tente novamente...\n";
     }

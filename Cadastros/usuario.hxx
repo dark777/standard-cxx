@@ -18,6 +18,7 @@ struct Usuario
  char nome[101];
   char rg[10];
   char cpf[12];
+  char email[50];
  char endereco[101];
 };
 
@@ -28,6 +29,7 @@ void listarUsuarios();
 void cadastrarUsuario();
 void removerUltimoUsuario();
 void numeroDeUsuariosCadastrados();
-void insereUsuario(Usuario *pUsuario);
+void insereUsuario(Usuario*);
+void insereUsuarios(Usuario*, int);
 int numeroDeUsuarios();
 int contadorDeLinhasDeUmArquivo();
