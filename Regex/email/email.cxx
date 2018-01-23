@@ -50,9 +50,10 @@ int main(void)
                            };
   
   for(int i=0; i<13; i++)
-  email(emails[i]).print();
-  std::cout<<"\n";
+   email(emails[i]).print();
+    std::cout<<"\n";
   
+  return 0;
 } 
 /*
  Output:
