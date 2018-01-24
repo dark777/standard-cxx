@@ -46,7 +46,7 @@ int main(int argc, const char **argv)
                 << "\n\tIdade: "<< res->getInt64("age")
                 << "\n\tStatus: "<< res->getString("status")
                 << "\n\tDateTime: "<< res->getString("date_person")<< "\n"; // type may need to be different
-    }
+     }
      delete con;
      delete stmt;
      delete res;
