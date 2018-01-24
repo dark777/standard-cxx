@@ -4,11 +4,7 @@
 struct Carro
 {
   Carro(){}
-  ~Carro()
-  {
-   idCarro=0;
-   if(descriCarro.length() != 0)descriCarro.clear();
-  }
+  ~Carro(){}
   int idCarro;
   std::string descriCarro;
   
