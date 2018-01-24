@@ -5,7 +5,7 @@
 #define USER "root"
 #define DATABASE "teste"
 #define DBHOST "localhost"
-#define PASSWORD ""
+#define PASSWORD "734nc354r"
 
 int main(void)
 {
@@ -20,7 +20,8 @@ int main(void)
    }
    else
    { 
-    if(mysql_query(&conn,"select * from cadastros"))
+    if(mysql_query(&conn,"select * from person"))
+    //if(mysql_query(&conn,"select * from cadastros"))  
     {
      std::cout<<"\n\t\tErro n "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
      std::cin.get();

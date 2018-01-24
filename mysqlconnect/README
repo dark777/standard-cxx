@@ -1,13 +1,13 @@
 se foi incluido o #include <mysql/mysql.h>
 faça: 
 
-bash-4.4$ g++ -o mysqlconect conection.cxx -lmysqlclient
+bash-4.4$ g++ -o connect example2.cxx -lmysqlclient
 
 else
 
-bash-4.4$ g++ -o mysqlconect conection.cxx -lmysqlclient -I/usr/include/mysql 
+bash-4.4$ g++ -o connect example2.cxx -lmysqlclient -I/usr/include/mysql 
 ou
-bash-4.4$ g++ -o mysqlconect conection.cxx -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql
+bash-4.4$ g++ -o connect example2.cxx -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql
 
 
 bash-4.4$ g++ -o connect example3.cxx -lmysqlcppconn -I/usr/include/cppconn

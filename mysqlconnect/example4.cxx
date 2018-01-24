@@ -16,7 +16,7 @@
  * Usage example for Driver, Connection, (simple) Statement, ResultSet
  */
 
-std::string url("tcp://127.0.0.1:3306");
+std::string url("localhost");
 std::string user("root");
 std::string pass("");
 std::string database("teste");
@@ -25,7 +25,6 @@ std::string database("teste");
 int main(int argc, const char **argv)
 {
  try{
-    
      sql::Driver *driver;
      sql::Connection *con;
      sql::Statement *stmt;
@@ -37,21 +36,28 @@ int main(int argc, const char **argv)
      con->setSchema(database);
      stmt = con->createStatement();
     
-     res = stmt->executeQuery("select * from cadastros");
+     res = stmt->executeQuery("select * from person");
      
-     while(res->next())std::cout << res->getInt64("id_faz") << "\n"; // type may need to be different
-    
+     while(res->next())
+     {
+      std::cout << "\n\tId Faz: "<<res->getInt64("id_faz")
+                << "\n\tId Pessoa: "<<res->getInt64("person_id")
+                << "\n\tName: "<<res->getString("name")
+                << "\n\tIdade: "<< res->getInt64("age")
+                << "\n\tStatus: "<< res->getString("status")
+                << "\n\tDateTime: "<< res->getString("date_person")<< "\n"; // type may need to be different
+    }
      delete con;
      delete stmt;
      delete res;
     } 
     catch (sql::SQLException &e) 
     {
-     std::cout << "# ERR: SQLException in " 
+     std::cerr << "# ERR: SQLException in " 
                << __FILE__
                << "(" << __FUNCTION__ 
                << ") on line " 
-               << __LINE__ 
+               << __LINE__
                << "\n# ERR: " 
                << e.what()
                << " (MySQL error code: " 
@@ -60,5 +66,6 @@ int main(int argc, const char **argv)
                << e.getSQLState() 
                << " )\n";
     }
+  std::cout<<std::endl;  
   return 0;  
 }

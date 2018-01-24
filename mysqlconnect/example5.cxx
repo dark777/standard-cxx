@@ -18,7 +18,7 @@
 #include <cppconn/statement.h>
 #include <cppconn/connection.h>
 
-#define DBHOST "tcp://127.0.0.1:3306"
+#define DBHOST "localhost"
 #define USER "root"
 #define PASSWORD ""
 #define DATABASE "teste"
@@ -234,7 +234,7 @@ int main(int argc, const char *argv[])
     }
     catch(sql::SQLException &e)
     {
-     std::cout << "ERROR: SQLException in " << __FILE__
+     std::cerr << "ERROR: SQLException in " << __FILE__
                << " (" << __func__<< ") on line " << __LINE__
                << "ERROR: " << e.what()
                << " (MySQL error code: " << e.getErrorCode()
@@ -252,7 +252,7 @@ int main(int argc, const char *argv[])
     }
     catch(std::runtime_error &e)
     {
-     std::cout << "ERROR: runtime_error in " << __FILE__
+     std::cerr << "ERROR: runtime_error in " << __FILE__
                << " (" << __func__ << ") on line " << __LINE__
                << "ERROR: " << e.what()
                << "\n";

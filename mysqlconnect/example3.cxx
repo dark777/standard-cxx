@@ -28,7 +28,7 @@ int main()
     
     status = mysql_num_rows(res_set);
     
-    std::cout<<"\n\t\tNum of rows: "<<status<<"\n\n";
+    std::cout<<"\n\t\tNum of rows: "<<status<<" row(s).\n\n";
     
       while((row = mysql_fetch_row(res_set)) != NULL) 
        {
