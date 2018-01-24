@@ -43,7 +43,7 @@ int main(void)
      } 
      else
      {
-       fprintf(stderr, "\n\t\tSuccessfully connected to Database. %s.\n",DATABASE); 
+       std::cerr<<"\n\t\tSuccessfully connected to Database: "<<DATABASE<<".\n\n";
        int ID;
        ID = mysql_num_rows(res_set);
        std::cout<<"\n\t\tNum of rows: "<<ID<<"\n";
