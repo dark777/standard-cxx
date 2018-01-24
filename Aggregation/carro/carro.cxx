@@ -82,8 +82,8 @@ int main(void)
  (*car).marca = *marc;
  (*car).modelo = *mod;
  (*car).motor = *mot;
-   
+ 
  std::cout<<"\n\t"<<(*car).imprimeDadosCarro()<<"\n\n";
  
- return 0;    
+ return 0;
 }
