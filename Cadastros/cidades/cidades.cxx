@@ -105,7 +105,7 @@ int main()
       
       case 2:
        numRegistros();
-      break;
+       break;
       
       case 3:
        printf("\n\tQual Registro quer excluir? ");
