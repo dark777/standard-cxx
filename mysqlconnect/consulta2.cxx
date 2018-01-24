@@ -9,18 +9,19 @@
 
 int main()
 {
- MYSQL conn = NULL; //variavel de conexao
+ MYSQL conn; //variavel de conexao
  MYSQL_RES *res_set; //variável que recebe o resultado
  MYSQL_ROW row; //variável que recebe os dados
  mysql_init(&conn);  // Inicia a variável conn
  
    if(!mysql_real_connect(&conn,DBHOST,USER,PASSWORD,DATABASE,0,NULL,0))
    {
-    fprintf(stderr, "\n\t\tFailed to connect to database: Error: %s\n",mysql_error(&conn));
+    std::cerr<<"\n\tFailed connect to database: "<<DATABASE
+             <<"\n\t"<<mysql_error(&conn)<<"\n\n";
    }
    else
    {
-    fprintf(stderr, "\n\t\tSuccessfully connected to Database.\n");
+    std::cerr<<"\n\t\tSuccessfully connected to Database: "<<DATABASE<<".\n\n";
     
     int status = mysql_query(&conn,"select *from cadastros");
     

@@ -16,14 +16,15 @@ int main(void)
  
   if(!mysql_real_connect(&conn,DBHOST,USER,PASSWORD,DATABASE,0,NULL,0))
    {
-    fprintf(stderr, "\n\t\tFailed to connect to database: %s\n",mysql_error(&conn));
+    std::cerr<<"\n\tFailed connect to database: "<<DATABASE
+             <<"\n\t"<<mysql_error(&conexao)<<"\n\n";
    }
    else
    { 
     if(mysql_query(&conn,"select * from person"))
     //if(mysql_query(&conn,"select * from cadastros"))  
     {
-     std::cout<<"\n\t\tErro n "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
+     std::cerr<<"\n\t\tErro n "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
      std::cin.get();
      std::cin.get();
      return 1;
@@ -35,14 +36,14 @@ int main(void)
     // Se consultou (sem erros)
     if(!res_set)
      {
-      std::cout<<"\n\t\tErro n "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
+      std::cerr<<"\n\t\tErro n "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
       std::cin.get();
       std::cin.get();
       return 1; 
      } 
      else
      {
-       fprintf(stderr, "\n\t\tSuccessfully connected to Database.\n"); 
+       fprintf(stderr, "\n\t\tSuccessfully connected to Database. %s.\n",DATABASE); 
        int ID;
        ID = mysql_num_rows(res_set);
        std::cout<<"\n\t\tNum of rows: "<<ID<<"\n";
