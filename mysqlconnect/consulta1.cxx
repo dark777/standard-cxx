@@ -24,7 +24,7 @@ int main(void)
     if(mysql_query(&conn,"select * from person"))
     //if(mysql_query(&conn,"select * from cadastros"))  
     {
-     std::cerr<<"\n\t\tErro n "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
+     std::cerr<<"\n\t\tErro: "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
      std::cin.get();
      std::cin.get();
      return 1;
@@ -36,7 +36,7 @@ int main(void)
     // Se consultou (sem erros)
     if(!res_set)
      {
-      std::cerr<<"\n\t\tErro n "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
+      std::cerr<<"\n\t\tErro: "<<mysql_errno(&conn)<<" : "<<mysql_error(&conn)<<"\n";
       std::cin.get();
       std::cin.get();
       return 1; 

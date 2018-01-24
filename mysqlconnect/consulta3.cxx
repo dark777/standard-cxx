@@ -25,7 +25,7 @@ int main(void)
    {
     if(mysql_query(&conexao,query))
      { 
-      std::cerr<<"\n\t\tErro n "<<mysql_errno(&conexao)<<" : "<<mysql_error(&conexao)<<"\n";
+      std::cerr<<"\n\t\tErro: "<<mysql_errno(&conexao)<<" : "<<mysql_error(&conexao)<<"\n";
       std::cin.get();
       std::cin.get();
       return 1;
@@ -39,7 +39,7 @@ int main(void)
        // Se consultou (sem erros)
      if(!resp)
       {
-       std::cerr<<"\n\t\tErro"<<mysql_errno(&conexao)<<" : "<<mysql_error(&conexao)<<"\n";
+       std::cerr<<"\n\t\tErro: "<<mysql_errno(&conexao)<<" : "<<mysql_error(&conexao)<<"\n";
        std::cin.get();
        std::cin.get();
        return 1; 
