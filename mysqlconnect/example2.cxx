@@ -5,7 +5,7 @@
 #define USER "root"
 #define DATABASE "teste"
 #define DBHOST "localhost"
-#define PASSWORD "734nc354r"
+#define PASSWORD ""
 
 int main(void)
 {
