@@ -12,24 +12,21 @@ struct Date
  
    Date()
    {
-    time_t now(time(nullptr));
-    tm *ltm(localtime(&now));
-
-    sday = std::to_string(ltm->tm_mday);
+    sday = std::to_string(now->tm_mday);
     if(sday.length() == 1)
     sday.insert(0,"0");
     
-    smonth = std::to_string(ltm->tm_mon+1);
+    smonth = std::to_string(now->tm_mon+1);
     if(smonth.length() == 1)
     smonth.insert(0,"0");
     
-    syear = std::to_string(ltm->tm_year+1900);
+    syear = std::to_string(now->tm_year+1900);
     if(syear.length() == 1)
     syear.insert(0,"0");
     
-    day = std::to_string(ltm->tm_mday);
-    month = std::to_string(ltm->tm_mon+1);
-    year = std::to_string(ltm->tm_year+1900);
+    day = std::to_string(now->tm_mday);
+    month = std::to_string(now->tm_mon+1);
+    year = std::to_string(now->tm_year+1900);
    }
    
    ~Date()
