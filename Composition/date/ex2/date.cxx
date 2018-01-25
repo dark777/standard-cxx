@@ -12,9 +12,9 @@ struct Date
    Date();
    ~Date();
    
-   Date &setDia(unsigned int ,std::string);
-   Date &setMes(unsigned int ,std::string);
-   Date &setAno(unsigned int ,std::string);
+   Date &setDia(unsigned int, std::string);
+   Date &setMes(unsigned int, std::string);
+   Date &setAno(unsigned int, std::string);
 
    Date &setDia(unsigned int);
    Date &setMes(unsigned int);
