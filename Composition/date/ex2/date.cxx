@@ -194,6 +194,14 @@ int main()
   time_t mt = time(0);
   tm* tms = localtime(&mt);
   
+  Date data;
+  
+  std::cout<<"\n\t";
+  data.setDia(01,"-").setMes(07,"-").setAno(00,"\n");
+  
+  
+  data.setDia(01).setMes(07).setAno(00);
+  
   Date sd;
   sd.dia = tms->tm_mday;
   sd.mes = tms->tm_mon+1;
@@ -213,12 +221,6 @@ int main()
   
   std::cout<<"\n\t";
   sd.setAno(sd.ano,"-").setMes(sd.mes,"-").setDia(sd.dia,"\n");
-  
-  std::cout<<"\n\t";
-  sd.setDia(01,"-").setMes(07,"-").setAno(00,"\n");
-  
-  Date data;
-  data.setDia(01).setMes(07).setAno(00);
-  
+    
   std::cout<<"\n";
 }
