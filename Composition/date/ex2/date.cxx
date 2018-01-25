@@ -5,6 +5,7 @@ struct Date
  unsigned int dia;
  unsigned int mes;
  unsigned int ano;
+ std::string tmp = "";
  
    Date(unsigned int, unsigned int, unsigned int);
    
@@ -51,7 +52,6 @@ std::ostream& operator<<(std::ostream& os, const Date& dt)
   return os;  
 }
 
-
 Date::Date(unsigned int d, unsigned int m, unsigned int a): dia(d), mes(m), ano(a){}
 
 Date::Date(){}
@@ -60,160 +60,133 @@ Date::~Date(){}
 Date &Date::setDia(unsigned int d, std::string sep)
 {
   this->dia = d;
-  std::string diaString = "", tmp = "";
 
   tmp = std::to_string(dia);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  diaString += tmp+sep;
+  tmp+=sep;
   
-  std::cout<<"\n\t"<<diaString.c_str();
+  std::cout<<tmp.c_str();
   return *this;
 }
 
 Date &Date::setMes(unsigned int m, std::string sep)
 {
-  this->mes = m; 
-  std::string monthString = "", tmp = "";
+  this->mes = m;
 
   tmp = std::to_string(mes);
   if(tmp.length() == 1)
   tmp.insert(0, "0"); 
-  monthString += tmp+sep;
+  tmp+=sep;
   
-  std::cout<<monthString.c_str();
+  std::cout<<tmp.c_str();
   return *this;
 }
 
 Date &Date::setAno(unsigned int a, std::string sep)
 {
-  this->ano = a; 
-  std::string yearString = "", tmp = "";
-
+  this->ano = a;
+  
   tmp = std::to_string(ano);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  yearString += tmp+sep;
+  tmp+=sep;
  
-  std::cout<<yearString.c_str();
+  std::cout<<tmp.c_str();
   return *this;
 }
 
 Date &Date::setDia(unsigned int d)
 {
   this->dia = d;
-  std::string diaString = "", tmp = "";
-
+  
   tmp = std::to_string(dia);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  diaString += tmp;
   
-  std::cout<<"\n\t"<<diaString.c_str()<<".";
+  std::cout<<"\n\t"<<tmp.c_str()<<".";
   return *this;
 }
 
 Date &Date::setMes(unsigned int m)
 {
   this->mes = m;
-  std::string monthString = "", tmp = "";
-
+  
   tmp = std::to_string(mes);
   if(tmp.length() == 1)
-  tmp.insert(0, "0"); 
-  monthString += tmp;
+  tmp.insert(0, "0");
   
-  std::cout<<monthString.c_str()<<".";
+  std::cout<<tmp.c_str()<<".";
   return *this;
 }
 
 Date &Date::setAno(unsigned int a)
 {
   this->ano = a;
-  std::string yearString = "", tmp = "";
   
   tmp = std::to_string(ano);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  yearString += tmp;
   
-  std::cout<<yearString.c_str()<<"\n";
+  std::cout<<tmp.c_str()<<"\n";
   return *this;
 }
 
 Date &Date::setDia()
 {
-  std::string diaString = "", tmp = "";
-
   tmp = std::to_string(dia);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  diaString += tmp;
-  
-  std::cout<<"\n\t"<<diaString.c_str()<<".";
+  tmp+=".";
+  std::cout<<tmp.c_str();
   return *this;
 }
 
 Date &Date::setMes()
 {
-  std::string monthString = "", tmp = "";
-
   tmp = std::to_string(mes);
   if(tmp.length() == 1)
-  tmp.insert(0, "0"); 
-  monthString += tmp;
-  
-  std::cout<<monthString.c_str()<<".";
+  tmp.insert(0, "0");
+  tmp+=".";
+  std::cout<<tmp.c_str();
   return *this;
 }
 
 Date &Date::setAno()
 {
-  std::string yearString = "", tmp = "";
-  
   tmp = std::to_string(ano);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  yearString += tmp;
-  
-  std::cout<<yearString.c_str()<<"\n";
+  tmp+=".";
+  std::cout<<tmp.c_str();
   return *this;
 }
 
 std::string Date::getDia()
 {
-  std::string diaString = "", tmp = "";
-
   tmp = std::to_string(dia);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  diaString += tmp;
   
-  return diaString.c_str();
+  return tmp.c_str();
 }
 
 std::string Date::getMes()
 {
-  std::string monthString = "", tmp = "";
-
   tmp = std::to_string(mes);
   if(tmp.length() == 1)
-  tmp.insert(0, "0"); 
-  monthString += tmp;
+  tmp.insert(0, "0");
   
-  return monthString.c_str();
+  return tmp.c_str();
 }
 
 std::string Date::getAno()
 {
-  std::string yearString = "", tmp = "";
-
   tmp = std::to_string(ano);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
-  yearString += tmp;
   
-  return yearString.c_str();
+  return tmp.c_str();
 }
 
 int main()
@@ -225,9 +198,24 @@ int main()
   sd.dia = tms->tm_mday;
   sd.mes = tms->tm_mon+1;
   sd.ano = tms->tm_year+1900;
+  
+  std::cout<<"\n\t";
   sd.setDia().setMes().setAno();
   
+  std::cout<<"\n\t";
+  sd.setAno().setMes().setDia();
+
+  std::cout<<"\n\t";
+  sd.setMes().setAno().setDia();
+  
+  std::cout<<"\n\n\t";
   sd.setDia(sd.dia,"-").setMes(sd.mes,"-").setAno(sd.ano,"\n");
+  
+  std::cout<<"\n\t";
+  sd.setAno(sd.ano,"-").setMes(sd.mes,"-").setDia(sd.dia,"\n");
+  
+  std::cout<<"\n\t";
+  sd.setDia(01,"-").setMes(07,"-").setAno(00,"\n");
   
   std::cout<<"\n\tDia: "<<sd.getDia()
            <<"\n\tMes: "<<sd.getMes()
@@ -235,24 +223,8 @@ int main()
   
   Date data;
   data.setDia(01).setMes(07).setAno(00);
-  data.setDia(01,"-").setMes(07,"-").setAno(00,"\n");
+  
   std::cout<<"\n\tDia: "<<data.getDia()
            <<"\n\tMes: "<<data.getMes()
            <<"\n\tAno: "<<data.getAno()<<"\n\n";
- 
-  
-  int dia = tms->tm_mday;
-  int mes = tms->tm_mon+1;
-  int ano = tms->tm_year+1900;
-  
-  Date date;   
-  date.setDia(dia,"-").setMes(mes,"-").setAno(ano,"\n");
-	   
-  std::cout<<"\n\t"<<Date(tms->tm_mday, tms->tm_mon+1, tms->tm_year+1900);
-  
-  Date d(tms->tm_mday, tms->tm_mon+1, tms->tm_year+1900);
-   
-  std::cout<<"\n\tDia: "<<d.getDia()
-           <<"\n\tMes: "<<d.getMes()
-           <<"\n\tAno: "<<d.getAno()<<"\n\n";
 }
