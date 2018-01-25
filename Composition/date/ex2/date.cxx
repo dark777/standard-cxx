@@ -199,7 +199,6 @@ int main()
   std::cout<<"\n\t";
   data.setDia(01,"-").setMes(07,"-").setAno(00,"\n");
   
-  
   data.setDia(01).setMes(07).setAno(00);
   
   Date sd;
