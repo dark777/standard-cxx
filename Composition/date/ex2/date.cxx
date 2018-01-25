@@ -217,14 +217,8 @@ int main()
   std::cout<<"\n\t";
   sd.setDia(01,"-").setMes(07,"-").setAno(00,"\n");
   
-  std::cout<<"\n\tDia: "<<sd.getDia()
-           <<"\n\tMes: "<<sd.getMes()
-           <<"\n\tAno: "<<sd.getAno()<<"\n\n";
-  
   Date data;
   data.setDia(01).setMes(07).setAno(00);
   
-  std::cout<<"\n\tDia: "<<data.getDia()
-           <<"\n\tMes: "<<data.getMes()
-           <<"\n\tAno: "<<data.getAno()<<"\n\n";
+  std::cout<<"\n";
 }
