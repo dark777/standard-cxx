@@ -1,8 +1,7 @@
 #include <map>
 #include <iostream>
 
-
-enum StringValue { evNotDefined=0, evStringValue1, evStringValue2, evStringValue3, evEnd };
+enum StringValue { evStringValue1=1, evStringValue2, evStringValue3, evEnd };
 
 // Map to associate the strings with the enum values
 static std::map<std::string, StringValue> mapStringValues;
