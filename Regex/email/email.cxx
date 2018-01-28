@@ -37,53 +37,25 @@ struct email
 
 int main(void)
 { 
-  std::string emails[13] = {
-                            "regex_cpp@net.br",
-                            "regex_cpp@terra.com.br",
-                            "regex_cpp@hotmail.com.br.net",
-                            "regex_cpp@hotmail.com",
-                            "regex_cpp@yahoo.com.br",
-                            "regex_cpp@gmail.com",
-                            "regex_cpp@uol.com.br",
-                            "regex_cpp@bol.com",
-                            "regex_cpp@bol.com.br",
-                            "regex.cpp@bol.com",
-                            "reg_ex.cpp@bol.com",
-                            "reg_ex.cpp@org.nz",
-                            "reg_ex.cpp@net.org.br"
-                           };
+  const std::string emails[13] = {
+                                  "regex_cpp@net.br",
+                                  "regex_cpp@terra.com.br",
+                                  "regex_cpp@hotmail.com.br.net",
+                                  "regex_cpp@hotmail.com",
+                                  "regex_cpp@yahoo.com.br",
+                                  "regex_cpp@gmail.com",
+                                  "regex_cpp@uol.com.br",
+                                  "regex_cpp@bol.com",
+                                  "regex_cpp@bol.com.br",
+                                  "regex.cpp@bol.com",
+                                  "reg_ex.cpp@bol.com",
+                                  "reg_ex.cpp@org.nz",
+                                  "reg_ex.cpp@net.org.br"
+                                 };
   
   for(int i=0; i<13; i++)
    email(emails[i]).print();
     std::cout<<"\n";
   
   return 0;
-} 
-/*
- Output:
-        Email: regex_cpp@net.br is Invalid
-
-        Email: regex_cpp@terra.com.br is Valid
-
-        Email: regex_cpp@hotmail.com.br.net is Invalid
-
-        Email: regex_cpp@hotmail.com is Invalid
-
-        Email: regex_cpp@yahoo.com.br is Valid
-
-        Email: regex_cpp@gmail.com is Valid
-
-        Email: regex_cpp@uol.com.br is Valid
-
-        Email: regex_cpp@bol.com is Invalid
-
-        Email: regex_cpp@bol.com.br is Valid
-
-        Email: regex.cpp@bol.com is Invalid
-
-        Email: reg_ex.cpp@bol.com is Invalid
-
-        Email: reg_ex.cpp@org.nz is Invalid
-
-        Email: reg_ex.cpp@net.org.br is Invalid
- */
+}
