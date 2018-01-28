@@ -47,5 +47,6 @@ int main()
                                 "ftp.uolhost.uol.com.br/downloads/source/index.XHTML"}; 
 
     for(int i=0; i<11; i++)
-    url(urls[i]).print();
+     url(urls[i]).print();
+      std::cout<<"\n";
 }
