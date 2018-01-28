@@ -20,6 +20,14 @@ class StringSmartPointer
 };
 
 
+
+
+
+
+
+
+
+
 int main()
 {
     StringSmartPointer str(new std::string("Testando Smart Pointers"));

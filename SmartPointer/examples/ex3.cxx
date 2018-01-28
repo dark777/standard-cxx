@@ -18,6 +18,17 @@ class IntSmartPointer
      }       
 };
 
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
     IntSmartPointer ptr(new int(5));
