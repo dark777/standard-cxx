@@ -3,25 +3,26 @@
 
 #define this (*this)
 
-struct file
+struct extensions
 { 
- file(std::string file): _file(file){}
+ extensions(std::string file): _file(file){}
 
- ~file()
+ ~extensions()
   {
    if(_file.length() != 0)_file.clear();
   } 
 
   bool isFile()
   {
-    std::smatch file_smatch;
+    std::smatch extensions_smatch;
+    //validas arquivos com as extensoes da regex
     const std::regex pattern(".*[.](h|hpp|hxx|H|HPP|HXX|c|cpp|cxx|C|CPP|CXX|aspx|php|py|java|rb|d|htm|html|HTM|HTML|mp3|css)");
-    return std::regex_match(this._file, file_smatch, pattern);
+    return std::regex_match(this._file, extensions_smatch, pattern);
   }
 
- file* print()
+ extensions* print()
  {
-  std::cout<<"\n\tFile: "<<this._file<<(file(this._file).isFile()?"\n":" is Invalid\n");
+  std::cout<<"\n\tFile: "<<this._file<<(extensions(this._file).isFile()?"\n":" is Invalid\n");
  }
 
   private:
@@ -49,6 +50,6 @@ int main()
                                 };
 
     for(int i=0; i<15; i++)
-     file(files[i]).print();
+     extensions(files[i]).print();
       std::cout<<"\n";
 }
