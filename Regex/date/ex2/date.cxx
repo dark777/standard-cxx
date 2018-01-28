@@ -20,9 +20,10 @@ struct date
   return std::regex_match(this._date, date_smatch, pattern);
  }
  
- date* print()
+ date& print()
  {
-  std::cout<<"\n\tEmail: "<<this._date<<(date(this._date).isDate()?" is Valid\n":" is Invalid\n"); 
+  std::cout<<"\n\tDate: "<<this._date<<(date(this._date).isDate()?" is Valid\n":" is Invalid\n");
+  return this;
  }
  
  private:
