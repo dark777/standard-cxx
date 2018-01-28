@@ -127,8 +127,7 @@ void CurrentDateTime::StrToNumber(const DayTime<std::string>& information)
   dt.second = std::stoi(information.second.c_str());
   dt.year   = std::stoi(information.year.c_str());
 }
-  
-  
+
 int main()
 {
  CurrentDateTime current = *new CurrentDateTime();
