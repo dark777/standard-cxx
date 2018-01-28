@@ -113,7 +113,7 @@ void getInput(int &day, int &month, int &year)
      
   }while(day > meses[month-1]);
 }
- 
+
 int main()
 {
  int day = 0;
@@ -129,4 +129,4 @@ int main()
    }while('y' == getChar());
    
   return 0;
-} 
+}

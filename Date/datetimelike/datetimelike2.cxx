@@ -33,13 +33,13 @@ std::array<std::pair<std::string, Month>, 12> monthinfo =
 template<class T1, class T2 = std::string>
 struct DayTime
 {
-  T1 day  = T1();
-  T1 month = T1();
-  T1 year  = T1();
-  T1 hour  = T1();
-  T1 min  = T1();
-  T1 second = T1();
-  T2 daystr = T2();
+  T1 day      = T1();
+  T1 month    = T1();
+  T1 year     = T1();
+  T1 hour     = T1();
+  T1 min      = T1();
+  T1 second   = T1();
+  T2 daystr   = T2();
   T2 dtstring = T2();
 };
   
