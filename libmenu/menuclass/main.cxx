@@ -26,13 +26,6 @@
 
 
 
-
-
-
-
-
-
-
 int main()
 {
  int op;
