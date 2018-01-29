@@ -6,6 +6,19 @@
 #define DBHOST "localhost"
 #define PASSWORD ""
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
  MYSQL conexao;
