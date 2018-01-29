@@ -1,5 +1,12 @@
 #include "bicicleta.hxx"
 
+
+
+
+
+
+
+
 int main(void)
 {
  
@@ -34,4 +41,4 @@ int main(void)
   bike3.bicicleta();
   
   return 0;
-} 
+}
