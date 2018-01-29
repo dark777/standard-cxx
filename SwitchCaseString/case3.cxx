@@ -5,10 +5,7 @@ enum StringValue { evStringValue1=1, evStringValue2, evStringValue3, evEnd };
 
 // Map to associate the strings with the enum values
 static std::map<std::string, StringValue> mapStringValues;
-    
-// User input
-static char szInput[15];
-    
+
 // Intialization
 void Initialize()
 {
@@ -24,6 +21,9 @@ void Initialize()
 
 int main(int argc, char* argv[])
 {
+ // User input
+ static char szInput[15];
+
  const std::string strings[3]={"First Value","Second Value","Third Value"};
  
  // Inicializa map strings
