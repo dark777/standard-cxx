@@ -1,51 +1,45 @@
 #include <iostream>
 
-class Test1
+class Test4
 {
- protected:
-  std::string _msg1;
+ public:
+ Test4(){  std::cout<<"\n\tI am class Test4.\n"; }
  
- public:
-  Test1( std::string msg1 ): _msg1( msg1 ){}
-};
-
-class Test2
-{
- protected:
-  std::string _msg2;
-  
- public:
-  Test2( std::string msg2 ): _msg2( msg2 ){}
+ ~Test4(){ std::cout<<"\n\tDestroied class Test4.\n"; }
 };
 
 class Test3
 {
- protected:
-  std::string _msg3;
- 
  public:
-  Test3( std::string msg3 ): _msg3( msg3 ){}
+ Test3(){ std::cout<<"\n\tI am class Test3.\n"; }
+ 
+ ~Test3(){ std::cout<<"\n\tDestroied class Test3.\n"; }
 };
 
-class Test4: public Test1, public Test2, public Test3
+class Test2
 {
- std::string _msg4;
-  public:
-     
- Test4( std::string msg1, std::string msg2 , std::string msg3, std::string msg4 ):
- Test1( msg1 ), Test2( msg2 ), Test3( msg3 ), _msg4( msg4 ){}
+ public:
+ Test2(){ std::cout<<"\n\tI am class Test2.\n";}
  
+ ~Test2(){ std::cout<<"\n\tDestroied class Test2.\n"; }
+};
+
+class Test1: public Test4, public Test3, public Test2
+{
+ public:
+ Test1(){  std::cout<<"\n\tI am class Test1.\n"; }
+ ~Test1(){ std::cout<<"\n\tDestroied class Test1.\n"; }
  void show();
 };
 
-void Test4::show()
+void Test1::show()
 {
- std::cout <<"\n\t"<< _msg1 <<" "<< _msg2 <<" "<< _msg3 <<" "<< _msg4 << "\n";
+ Test1();
 }
-     
+
 int main()
 {
- Test4 teste("Teste1", "Teste2","Teste3","Teste4\n");
+ Test1 teste;
  teste.show();
  return 0;
 }
