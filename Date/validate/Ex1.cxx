@@ -47,11 +47,16 @@ int getYearValue(int year)
  
 int getMonthValue(int month, int year)
 {
-  const static int LEAP_VALS[] = { 0xDEAD, 6, 2, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
+  //const static int LEAP_VALS[] = { 0xDEAD, 6, 2, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
   
-  const static int NON_LEAP_VALS[] = { 0xDEAD, 0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
+  //const static int NON_LEAP_VALS[] = { 0xDEAD, 0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
+  //return (__isleap(year) ? LEAP_VALS[month] : NON_LEAP_VALS[month]);
+   
   
-  return (__isleap(year) ? LEAP_VALS[month] : NON_LEAP_VALS[month]);
+  const static int LEAP_VALS[] = {31,29,31,30,31,30,31,31,30,31,30,31};
+  
+  const static int NON_LEAP_VALS[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+  return (__isleap(year) ? LEAP_VALS[month-1] : NON_LEAP_VALS[month-1]);
 }
 /*
 int getMonthValue(int month, int year)
