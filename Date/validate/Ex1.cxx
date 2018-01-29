@@ -2,9 +2,7 @@
 #include <iostream>
  
 enum Months { January=1, February, March, April, May, June, July, August, September, October, November, December};
- 
-const std::string weekDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
- 
+
 /**
  * Makes sure data isn't malicious, and signals user to re-enter proper data if invalid
  * getSanitizedNum
@@ -47,16 +45,11 @@ int getYearValue(int year)
  
 int getMonthValue(int month, int year)
 {
-  //const static int LEAP_VALS[] = { 0xDEAD, 6, 2, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
+  const static int LEAP_VALS[] = { 0xDEAD, 6, 2, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
   
-  //const static int NON_LEAP_VALS[] = { 0xDEAD, 0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
-  //return (__isleap(year) ? LEAP_VALS[month] : NON_LEAP_VALS[month]);
-   
+  const static int NON_LEAP_VALS[] = { 0xDEAD, 0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
   
-  const static int LEAP_VALS[] = {31,29,31,30,31,30,31,31,30,31,30,31};
-  
-  const static int NON_LEAP_VALS[] = {31,28,31,30,31,30,31,31,30,31,30,31};
-  return (__isleap(year) ? LEAP_VALS[month-1] : NON_LEAP_VALS[month-1]);
+  return (__isleap(year) ? LEAP_VALS[month] : NON_LEAP_VALS[month]);
 }
 /*
 int getMonthValue(int month, int year)
@@ -96,7 +89,13 @@ int dayOfWeek(int day, int month, int year)
  
 void getInput(int &day, int &month, int &year)
 {
+ tm *atual; 
+ time_t curTime = 0; // Amount of seconds since 1 jan 1970
+ 
  int meses[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+ 
+ const char *strmes[] = { "January", "February", "March", "April", "May", "June", "July","August", "September", "October", "November", "December" };
+ 
  do{
     do{
        std::cout << "\n\tEnter the day (1-31): ";
@@ -113,21 +112,37 @@ void getInput(int &day, int &month, int &year)
        year = getInt();
       }while(year < 1100);
      
-      if(__isleap(year))meses[1] = 29;
-       
-      if(day > meses[month-1])std::cout<<"\n\tO mes "<<month<<" do ano de "<<year<<" nao tem "<<day<<" dias!!!\n\n";
+      if(__isleap(year))meses[1] = 29; // atualiza dia+1 caso  ano seja bisexto
+      
      
-  }while(day > meses[month-1]);
+    //Pega a hora atual e converte em uma estrutura tm
+    time(&curTime);
+    atual = localtime(&curTime);
+    
+    //Atualiza os valores dia, mes e ano da estrutura tm
+    atual->tm_mday = day;
+    atual->tm_mon  = month-1;   /* Mes vai de 0 a 11 */
+    atual->tm_year = year-1900; /* Ano inicial é 1900 */
+    
+    //Atualizar o dia da semana (tm_wday) e dia do ano (tm_yday), de acordo com os atualizados anteriormente
+    mktime(atual);
+    
+    if(day > meses[month-1])std::cout<<"\n\t"<<strmes[atual->tm_mon-1]<<" of year "<<year<<" does not have "<<day<<" days!!!\n\n";
+    
+   }while(day > meses[month-1]);
 }
 
 int main()
 {
- int day = 0;
+ int day   = 0;
  int month = 0;
- int year = 0;
+ int year  = 0;
+ 
+ const std::string weekDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
  
  do{
     getInput(day, month, year);
+    
     std::cout << "\n\tThe day of the week is " << weekDays[dayOfWeek(day, month, year)] << std::endl;
    
     std::cout << "\n\tRun the program again (y/N): ";  // signify n as default with capital letter
