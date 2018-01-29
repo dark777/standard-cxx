@@ -33,7 +33,7 @@ struct Date
     {      
      if(sday.length() != 0)sday.clear();
      if(smonth.length() != 0)smonth.clear();     
-     if(smonth.length() != 0)syear.clear();
+     if(syear.length() != 0)syear.clear();
      
      if(day.length() != 0)day.clear();
      if(month.length() != 0)month.clear();
