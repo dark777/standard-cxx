@@ -33,7 +33,7 @@ menu::menu(int opmenu, const char* opcoes[])
  else
  for(int i = 0; i<opmenu; i++)
  std::cout<<"\n\t["<<i+1<<"]-"<<opcoes[i];
- std::cout<<"\n\tESCOLHA: ";
+ std::cout<<"\n\tCHOICE: ";
 }
 
 menu::menu(int opmenu, int maxlimits, const char* opcoes[])
@@ -46,7 +46,7 @@ menu::menu(int opmenu, int maxlimits, const char* opcoes[])
  else
  for(int i = 0; i<opmenu; i++)
  std::cout<<"\n\t["<<i+1<<"]-"<<opcoes[i];
- std::cout<<"\n\tESCOLHA: ";
+ std::cout<<"\n\tCHOICE: ";
 }
 
 menu::menu(int opmenu, std::string* opcoes)
@@ -59,7 +59,7 @@ menu::menu(int opmenu, std::string* opcoes)
  else
  for(int i = 0; i<opmenu; i++)
  std::cout<<"\n\t["<<i+1<<"]-"<<opcoes[i];
- std::cout<<"\n\tESCOLHA: ";
+ std::cout<<"\n\tCHOICE: ";
 }
 
 menu::menu(int opmenu, int maxlimits, std::string* opcoes)
@@ -72,5 +72,5 @@ menu::menu(int opmenu, int maxlimits, std::string* opcoes)
  else
  for(int i = 0; i<opmenu; i++)
  std::cout<<"\n\t["<<i+1<<"]-"<<opcoes[i];
- std::cout<<"\n\tESCOLHA: ";
+ std::cout<<"\n\tCHOICE: ";
 }
