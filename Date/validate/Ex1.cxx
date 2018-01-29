@@ -91,7 +91,7 @@ int getMonthValue(int month, int year)
 */
 int dayOfWeek(int day, int month, int year)
 {
-    return div(day + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year), 7).rem;
+ return div(day + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year), 7).rem;
 }
  
 void getInput(int &day, int &month, int &year)
