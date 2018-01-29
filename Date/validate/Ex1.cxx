@@ -94,7 +94,7 @@ void getInput(int &day, int &month, int &year)
  
  int meses[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
  
- const char *strmes[] = { "January", "February", "March", "April", "May", "June", "July","August", "September", "October", "November", "December" };
+ const char *strmes[] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
  
  do{
     do{
