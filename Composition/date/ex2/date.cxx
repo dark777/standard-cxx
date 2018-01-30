@@ -55,7 +55,14 @@ std::ostream& operator<<(std::ostream& os, const Date& dt)
 Date::Date(unsigned int d, unsigned int m, unsigned int a): dia(d), mes(m), ano(a){}
 
 Date::Date(){}
-Date::~Date(){}
+
+Date::~Date()
+{
+ dia=0;
+ mes=0;
+ ano=0;
+ tmp.clear();
+}
 
 Date &Date::setDia(unsigned int d, std::string sep)
 {
