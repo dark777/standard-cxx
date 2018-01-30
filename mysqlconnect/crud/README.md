@@ -32,7 +32,7 @@ You can compile use make.
 
 ## Repository
 
-https://github.com/agusk/crud-mysql-cpp
+    $ git clone https://github.com/agusk/crud-mysql-cpp
 
 
 ## License
