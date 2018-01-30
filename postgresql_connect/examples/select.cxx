@@ -1,50 +1,47 @@
 #include <iostream>
 #include <pqxx/pqxx> 
 //SELECT Operation
-using namespace std;
-using namespace pqxx;
 
 int main(int argc, char* argv[])
 {
- char * sql;
+ const char * sql;
    
  try{
-      connection C("dbname = testdb user = postgres password = cohondob \
-      hostaddr = 127.0.0.1 port = 5432");
-      if(C.is_open())std::cout << "\n\tOpened database successfully: " << C.dbname() << "\n";
+      pqxx::connection login("dbname = teste user = darkstar password = darkstar hostaddr = 127.0.0.1 port = 5432");
+      
+      if(login.is_open())std::cout << "\n\tOpened database successfully: " << login.dbname() << "\n\n";
       else
       {
-       std::cout << "\n\tCan't open database\n";
+       std::cout << "\n\tCan't open database\n\n";
        return 1;
       }
       
       /* Create SQL statement */
-      sql = "SELECT * from COMPANY";
+      sql = "select *from person";
 
       /* Create a non-transactional object. */
-      nontransaction N(C);
+      pqxx::nontransaction N(login);
       
       /* Execute SQL query */
-      result R( N.exec( sql ));
+      pqxx::result res(N.exec(sql));
       
       /* List down all the records */
-      for (result::const_iterator c = R.begin(); c != R.end(); ++c)
-      {
-       std::cout << "\n\tID: " << c[0].as<int>()
-                 << "\n\tName: " << c[1].as<std::string>()
-                 << "\n\tAge: " << c[2].as<int>()
-                 << "\n\tAddress: " << c[3].as<std::string>()
-                 << "\n\tSalary: " << c[4].as<float>()
+      for (pqxx::result::const_iterator c = res.begin(); c != res.end(); ++c)
+       std::cout << "\n\tIdPerson.: " << c[0].as<int>()
+                 << "\n\tName.....: " << c[1].as<std::string>()
+                 << "\n\tAge......: " << c[2].as<int>()
+                 << "\n\tStatus...: " << c[3].as<std::string>()
+                 << "\n\tIdFaz....: " << c[4].as<int>()
+                 << "\n\tDate.....: " << c[5].as<std::string>()
                  << "\n\n";
-      }
-     std::cout << "\n\tOperation done successfully\n";
-     C.disconnect ();
+      
+     std::cout << "\n\tOperation done successfully\n\n";
+     login.disconnect();
     }
     catch (const std::exception &e)
     {
      std::cerr << e.what() << std::endl;
      return 1;
     }
-
-   return 0;
-} 
+ return 0;
+}

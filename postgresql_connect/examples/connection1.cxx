@@ -1,8 +1,9 @@
 #include <iostream>
 #include <pqxx/pqxx> 
 //Connecting To Database
-using namespace std;
-using namespace pqxx;
+
+
+
 
 
 
@@ -24,16 +25,15 @@ using namespace pqxx;
 int main(int argc, char* argv[])
 {
  try{
-      connection C("dbname = teste user = postgres password = cohondob \
-      hostaddr = 127.0.0.1 port = 5432");
+      pqxx::connection login("dbname = teste user = postgres password = cohondob hostaddr = 127.0.0.1 port = 5432");
       
-      if(C.is_open())std::cout << "\n\tOpened database successfully: " << C.dbname() << "\n\n";
+      if(login.is_open())std::cout << "\n\tOpened database successfully: " << login.dbname() << "\n\n";
       else 
       {
        std::cout << "\n\tCan't open database\n\n";
          return 1;
       }
-      C.disconnect ();
+      login.disconnect ();
     }
     catch (const std::exception &e)
     {

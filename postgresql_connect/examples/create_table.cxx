@@ -1,18 +1,15 @@
 #include <iostream>
 #include <pqxx/pqxx> 
 //Create a Table
-using namespace std;
-using namespace pqxx;
 
 int main(int argc, char* argv[])
 {
- char * sql;
+ const char *sql;
    
  try{
-      connection C("dbname = teste user = postgres password = cohondob \
-      hostaddr = 127.0.0.1 port = 5432");
+      pqxx::connection login("dbname = teste user = postgres password = cohondob hostaddr = 127.0.0.1 port = 5432");
       
-      if(C.is_open())std::cout << "\n\tOpened database successfully: " << C.dbname() << "\n";
+      if(login.is_open())std::cout << "\n\tOpened database successfully: " << login.dbname() << "\n";
       else
       {
        std::cout << "\n\tCan't open database\n\n";
@@ -27,13 +24,13 @@ int main(int argc, char* argv[])
       "SALARY         REAL );";
 
       /* Create a transactional object. */
-      work W(C);
+      pqxx::work tr_obj(login);
       
       /* Execute SQL query */
-      W.exec( sql );
-      W.commit();
+      tr_obj.exec( sql );
+      tr_obj.commit();
       std::cout << "\n\tTable created successfully\n\n";
-      C.disconnect ();
+      login.disconnect ();
     }
     catch (const std::exception &e)
     {

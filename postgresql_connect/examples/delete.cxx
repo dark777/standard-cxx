@@ -1,18 +1,16 @@
 #include <iostream>
 #include <pqxx/pqxx> 
 //DELETE Operation
-using namespace std;
-using namespace pqxx;
 
 int main(int argc, char* argv[])
 {
- char * sql;
+ const char *sql;
    
  try{
-     connection C("dbname = teste user = postgres password = cohondob \
+     pqxx::connection login("dbname = teste user = postgres password = cohondob \
      hostaddr = 127.0.0.1 port = 5432");
      
-     if(C.is_open())std::cout << "\n\tOpened database successfully: " << C.dbname() << "\n";
+     if(login.is_open())std::cout << "\n\tOpened database successfully: " << login.dbname() << "\n";
      else
      {
       std::cout << "\n\tCan't open database\n";
@@ -20,25 +18,27 @@ int main(int argc, char* argv[])
      }
       
      /* Create a transactional object. */
-     work W(C);
+     pqxx::work tr_obj(login);
+     
      /* Create  SQL DELETE statement */
      sql = "DELETE from COMPANY where ID = 2";
+     
      /* Execute SQL query */
-     W.exec( sql );
-     W.commit();
+     tr_obj.exec( sql );
+     tr_obj.commit();
      std::cout << "\n\tRecords deleted successfully\n";
       
      /* Create SQL SELECT statement */
      sql = "SELECT * from COMPANY";
      
      /* Create a non-transactional object. */
-     nontransaction N(C);
+     pqxx::nontransaction N(login);
       
      /* Execute SQL query */
-     result R( N.exec( sql ));
+     pqxx::result res( N.exec( sql ));
       
      /* List down all the records */
-     for(result::const_iterator c = R.begin(); c != R.end(); ++c)
+     for(pqxx::result::const_iterator c = res.begin(); c != res.end(); ++c)
       {
        std::cout << "\n\tID: " << c[0].as<int>()
                  << "\n\tName: " << c[1].as<std::string>()
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
                  << "\n\n";
       }
       std::cout << "\n\tOperation done successfully\n";
-      C.disconnect ();
+      login.disconnect ();
     }
     catch(const std::exception &e)
     {
