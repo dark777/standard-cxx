@@ -59,9 +59,7 @@ Date::~Date(){}
 
 Date &Date::setDia(unsigned int d, std::string sep)
 {
-  this->dia = d;
-
-  tmp = std::to_string(dia);
+  tmp = std::to_string(d);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
   tmp+=sep;
@@ -72,9 +70,7 @@ Date &Date::setDia(unsigned int d, std::string sep)
 
 Date &Date::setMes(unsigned int m, std::string sep)
 {
-  this->mes = m;
-
-  tmp = std::to_string(mes);
+  tmp = std::to_string(m);
   if(tmp.length() == 1)
   tmp.insert(0, "0"); 
   tmp+=sep;
@@ -85,9 +81,7 @@ Date &Date::setMes(unsigned int m, std::string sep)
 
 Date &Date::setAno(unsigned int a, std::string sep)
 {
-  this->ano = a;
-  
-  tmp = std::to_string(ano);
+  tmp = std::to_string(a);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
   tmp+=sep;
@@ -98,9 +92,7 @@ Date &Date::setAno(unsigned int a, std::string sep)
 
 Date &Date::setDia(unsigned int d)
 {
-  this->dia = d;
-  
-  tmp = std::to_string(dia);
+  tmp = std::to_string(d);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
   
@@ -110,9 +102,7 @@ Date &Date::setDia(unsigned int d)
 
 Date &Date::setMes(unsigned int m)
 {
-  this->mes = m;
-  
-  tmp = std::to_string(mes);
+  tmp = std::to_string(m);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
   
@@ -122,9 +112,7 @@ Date &Date::setMes(unsigned int m)
 
 Date &Date::setAno(unsigned int a)
 {
-  this->ano = a;
-  
-  tmp = std::to_string(ano);
+  tmp = std::to_string(a);
   if(tmp.length() == 1)
   tmp.insert(0, "0");
   
