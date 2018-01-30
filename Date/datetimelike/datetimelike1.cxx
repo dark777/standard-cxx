@@ -3,7 +3,6 @@
 #include <vector>
 #include <chrono>
 #include <cassert>
-#include <utility>
 #include <iostream>
 
 enum Month
@@ -43,7 +42,6 @@ struct DayTime
   T2 dtstring = T2();
 };
 
-
 // main class which would fetech/parse the current time and provide to the client
 class CurrentDateTime
 {
@@ -80,7 +78,6 @@ CurrentDateTime::CurrentDateTime()
   auto dtstr = ParseDateTime(currentinfo);
   StrToNumber(dtstr);
 }
-
 
 DayTime<std::string> CurrentDateTime::ParseDateTime(const std::string& information)
 {

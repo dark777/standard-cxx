@@ -3,7 +3,6 @@
 #include <vector>
 #include <chrono>
 #include <cassert>
-#include <utility>
 #include <iostream>
   
 enum Month
@@ -65,7 +64,7 @@ class CurrentDateTime
   Month GetMonth()  const { return static_cast<Month>(dt.month); }
   std::string GetDayStr() const { return dt.daystr; }
 };
-  
+
 CurrentDateTime::CurrentDateTime()
 {
   //fetch/store current local-daytime information
@@ -80,8 +79,7 @@ CurrentDateTime::CurrentDateTime()
   auto dtstr = ParseDateTime(currentinfo);
   StrToNumber(dtstr);
 }
-  
-  
+
 DayTime<std::string> CurrentDateTime::ParseDateTime(const std::string& information)
 {
  DayTime<std::string> info;
