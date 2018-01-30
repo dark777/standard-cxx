@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
       for(result::const_iterator c = R.begin(); c != R.end(); ++c)
       {
        std::cout << "ID: " << c[0].as<int>()
-                 << "Name: " << c[1].as<string>()
+                 << "Name: " << c[1].as<std::string>()
                  << "Age: " << c[2].as<int>()
                  << "Address: " << c[3].as<std::string>()
                  << "Salary: " << c[4].as<float>() 
