@@ -7,8 +7,7 @@ int main(int argc, char* argv[])
  const char *sql;
    
  try{
-     pqxx::connection login("dbname = teste user = postgres password = cohondob \
-     hostaddr = 127.0.0.1 port = 5432");
+     pqxx::connection login("dbname = teste user = postgres password = cohondob hostaddr = 127.0.0.1 port = 5432");
      
      if(login.is_open())std::cout << "\n\tOpened database successfully: " << login.dbname() << "\n";
      else
