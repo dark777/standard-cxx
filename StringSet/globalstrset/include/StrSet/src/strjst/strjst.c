@@ -3,6 +3,18 @@
 //Esta função remove todos os espacos em escesso de uma frase
 #include <StrSet/include/strset.h>
 
+
+
+
+
+
+
+
+
+
+
+
+
 char *strjst(char* string)
 {
  char blank[1000];

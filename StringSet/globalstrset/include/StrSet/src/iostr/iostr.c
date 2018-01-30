@@ -4,6 +4,35 @@
 #include <StrSet/include/strset.h>
 #include <StrSet/src/rdspc/rdspc.c>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void iostr(char* string)
 {
  fgets(string,1000,stdin);

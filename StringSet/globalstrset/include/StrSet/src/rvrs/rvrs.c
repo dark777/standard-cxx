@@ -3,6 +3,23 @@
 /* função recursiva para ajustar espaços na string */
 #include <StrSet/include/strset.h>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 char* rvrs(char frase[]) 
 {
   int i=0, j=0;

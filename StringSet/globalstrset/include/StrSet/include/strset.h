@@ -6,6 +6,14 @@
 #include <string.h>
 #include <stdlib.h>
 
+
+
+
+
+
+
+
+
 void add(const char*);
 int  space(char*);
 char rmspc(char*); //OK
@@ -14,6 +22,15 @@ char *strjst(char*); //OK
 void iostr(char*); //OK
 void histogram(char*); //ok 
 char* rvrs(char*); //ok
+
+
+
+
+
+
+
+
+
 
 #include <StrSet/src/rdspc/rdspc.c>
 #include <StrSet/src/iostr/iostr.c>
@@ -24,4 +41,4 @@ char* rvrs(char*); //ok
 #include <StrSet/src/histogram/histograma.c>
 #include <StrSet/src/rvrs/rvrs.c>
 
-#endif 
+#endif

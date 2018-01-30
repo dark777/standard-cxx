@@ -6,6 +6,7 @@
 
 #include <StrSet/include/strset.h>
 
+
 char *rdspc(char* string) 
 {
   int length;

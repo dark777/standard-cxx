@@ -3,6 +3,15 @@
 /* função que faz contagem de cada letra e consoantes em uma frase */
 #include <StrSet/include/strset.h>
 
+
+
+
+
+
+
+
+
+
 void histogram(char *frase) 
 {
  int num=0, num2=0, az=0;
