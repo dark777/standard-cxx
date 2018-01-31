@@ -14,7 +14,7 @@ void Initialize()
  mapStringValues["Third Value"]  = evStringValue3;
  mapStringValues["end"] = evEnd;
  
- std::cout << "\n\tmapStringValues contains " 
+ std::cout << "\n\tmapStringValues contain " 
            << mapStringValues.size() 
            << " entries.\n";
 }
@@ -60,14 +60,14 @@ int main(int argc, char* argv[])
       default:
             std::cout << "\n\t\"" << szInput 
                       << "\" is an invalid string."
-                      << "\n\tmapStringValues now contains "
+                      << "\n\tmapStringValues does not contain"
                       << mapStringValues.size() 
                       << " entries.\n";
       
          for(int st = evStringValue1; st<evEnd; st++)
           {
            StringValue str = static_cast<StringValue>(st);
-           std::cout<<"\n\tDigite: "<<strings[str-1]<<"\n";   
+           std::cout<<"\n\tEnter: "<<strings[str-1]<<"\n";   
           }
       break;
      }
