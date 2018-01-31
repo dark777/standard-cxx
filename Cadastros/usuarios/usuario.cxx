@@ -38,7 +38,7 @@ int contadorDeLinhasDeUmArquivo()
       if(c == letra)vezes++;
      } 
 
-    return vezes;
+    return vezes-1;
 
     fclose(arq);
 }
@@ -60,8 +60,8 @@ int numeroDeUsuarios()
      return 0;
     }
 
-    char linha[1000];
-    while(fgets(linha, 1000, arquivo))
+    char linha[500];
+    while(fgets(linha, 500, arquivo))
     {
      ++numeroDeLinhas;
     }
@@ -89,13 +89,13 @@ void listarUsuarios()
 
     char espaco = ' ';
     std::cout << "====================================================================================================================================================\n";
-    printf("| Nome %-19c | RG %-13c | CPF %-13c | EMAIL %-30c | Endereço %-30c |\n", espaco, espaco, espaco, espaco, espaco);
+    printf("| Nome %-25c | RG %-13c | CPF %-13c | EMAIL %-30c | Endereço %-30c |\n", espaco, espaco, espaco, espaco, espaco);
     std::cout << "====================================================================================================================================================\n";
 
-    char linha[1000];
+    char linha[500];
     while(fgets(linha, sizeof(linha), arquivo))
     {
-     linha[strlen(linha) - 1] = '\0';
+     linha[strlen(linha)-1] = '\0';
 
      sscanf(
             linha, ";%[^;];%[^;];%[^;];%[^;];%[^;];",
@@ -107,7 +107,7 @@ void listarUsuarios()
            );
      
      printf(
-            "|%-25s|%-17s|%-17s|%-32s|%-41s|\n",
+            "|%-25s|%-14s|%-14s|%-35s|%-45s|\n",
             usuario->nome,
             usuario->rg,
             usuario->cpf,
@@ -196,7 +196,7 @@ void removerUltimoUsuario()
     Usuario *usuarios = (Usuario *) malloc(numeroDeUsuarios() * sizeof(Usuario));
     
     int i = 0;
-    char linha[1000];
+    char linha[500];
     
     for(; fgets(linha, sizeof(linha), arquivo); i++)
     {
@@ -213,8 +213,8 @@ void removerUltimoUsuario()
     }
     
     std::cout << "N: " << i << "\n";
-    fclose(arquivo);
     insereUsuarios(usuarios, i);
+    fclose(arquivo);
     free(usuarios);
     std::cout << "Usuário removido com sucesso!\n";
 }
