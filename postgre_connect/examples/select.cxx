@@ -20,10 +20,10 @@ int main(int argc, char* argv[])
       sql = "select *from person";
 
       /* Create a non-transactional object. */
-      pqxx::nontransaction N(login);
+      pqxx::nontransaction non_obj(login);
       
       /* Execute SQL query */
-      pqxx::result res(N.exec(sql));
+      pqxx::result res(non_obj.exec(sql));
       
       /* List down all the records */
       for (pqxx::result::const_iterator c = res.begin(); c != res.end(); ++c)
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
      std::cout << "\n\tOperation done successfully\n\n";
      login.disconnect();
     }
-    catch (const std::exception &e)
+    catch(const std::exception &e)
     {
      std::cerr << e.what() << std::endl;
      return 1;

@@ -2,6 +2,9 @@
 #include <pqxx/pqxx> 
 //Create a Table
 
+
+
+
 int main(int argc, char* argv[])
 {
  const char *sql;
@@ -27,15 +30,15 @@ int main(int argc, char* argv[])
       pqxx::work tr_obj(login);
       
       /* Execute SQL query */
-      tr_obj.exec( sql );
+      tr_obj.exec(sql);
       tr_obj.commit();
       std::cout << "\n\tTable created successfully\n\n";
-      login.disconnect ();
+      login.disconnect();
     }
     catch (const std::exception &e)
     {
      std::cerr << e.what() << std::endl;
-     return 1;
+      return 1;
     }
  return 0;
 }

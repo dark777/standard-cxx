@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
      sql = "DELETE from COMPANY where ID = 2";
      
      /* Execute SQL query */
-     tr_obj.exec( sql );
+     tr_obj.exec(sql);
      tr_obj.commit();
      std::cout << "\n\tRecords deleted successfully\n";
       
@@ -31,10 +31,10 @@ int main(int argc, char* argv[])
      sql = "SELECT * from COMPANY";
      
      /* Create a non-transactional object. */
-     pqxx::nontransaction N(login);
+     pqxx::nontransaction non_obj(login);
       
      /* Execute SQL query */
-     pqxx::result res( N.exec( sql ));
+     pqxx::result res(non_obj.exec(sql));
       
      /* List down all the records */
      for(pqxx::result::const_iterator c = res.begin(); c != res.end(); ++c)
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
                  << "\n\n";
       }
       std::cout << "\n\tOperation done successfully\n";
-      login.disconnect ();
+      login.disconnect();
     }
     catch(const std::exception &e)
     {

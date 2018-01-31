@@ -30,12 +30,12 @@ int main(int argc, char* argv[])
       pqxx::work tr_obj(login);
       
       /* Execute SQL query */
-      tr_obj.exec( sql );
+      tr_obj.exec(sql);
       tr_obj.commit();
       std::cout << "\n\tRecords created successfully\n\n";
-      login.disconnect ();
+      login.disconnect();
     }
-    catch (const std::exception &e)
+    catch(const std::exception &e)
     {
      std::cerr << e.what() << std::endl;
      return 1;

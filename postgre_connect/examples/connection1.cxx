@@ -31,11 +31,11 @@ int main(int argc, char* argv[])
       else 
       {
        std::cout << "\n\tCan't open database\n\n";
-         return 1;
+        return 1;
       }
-      login.disconnect ();
+      login.disconnect();
     }
-    catch (const std::exception &e)
+    catch(const std::exception &e)
     {
      std::cerr << e.what() << std::endl;
      return 1;

@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
       /* Create  SQL UPDATE statement */
       sql = "UPDATE COMPANY set SALARY = 25000.00 where ID=1";
       /* Execute SQL query */
-      tr_obj.exec( sql );
+      tr_obj.exec(sql);
       tr_obj.commit();
       std::cout << "\n\tRecords updated successfully\n\n";
       
@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
       pqxx::nontransaction non_obj(login);
       
       /* Execute SQL query */
-      pqxx::result res( non_obj.exec( sql ));
+      pqxx::result res(non_obj.exec(sql));
       
       /* List down all the records */
       for(pqxx::result::const_iterator c = res.begin(); c != res.end(); ++c)
@@ -45,9 +45,9 @@ int main(int argc, char* argv[])
                  << "\n\n";
       }
       std::cout << "\n\tOperation done successfully\n\n";
-     login.disconnect ();
+     login.disconnect();
     }
-    catch (const std::exception &e)
+    catch(const std::exception &e)
     {
      std::cerr << e.what() << std::endl;
      return 1;
