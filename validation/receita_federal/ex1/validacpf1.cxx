@@ -92,7 +92,9 @@ struct validation
   
   validation* print()
   {
-   std::cout<<"\n\tCpf: "<<fmtCpf(_input,"###.###.###-##")<<(validation(_input).isCpf()?" is Valid\n":" is Invalid\n");  
+   std::cout<<"\n\tCpf: "
+            <<fmtCpf(_input,"###.###.###-##")
+            <<(validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
   }
   
   private:
