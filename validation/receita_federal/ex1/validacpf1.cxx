@@ -1,11 +1,26 @@
+#include <cstring>
 #include <iostream>
 /*
 Programinha em C++ que checa se um número de CPF é válido
 
 validacpf1.cpp - feb/2018 - Jean Zonta
 
-Modificação do Script Referência: https://www.vivaolinux.com.br/script/Validar-CPF-em-C-esse-funciona
+Modificação do Script Referência: 
+ https://www.vivaolinux.com.br/script/Validar-CPF-em-C-esse-funciona
+ https://www.vivaolinux.com.br/script/Formatar-strings-em-C-(RG-telefone-CEP-etc)/
 */
+
+void  getCpf();
+char* fmtCpf(char *, const char *);
+
+
+int main()
+{
+ getCpf();
+ std::cout<<"\n";
+ return 0;
+}
+
 
 struct validation
 {
@@ -27,7 +42,7 @@ struct validation
     if(i == 8);
    }
  }
- 
+
  bool isCpf()
  {
   int digito1;
@@ -35,7 +50,7 @@ struct validation
   int temp = 0;
   const int *cpf;
     /*Obtendo o primeiro digito verificador:
-
+  
     Os 9 primeiros algarismos são multiplicados pela sequência 10, 9, 8, 7, 6, 5, 4, 3, 2
     (o primeiro por 10, o segundo por 9, e assim por diante);
     Em seguida, calcula-se o resto “r1″ da divisão da soma dos resultados das multiplicações por 11,
@@ -75,31 +90,48 @@ struct validation
        return false;
   }
   
- validation* print()
- {
-  std::cout<<"\n\tCpf: "<<_input<<(validation(_input).isCpf()?" is Valid\n":" is Invalid\n");  
- }
+  validation* print()
+  {
+   std::cout<<"\n\tCpf: "<<fmtCpf(_input,"###.###.###-##")<<(validation(_input).isCpf()?" is Valid\n":" is Invalid\n");  
+  }
   
- private:
-  int cpf[11]; 
-  char *_input;
+  private:
+   int cpf[11];
+   char *_input;
 };
+
+char* fmtCpf(char *frase, const char *fmt)
+{
+ int i = 0; 
+ char aux[100];
+ 
+  while(*frase)
+   {
+    if(fmt[i] != '#')
+     {
+      aux[i] = fmt[i];
+      i++;
+     }
+     else
+     {
+      aux[i] = *frase;
+      frase++;
+      i++;
+     }
+   }
+  aux[i] = 0;
+ strcpy(frase, aux);
+}
 
 void getCpf()
 {
- char input[12]; 
+ char input[12];
+ 
  do{
     std::cout << "\n\tInforme o CPF sem pontos, espaços ou traços\n\tDigite: ";
     std::cin.getline(input, 12, '\n');
-     
+    
     validation(input).print();
     
    }while(validation(input).isCpf() == 0);
-}
-
-int main(void)
-{
- getCpf();
- std::cout<<"\n";
- return 0;
 }
