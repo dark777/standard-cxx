@@ -12,30 +12,28 @@ struct validation
  validation(char *input): _input(input)
  {
   for(char i = 0; i < 11; i++)
-    {
-     cpf[i] = static_cast<int>(input[i] - 48); //Convertendo char para valor absoluto segundo tabela ASCII e passando para array de inteiros//
-     
-     if(cpf[i] < 0 || cpf[i] > 9)
-     { //Validando a entrada de dados
-      std::cout << "\n\tENTRADA INVÁLIDA\n";
-      return;
-     }
-    }
+   {
+    //Convertendo char para valor absoluto segundo tabela ASCII e passando para array de inteiros// 
+    cpf[i] = static_cast<int>(input[i] - 48);
     
-    for(char i = 0; i < 11; i++)
-    {
-     cpf[i];
-     if(i == 2 || i == 5);
-     if(i == 8);
-    }
+    //Validando a entrada de dados
+    if(cpf[i] < 0 || cpf[i] > 9)std::cout << "\n\tENTRADA INVÁLIDA\n";
+   }
+    
+  for(char i = 0; i < 11; i++)
+   {
+    cpf[i];
+    if(i == 2 || i == 5);
+    if(i == 8);
+   }
  }
  
  bool isCpf()
  {
-   int digito1;
-   int digito2;
-   int temp = 0;
-   const int *incpf;
+  int digito1;
+  int digito2;
+  int temp = 0;
+  const int *incpf;
     /*Obtendo o primeiro digito verificador:
 
     Os 9 primeiros algarismos são multiplicados pela sequência 10, 9, 8, 7, 6, 5, 4, 3, 2
@@ -44,40 +42,37 @@ struct validation
     e se o resto for zero ou 1, digito é zero, caso contrário digito = (11-r1) */
     
     for(char i = 0; i < 9; i++)
-        temp += (incpf[i] * (10 - i));
-
-    temp %= 11;
-
+     temp += (incpf[i] * (10 - i));
+      temp %= 11;
+    
     if(temp < 2)
-        digito1 = 0;
-    else
-        digito1 = 11 - temp;
-
+     digito1 = 0;
+      else
+       digito1 = 11 - temp;
+    
     /*Obtendo o segundo digito verificador:
-
     O dígito2 é calculado pela mesma regra, porém inclui-se o primeiro digito verificador ao final
     da sequencia. Os 10 primeiros algarismos são multiplicados pela sequencia 11, 10, 9, ... etc...
     (o primeiro por 11, o segundo por 10, e assim por diante);
     procedendo da mesma maneira do primeiro digito*/
-
+    
     temp = 0;
-    for(char i = 0; i < 10; i++)
-     temp += (incpf[i] * (11 - i));
-
-    temp %= 11;
-
+     for(char i = 0; i < 10; i++)
+      temp += (incpf[i] * (11 - i));
+       temp %= 11;
+    
     if(temp < 2)
      digito2 = 0;
-    else
-     digito2 = 11 - temp;
+      else
+       digito2 = 11 - temp;
     
     /* Se os digitos verificadores obtidos forem iguais aos informados pelo usuário,
        então o CPF é válido */
     
     if(digito1 == incpf[9] && digito2 == incpf[10])
      return true;
-    else
-     return false;
+      else
+       return false;
   }
   
  validation* print()
@@ -100,6 +95,7 @@ void getCpf()
      validation(input).print();
     
    }while(validation(input).isCpf() == 0);
+ std::cout<<"\n";
 }
 
 int main(void)
