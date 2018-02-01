@@ -70,8 +70,8 @@ Contact getContact()
 
 int main(void)
 {
-  //getContact();
-  getEmail();
-  std::cout<<"\n";
-
+ //getContact();
+ getEmail();
+ std::cout<<"\n";
+ return 0;
 }

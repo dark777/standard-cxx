@@ -33,7 +33,7 @@ struct validation
   int digito1;
   int digito2;
   int temp = 0;
-  const int *incpf;
+  const int *cpf;
     /*Obtendo o primeiro digito verificador:
 
     Os 9 primeiros algarismos são multiplicados pela sequência 10, 9, 8, 7, 6, 5, 4, 3, 2
@@ -42,7 +42,7 @@ struct validation
     e se o resto for zero ou 1, digito é zero, caso contrário digito = (11-r1) */
     
     for(char i = 0; i < 9; i++)
-     temp += (incpf[i] * (10 - i));
+     temp += (cpf[i] * (10 - i));
       temp %= 11;
     
     if(temp < 2)
@@ -58,7 +58,7 @@ struct validation
     
     temp = 0;
      for(char i = 0; i < 10; i++)
-      temp += (incpf[i] * (11 - i));
+      temp += (cpf[i] * (11 - i));
        temp %= 11;
     
     if(temp < 2)
@@ -69,7 +69,7 @@ struct validation
     /* Se os digitos verificadores obtidos forem iguais aos informados pelo usuário,
        então o CPF é válido */
     
-    if(digito1 == incpf[9] && digito2 == incpf[10])
+    if(digito1 == cpf[9] && digito2 == cpf[10])
      return true;
       else
        return false;
@@ -90,16 +90,16 @@ void getCpf()
  char input[12]; 
  do{
     std::cout << "\n\tInforme o CPF sem pontos, espaços ou traços\n\tDigite: ";
-     std::cin.getline(input, 12, '\n');
+    std::cin.getline(input, 12, '\n');
      
-     validation(input).print();
+    validation(input).print();
     
    }while(validation(input).isCpf() == 0);
- std::cout<<"\n";
 }
 
 int main(void)
 {
  getCpf();
+ std::cout<<"\n";
  return 0;
 }
