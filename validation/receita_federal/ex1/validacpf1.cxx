@@ -29,7 +29,7 @@ struct validation
   for(char i = 0; i < 11; i++)
    {
     //Convertendo char para valor absoluto segundo tabela ASCII e passando para array de inteiros// 
-    cpf[i] = static_cast<int>(input[i] - 48);
+    cpf[i] = static_cast<int>(_input[i] - 48);
     
     //Validando a entrada de dados
     if(cpf[i] < 0 || cpf[i] > 9)std::cout << "\n\tENTRADA INVÁLIDA\n";
