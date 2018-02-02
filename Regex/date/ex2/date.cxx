@@ -5,7 +5,7 @@
 
 struct date
 {
- date(std::string mail): _date(mail){}
+ date(std::string date): _date(date){}
  
  ~date()
   {
