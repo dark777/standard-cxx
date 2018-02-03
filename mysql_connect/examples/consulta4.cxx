@@ -5,7 +5,6 @@
 
 #include <mysql_connection.h>
 #include <mysql_driver.h>
-
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/resultset.h>
@@ -16,14 +15,13 @@
  * Usage example for Driver, Connection, (simple) Statement, ResultSet
  */
 
-std::string url("localhost");
-std::string user("root");
-std::string pass("");
-std::string database("teste");
-
-
-int main(int argc, const char **argv)
+int main(void)
 {
+ std::string url("localhost");
+ std::string user("root");
+ std::string pass("");
+ std::string database("teste");
+
  try{
      sql::Driver *driver;
      sql::Connection *con;
@@ -47,6 +45,7 @@ int main(int argc, const char **argv)
                 << "\n\tStatus: "<< res->getString("status")
                 << "\n\tDateTime: "<< res->getString("date_person")<< "\n"; // type may need to be different
      }
+     delete driver;
      delete con;
      delete stmt;
      delete res;

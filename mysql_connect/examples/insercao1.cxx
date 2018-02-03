@@ -26,7 +26,7 @@ int main()
  
  if(!mysql_real_connect(&conexao,DBHOST,USER,PASSWORD,DATABASE,0,NULL,0))
   {
-    fprintf(stderr, "\n\t\tFailed to connect to database: Error: %s\n",mysql_error(&conexao));
+    fprintf(stderr, "\n\t\tFailed to connect to database: %s\n",mysql_error(&conexao));
   }
  else
   {
