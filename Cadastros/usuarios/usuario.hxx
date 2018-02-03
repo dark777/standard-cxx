@@ -33,4 +33,5 @@ int  numeroDeUsuarios();
 void removerUltimoUsuario();
 void sair();
 void enter();
+void cbuff();
 void menu(); 

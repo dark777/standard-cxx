@@ -16,6 +16,20 @@ void enter()
 
 }
 
+void cbuff()
+{
+ #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
+ 
+  fflush(stdin);
+  
+#elif defined(linux) || defined(__linux) || \
+      defined(__linux__) || defined(__gnu_linux__)
+
+  __fpurge(stdin);
+
+#endif  
+}
+
 Usuario *_usuario;
 
 void sair() 
@@ -38,7 +52,7 @@ int contadorDeLinhasDeUmArquivo()
       if(c == letra)vezes++;
      } 
 
-    return vezes-1;
+    return vezes;
 
     fclose(arq);
 }
@@ -137,27 +151,27 @@ void cadastrarUsuario()
      exit(1);
     }
 
-    __fpurge(stdin);
+    cbuff();
     std::cin.clear();
     std::cout << "Digite seu nome: ";
     std::cin.getline(usuario->nome, 100);
 
-    __fpurge(stdin);
+    cbuff();
     std::cin.clear();
     std::cout << "Digite seu RG: ";
     std::cin.getline(usuario->rg, 9);
 
-    __fpurge(stdin);
+    cbuff();
     std::cin.clear();
     std::cout << "Digite seu CPF: ";
     std::cin.getline(usuario->cpf, 11);
     
-    __fpurge(stdin);
+    cbuff();
     std::cin.clear();
     std::cout << "Digite seu EMAIL: ";
     std::cin.getline(usuario->email, 50);
     
-    __fpurge(stdin);
+    cbuff();
     std::cin.clear();
     std::cout << "Digite seu Endereço: ";
     std::cin.getline(usuario->endereco, 100);
@@ -258,7 +272,7 @@ void menu()
                  "Digite uma opção válida: ";
      
     std::cin.clear();
-    __fpurge(stdin);
+    cbuff();
     std::cin >> escolha;
 
     switch (escolha) 
@@ -287,7 +301,7 @@ void menu()
       std::cout << "Opção inválida! Tente novamente...\n";
     }
 
-    __fpurge(stdin);
+    cbuff();
     std::cout << "Pressione ENTER para prosseguir...\n";
     enter();
     menu();

@@ -1,5 +1,0 @@
-;cesar;2321;2132;cesar@gmail.com;rua do fico;
-;sidinei;23432;32434;teste@yahoo.com.br;rua dos bandeirantes;
-;marcos;8098;97989;marcos@yahoo.com.br;rua dos estados;
-;andrei;3432;232;andrei@terra.com.br;dua dos tres;
- 
