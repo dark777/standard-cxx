@@ -36,7 +36,7 @@ struct phone
  
  phone* print()
  {
-  std::cout<<"\n\tPhone: "<<this._tel<<(phone(this._tel).isPhone()?"\n":" is Invalid\n");
+  std::cout<<"\n\tPhone: "<<this._tel<<(phone(this._tel).isPhone()?" is Valid\n":" is Invalid\n");
  }
  
  private:

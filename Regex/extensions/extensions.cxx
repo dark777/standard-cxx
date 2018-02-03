@@ -22,7 +22,7 @@ struct extensions
 
  extensions* print()
  {
-  std::cout<<"\n\tFile: "<<this._file<<(extensions(this._file).isFile()?"\n":" is Invalid\n");
+  std::cout<<"\n\tFile: "<<this._file<<(extensions(this._file).isFile()?" is Valid\n":" is Invalid\n");
  }
 
   private:
