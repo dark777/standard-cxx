@@ -132,7 +132,6 @@ void listarUsuarios()
 
     std::cout << "\n\n";
     fclose(arquivo);
-    free(usuario);
 }
 
 void cadastrarUsuario() 
@@ -227,8 +226,8 @@ void removerUltimoUsuario()
     }
     
     std::cout << "N: " << i << "\n";
-    insereUsuarios(usuarios, i);
     fclose(arquivo);
+    insereUsuarios(usuarios, i);
     free(usuarios);
     std::cout << "Usuário removido com sucesso!\n";
 }
