@@ -1,6 +1,7 @@
 #include <cstring>
 #include <iostream>
 /*
+site que gera cpf's validos
 http://geradordecpf.clevert.com.br/
 Programinha em C++ que checa se um número de CPF é válido
 
@@ -25,7 +26,7 @@ int main()
 
 struct validation
 {
- validation(char *input): _input(input)
+ inline validation(char *input): _input(input)
  {
   for(char i = 0; i < 11; i++)
    {
@@ -35,7 +36,7 @@ struct validation
     //Validando a entrada de dados
     if(cpf[i] < 0 || cpf[i] > 9)std::cout << "\n\tENTRADA INVÁLIDA\n";
    }
-    
+   
   for(char i = 0; i < 11; i++)
    {
     cpf[i];
@@ -44,7 +45,7 @@ struct validation
    }
  }
 
- bool isCpf()
+ inline bool isCpf()
  {
   int digito1;
   int digito2;
@@ -91,7 +92,7 @@ struct validation
        return false;
   }
   
-  validation* print()
+  inline validation* print()
   {
    std::cout<<"\n\tCpf: "
             <<fmtCpf(_input,"###.###.###-##")
@@ -103,12 +104,12 @@ struct validation
    char *_input;
 };
 
-char* fmtCpf(char *frase, const char *fmt)
+inline char* fmtCpf(char *var, const char *fmt)
 {
  int i = 0; 
  char aux[100];
  
-  while(*frase)
+  while(*var)
    {
     if(fmt[i] != '#')
      {
@@ -117,13 +118,13 @@ char* fmtCpf(char *frase, const char *fmt)
      }
      else
      {
-      aux[i] = *frase;
-      frase++;
+      aux[i] = *var;
+      var++;
       i++;
      }
    }
   aux[i] = 0;
- strcpy(frase, aux);
+ strcpy(var, aux);
 }
 
 void getCpf()
@@ -132,7 +133,7 @@ void getCpf()
  
  do{
     std::cout << "\n\tInforme o CPF sem pontos, espaços ou traços\n\tDigite: ";
-    std::cin.getline(input, 12, '\n');
+    std::cin.getline(input, sizeof(input), '\n');
     
     validation(input).print();
     

@@ -1,4 +1,4 @@
-https://www.vivaolinux.com.br/script/Mega-Sena
+//https://www.vivaolinux.com.br/script/Mega-Sena
 
 #include <iostream>
 
@@ -28,7 +28,7 @@ int main()
     
     std::cout << "\n\n--------------------\n"
                  "MEGA SENA\n"
-                 "--------------------\n\n"
+                 "--------------------\n\n";
     
     do
     {
@@ -38,7 +38,7 @@ int main()
               do
               {
                    std::cout << "Digite o " << j << " numero: ";
-                   cin >> num[i];
+                   std::cin >> num[i];
                    
                    if (num[i]>60)
                    {
@@ -240,7 +240,7 @@ void menu_final()
      a=0;
      
      std::cout << "Digite a sua opcao: ";
-     cin >> opcao;
+     std::cin >> opcao;
      
      
           switch (opcao)
