@@ -1,8 +1,8 @@
-#include <mysql.h>
 #include <sstream>
 #include <iomanip>     
 #include <cstdlib>
 #include <iostream>
+#include <mysql/mysql.h>
 //https://www.codeguru.com/cpp/data/database-programming-with-cc.html
 #include "bank_account.hxx"
 #include "bank_transaction.hxx"
@@ -74,7 +74,7 @@ int main(int argc, char** argv)
                   
           case DEPOSIT:
              std::cout << "\n\tEnter account no, amount to deposit? ";
-             cin >> acno >> bal;
+             std::cin >> acno >> bal;
              if(bal < 0)
               {
                std::cout << "\n\tInvalid amount.\n";

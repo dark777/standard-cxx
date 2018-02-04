@@ -68,7 +68,7 @@ int main(void)
        while((linhas=mysql_fetch_row(resp)) != NULL)
         {
          for(int i = 0; i<mysql_num_fields(resp); i++)
-          std::cout<<"\t "<<linhas[i];
+          std::cout<<"\t"<<linhas[i];
            std::cout<<"\n";
         }
       }
