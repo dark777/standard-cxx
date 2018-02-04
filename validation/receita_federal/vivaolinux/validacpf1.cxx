@@ -93,12 +93,12 @@ struct validation
       else
        digito2 = 11 - temp;
   
-    int n = sizeof(cpf);
-
     /* 
     Se todos os digitos forem iguais
     então o CPF é inválido.
-    */    
+    */
+    int n = sizeof(cpf);
+    
     for(int i = 1; i < n; i++ )
      if(cpf[i] != cpf[i-1])
       return true;
