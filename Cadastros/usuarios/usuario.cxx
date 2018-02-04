@@ -18,7 +18,7 @@ void enter()
 
 void cbuff()
 {
- #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
  
   fflush(stdin); //nao nescessita da windows.h e nem de conio.h
   
