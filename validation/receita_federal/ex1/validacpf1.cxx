@@ -57,7 +57,6 @@ struct validation
     (o primeiro por 10, o segundo por 9, e assim por diante);
     Em seguida, calcula-se o resto “r1″ da divisão da soma dos resultados das multiplicações por 11,
     e se o resto for zero ou 1, digito é zero, caso contrário digito = (11-r1) */
-    
     for(char i = 0; i < 9; i++)
      temp += (cpf[i] * (10 - i));
       temp %= 11;
@@ -72,7 +71,6 @@ struct validation
     da sequencia. Os 10 primeiros algarismos são multiplicados pela sequencia 11, 10, 9, ... etc...
     (o primeiro por 11, o segundo por 10, e assim por diante);
     procedendo da mesma maneira do primeiro digito*/
-    
     temp = 0;
      for(char i = 0; i < 10; i++)
       temp += (cpf[i] * (11 - i));
@@ -85,7 +83,6 @@ struct validation
     
     /* Se os digitos verificadores obtidos forem iguais aos informados pelo usuário,
        então o CPF é válido */
-    
     if(digito1 == cpf[9] && digito2 == cpf[10])
      return true;
       else
@@ -107,8 +104,8 @@ struct validation
 inline char* fmtCpf(char *var, const char *fmt)
 {
  int i = 0; 
- char aux[100];
- 
+ char aux[14];
+   
   while(*var)
    {
     if(fmt[i] != '#')
