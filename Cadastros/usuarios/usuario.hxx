@@ -7,7 +7,7 @@
  #include <windows.h>
 
 #elif defined(linux) || defined(__linux) || \
-      defined(__linux__) || defined(__gnu_linux__)
+defined(__linux__) || defined(__gnu_linux__)
 
  #include <stdio_ext.h>
 

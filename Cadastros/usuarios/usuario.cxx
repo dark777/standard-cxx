@@ -20,7 +20,7 @@ void cbuff()
 {
  #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
  
-  fflush(stdin);
+  fflush(stdin); //nao nescessita da windows.h e nem de conio.h
   
 #elif defined(linux) || defined(__linux) || \
       defined(__linux__) || defined(__gnu_linux__)
