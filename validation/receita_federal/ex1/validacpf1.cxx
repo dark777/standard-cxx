@@ -5,7 +5,7 @@ site que gera cpf's validos
 http://geradordecpf.clevert.com.br/
 Programinha em C++ que checa se um número de CPF é válido
 
-validacpf1.cpp - feb/2018 - Jean Zonta
+validacpf1.cxx - feb/2018 - Jean Zonta
 
 Modificação do Script Referência: 
  https://www.vivaolinux.com.br/script/Validar-CPF-em-C-esse-funciona
@@ -103,7 +103,7 @@ struct validation
 
 inline char* fmtCpf(char *var, const char *fmt)
 {
- int i = 0; 
+ int i = 0;
  char aux[14];
    
   while(*var)
