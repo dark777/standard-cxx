@@ -56,18 +56,19 @@ int main(int argc, char* argv[])
             std::cout << "\n\tDetected program end command. "
                       << "\n\tProgramm will be stopped.\n\n";
       return 0;
+      break;
       
       default:
             std::cout << "\n\t\"" << szInput 
                       << "\" is an invalid string."
-                      << "\n\tmapStringValues does not contain"
+                      << "\n\tmapStringValues does not contain "
                       << mapStringValues.size() 
-                      << " entries.\n";
-      
+                      << " entries."
+                      << "\n\n\tEnter:\n";
          for(int st = evStringValue1; st<evEnd; st++)
           {
            StringValue str = static_cast<StringValue>(st);
-           std::cout<<"\n\tEnter: "<<strings[str-1]<<"\n";   
+           std::cout<<"\t"<<strings[str-1]<<"\n";   
           }
       break;
      }
