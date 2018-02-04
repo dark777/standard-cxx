@@ -51,12 +51,19 @@ struct validation
   int digito2;
   int temp = 0;
   const int *cpf;
-    /*Obtendo o primeiro digito verificador:
-  
-    Os 9 primeiros algarismos são multiplicados pela sequência 10, 9, 8, 7, 6, 5, 4, 3, 2
+    
+    /*
+    Obtendo o primeiro digito verificador:
+    
+    Os 9 primeiros algarismos são multiplicados
+    pela sequência 10, 9, 8, 7, 6, 5, 4, 3, 2
     (o primeiro por 10, o segundo por 9, e assim por diante);
-    Em seguida, calcula-se o resto “r1″ da divisão da soma dos resultados das multiplicações por 11,
-    e se o resto for zero ou 1, digito é zero, caso contrário digito = (11-r1) */
+    Em seguida, calcula-se o resto “r1″ da divisão da,
+    soma dos resultados das multiplicações por 11,
+    e se o resto for zero ou 1, digito é zero,
+    caso contrário digito = (11-r1)
+    */
+    
     for(char i = 0; i < 9; i++)
      temp += (cpf[i] * (10 - i));
       temp %= 11;
@@ -66,11 +73,16 @@ struct validation
       else
        digito1 = 11 - temp;
     
-    /*Obtendo o segundo digito verificador:
-    O dígito2 é calculado pela mesma regra, porém inclui-se o primeiro digito verificador ao final
-    da sequencia. Os 10 primeiros algarismos são multiplicados pela sequencia 11, 10, 9, ... etc...
+    /*
+    Obtendo o segundo digito verificador:
+    
+    O dígito2 é calculado pela mesma regra, 
+    porém inclui-se o primeiro digito verificador ao final
+    da sequencia. Os 10 primeiros algarismos são 
+    multiplicados pela sequencia 11, 10, 9, ... etc...
     (o primeiro por 11, o segundo por 10, e assim por diante);
-    procedendo da mesma maneira do primeiro digito*/
+    procedendo da mesma maneira do primeiro digito
+    */
     temp = 0;
      for(char i = 0; i < 10; i++)
       temp += (cpf[i] * (11 - i));
@@ -80,21 +92,36 @@ struct validation
      digito2 = 0;
       else
        digito2 = 11 - temp;
-    
-    /* Se os digitos verificadores obtidos forem iguais aos informados pelo usuário,
-       então o CPF é válido */
+  
+    int n = sizeof(cpf);
+
+    /* 
+    Se todos os digitos forem iguais
+    então o CPF é inválido.
+    */    
+    for(int i = 1; i < n; i++ )
+     if(cpf[i] != cpf[i-1])
+      return true;
+       else
+        return false;
+  
+    /* 
+    Se os digitos verificadores obtidos
+    forem iguais aos informados pelo usuário,
+    então o CPF é válido.
+    */
     if(digito1 == cpf[9] && digito2 == cpf[10])
      return true;
       else
        return false;
-  }
+ }
   
-  inline validation* print()
-  {
-   std::cout<<"\n\tCpf: "
-            <<fmtCpf(_input,"###.###.###-##")
-            <<(validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
-  }
+ inline validation* print()
+ {
+  std::cout << "\n\tCpf: "
+            << fmtCpf(_input,"###.###.###-##")
+            << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
+ }
   
   private:
    int cpf[11];

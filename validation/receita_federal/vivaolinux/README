@@ -1,0 +1,76 @@
+//if (digito1==cpf[10] && digito2==cpf[11])
+//for(int i=0;i<=10;i++)cpf[i]==i;
+//std::cout << "\n\tCPF Invalido - Digitos Iguais\n\n"; 
+
+https://github.com/LacobusVentura/CPF-Gen/blob/master/cpfgen.c
+
+Identificar o Estado onde um CPF foi registrado.
+
+Quando registrei meu CPF, aos 16 anos de idade, fi-lo pelo Banco do Brasil, onde eu trabalhava.
+Minha colega abriu uma gaveta com um monte de etiquetinhas adesivas previamente numeradas, 
+colou no papel que eu assinara, e pronto, lá estava eu oficialmente um cidadão brasileiro.
+
+Obviamente, meu cérebro linear pensava que aquela lista era sequencial, 
+e que se o meu CPF terminava em 710 o próximo deveria ser 711. Mas não era.
+
+Quando mudei para São Paulo percebi que todos os CPFs eram 
+terminados em 8 (antes dos dois dígitos verificadores).
+
+
+Tabela de identificação de CPF conforme o Estado
+
+Dígito	Estado(s)
+0	Rio Grande do Sul
+1	Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins
+2	Amazonas, Pará, Roraima, Amapá, Acre e Rondônia
+3	Ceará, Maranhão e Piauí
+4	Paraíba, Pernambuco, Alagoas e Rio Grande do Norte
+5	Bahia e Sergipe
+6	Minas Gerais
+7	Rio de Janeiro e Espírito Santo
+8	São Paulo
+9	Paraná e Santa Catarina
+
+Para saber de onde é um CPF, basta ignorar os dois dígitos verificadores e 
+observar o último algarismo da “parte inteira”. A tabela acima dirá de onde ele é.
+
+Por exemplo: se existisse, o CPF 629353495-31 seria da Bahia ou do Sergipe, porque 5,
+o último algarismo antes dos dígitos verificadores, identifica esses dois Estados.
+       
+       
+      /*
+       if(cpf[9]==0)std::cout<<"CPF emitido no estado do RS\n";
+       if(cpf[9]==1)std::cout<<"cpf emitido em um desses estados: DF-GO-MS-MT-TO";
+       if(cpf[9]==2)std::cout<<"cpf emitido em um desses estados: AC-AM-AP-PA-RO-RR";
+       if(cpf[9]==3)std::cout<<"cpf emitido em um desses estados: CE-MA-PI";
+       if(cpf[9]==4)std::cout<<"cpf emitido em um desses estados: AL-PB-PE-RN";
+       if(cpf[9]==5)std::cout<<"cpf emitido em um desses estados: BA-SE";
+       if(cpf[9]==6)std::cout<<"cpf emitido no estado de MG";
+       if(cpf[9]==7)std::cout<<"cpf emitido em um desses estados: ES-RJ"; */
+       if(cpf[9]==cpf[9-2])std::cout<<"cpf emitido no estado de SP";
+       //if(cpf[9]==9)std::cout<<"cpf emitido em um desses estados: PR-SC";       
+       
+       
+             std::string estados[10]={
+                           "cpf emitido no estado do RS",
+                           "cpf emitido em um desses estados: DF-GO-MS-MT-TO",
+                           "cpf emitido em um desses estados: AC-AM-AP-PA-RO-RR",
+                           "cpf emitido em um desses estados: CE-MA-PI",
+                           "cpf emitido em um desses estados: AL-PB-PE-RN",
+                           "cpf emitido em um desses estados: BA-SE",
+                           "cpf emitido no estado de MG",
+                           "cpf emitido em um desses estados: ES-RJ",
+                           "cpf emitido no estado de SP",
+                           "cpf emitido em um desses estados: PR-SC"
+                          };
+      
+       if(cpf[9]==0)std::cout<<estados[0]<<"\n";
+       if(cpf[9]==1)std::cout<<estados[1]<<"\n";
+       if(cpf[9]==2)std::cout<<estados[2]<<"\n";
+       if(cpf[9]==3)std::cout<<estados[3]<<"\n";
+       if(cpf[9]==4)std::cout<<estados[4]<<"\n";
+       if(cpf[9]==5)std::cout<<estados[5]<<"\n";
+       if(cpf[9]==6)std::cout<<estados[6]<<"\n";
+       if(cpf[9]==7)std::cout<<estados[7]<<"\n";
+       if(cpf[9]==8)std::cout<<estados[8]<<"\n";
+       if(cpf[9]==9)std::cout<<estados[9]<<"\n";
