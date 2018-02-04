@@ -1,13 +1,13 @@
-#CPF-Gen
+CPF-Gen
 
-#Gerador de Números Aleatórios de CPF
+Gerador de Números Aleatórios de CPF
 
-#Compilando:
+Compilando:
 
 bash-4.4$ make
 gcc -Wall cpfgen.c -o cpfgen
 
-#Exemplos:
+Exemplos:
 
 bash-4.4$ ./cpfgen
 12758151200
