@@ -15,7 +15,8 @@ int getInt()
 {
  int input = 0;
  
- while(!(std::cin>>input))
+ //while(!(std::cin>>input))
+ while((std::cin>>input).fail())
   {
    // clear the error flag that was set so that future I/O operations will work correctly
    std::cin.clear();
