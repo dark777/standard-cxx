@@ -1,7 +1,7 @@
 #ifndef _ADD_C
 #define _ADD_C
 /* 
- * aloca uam string a uma variavel 
+ * aloca uma string a uma variavel 
  */
 #include <StrSet/include/strset.h>
 
