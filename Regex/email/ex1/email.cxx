@@ -25,7 +25,7 @@ struct email
   return std::regex_match(this._email, email_smatch, pattern);
  }
  
- email* print()
+ void print()
  {
    std::cout<<"\n\tEmail: "<<this._email<<(email(this._email).isMail()?" is Valid\n":" is Invalid\n"); 
  }

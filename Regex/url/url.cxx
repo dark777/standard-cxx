@@ -23,7 +23,7 @@ struct url
     return std::regex_match(this._url, url_smatch, pattern);
   }
 
- url* print()
+ void print()
  {
   std::cout<<"\n\tUrl: "<<this._url<<(url(this._url).isUrl()?" is Valid\n":" is Invalid\n");
  }
@@ -34,7 +34,8 @@ struct url
 
 int main()
 {
-  const std::string urls[11] = {"http://docs.microsoft.com/pt-br/sql/reporting-services/tools/url-examples-for-items-on-a-report-server-sharepoint-mode/",
+  const std::string urls[11] = {
+                                "http://docs.microsoft.com/pt-br/sql/reporting-services/tools/url-examples-for-items-on-a-report-server-sharepoint-mode/",
                                 "https://www.uolhost.uol.com.br/faq/v2/loja-virtual/o-que-e-um-endereco-de-url.php",
                                 "https://www.uolhost.uol.com.br/index.asp",
                                 "www.uolhost.uol.com.br/INDEX.htm",
@@ -44,9 +45,11 @@ int main()
                                 "ftp.uolhost.uol.com.br/downloads/source/index.jhtml",
                                 "ftp.uolhost.uol.com.br/downloads/source/index.xhtml",
                                 "ftp.uolhost.uol.com.br/downloads/source/index.aspx",
-                                "ftp.uolhost.uol.com.br/downloads/source/index.XHTML"}; 
-
-    for(int i=0; i<11; i++)
-     url(urls[i]).print();
-      std::cout<<"\n";
+                                "ftp.uolhost.uol.com.br/downloads/source/index.XHTML"
+                               };
+  
+  for(int i=0; i<11; i++)
+   url(urls[i]).print();
+    std::cout<<"\n";
+  return 0;  
 }

@@ -20,7 +20,7 @@ struct extensions
     return std::regex_match(this._file, extensions_smatch, pattern);
   }
 
- extensions* print()
+ void print()
  {
   std::cout<<"\n\tFile: "<<this._file<<(extensions(this._file).isFile()?" is Valid\n":" is Invalid\n");
  }

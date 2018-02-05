@@ -27,7 +27,7 @@ struct date
   return std::regex_match(this._date, date_smatch, pattern);
  }
  
- date* print()
+ void print()
  {
   std::cout<<"\n\tDate: "<<this._date<<(date(this._date).isDate()?" is Valid\n":" is Invalid\n");
  }

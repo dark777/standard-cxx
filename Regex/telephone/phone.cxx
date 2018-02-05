@@ -34,7 +34,7 @@ struct phone
   return std::regex_match(this._tel, phone_smatch, pattern);
  }
  
- phone* print()
+ void print()
  {
   std::cout<<"\n\tPhone: "<<this._tel<<(phone(this._tel).isPhone()?" is Valid\n":" is Invalid\n");
  }
