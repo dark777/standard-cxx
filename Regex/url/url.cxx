@@ -25,7 +25,7 @@ struct url
 
  void print()
  {
-  std::cout<<"\n\tUrl: "<<this._url<<(url(this._url).isUrl()?" is Valid\n":" is Invalid\n");
+  std::cout<<"\n\tUrl: "<<this._url<<(isUrl()?" is Valid\n":" is Invalid\n");
  }
 
   private:
