@@ -1,8 +1,6 @@
 #include <regex>
 #include <iostream>
 
-#define this (*this)
-
 struct name
 {
    name(std::string nome): _nome(nome){}
@@ -20,12 +18,12 @@ struct name
                              "((?:[á-úA-Za-z]+[[:space:]]+[á-úA-Za-z]{0,20})?)?" //valida nome e sobrenome
                              "((?:[[:space:]]+[á-úA-Za-z]{0,10})?)?" // valida nome, nome composto e sobrenome
                             );
-    return std::regex_match(this._nome, name_smatch, pattern);
+    return std::regex_match(_nome, name_smatch, pattern);
    }
    
    void print()
    {
-    std::cout<<"\n\tNome: "<<this._nome<<(isName()?" is Valid\n":" is Invalid\n");
+    std::cout<<"\n\tNome: "<<_nome<<(isName()?" is Valid\n":" is Invalid\n");
    }
    
    private:

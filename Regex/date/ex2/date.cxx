@@ -1,8 +1,6 @@
 #include <regex>
 #include <iostream>
 
-#define this (*this)
-
 struct date
 {
  date(std::string date): _date(date){}
@@ -24,7 +22,7 @@ struct date
                            std::regex_constants::icase
                           );
     */
-  return std::regex_match(this._date, date_smatch, pattern);
+  return std::regex_match(_date, date_smatch, pattern);
  }
  
  void print()

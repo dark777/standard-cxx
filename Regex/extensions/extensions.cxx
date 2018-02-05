@@ -1,8 +1,6 @@
 #include <regex>
 #include <iostream>
 
-#define this (*this)
-
 struct extensions
 { 
  extensions(std::string file): _file(file){}
@@ -17,12 +15,12 @@ struct extensions
     std::smatch extensions_smatch;
     //validas arquivos com as extensoes da regex
     const std::regex pattern(".*[.](h|hpp|hxx|H|HPP|HXX|c|cpp|cxx|C|CPP|CXX|aspx|php|py|java|rb|d|htm|html|HTM|HTML|mp3|css)");
-    return std::regex_match(this._file, extensions_smatch, pattern);
+    return std::regex_match(_file, extensions_smatch, pattern);
   }
 
  void print()
  {
-  std::cout<<"\n\tFile: "<<this._file<<(isFile()?" is Valid\n":" is Invalid\n");
+  std::cout<<"\n\tFile: "<<_file<<(isFile()?" is Valid\n":" is Invalid\n");
  }
 
   private:
@@ -48,8 +46,8 @@ int main()
                                  "file14.HXX",
                                  "file15.aa"
                                 };
-
     for(int i=0; i<15; i++)
      extensions(files[i]).print();
       std::cout<<"\n";
+   return 0;   
 }

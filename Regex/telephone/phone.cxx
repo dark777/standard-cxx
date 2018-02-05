@@ -1,8 +1,6 @@
 #include <regex>
 #include <iostream>
 
-#define this (*this)
-
 struct phone
 { 
  phone(std::string tel): _tel(tel){}
@@ -31,12 +29,12 @@ struct phone
   
   const std::regex pattern("^(\\([1-9]{2}\\) 9?[0-9]{4}[-.][0-9]{4})$");
   
-  return std::regex_match(this._tel, phone_smatch, pattern);
+  return std::regex_match(_tel, phone_smatch, pattern);
  }
  
  void print()
  {
-  std::cout<<"\n\tPhone: "<<this._tel<<(isPhone()?" is Valid\n":" is Invalid\n");
+  std::cout<<"\n\tPhone: "<<_tel<<(isPhone()?" is Valid\n":" is Invalid\n");
  }
  
  private:

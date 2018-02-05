@@ -1,8 +1,6 @@
 #include <regex>
 #include <iostream>
 
-#define this (*this)
-
 struct email
 {
  email(std::string mail): _email(mail){}
@@ -22,12 +20,12 @@ struct email
   //valida somente servidores @{hotmail,terra,yahoo,uol,bol} no dominio .com.br e servidor gmail no dominio .com
   const std::regex pattern("^([a-z0-9._]+@(?:(?:hotmail|terra|yahoo|uol|bol)[.](?:com[.]br)?)?(?:(?:gmail)[.](?:com)?)?)$");
    
-  return std::regex_match(this._email, email_smatch, pattern);
+  return std::regex_match(_email, email_smatch, pattern);
  }
  
  void print()
  {
-   std::cout<<"\n\tEmail: "<<this._email<<(isMail()?" is Valid\n":" is Invalid\n"); 
+   std::cout<<"\n\tEmail: "<<_email<<(isMail()?" is Valid\n":" is Invalid\n"); 
  }
  
  private:
@@ -54,10 +52,8 @@ int main(void)
                             "regex_email@terra.com",
                             "regex_email@terra.com.br"    
                             };
-  
   for(int i=0; i<15; i++)
    email(emails[i]).print();
     std::cout<<"\n";
-  
   return 0;
 }

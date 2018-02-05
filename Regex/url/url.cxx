@@ -1,8 +1,6 @@
 #include <regex>
 #include <iostream>
 
-#define this (*this)
-
 struct url
 { 
  url(std::string url): _url(url){}
@@ -20,12 +18,12 @@ struct url
                              "(.*[.](com|php|net|org|br|dk|at|us|tv|info|uk|co.uk|biz|se)?)?"
                              "(.*[.](aspx|htm|html|HTM|HTML|jhtm|jhtml|JHTM|JHTML|xhtm|xhtml|XHTM|XHTML)?)?"       
                             );
-    return std::regex_match(this._url, url_smatch, pattern);
+    return std::regex_match(_url, url_smatch, pattern);
   }
 
  void print()
  {
-  std::cout<<"\n\tUrl: "<<this._url<<(isUrl()?" is Valid\n":" is Invalid\n");
+  std::cout<<"\n\tUrl: "<<_url<<(isUrl()?" is Valid\n":" is Invalid\n");
  }
 
   private:
