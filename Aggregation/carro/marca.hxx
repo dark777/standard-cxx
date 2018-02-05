@@ -1,4 +1,7 @@
-﻿#include <iostream>
+﻿#ifndef MARCA_HXX
+#define MARCA_HXX
+
+#include <iostream>
 
 struct Marca
 {
@@ -8,3 +11,4 @@ struct Marca
  std::string descriMarca;
 };
 
+#endif

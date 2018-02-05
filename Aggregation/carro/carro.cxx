@@ -1,4 +1,7 @@
-﻿#include "carro.hxx"
+﻿#ifndef CARRO_CXX
+#define CARRO_CXX
+
+#include "carro.hxx"
 #include <stdio_ext.h>
 
 int main(void)
@@ -87,3 +90,5 @@ int main(void)
  
  return 0;
 }
+
+#endif

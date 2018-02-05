@@ -1,4 +1,7 @@
-﻿#include <iostream>
+﻿#ifndef MOTOR_HXX
+#define MOTOR_HXX
+
+#include <iostream>
 
 struct Motor
 {
@@ -8,3 +11,5 @@ struct Motor
   std::string descriMotor;
  std::string descriPotencia;
 };
+
+#endif

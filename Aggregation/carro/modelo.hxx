@@ -1,4 +1,7 @@
-﻿#include "marca.hxx"
+﻿#ifndef MODELO_HXX
+#define MODELO_HXX
+
+#include "marca.hxx"
 
 struct Modelo
 {
@@ -8,3 +11,5 @@ struct Modelo
   std::string descriModelo;
  Marca marca;
 };
+
+#endif

@@ -1,4 +1,7 @@
-﻿#include "modelo.hxx"
+﻿#ifndef CARRO_HXX
+#define CARRO_HXX
+
+#include "modelo.hxx"
 #include "motor.hxx"
 
 struct Carro
@@ -27,3 +30,5 @@ struct Carro
  }
  
 };
+
+#endif
