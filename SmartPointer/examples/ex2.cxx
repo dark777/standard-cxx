@@ -32,7 +32,7 @@ int main()
 {
     StringSmartPointer str(new std::string("Testando Smart Pointers"));
     
-    std::cout << "\n\tStringSmartPointer: "<<str.getString();
+    std::cout << "\n\tStringSmartPointer: "<<*str.getString();
     
     //Ponteiro normal:    
     std::string *nmptr = new std::string("Testando Default Pointers");
