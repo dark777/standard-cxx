@@ -150,15 +150,16 @@ void Lutador::setPeso(float peso)
 
 void Lutador::apresenta()
 {
- std::cout << "Nome.............: " << getNome() << "\n"
-           << "Nacionalidade....: " << getNacionalidade() << "\n"
-           << "Categoria........: " << getCategoria() << "\n"
-           << "Vitorias.........: " << getVitorias() << "\n"
-           << "Derrotas.........: " << getDerrotas() << "\n"
-           << "Empates..........: " << getEmpates() << "\n"
-           << "Idade............: " << getIdade() << "\n"
-           << "Altura...........: " << getAltura() << "\n"
-           << "Peso.............: " << getPeso() << "\n\n\n";
+ std::cout << "\nNome.............: " << getNome()
+           << "\nNacionalidade....: " << getNacionalidade()
+           << "\nCategoria........: " << getCategoria()
+           << "\nVitorias.........: " << getVitorias()
+           << "\nDerrotas.........: " << getDerrotas()
+           << "\nEmpates..........: " << getEmpates()
+           << "\nIdade............: " << getIdade()
+           << "\nAltura...........: " << getAltura()
+           << "\nPeso.............: " << getPeso() 
+           << "\n\n\n";
 }
 
 void Lutador::status()
