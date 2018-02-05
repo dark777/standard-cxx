@@ -4,10 +4,9 @@
  \author Tiago Ventura (tiago.ventura@gmail.com)
  \git https://github.com/LacobusVentura/CPF-Gen/blob/master/cpfgen.c
 */
-
-#include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdlib.h> //atoi
 #include <string.h>
 
 #define MAX_BUF_LEN (16)
