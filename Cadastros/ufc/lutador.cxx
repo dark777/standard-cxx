@@ -6,7 +6,7 @@
 #include "lutador.hxx"
 #include "luta.hxx"
 
-Lutador::Lutador(void) :
+Lutador::Lutador(void):
 nome(""),
 nacionalidade(""),
 vitorias(0),
