@@ -1,3 +1,6 @@
+#ifndef LUTADOR_CXX
+#define LUTADOR_CXX
+
 #include <iostream>
 
 #include "lutador.hxx"
@@ -180,3 +183,5 @@ void Lutador::empatarLuta()
 {
  setEmpates(getEmpates()+1);
 }
+
+#endif

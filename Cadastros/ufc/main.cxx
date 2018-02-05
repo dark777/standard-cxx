@@ -1,10 +1,8 @@
+#ifndef MAIN_CXX
+#define MAIN_CXX
+
 #include "luta.hxx"
 #include "lutador.hxx"
-
-
-
-
-
 
 
 
@@ -42,3 +40,5 @@ int main(void)
 
  return 0;
 } 
+
+#endif

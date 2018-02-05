@@ -1,3 +1,6 @@
+#ifndef LUTA_CXX
+#define LUTA_CXX
+
 #include "luta.hxx"
 #include <cstdlib>
 #include <iostream>
@@ -89,3 +92,5 @@ void Luta::lutar()
     Desafiante.ganharLuta();
    }
 }
+
+#endif
