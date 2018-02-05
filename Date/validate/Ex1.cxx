@@ -81,12 +81,20 @@ int getMonthValue(int month, int year)
             return -1;
     }
 }
-*/
+
 int dayOfWeek(int day, int month, int year)
 {
  return div(day + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year), 7).rem;
 }
- 
+*/
+
+int dayOfWeek(int day, int month, int year)
+{
+    static int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
+    year -= month < 3;
+    return ( year + year/4 - year/100 + year/400 + t[month-1] + day) % 7;
+}
+
 void getInput(int &day, int &month, int &year)
 {
  tm *atual; 
