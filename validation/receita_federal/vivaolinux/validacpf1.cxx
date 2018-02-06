@@ -92,7 +92,7 @@ struct validation
      digito2 = 0;
       else
        digito2 = 11 - temp;
-  
+    
     /* 
     Se todos os digitos forem iguais
     então o CPF é inválido.
@@ -102,7 +102,7 @@ struct validation
       return true;
        else
         return false;
-  
+    
     /* 
     Se os digitos verificadores obtidos
     forem iguais aos informados pelo usuário,
