@@ -3,9 +3,12 @@
 
 #include <iostream>
 
-
 struct date
 {
+ int _day;
+ int _month;
+ int _year; 
+ 
  date(int d, int m, int y): _day(d), _month(m), _year(y){}
  
  int day()  { return _day;   }
@@ -33,9 +36,6 @@ struct date
  
  private:
   
-  int _day;
-  int _month;
-  int _year;
   time_t tms = time(NULL);
   tm *now = localtime(&tms);
 };

@@ -1,8 +1,8 @@
-#include<iostream>
-#include<fstream>
-#include<sstream>
-#include<string>
-#include <date.h>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include "date.hxx"
+
 //http://www.dreamincode.net/forums/topic/39499-2-parts-of-attention-required/
 using namespace std;
 
@@ -16,7 +16,7 @@ struct Contact{
 	string dobYear;
 	string dobMonth;
 	string dobDay;
-	int age
+	int age;
 };
 
 const int MAX = 101;
@@ -120,12 +120,12 @@ Contact newContact()
 	cout << endl << "The day is " << today.day();
 	
 	
-	c.age = today.year - numdobYear;
-	if (numdobMonth > today.month)
+	c.age = today._year - numdobYear;
+	if (numdobMonth > today._month)
 	--c.age;
-	else if (numdobMonth == today.month && numdobDay > today.day )
+	else if (numdobMonth == today._month && numdobDay > today._day )
 	--c.age;
-	else if (numdobMonth == today.month && numdobDay == today.day )
+	else if (numdobMonth == today._month && numdobDay == today._day )
 	cout << "^_^/> Happy Birthday To You ^_^/>";
 
  	return c;
@@ -192,7 +192,7 @@ void displayContact(Contact c)
 void readFile()
 {
    try{
-	  ifstream inFile("C:\\Temp\\Contacts.dat", ios::in);
+	  ifstream inFile("cadastro.txt", ios::in);
 	  inFile >> ContactCounter;
 	  inFile.ignore();
 	  for(int i=0; i<ContactCounter; i++)
@@ -207,10 +207,13 @@ void readFile()
 void writeFile()
 {
 	try{
-		ofstream outFile("C:\\Temp\\Contacts.dat", ios::out);
-		outFile << ContactCounter << endl;
-		for(int i=0; i<ContactCounter; i++)
-			writeContacts(listContact[i], outFile);
+		ofstream outFile("cadastro.txt", ios::ate);
+		if(outFile.is_open())
+		{
+		 outFile << ContactCounter << endl;
+		 for(int i=0; i<ContactCounter; i++)
+		 writeContacts(listContact[i], outFile);
+		}
 		outFile.close();
 	}
 	catch(exception e) {
@@ -223,7 +226,7 @@ void doMenu()
 	  int choice;
 	  int ContactNumber;
 	  do{
-		  cout << "Enter your selection." << endl;
+		 cout << "\nEnter your selection." << endl;
 		 cout << "1. Load Contacts List" << endl;
 		 cout << "2. Save Contacts List" << endl;
 		 cout << "3. Add a Contact" << endl;
@@ -252,12 +255,13 @@ void doMenu()
 	           displayContact(listContact[ContactNumber]);
                    else
 		   cout << "Contact Not Found.\n";
-		 break;
+		  break;
+		 }
 		 
 	  } while(choice != 5);
 }
 
-int main ()
+int main()
 {
 	readFile();
 	doMenu();
