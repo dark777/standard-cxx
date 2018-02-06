@@ -7,28 +7,33 @@ struct Date
  unsigned int ano;
  std::string tmp = "";
  
-   Date(unsigned int, unsigned int, unsigned int);
+ Date(unsigned int, unsigned int, unsigned int);
    
-   Date();
-   ~Date();
+ Date();
+ ~Date();
    
-   Date &setDia(unsigned int, std::string);
-   Date &setMes(unsigned int, std::string);
-   Date &setAno(unsigned int, std::string);
-
-   Date &setDia(unsigned int);
-   Date &setMes(unsigned int);
-   Date &setAno(unsigned int);
-   
-   Date &setDia();
-   Date &setMes();
-   Date &setAno();
-   
-   std::string getDia();
-   std::string getMes();
-   std::string getAno();
+ Date &setDia(unsigned int, std::string);
+ Date &setMes(unsigned int, std::string);
+ Date &setAno(unsigned int, std::string);
  
-   friend std::ostream& operator<<(std::ostream& os, const Date& dt);
+ Date &setDia(unsigned int);
+ Date &setMes(unsigned int);
+ Date &setAno(unsigned int);
+   
+ Date &setDia();
+ Date &setMes();
+ Date &setAno();
+   
+ std::string getDia();
+ std::string getMes();
+ std::string getAno();
+ 
+ friend std::ostream& operator<<(std::ostream& os, const Date& dt);
+   
+ private:
+   
+ time_t mt = time(0);
+ tm* tms = localtime(&mt);   
 };
 
 std::ostream& operator<<(std::ostream& os, const Date& dt)  
@@ -54,7 +59,12 @@ std::ostream& operator<<(std::ostream& os, const Date& dt)
 
 Date::Date(unsigned int d, unsigned int m, unsigned int a): dia(d), mes(m), ano(a){}
 
-Date::Date(){}
+Date::Date()
+{
+ dia = tms->tm_mday;
+ mes = tms->tm_mon+1;
+ ano = tms->tm_year+1900; 
+}
 
 Date::~Date()
 {
@@ -186,9 +196,6 @@ std::string Date::getAno()
 
 int main()
 {
-  time_t mt = time(0);
-  tm* tms = localtime(&mt);
-  
   Date data;
   
   std::cout<<"\n\t";
@@ -197,18 +204,16 @@ int main()
   data.setDia(01).setMes(07).setAno(00);
   
   Date sd;
-  sd.dia = tms->tm_mday;
-  sd.mes = tms->tm_mon+1;
-  sd.ano = tms->tm_year+1900;
+  std::cout<<"\n\t"<<sd;
   
   std::cout<<"\n\t";
   sd.setDia().setMes().setAno();
+
+  std::cout<<"\n\t";
+  sd.setMes().setAno().setDia();  
   
   std::cout<<"\n\t";
   sd.setAno().setMes().setDia();
-
-  std::cout<<"\n\t";
-  sd.setMes().setAno().setDia();
   
   std::cout<<"\n\n\t";
   sd.setDia(sd.dia,"-").setMes(sd.mes,"-").setAno(sd.ano,"\n");
