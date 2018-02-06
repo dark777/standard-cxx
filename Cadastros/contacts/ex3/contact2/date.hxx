@@ -1,37 +1,44 @@
 #ifndef _DATE_HXX
 #define _DATE_HXX
 
-#include<iostream>
+#include <iostream>
 
-struct date{
 
+struct date
+{
  date(int d, int m, int y): _day(d), _month(m), _year(y){}
  
- int day()   { return _day;   }
- int month() { return _month; }
- int year()  { return _year;  }
+ int day()  { return _day;   }
+ int month(){ return _month; }
+ int year() { return _year;  }
  
  date()
  {
-  time_t theTime;
-  tm localTime;
-  
-  time(&theTime);
-  
-  localtime_s(&localTime, &theTime);
-  
-  _day = localTime.tm_mday;
-  _month = localTime.tm_mon;
-  _year = localTime.tm_year+1900;
+  _day   = now->tm_mday;
+  _month = now->tm_mon;
+  _year  = now->tm_year+1900;
  }
  
- friend ostream& operator<<(ostream& os, const date &d)
+ ~date()
  {
-  return os << d._day << '/' << d._month << '/' << d._year;
+  _day   = 0;
+  _month = 0;
+  _year  = 0;
  }
-
+ 
+ friend std::ostream& operator<<(std::ostream& os, const date &d)
+ {
+  return os << d._day << "/" << d._month << "/" << d._year;
+ }
+ 
  private:
-  int _day, _month, _year;
+  
+  int _day;
+  int _month;
+  int _year;
+  time_t tms = time(NULL);
+  tm *now = localtime(&tms);
 };
 
-#endif 
+
+#endif
