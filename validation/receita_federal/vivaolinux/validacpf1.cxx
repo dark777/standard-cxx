@@ -116,16 +116,16 @@ struct validation
        return false;
  }
   
- inline validation* print()
+ void print()
  {
   std::cout << "\n\tCpf: "
             << fmtCpf(_input,"###.###.###-##")
-            << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
+            << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");   
  }
-  
-  private:
-   int cpf[11];
-   char *_input;
+ 
+ private:
+  int cpf[11];
+  char *_input;
 };
 
 inline char* fmtCpf(char *var, const char *fmt)
