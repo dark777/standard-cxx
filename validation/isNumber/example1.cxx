@@ -1,4 +1,5 @@
-#include<iostream>
+#include <sstream>
+#include <iostream>
 
 bool isOk(std::string x)
 {
@@ -80,8 +81,44 @@ void getNum2()
    }while(isOk(s) == 0);
 }
 
+bool checkNumber(std::string &s) 
+{
+ std::istringstream ssIn(s);
+ int n;
+ 
+ if(ssIn >> n)
+  {
+   //std::cout << n << std::endl;
+   // we got a number, feed it back
+   std::stringstream ssOut;
+   ssOut << n;
+   s = ssOut.str();	  
+   return true;
+   }
+   else
+   s.clear();
+ return false;
+}
+
+void getBool()
+{
+ std::string num;
+ 
+ do
+  { 
+   std::cout<<"\n\tDigite um numero: ";
+   std::cin>>num;
+  
+   if(checkNumber(num) == 0)
+    std::cout<<"\n\tNao é um numero\n\n";
+   else
+    std::cout<<"\n\tÉ um numero.\n\n";
+ }while(checkNumber(num) == 0);  
+}
+
 int main()
 {
- getNum2();
+ //getNum2();
+  getBool();
  return 0;
 }
