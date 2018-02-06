@@ -97,9 +97,7 @@ struct validation
     Se todos os digitos forem iguais
     então o CPF é inválido.
     */
-    int n = sizeof(cpf);
-    
-    for(int i = 1; i < n; i++ )
+    for(int i = 1; i < 9; i++)
      if(cpf[i] != cpf[i-1])
       return true;
        else
