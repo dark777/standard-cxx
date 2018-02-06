@@ -28,7 +28,7 @@ struct Date
  std::string getMes();
  std::string getAno();
  
- friend std::ostream& operator<<(std::ostream& os, const Date& dt);
+ friend std::ostream& operator<<(std::ostream&, const Date&);
    
  private:
    
