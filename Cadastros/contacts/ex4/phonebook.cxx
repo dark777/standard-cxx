@@ -1,8 +1,4 @@
-// Phonebook project
-//===============================
-
 #include <iostream>
-
 
 //prototypes
 void printline(char, int);
@@ -357,15 +353,16 @@ bool mob_valid(std::string tmob)
 {
  if(tmob.size() > 13 || tmob.size() < 10)
   {
-   std::cout << "\n\tInvalid mobile no.\n\tEnter a no." 
-                "between 10 and 13 digits\n";
+   std::cout << "\n\tInvalid mobile no."
+                "\n\tEnter a no. between"
+                " 10 and 13 digits\n";
    return 0;
   }
   else 
   if(tmob == "")
   {
-   std::cout << "\n\tInvalid mobile no.\n\tMobile" 
-                "no cannot be blank\n";
+   std::cout << "\n\tInvalid mobile no."
+                "\n\tMobile no cannot be blank\n";
    return 0;
   }
   else
