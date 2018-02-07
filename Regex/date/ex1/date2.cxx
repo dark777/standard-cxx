@@ -37,7 +37,7 @@ std::string regexDate(const char *text)
  
  std::cmatch match;
  
- if(std::regex_match(text, match, re) == 0)
+ if(!std::regex_match(text, match, re))
  return "\n\tData inválida!!\n";
  else
  return match[0];

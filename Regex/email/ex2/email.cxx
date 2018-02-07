@@ -48,7 +48,7 @@ void getEmail()
      
      email(mail).print();
      
-    }while(email(mail).isMail() == 0);
+    }while(!email(mail).isMail());
 }
 
 Contact getContact()
@@ -61,7 +61,7 @@ Contact getContact()
      
      email(c).print();
      
-    }while(email(c).isMail() == 0);
+    }while(!email(c).isMail());
  
  return c;
 }

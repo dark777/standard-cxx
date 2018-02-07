@@ -31,7 +31,7 @@ int main()
  
  std::cmatch match;
 
- if(std::regex_match(text, match, re) == 0)std::cout << "\n\tData inválida!!\n\n";
+ if(!std::regex_match(text, match, re))std::cout << "\n\tData inválida!!\n\n";
  else
   {
    std::cout << "\n\tDate: " << match[0]

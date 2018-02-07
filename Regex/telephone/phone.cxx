@@ -54,7 +54,7 @@ int main(void)
      phone(strphone).print();
      std::cout<<"\n";
     
-    }while(phone(strphone).isPhone() == 0);
+    }while(!phone(strphone).isPhone());
   
   return 0;
 }

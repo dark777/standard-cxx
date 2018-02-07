@@ -46,7 +46,7 @@ int main()
     date(str).print();
     std::cout<<"\n";
     
-   }while(date(str).isDate() == 1);
+   }while(!date(str).isDate());
   
   return 0;
 }
