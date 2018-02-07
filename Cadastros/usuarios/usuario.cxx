@@ -1,26 +1,12 @@
 #include "usuario.hxx"
 //https://github.com/codenome/Lista0-EstruturaDeDados/blob/master/Exericicio 7/
 //https://pt.stackoverflow.com/questions/186716/como-excluir-a-%C3%BAltima-linha-de-um-arquivo-texto-na-linguagem-c
-void enter()
-{
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
- 
-  getch();
-
-#elif defined(linux) || defined(__linux) || \
-      defined(__linux__) || defined(__gnu_linux__)
-
-  getchar();
-
-#endif 
-
-}
 
 void cbuff()
 {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
  
-  fflush(stdin); //nao nescessita da windows.h e nem de conio.h
+  fflush(stdin);
   
 #elif defined(linux) || defined(__linux) || \
       defined(__linux__) || defined(__gnu_linux__)
@@ -102,10 +88,13 @@ void listarUsuarios()
     }
 
     char espaco = ' ';
-    std::cout << "====================================================================================================================================================\n";
-    printf("| Nome %-25c | RG %-13c | CPF %-13c | EMAIL %-30c | Endereço %-30c |\n", espaco, espaco, espaco, espaco, espaco);
-    std::cout << "====================================================================================================================================================\n";
-
+    printf(
+           "====================================================================================================================================================\n"
+           "| Nome %-25c | RG %-13c | CPF %-13c | EMAIL %-30c | Endereço %-30c |\n"
+           "====================================================================================================================================================\n",
+           espaco, espaco, espaco, espaco, espaco
+          );
+          
     char linha[500];
     while(fgets(linha, sizeof(linha), arquivo))
     {
@@ -302,6 +291,6 @@ void menu()
 
     cbuff();
     std::cout << "Pressione ENTER para prosseguir...\n";
-    enter();
+    getchar();
     menu();
 } 

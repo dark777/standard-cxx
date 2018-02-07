@@ -1,12 +1,7 @@
 #include <cstring>
 #include <iostream>
 
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
- 
- #include <conio.h>
- #include <windows.h>
-
-#elif defined(linux) || defined(__linux) || \
+#if defined(linux) || defined(__linux) || \
 defined(__linux__) || defined(__gnu_linux__)
 
  #include <stdio_ext.h>
