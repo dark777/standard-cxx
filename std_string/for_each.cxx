@@ -28,4 +28,12 @@ int main()
     std::for_each(nums.begin(), nums.end(), print);
     std::cout << '\n';
     std::cout << "sum: " << s.sum << '\n';
-} 
+  return 0;  
+}
+/*
+Output:
+
+before: 3 4 2 8 15 267
+after:  4 5 3 9 16 268
+sum: 305
+*/
