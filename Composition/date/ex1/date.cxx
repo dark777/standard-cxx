@@ -76,13 +76,13 @@ int main()
            << "\n\tThe year is.............: " << date.year
            << "\n\tThe date Int Format.....: " << date.toInt()
            << "\n\tThe date Int Format Sep.: " << date.toInt("-")
-	   << "\n\n\tThe date is Str "
+           << "\n\n\tThe date is Str "
            << "\n\tdate time..................: " << date.dateTime()
            << "\n\tThe day is.................: " << date.sday      
            << "\n\tThe month is...............: " << date.smonth
            << "\n\tThe year is................: " << date.year
            << "\n\tThe date String Format.....: " << date.toString() 
            << "\n\tThe date String Format Sep.: " << date.toString("-")
-	   << "\n\n";
- return 0;   
+           << "\n\n";
+ return 0;
 }
