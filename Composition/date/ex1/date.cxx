@@ -62,9 +62,9 @@ struct Date
    
   private:
   
-  char buf[50];
-  time_t tms = time(NULL);
-  tm *now = localtime(&tms);
+   char buf[50];
+   time_t tms = time(NULL);
+   tm *now = localtime(&tms);
   
 }date; 
 
