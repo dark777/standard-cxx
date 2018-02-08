@@ -32,8 +32,8 @@ struct Date
    
  private:
    
- time_t mt = time(0);
- tm* tms = localtime(&mt);   
+  time_t mt = time(0);
+  tm* tms = localtime(&mt);   
 };
 
 std::ostream& operator<<(std::ostream& os, const Date& dt)  
