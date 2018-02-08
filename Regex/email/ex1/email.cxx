@@ -51,7 +51,7 @@ int main(void)
                             "reg_ex.cpp@net.org.br",
                             "regex_email@terra.com",
                             "regex_email@terra.com.br"    
-                            };
+                           };
   for(int i=0; i<15; i++)
    email(emails[i]).print();
     std::cout<<"\n";
