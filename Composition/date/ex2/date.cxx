@@ -223,10 +223,10 @@ int main()
   sd.setAno().setDia().setMes();
   
   std::cout<<"\n\n\t";
-  sd.setDia(sd.dia,"-").setMes(sd.mes,"-").setAno(sd.ano,"\n");
+  sd.setDia(sd.dia,"-").setMes(sd.mes,"-").setAno(sd.ano,"");
   
   std::cout<<"\n\n\t";
-  sd.setAno(sd.ano,"-").setMes(sd.mes,"-").setDia(sd.dia,"\n");
+  sd.setAno(sd.ano,"-").setMes(sd.mes,"-").setDia(sd.dia,"");
     
-  std::cout<<"\n";
+  std::cout<<"\n\n";
 }
