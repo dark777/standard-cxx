@@ -65,20 +65,20 @@ struct Date
    char buf[50];
    time_t tms = time(NULL);
    tm *now = localtime(&tms);
-  
-}date; 
+   
+}date;
 
 int main()
 {
  std::cout << "\n\tThe date is Int "
-           << "\n\tThe day is..............: " << date.day      
+           << "\n\tThe day is..............: " << date.day
            << "\n\tThe month is............: " << date.month
            << "\n\tThe year is.............: " << date.year
            << "\n\tThe date Int Format.....: " << date.toInt()
            << "\n\tThe date Int Format Sep.: " << date.toInt("-")
            << "\n\n\tThe date is Str "
            << "\n\tdate time..................: " << date.dateTime()
-           << "\n\tThe day is.................: " << date.sday      
+           << "\n\tThe day is.................: " << date.sday
            << "\n\tThe month is...............: " << date.smonth
            << "\n\tThe year is................: " << date.year
            << "\n\tThe date String Format.....: " << date.toString() 
