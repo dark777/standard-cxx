@@ -7,33 +7,36 @@ enum StringValue { evStringValue1=1, evStringValue2, evStringValue3, evEnd };
 static std::map<std::string, StringValue> mapStringValues;
 
 // Intialization
-void Initialize()
+void initialize()
 {
  mapStringValues["First Value"]  = evStringValue1;
  mapStringValues["Second Value"] = evStringValue2;
  mapStringValues["Third Value"]  = evStringValue3;
  mapStringValues["end"] = evEnd;
  
- std::cout << "\n\tmapStringValues contain " 
-           << mapStringValues.size() 
-           << " entries.\n";
+ const std::string strings[4]={"First Value","Second Value","Third Value","end"};
+ 
+ std::cout << "\n\tmapStringValues contain\n\n";
+         for(int st = evStringValue1; st<=evEnd; st++)
+          {
+           StringValue str = static_cast<StringValue>(st);
+           std::cout<<"\t"<<strings[str-1]<<"\n";   
+          }    
 }
 
 int main(int argc, char* argv[])
 {
  // User input
  static char szInput[15];
-
- const std::string strings[3]={"First Value","Second Value","Third Value"};
  
  // Inicializa map strings
- Initialize();
+ initialize();
   
  // Enquanto imput nao for igual a end
  while(1) 
   {
     // Get the user's input
-    std::cout << "\n\tPlease enter a string or enter end: ";
+    std::cout << "\n\tPlease enter any of the\n\tstrings above: ";
     std::cout.flush();
     std::cin.getline(szInput, sizeof(szInput));
     
@@ -61,17 +64,12 @@ int main(int argc, char* argv[])
       default:
             std::cout << "\n\t\"" << szInput 
                       << "\" is an invalid string."
-                      << "\n\tmapStringValues does not contain "
-                      << mapStringValues.size() 
-                      << " entries."
-                      << "\n\n\tEnter:\n";
-         for(int st = evStringValue1; st<evEnd; st++)
-          {
-           StringValue str = static_cast<StringValue>(st);
-           std::cout<<"\t"<<strings[str-1]<<"\n";   
-          }
+                      << "\n\tmapStringValues does not\n\tcontain "
+                      << mapStringValues.size()
+                      << " entries.\n";
+            initialize();
       break;
      }
   }
  return 0;
-} 
+}
