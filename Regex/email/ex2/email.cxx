@@ -32,8 +32,6 @@ struct email
  }
  
  private:
-   
-  Contact c;
   std::string _mail;
    
 };
