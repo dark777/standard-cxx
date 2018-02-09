@@ -1,5 +1,33 @@
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int main ()
 {
@@ -14,5 +42,3 @@ int main ()
   puts (buffer);    
   return 0;
 }
-
- 
