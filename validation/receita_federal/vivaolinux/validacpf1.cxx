@@ -151,10 +151,46 @@ struct validation
  } 
  
  void print()
- {
+ {/*
+  char i; 
+  for(i = 0; i < 9; i++)_input[9] == i;
+  
+  switch(i)
+  {
+   case 0: std::cout << "\n\tCPF emitido no estado do RS\n";
+   break;
+   
+   case 1: std::cout << "\n\tCPF emitido em um desses estados: DF-GO-MS-MT-TO\n";
+   break;
+   
+   case 2: std::cout << "\n\tCPF emitido em um desses estados: AC-AM-AP-PA-RO-RR\n";
+   break;
+   
+   case 3: std::cout << "\n\tCPF emitido em um desses estados: CE-MA-PI\n";
+   break;
+   
+   case 4: std::cout << "\n\tCPF emitido em um desses estados: AL-PB-PE-RN\n";
+   break;
+   
+   case 5: std::cout << "\n\tCPF emitido em um desses estados: BA-SE\n";
+   break;
+   
+   case 6: std::cout << "\n\tCPF emitido no estado de MG\n";
+   break;
+   
+   case 7: std::cout << "\n\tCPF emitido em um desses estados: ES-RJ\n";
+   break;
+   
+   case 8: std::cout << "\n\tCPF emitido no estado de SP\n";
+   break;
+   
+   case 9: std::cout << "\n\tCPF emitido em um desses estados: PR-SC\n";
+   break;
+  }
+  */
   std::cout << "\n\tCpf: "
             << fmtCpf(_input,"###.###.###-##")
-            << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");   
+            << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
  }
  
  int cpf[11];
