@@ -7,7 +7,7 @@ struct url
 
  ~url()
   {
-   if(_url.length() != 0)_url.clear();
+   if(_url)_url.clear();
   } 
 
   bool isUrl()
