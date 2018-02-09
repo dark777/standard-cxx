@@ -20,7 +20,7 @@ struct BankAccount
 {
  static const int MAX_SIZE = 30;
      
- BankAccount(int = 0, std::string = "", std::string = "", double = 0.0);
+ BankAccount(int, std::string, std::string, double);
  ~BankAccount();
      
  void setAccountNumber(int);

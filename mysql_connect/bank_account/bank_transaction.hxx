@@ -21,7 +21,7 @@ struct BankAccount;
 
 struct BankTransaction
 {
- BankTransaction(const string = "localhost", const std::string = "", const std::string = "", const std::string = "");
+ BankTransaction(const std::string, const std::string, const std::string, const std::string);
  ~BankTransaction();
  
  void createAccount(BankAccount*);
