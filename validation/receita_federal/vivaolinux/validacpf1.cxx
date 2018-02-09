@@ -92,12 +92,13 @@ struct validation
      digito2 = 0;
       else
        digito2 = 11 - temp;
-    
+       
     /* 
     Se todos os digitos forem iguais
     então o CPF é inválido.
     */
-    for(int i = 1; i < 9; i++)
+    
+    for(int i = 1; i < sizeof(cpf); i++)
      if(cpf[i] != cpf[i-1])
       return true;
        else
@@ -108,6 +109,7 @@ struct validation
     forem iguais aos informados pelo usuário,
     então o CPF é válido.
     */
+    
     if(digito1 == cpf[9] && digito2 == cpf[10])
      return true;
       else
