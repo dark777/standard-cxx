@@ -4,20 +4,27 @@
 
 int main(int argc, char* argv[])
 {
- const char * sql;
-   
  try{
       pqxx::connection login("dbname = teste user = darkstar password = darkstar hostaddr = 127.0.0.1 port = 5432");
       
-      if(login.is_open())std::cout << "\n\tOpened database successfully: " << login.dbname() << "\n\n";
+      if(login.is_open())std::cout << "\n\tOpened database \""<< login.dbname() <<"\" successfully.\n\n";
       else
       {
        std::cout << "\n\tCan't open database\n\n";
        return 1;
       }
       
-      /* Create SQL statement */
-      sql = "select *from person";
+      std::cout<<"\n\tQual Usuario deseja listar? ";
+      std::cin>>argc;
+      
+      //Create SQL statement stringstream; 
+      std::stringstream sql;
+      sql << "select *from person where person_id=" << argc;
+      
+      
+      // Create SQL statement const char*
+      //const char * sql; 
+      //sql = "select *from person where person_id=1";
 
       /* Create a non-transactional object. */
       pqxx::nontransaction non_obj(login);
