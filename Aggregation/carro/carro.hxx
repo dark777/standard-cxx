@@ -21,7 +21,7 @@ struct Carro
          "\n\n\tID. DO CARRO: " + std::to_string(idCarro) +
          "\n\n\tDESCRI. DO CARRO: " + descriCarro +
          "\n\n\tID. DA MARCA: " + std::to_string(marca.idMarca) +
-         "\n\n\tDESCRI. DA MARCA: " + marca.descriMarca+
+         "\n\n\tDESCRI. DA MARCA: " + marca.descriMarca +
          "\n\n\tID. DO MODELO: " + std::to_string(modelo.idModelo) +
          "\n\n\tDESCRI. DO MODELO: " + modelo.descriModelo +
          "\n\n\tID. DO MOTOR: " + std::to_string(motor.idMotor) +
