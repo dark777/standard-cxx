@@ -5,6 +5,9 @@ site que gera cpf's validos
 http://geradordecpf.clevert.com.br/
 Programinha em C++ que checa se um número de CPF é válido
 
+Gerador de pessoas validas.
+https://www.4devs.com.br/gerador_de_pessoas
+
 validacpf1.cxx - feb/2018 - Jean Zonta
 
 Modificação do Script Referência: 
