@@ -7,7 +7,7 @@ struct date
  
  ~date()
   {
-   if(_date) _date.clear();
+   if(_date.length() != 0) _date.clear();
   }
  
  bool isDate()
