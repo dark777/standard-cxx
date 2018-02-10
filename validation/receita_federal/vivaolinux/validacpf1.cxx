@@ -36,8 +36,8 @@ struct validation
   
  void print();
  
- int cpf[11];
- char *_input;
+ int cpf[11]={0};
+ char *_input={0};
  
 }validate;
 
@@ -52,8 +52,8 @@ validation::validation(){}
 
 validation::~validation()
 {
-  cpf[0]=0;
-  _input=0;
+  cpf[0]={0};
+  _input={0};
 }
 
 inline validation::validation(char *input): _input(input)
@@ -199,11 +199,11 @@ void validation::print()
   */
   if(!verify(cpf))
    {
-    std::cout<< "\n\tCpf: "; 
+    std::cout<< "\n\tCpf: ";
     fmtCpf(_input);
+    std::cout<<" is Invalid\n";
     cpf[0]=0;
     _input=0;
-    std::cout<<" is Invalid\n";
     getCpf();
    }
    else
