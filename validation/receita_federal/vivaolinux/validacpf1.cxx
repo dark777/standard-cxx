@@ -89,11 +89,11 @@ void validation::getCpf()
  
 bool validation::verify(const int * cpf)
  {
-    for(int i = 1; i < sizeof(cpf); i++)
-     if(cpf[i] != cpf[i-1])
-      return true;
-       else
-        return false;
+  for(int i = 1; i < sizeof(cpf); i++)
+   if(cpf[i] != cpf[i-1])
+    return true;
+     else
+      return false;
  }
  
 inline bool validation::isCpf()
