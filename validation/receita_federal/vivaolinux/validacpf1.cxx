@@ -49,9 +49,9 @@ int main()
 validation::validation(){}
 
 validation::~validation()
-{ 
- cpf[0]=0;
- _input=0;
+{
+  cpf[0]=0;
+  _input=0;
 }
 
 inline validation::validation(char *input): _input(input)
