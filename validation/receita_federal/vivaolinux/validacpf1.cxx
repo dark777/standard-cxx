@@ -46,9 +46,9 @@ struct validation
   do{
      std::cout << "\n\tInforme o CPF sem pontos, espaços ou traços\n\tDigite: ";
      std::cin.getline(input, sizeof(input), '\n');
-    
+     
      validation(input).print();
-    
+     
     }while(!validation(input).isCpf());
     
   return *this;
@@ -114,7 +114,7 @@ struct validation
       return true;
        else
         return false;
-    
+    */
     /* 
     Se os digitos verificadores obtidos
     forem iguais aos informados pelo usuário,
