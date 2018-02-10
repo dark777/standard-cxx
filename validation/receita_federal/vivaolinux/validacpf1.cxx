@@ -17,10 +17,40 @@ Modificação do Script Referência:
 
 struct validation
 {
- validation(){}
- ~validation(){}
+ validation();
+ ~validation();
  
- inline validation(char *input): _input(input)
+ inline validation(char *);
+ 
+ void getCpf();
+ 
+ private:
+ 
+ inline bool isCpf();
+ 
+ void fmtCpf(char *);
+ 
+ inline char* fmtCpf(char *, const char *);
+  
+ void print();
+ 
+ int cpf[11];
+ char *_input;
+ 
+}validation;
+
+int main()
+{
+ validation.getCpf();
+ std::cout<<"\n";
+ return 0;
+}
+
+validation::validation(){}
+
+validation::~validation(){}
+
+inline validation::validation(char *input): _input(input)
  {
   for(char i = 0; i < 11; i++)
    {
@@ -39,7 +69,7 @@ struct validation
    }
  }
  
- validation& getCpf()
+void validation::getCpf()
  {
   char input[12];
   
@@ -50,13 +80,9 @@ struct validation
      validation(input).print();
      
     }while(!validation(input).isCpf());
-    
-  return *this;
  }
  
- private:
- 
- inline bool isCpf()
+inline bool validation::isCpf()
  {
   int digito1;
   int digito2;
@@ -127,7 +153,7 @@ struct validation
        return false;
  }
  
- void fmtCpf(char *fmt)
+void validation::fmtCpf(char *fmt)
  {
   for(int i = 0; i < 11; i++)
    {
@@ -139,7 +165,7 @@ struct validation
    }
  }
  
- inline char* fmtCpf(char *var, const char *fmt)
+inline char* validation::fmtCpf(char *var, const char *fmt)
  {
   int i = 0;
   char aux[strlen(var)];
@@ -162,7 +188,7 @@ struct validation
   strcpy(var, aux);
  }
   
- void print()
+void validation::print()
  {
   char i; 
   for(i = 0; i < 9; i++)cpf[9]=cpf[i];
@@ -254,15 +280,3 @@ struct validation
             << fmtCpf(_input,"###.###.###-##")
             << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
  }
- 
- int cpf[11];
- char *_input;
- 
-}validation;
-
-int main()
-{
- validation.getCpf();
- std::cout<<"\n";
- return 0;
-}
