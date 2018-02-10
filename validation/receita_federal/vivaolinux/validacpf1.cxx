@@ -18,23 +18,23 @@ Modificação do Script Referência:
 struct validation
 {
  validation();
- inline ~validation();
+ ~validation();
  
- inline validation(char *);
+ validation(char *);
  
- inline void getCpf();
+ void getCpf();
  
  private:
  
- inline bool isCpf();
+ bool isCpf();
  
- inline void fmtCpf(char *);
+ void fmtCpf(char *);
  
- inline bool verify(const int *);
+ bool verify(const int *);
  
- inline char* fmtCpf(char *, const char *);
+ char* fmtCpf(char *, const char *);
  
- inline void print();
+ void print();
  
  int cpf[11];
  char *_input;
