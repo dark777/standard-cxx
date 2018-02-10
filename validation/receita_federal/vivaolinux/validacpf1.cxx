@@ -77,7 +77,7 @@ inline validation::validation(char *input): _input(input)
  
 validation& validation::getCpf()
  {
-  char input[12];
+  char input[12]={0};
   do{
      std::cout << "\n\tInforme o CPF sem pontos, espaços ou traços\n\tDigite: ";
      std::cin.getline(input, sizeof(input), '\n');
@@ -85,10 +85,10 @@ validation& validation::getCpf()
      validation(input).print();
      
     }while(!validation(input).isCpf());
-  return *this;  
+  return *this; 
  }
- /*
- bool validation::verify(const int * cpf)
+ 
+bool validation::verify(const int * cpf)
  {
     for(int i = 1; i < sizeof(cpf); i++)
      if(cpf[i] != cpf[i-1])
@@ -96,7 +96,7 @@ validation& validation::getCpf()
        else
         return false;
  }
- */
+ 
 inline bool validation::isCpf()
  {
   int digito1;
@@ -192,20 +192,23 @@ inline char* validation::fmtCpf(char *var, const char *fmt)
   
 void validation::print()
  {
-  char i; 
-  for(i = 0; i < 9; i++)cpf[9]=cpf[i];
+  char i;
   /* 
-    Se todos os digitos forem iguais
-    então o CPF é inválido.
-    *
+  Se todos os digitos forem iguais
+  então o CPF é inválido.
+  */
   if(!verify(cpf))
    {
-    _input=0; 
-    std::cout<<"\n\tTodos Os numeros sao iguais.\n\n"; 
+    std::cout<< "\n\tCpf: "; 
+    fmtCpf(_input);
+    cpf[0]=0;
+    _input=0;
+    std::cout<<" is Invalid\n";
     getCpf();
    }
    else
-  */
+  for(i = 0; i < 9; i++)cpf[9]=cpf[i];
+  
   switch(cpf[i])
   {
    case 0:
