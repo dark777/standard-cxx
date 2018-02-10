@@ -235,9 +235,7 @@ struct validation
    
    case 8:
     if(!validation(_input).isCpf())break;
-    else 
-    if(!validation(_input).isCpf())break;
-    else 
+    else
     std::cout << "\n\tO Cpf: "; 
     fmtCpf(_input);
     std::cout << " foi emitido no estado de SP.\n";
