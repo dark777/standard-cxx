@@ -194,7 +194,7 @@ void validation::print()
  {
   char i; 
   for(i = 0; i < 9; i++)cpf[9]=cpf[i];
-    /* 
+  /* 
     Se todos os digitos forem iguais
     então o CPF é inválido.
     *
@@ -205,7 +205,7 @@ void validation::print()
     getCpf();
    }
    else
-     */
+  */
   switch(cpf[i])
   {
    case 0:
