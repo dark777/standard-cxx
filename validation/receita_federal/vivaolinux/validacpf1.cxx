@@ -127,11 +127,11 @@ struct validation
        return false;
  }
  
- void fmtCpf(char *_input)
+ void fmtCpf(char *fmt)
  {
   for(int i = 0; i < 11; i++)
    {
-    std::cout << _input[i];
+    std::cout << fmt[i];
      if(i == 2 || i == 5)
       std::cout << ".";
      if(i == 8)
