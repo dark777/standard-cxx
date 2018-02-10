@@ -37,7 +37,7 @@ struct validation
  void print();
  
  int cpf[11]={0};
- char *_input=0;
+ char *_input={0};
  
 }validate;
 
