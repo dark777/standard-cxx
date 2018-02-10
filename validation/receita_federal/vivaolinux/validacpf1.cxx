@@ -22,13 +22,15 @@ struct validation
  
  inline validation(char *);
  
- void getCpf();
+ validation& getCpf();
  
  private:
  
  inline bool isCpf();
  
  void fmtCpf(char *);
+ 
+ bool verify(const int *);
  
  inline char* fmtCpf(char *, const char *);
   
@@ -37,11 +39,11 @@ struct validation
  int cpf[11];
  char *_input;
  
-}validation;
+}validate;
 
 int main()
 {
- validation.getCpf();
+ validate.getCpf();
  std::cout<<"\n";
  return 0;
 }
@@ -73,10 +75,9 @@ inline validation::validation(char *input): _input(input)
    }
  }
  
-void validation::getCpf()
+validation& validation::getCpf()
  {
   char input[12];
-  
   do{
      std::cout << "\n\tInforme o CPF sem pontos, espaços ou traços\n\tDigite: ";
      std::cin.getline(input, sizeof(input), '\n');
@@ -84,15 +85,25 @@ void validation::getCpf()
      validation(input).print();
      
     }while(!validation(input).isCpf());
+  return *this;  
  }
- 
+ /*
+ bool validation::verify(const int * cpf)
+ {
+    for(int i = 1; i < sizeof(cpf); i++)
+     if(cpf[i] != cpf[i-1])
+      return true;
+       else
+        return false;
+ }
+ */
 inline bool validation::isCpf()
  {
   int digito1;
   int digito2;
   int temp = 0;
   const int *cpf;
-    
+  
     /*
     Obtendo o primeiro digito verificador:
     
@@ -103,8 +114,7 @@ inline bool validation::isCpf()
     soma dos resultados das multiplicações por 11,
     e se o resto for zero ou 1, digito é zero,
     caso contrário digito = (11-r1)
-    */
-    
+    */  
     for(char i = 0; i < 9; i++)
      temp += (cpf[i] * (10 - i));
       temp %= 11;
@@ -133,24 +143,12 @@ inline bool validation::isCpf()
      digito2 = 0;
       else
        digito2 = 11 - temp;
-       
-    /* 
-    Se todos os digitos forem iguais
-    então o CPF é inválido.
-    
-    
-    for(int i = 1; i < sizeof(cpf); i++)
-     if(cpf[i] != cpf[i-1])
-      return true;
-       else
-        return false;
-    */
+          
     /* 
     Se os digitos verificadores obtidos
     forem iguais aos informados pelo usuário,
     então o CPF é válido.
     */
-    
     if(digito1 == cpf[9] && digito2 == cpf[10])
      return true;
       else
@@ -196,7 +194,18 @@ void validation::print()
  {
   char i; 
   for(i = 0; i < 9; i++)cpf[9]=cpf[i];
-  
+    /* 
+    Se todos os digitos forem iguais
+    então o CPF é inválido.
+    *
+  if(!verify(cpf))
+   {
+    _input=0; 
+    std::cout<<"\n\tTodos Os numeros sao iguais.\n\n"; 
+    getCpf();
+   }
+   else
+     */
   switch(cpf[i])
   {
    case 0:
@@ -279,8 +288,7 @@ void validation::print()
     std::cout << " foi emitido em um desses estados: PR-SC.\n";
    break;
   }
-  
-  std::cout << "\n\tCpf: "
-            << fmtCpf(_input,"###.###.###-##")
-            << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
+   std::cout << "\n\tCpf: "
+             << fmtCpf(_input,"###.###.###-##")
+             << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
  }
