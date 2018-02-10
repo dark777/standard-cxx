@@ -197,7 +197,7 @@ void validation::print()
   Se todos os digitos forem iguais
   então o CPF é inválido.
   */
-  if(!verify(cpf))
+  if(verify(cpf) == 0)
    {
     std::cout<< "\n\tCpf: ";
     fmtCpf(_input);
