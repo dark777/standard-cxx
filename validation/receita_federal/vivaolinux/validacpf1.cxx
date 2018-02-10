@@ -22,7 +22,7 @@ struct validation
  
  inline validation(char *);
  
- validation& getCpf();
+ void getCpf();
  
  private:
  
@@ -36,14 +36,14 @@ struct validation
   
  void print();
  
- int cpf[11]={0};
- char *_input={0};
+ int cpf[11];
+ char *_input;
  
-}validate;
+}validation;
 
 int main()
 {
- validate.getCpf();
+ validation.getCpf();
  std::cout<<"\n";
  return 0;
 }
@@ -75,7 +75,7 @@ inline validation::validation(char *input): _input(input)
    }
  }
  
-validation& validation::getCpf()
+void validation::getCpf()
  {
   char input[12]={0};
   do{
@@ -85,7 +85,6 @@ validation& validation::getCpf()
      validation(input).print();
      
     }while(!validation(input).isCpf());
-  return *this; 
  }
  
 bool validation::verify(const int * cpf)
