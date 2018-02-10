@@ -158,43 +158,133 @@ struct validation
   switch(cpf[i])
   {
    case 0:
-    std::cout << "\n\tO Cpf: " << _input << " foi emitido no estado do RS.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido no estado do RS.\n";
    break;
    
    case 1:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido em um desses estados: DF-GO-MS-MT-TO.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido em um desses estados: DF-GO-MS-MT-TO.\n";
    break;
    
    case 2:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido em um desses estados: AC-AM-AP-PA-RO-RR.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido em um desses estados: AC-AM-AP-PA-RO-RR.\n";
    break;
    
    case 3:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido em um desses estados: CE-MA-PI.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido em um desses estados: CE-MA-PI.\n";
    break;
    
    case 4:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido em um desses estados: AL-PB-PE-RN.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido em um desses estados: AL-PB-PE-RN.\n";
    break;
    
    case 5:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido em um desses estados: BA-SE.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido em um desses estados: BA-SE.\n";
    break;
    
    case 6:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido no estado de MG.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido no estado de MG.\n";
    break;
    
    case 7:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido em um desses estados: ES-RJ.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido em um desses estados: ES-RJ.\n";
    break;
    
    case 8:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido no estado de SP.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido no estado de SP.\n";
    break;
    
    case 9:
-    std::cout << "\n\tO Cpf: "  << _input <<  " foi emitido em um desses estados: PR-SC.\n";
+    std::cout << "\n\tO Cpf: "; 
+    for(i = 0; i < 11; i++)
+     {
+      std::cout << _input[i];
+       if(i == 2 || i == 5)
+        std::cout << ".";
+       if(i == 8)
+        std::cout << "-";
+     }
+    std::cout << " foi emitido em um desses estados: PR-SC.\n";
    break;
   }
   
