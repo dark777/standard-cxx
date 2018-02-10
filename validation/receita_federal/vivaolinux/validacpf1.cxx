@@ -18,23 +18,23 @@ Modificação do Script Referência:
 struct validation
 {
  validation();
- ~validation();
+ inline ~validation();
  
  inline validation(char *);
  
- void getCpf();
+ inline void getCpf();
  
  private:
  
  inline bool isCpf();
  
- void fmtCpf(char *);
+ inline void fmtCpf(char *);
  
- bool verify(const int *);
+ inline bool verify(const int *);
  
  inline char* fmtCpf(char *, const char *);
-  
- void print();
+ 
+ inline void print();
  
  int cpf[11];
  char *_input;
@@ -50,7 +50,7 @@ int main()
 
 validation::validation(){}
 
-validation::~validation()
+inline validation::~validation()
 {
   cpf[0]=0;
   _input=0;
@@ -75,7 +75,7 @@ inline validation::validation(char *input): _input(input)
    }
  }
  
-void validation::getCpf()
+inline void validation::getCpf()
  {
   char input[12]={0};
   do{
@@ -87,7 +87,7 @@ void validation::getCpf()
     }while(!validation(input).isCpf());
  }
  
-bool validation::verify(const int * cpf)
+inline bool validation::verify(const int * cpf)
  {
   for(int i = 1; i < sizeof(cpf); i++)
    if(cpf[i] != cpf[i-1])
@@ -154,7 +154,7 @@ inline bool validation::isCpf()
        return false;
  }
  
-void validation::fmtCpf(char *fmt)
+inline void validation::fmtCpf(char *fmt)
  {
   for(int i = 0; i < 11; i++)
    {
@@ -189,7 +189,7 @@ inline char* validation::fmtCpf(char *var, const char *fmt)
   strcpy(var, aux);
  }
   
-void validation::print()
+inline void validation::print()
  {
   int i;
   /* 
