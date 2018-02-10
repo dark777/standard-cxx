@@ -58,7 +58,7 @@ validation::~validation()
 
 inline validation::validation(char *input): _input(input)
  {
-  for(char i = 0; i < 11; i++)
+  for(int i = 0; i < 11; i++)
    {
     //Convertendo char para valor absoluto segundo tabela ASCII e passando para array de inteiros// 
     cpf[i] = static_cast<int>(_input[i] - 48);
@@ -67,7 +67,7 @@ inline validation::validation(char *input): _input(input)
     if(cpf[i] < 0 || cpf[i] > 9)std::cout << "\n\tENTRADA INVÁLIDA\n";
    }
    
-  for(char i = 0; i < 11; i++)
+  for(int i = 0; i < 11; i++)
    {
     cpf[i];
     if(i == 2 || i == 5);
@@ -191,7 +191,7 @@ inline char* validation::fmtCpf(char *var, const char *fmt)
   
 void validation::print()
  {
-  char i;
+  int i;
   /* 
   Se todos os digitos forem iguais
   então o CPF é inválido.
@@ -213,55 +213,55 @@ void validation::print()
    case 0:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
-    std::cout << " foi emitido no estado do RS.\n";
+    std::cout << " foi emitido no estado de RS.\n";
    break;
    
    case 1:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
-    std::cout << " foi emitido em um desses estados: DF-GO-MS-MT-TO.\n";
+    std::cout << " foi emitido em algum dos estados: DF-GO-MS-MT-TO.\n";
    break;
    
    case 2:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
-    std::cout << " foi emitido em um desses estados: AC-AM-AP-PA-RO-RR.\n";
+    std::cout << " foi emitido em algum dos estados: AC-AM-AP-PA-RO-RR.\n";
    break;
    
    case 3:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
-    std::cout << " foi emitido em um desses estados: CE-MA-PI.\n";
+    std::cout << " foi emitido em algum dos estados: CE-MA-PI.\n";
    break;
    
    case 4:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
-    std::cout << " foi emitido em um desses estados: AL-PB-PE-RN.\n";
+    std::cout << " foi emitido em algum dos estados: AL-PB-PE-RN.\n";
    break;
    
    case 5:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
-    std::cout << " foi emitido em um desses estados: BA-SE.\n";
+    std::cout << " foi emitido em algum dos estados: BA-SE.\n";
    break;
    
    case 6:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido no estado de MG.\n";
    break;
@@ -269,15 +269,15 @@ void validation::print()
    case 7:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: "; 
+    std::cout << "\n\tCpf: "; 
     fmtCpf(_input);
-    std::cout << " foi emitido em um desses estados: ES-RJ.\n";
+    std::cout << " foi emitido em algum dos estados: ES-RJ.\n";
    break;
    
    case 8:
     if(!validation(_input).isCpf())break;
     else
-    std::cout << "\n\tO Cpf: "; 
+    std::cout << "\n\tCpf: "; 
     fmtCpf(_input);
     std::cout << " foi emitido no estado de SP.\n";
    break;
@@ -285,12 +285,13 @@ void validation::print()
    case 9:
     if(!validation(_input).isCpf())break;
     else 
-    std::cout << "\n\tO Cpf: ";
+    std::cout << "\n\tCpf: ";
     fmtCpf(_input);
-    std::cout << " foi emitido em um desses estados: PR-SC.\n";
+    std::cout << " foi emitido em algum dos estados: PR-SC.\n";
    break;
   }
-   std::cout << "\n\tCpf: "
-             << fmtCpf(_input,"###.###.###-##")
-             << (validation(_input).isCpf()?" is Valid\n":" is Invalid\n");
+    if(!validation(_input).isCpf())    
+     std::cout << "\n\tCpf: "
+              << fmtCpf(_input,"###.###.###-##")
+              << (validation(_input).isCpf()?"":" is Invalid\n");
  }
