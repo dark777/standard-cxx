@@ -206,6 +206,7 @@ void validation::print()
     getCpf();
    }
    else
+   /* Se o nono digito for igual ao existente no laço */  
   for(i = 0; i < 9; i++)cpf[9]=cpf[i];
   
   switch(cpf[i])
@@ -290,6 +291,10 @@ void validation::print()
     std::cout << " foi emitido em algum dos estados: PR-SC.\n";
    break;
   }
+    /* 
+    Se o cpf com digitos diferentes
+    for invalido retorna mensagen.
+    */
     if(!validation(_input).isCpf())    
      std::cout << "\n\tCpf: "
               << fmtCpf(_input,"###.###.###-##")
