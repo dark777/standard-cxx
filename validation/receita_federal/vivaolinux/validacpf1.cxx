@@ -37,7 +37,7 @@ struct validation
  void print();
  
  int cpf[11]={0};
- char *_input={0};
+ char *_input=0;
  
 }validate;
 
@@ -52,8 +52,8 @@ validation::validation(){}
 
 validation::~validation()
 {
-  cpf[0]={0};
-  _input={0};
+  cpf[0]=0;
+  _input=0;
 }
 
 inline validation::validation(char *input): _input(input)
