@@ -1,7 +1,3 @@
-//if (digito1==cpf[10] && digito2==cpf[11])
-//for(int i=0;i<=10;i++)cpf[i]==i;
-//std::cout << "\n\tCPF Invalido - Digitos Iguais\n\n"; 
-
 https://github.com/LacobusVentura/CPF-Gen/blob/master/cpfgen.c
 
 site que gera cpf's validos
