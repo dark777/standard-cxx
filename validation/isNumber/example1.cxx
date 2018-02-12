@@ -1,3 +1,4 @@
+#include <regex>
 #include <sstream>
 #include <iostream>
 
@@ -50,7 +51,7 @@ int isNumber(std::string str)
   }
 } 
 
-bool isInt(std::string numero)
+bool isIntReg(std::string numero)
 {
  std::regex rgx("^[0-9]+$");
 
@@ -58,6 +59,19 @@ bool isInt(std::string numero)
   return true;
   else
  return false;
+}
+
+void getIntReg()
+{
+  std::string num;
+  do{
+     std::cout<<"\n\tDigite um numero: ";
+     std::cin>>num;
+  
+     if(isIntReg(num))std::cout<<"\n\tIs Num.\n";
+     else
+      std::cout<<"\n\tNot is Num.\n";
+   }while(true);
 }
 
 void getNum1()
@@ -124,9 +138,34 @@ void getBool()
    }while(checkNumber(num) == 0);  
 }
 
+int isInt()
+{
+ int dado = -1;
+ std::string entrada = ""; //melhor ler uma string e tentar converter depois
+ 
+ while(true)
+ {
+  std::cout << "Digite um numero inteiro: ";
+  getline(std::cin, entrada); //pede um stream de uma linha toda
+  std::cout << std::endl;
+  std::stringstream myStream(entrada);
+  
+  if(!(myStream >> dado))
+   { //se não conseguir fazer a conversão
+    std::cout << "\n\tValor inválido, tente novamente\n\n";
+    continue;
+   }
+  if(dado < 0)
+   { //se digitar o número que determina encerrar
+    break;
+   }
+ }
+}
+
 int main()
 {
  //getNum2();
-  getBool();
+  //getBool();
+ getIntReg();
  return 0;
 }
