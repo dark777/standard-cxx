@@ -14,16 +14,16 @@ int main(int argc, char* argv[])
        return 1;
       }
       
+      // Create SQL statement stringstream;
+      std::stringstream sql;
+      
       // Create a non-transactional object.
       pqxx::nontransaction non_obj(login);
       
-      // Create SQL statement stringstream;
-      std::stringstream contsql;
-      
-      contsql<<"select *from person where person_id = (select count(*) from person);";
+      sql<<"select *from person where person_id = (select count(*) from person);";
       
       // Execute SQL query 
-      pqxx::result res1(non_obj.exec(contsql));
+      pqxx::result res1(non_obj.exec(sql));
       
       for (pqxx::result::const_iterator num1 = res1.begin(); num1 != res1.end(); ++num1)
       std::cout << "\n\tNum Rows.: " << num1[0].as<int>()<<"\n";
@@ -31,8 +31,7 @@ int main(int argc, char* argv[])
       std::cout<<"\n\tQual Usuario deseja listar? ";
       std::cin>>argc;
       
-      //Create SQL statement stringstream; 
-      std::stringstream sql;
+      // Select person_id
       sql << "select *from person where person_id=" << argc;
       
       // Create SQL statement const char*
