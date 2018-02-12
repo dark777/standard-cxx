@@ -1,3 +1,5 @@
+#include <iostream>
+#include <dirent.h>
 /* ListarDiretorios.cpp:
    - Listar diretorios
    - Criar recursão para acessar subpastas
@@ -5,20 +7,27 @@
    - Adicionar arquivos em uma coleção
    - Estruturar o programa em classes
 */
+#if defined(__WIN32__) || defined(__WINDOWS__)
 
-#include <iostream>
-#include <dirent.h>
-
+//Windows definition
 #define IS_FILE 32768
 #define IS_DIR 16384
 
+const char *DIRECTORY = "c:\\";
+
+#elif defined(__linux) || defined(linux)
+
+//Linux definition
+#define IS_DIR 0x4
+#define IS_FILE 0x8
+
 const char *DIRECTORY = "/home/";
 
+#endif
+
 struct dirent *directory = 0;
+
 DIR *_DIR;
-
-using namespace std;
-
 
 //prototipos
 int countFiles(const char *);
@@ -28,8 +37,12 @@ inline bool dirExist(const char *);
 
 int main()
 {
- //cout << countFiles(DIRECTORY) << endl;
- cout << dirExist(DIRECTORY) << endl;
+ std::cout << std::endl
+           << countFiles(DIRECTORY)
+           << std::endl
+           << dirExist(DIRECTORY)
+           << std::endl;
+    
  listDir(DIRECTORY);
  return 0;
 }
@@ -46,11 +59,14 @@ void listDir(const char *dir)
  while ((directory = readdir(_DIR)) != NULL)
   {
    if(directory->d_type == IS_DIR)
-   cout << DIRECTORY << directory->d_name << endl;
+   std::cout << DIRECTORY
+             << directory->d_name
+             << std::endl;
   };
  
  directory = 0;
  closedir(::_DIR);
+ std::cout << std::endl;
 }
 
 inline bool existsFiles(const char *dir)
