@@ -37,17 +37,16 @@ int isNumber(std::string str)
 {
   while(getline( std::cin, str )) 
   {
-    const char *idx = str.c_str( );
-
-    // Mientras que no lleguemos al final de la cadena,
-    // y el caracter sea un dígito.
-    while( *idx && *idx >= '0' && *idx <= '9' )
-      ++idx;
-
-    // Si llegamos al final de la cadena, la validación es correcta.
-    if(!( *idx ) )break;
-
-    std::cout << "\n\tEntrada inválida.\n"; 
+   const char *idx = str.c_str( );
+   
+   // Mientras que no lleguemos al final de la cadena,
+   // y el caracter sea un dígito.
+   while( *idx && *idx >= '0' && *idx <= '9' )++idx;
+    
+   // Si llegamos al final de la cadena, la validación es correcta.
+   if(!( *idx ) )break;
+   
+   std::cout << "\n\tEntrada inválida.\n"; 
   }
 } 
 
@@ -94,9 +93,9 @@ bool checkNumber(std::string &s)
    ssOut << n;
    s = ssOut.str();	  
    return true;
-   }
-   else
-   s.clear();
+  }
+  else
+  s.clear();
  return false;
 }
 
@@ -104,16 +103,15 @@ void getBool()
 {
  std::string num;
  
- do
-  { 
-   std::cout<<"\n\tDigite um numero: ";
-   std::cin>>num;
+ do{ 
+    std::cout<<"\n\tDigite um numero: ";
+    std::cin>>num;
   
-   if(checkNumber(num) == 0)
-    std::cout<<"\n\tNao é um numero\n\n";
-   else
-    std::cout<<"\n\tÉ um numero.\n\n";
- }while(checkNumber(num) == 0);  
+    if(checkNumber(num) == 0)
+     std::cout<<"\n\tNao é um numero\n\n";
+    else
+     std::cout<<"\n\tÉ um numero.\n\n";
+   }while(checkNumber(num) == 0);  
 }
 
 int main()
