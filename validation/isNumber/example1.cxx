@@ -50,6 +50,16 @@ int isNumber(std::string str)
   }
 } 
 
+bool isInt(std::string numero)
+{
+ std::regex rgx("^[0-9]+$");
+
+ if(std::regex_match(numero,rgx))
+  return true;
+  else
+ return false;
+}
+
 void getNum1()
 {
  std::string s;
