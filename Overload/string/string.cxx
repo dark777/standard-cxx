@@ -79,13 +79,15 @@ int main()
     String s3 = "operador";
     String s4 = s1 + s2 + s3;
     s4.mostra();
-
-    char c = s4[11];
+    
+    //A letra é é a 12º letra do vetor.
+    char c = s4[12];
 
     std::cout << "\n" << c;
-
-    s4 = s2 * 7;
+    
+    s4 = s2 * 10;
     std::cout << "\n";
+    // imprime a s2 10 vezes
     s4.mostra();
     std::cout<<"\n\n";
     return 0;
