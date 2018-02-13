@@ -31,13 +31,17 @@ int main(int argc, char* argv[])
       std::cout<<"\n\tQual Usuario deseja listar? ";
       std::cin>>argc;
       
-      // Select person_id
+      // Listando pessoa pelo id
       sql << "select *from person where person_id=" << argc;
       
-      // Create SQL statement const char*
-      //const char * sql; 
-      //sql = "select *from person where person_id=1";
       
+      /*
+      //Listando pelo nome.
+      std::cout<<"Digite o nome que deseja listar: ";
+      std::cin>>argv[0];
+      
+      sql<<"select *from person where name ilike \'"<<argv[0]<<"%\'";
+      */
       // Execute SQL query
       pqxx::result res2(non_obj.exec(sql));
       
