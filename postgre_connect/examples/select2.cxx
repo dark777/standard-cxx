@@ -26,7 +26,6 @@ pqxx::result query()
   return r;
 }
 
-
 /// Query employees from database, print results.
 int main(int, char *argv[])
 {

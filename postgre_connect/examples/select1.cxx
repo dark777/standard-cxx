@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
       
       /*
       //Listando pelo nome.
-      std::cout<<"Digite o nome que deseja listar: ";
+      std::cout<<"\n\tDigite o nome que deseja listar: ";
       std::cin>>argv[0];
       
       sql<<"select *from person where name ilike \'"<<argv[0]<<"%\'";
