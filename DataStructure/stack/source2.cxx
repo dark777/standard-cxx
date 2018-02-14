@@ -56,7 +56,7 @@ int main()
        
       for(int i = 0;i < opt.num; i++)
        {
-        std::cout << "\n\tINSIRA NA LISTA O NUMERO " << i+1 << ": ";
+        std::cout << "\n\tINSIRA NA LISTA O NUMERO " << i+1 << "º: ";
         lista *novo = new lista();
         std::cin >> novo->num;
           

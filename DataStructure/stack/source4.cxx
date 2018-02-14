@@ -64,7 +64,7 @@ int main()
        
       for(int i = 0;i < opt.num; i++)
        {
-        std::cout << "\n\tINSIRA NO INICIO O NUMERO " << i+1 << ": ";
+        std::cout << "\n\tINSIRA NO INICIO O NUMERO " << i+1 << "º: ";
         lista *novo = new lista();
         std::cin >> novo->num;
        
@@ -94,7 +94,7 @@ int main()
        
       for(int i = 0;i < opt.num; i++)
        {
-        std::cout << "\n\tINSIRA NO FIM O NUMERO " << i+1 << ": ";
+        std::cout << "\n\tINSIRA NO FIM O NUMERO " << i+1 << "º: ";
         lista *novo = new lista();
         std::cin >> novo->num;
       

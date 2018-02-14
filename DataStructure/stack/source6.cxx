@@ -54,7 +54,7 @@ int main()
          std::cin >> opt.num;
          for(int i = 0;i < opt.num; i++)
          {
-          std::cout << "\n\tINSIRA NA PILHA O NUMERO " << i+1 << ": ";
+          std::cout << "\n\tINSIRA NA PILHA O NUMERO " << i+1 << "º: ";
            pilha *novo = new pilha();
             std::cin >> novo->num;
             novo->prox = topo;

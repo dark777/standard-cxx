@@ -54,7 +54,7 @@ int main()
        
        for(int i = 0; i < opt.num; i++)
         {
-         std::cout << "\n\tINSIRA NA FILA O NUMERO " << i+1 << ": ";
+         std::cout << "\n\tINSIRA NA FILA O NUMERO " << i+1 << "º: ";
          fila *novo = new fila();
          std::cin >> novo->num;
          novo->prox = NULL;

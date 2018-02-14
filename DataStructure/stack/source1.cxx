@@ -44,7 +44,7 @@ int main()
      
      for(i = 0; i < qtd; i++)
       {
-       std::cout << "\n\tDIGITE O NUMERO " << i+1 << ": ";
+       std::cout << "\n\tDIGITE O NUMERO " << i+1 << "º: ";
        std::cin >> X[i];
       }
                 
@@ -74,7 +74,7 @@ int main()
       std::cin >> qtd;
       for(i = 0; i < qtd; i++)
        {
-        std::cout << "\n\tDIGITE O NUMERO " << i+1 << ": ";
+        std::cout << "\n\tDIGITE O NUMERO " << i+1 << "º: ";
         std::cin >> X[i];
        }
                 
