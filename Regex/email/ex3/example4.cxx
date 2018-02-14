@@ -272,8 +272,9 @@ void menu()
       
       default:
          std::cout << "\n\tInvalid Option!\n\n";
+      break; 
      }
-   }while(1); 
+   }while(1);
 }
 
 int main() 
