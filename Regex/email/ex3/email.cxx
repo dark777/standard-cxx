@@ -19,25 +19,27 @@ struct email
   
  bool isMail()
  {
-  if(count(_mail.begin(), _mail.end(), '@') != 1)return false;
-
+  if(count(_mail.begin(), _mail.end(), '@') != 1)
+  return false;
+  
   const std::string::size_type pos_at = _mail.find('@');
-
-  if(pos_at == 0 || (pos_at == (_mail.length() - 1)))return false;
-
+  
+  if(pos_at == 0 || (pos_at == (_mail.length() - 1)))
+  return false;
+  
   if(_mail.find('.', pos_at) == std::string::npos)
   return false;
+  else
   return true;
  }
-
+ 
  void print()
  {
   std::cout<<"\n\tEmail: "<<_mail<<(isMail()?" is Valid\n":" is Invalid\n"); 
  }
  
  private:
-  std::string _mail;
-   
+  std::string _mail;  
 };
 
 void getEmail()
@@ -67,8 +69,6 @@ Contact getContact()
  
  return c;
 }
-
-
 
 int main(void)
 {
