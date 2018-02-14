@@ -10,6 +10,14 @@ struct validation
  virtual bool isValid() = 0;
 };
 
+void menu_All();
+
+int main() 
+{
+ menu_All(); 
+ return 0;
+}
+
 struct gmail: validation
 {
  gmail(){}
@@ -343,11 +351,4 @@ void menu_All()
       break; 
      }
    }while(1);
-}
-
-
-int main() 
-{
- menu_All(); 
- return 0;
 }
