@@ -20,11 +20,11 @@ struct gmail: validation
   
   bool isValid()
   {
-   std::string servidor("@gmail.com");
+   std::string server("@gmail.com");
    
-   std::string pedaco(_mail.substr(_mail.size()-servidor.size()));
+   std::string piece(_mail.substr(_mail.size()-server.size()));
    
-   return !pedaco.compare(servidor);
+   return !piece.compare(server);
   }
   
  private:
@@ -42,11 +42,11 @@ struct uol: validation
   
   bool isValid()
   {
-   std::string servidor("@uol.com.br");
+   std::string server("@uol.com.br");
    
-   std::string pedaco(_mail.substr(_mail.size()-servidor.size()));
+   std::string piece(_mail.substr(_mail.size()-server.size()));
    
-   return !pedaco.compare(servidor);
+   return !piece.compare(server);
   }
   
  private:
@@ -64,33 +64,33 @@ struct bol: validation
   
  bool isValid()
  {
-  std::string servidor("@bol.com.br");
+  std::string server("@bol.com.br");
   
-  std::string pedaco(_mail.substr(_mail.size()-servidor.size()));
+  std::string piece(_mail.substr(_mail.size()-server.size()));
   
-  return !pedaco.compare(servidor);
+  return !piece.compare(server);
  }
  
  private:
   std::string _mail; 
 };
 
-struct terra: validation
+struct earth: validation
 {
- terra(std::string mail): _mail(mail){}
+ earth(std::string mail): _mail(mail){}
  
- ~terra()
+ ~earth()
   {
    if(!_mail.empty())_mail.clear();  
   }
   
  bool isValid()
  {
-  std::string servidor("@terra.com.br");
+  std::string server("@terra.com.br");
   
-  std::string pedaco(_mail.substr(_mail.size()-servidor.size()));
+  std::string piece(_mail.substr(_mail.size()-server.size()));
   
-  return !pedaco.compare(servidor);
+  return !piece.compare(server);
  }
  
  private:
@@ -108,11 +108,11 @@ struct yahoo: validation
   
  bool isValid()
  {
-  std::string servidor("@yahoo.com.br");
+  std::string server("@yahoo.com.br");
   
-  std::string pedaco(_mail.substr(_mail.size()-servidor.size()));
+  std::string piece(_mail.substr(_mail.size()-server.size()));
   
-  return !pedaco.compare(servidor);
+  return !piece.compare(server);
  }
  
  private:
@@ -130,11 +130,11 @@ struct hotmail: validation
   
  bool isValid()
  {
-  std::string servidor("@hotmail.com.br");
+  std::string server("@hotmail.com.br");
   
-  std::string pedaco(_mail.substr(_mail.size()-servidor.size()));
+  std::string piece(_mail.substr(_mail.size()-server.size()));
   
-  return !pedaco.compare(servidor);
+  return !piece.compare(server);
  }
 
  private:
@@ -147,7 +147,7 @@ void menu()
  std::string str;
  validation* is_val[6];
  
- enum { Gmail=1, Uol, Bol, Terra, Yahoo, Hotmail, Exit };
+ enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit };
  
  do{
     std::cout << "\n\tValidation e-mail"
@@ -175,6 +175,7 @@ void menu()
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
          else 
          std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
         }while(!is_val[0]->isValid());
       
       break;
@@ -191,6 +192,7 @@ void menu()
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
          else 
          std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
         }while(!is_val[1]->isValid());
       
       break;
@@ -207,22 +209,24 @@ void menu()
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
          else 
          std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
         }while(!is_val[2]->isValid());
       
       break;
       
-      case Terra:
+      case Earth:
       
       do{
          std::cout<<"\n\tEnter your earth mail: ";
          std::cin>>str;
          
-         is_val[3] = new terra(str);
+         is_val[3] = new earth(str);
          
          if(is_val[3]->isValid())
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
          else 
          std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         
         }while(!is_val[3]->isValid());
       
       break;
@@ -256,6 +260,7 @@ void menu()
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
          else 
          std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
         }while(!is_val[5]->isValid());
       
       break;
