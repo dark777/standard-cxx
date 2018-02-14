@@ -88,50 +88,50 @@ void menu()
        std::cout<<"\n\tEnter your email: ";
        std::cin>>str;
        
-        if(uol(str))
-        std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-        else 
-        std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       if(uol(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
       break;
       
       case Bol:
        std::cout<<"\n\tEnter your email: ";
        std::cin>>str;
        
-        if(bol(str))
-        std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-        else 
-        std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       if(bol(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
       break;
       
       case Terra:
        std::cout<<"\n\tEnter your email: ";
        std::cin>>str;
        
-        if(terra(str))
-        std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-        else 
-        std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       if(terra(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
       break;
       
       case Yahoo:
        std::cout<<"\n\tEnter your email: ";
        std::cin>>str;
        
-        if(yahoo(str))
-        std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-        else 
-        std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       if(yahoo(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
       break;
       
       case Hotmail:
        std::cout<<"\n\tEnter your email: ";
        std::cin>>str;
        
-        if(hotmail(str))
-        std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-        else 
-        std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       if(hotmail(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
       break;
                                     
       case Exit:
