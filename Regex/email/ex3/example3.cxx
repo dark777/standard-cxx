@@ -58,7 +58,7 @@ void menu()
 {
  int op;
  std::string str;
- enum Mail{ Gmail=1, Uol, Bol, Terra, Yahoo, Hotmail, Exit };
+ enum { Gmail=1, Uol, Bol, Terra, Yahoo, Hotmail, Exit };
  
  do{
     std::cout << "\n\tValidation Email"
@@ -72,7 +72,7 @@ void menu()
                  "\n\tEnter: ";
     std::cin>>op;
     
-     switch(op)
+    switch(op)
      {      
       case Gmail:
        std::cout<<"\n\tEnter your email: ";
