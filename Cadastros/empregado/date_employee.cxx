@@ -109,9 +109,9 @@ struct Employee
 
  void Display()
  {
-  std::cout << "\n\n\tEmployee's Number: "<< e_number
-       << "\n\tEmployee's Salary R$: " << e_salary
-       << "\n\tEmployee's Job Category: ";
+  std::cout << "\n\n\tEmployee's Number: " << e_number
+            << "\n\tEmployee's Salary R$: " << e_salary
+            << "\n\tEmployee's Job Category: ";
   
   switch(e_job)
    {
