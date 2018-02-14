@@ -5,11 +5,13 @@
 std::map<std::string, int> months;
 std::map<std::string, int>::iterator iter;
 
+//take value of the month through the name
 int GetValue(std::string vals)
 {
  return months[vals];
 }
 
+//take the name of the month through your number
 std::string GetName(int value)
 {
  for(iter = months.begin(); iter != months.end(); iter++ )
@@ -31,16 +33,14 @@ void initMonths()
  months["Setember"] =  9;
  months["October"]  = 10;
  months["November"] = 11;
- months["December"] = 12; 
+ months["December"] = 12;
 }
 void getMont(std::string name, int value)
 {
  initMonths();
-    
- std::string num_mont(std::to_string(GetValue(name)));
 
- std::cout<<"\n\t"<<std::to_string(GetValue(name))
-          <<"\n\t"<<GetName(value)
+ std::cout<<"\n\tMonth value by name: "<<GetValue(name)
+          <<"\n\n\tName of the month\n\twith your number: "<<GetName(value)
           <<"\n\n";
 }
 
@@ -49,10 +49,10 @@ int main()
  int num; 
  std::string str;
  
- std::cout<<"Digite o numero de um mês: ";
+ std::cout<<"Enter the number of the month: ";
  std::cin>>num;
  
- std::cout<<"Digite o nome de um mês: ";
+ std::cout<<"Enter the name of the month in English: ";
  std::cin>>str;
  
  getMont(str, num);
