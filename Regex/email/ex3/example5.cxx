@@ -4,7 +4,7 @@
 struct validation
 {
  validation(){}
- ~validation(){}
+ ~validation(){ delete is_val; }
  //pure virtual function to enforce reimplementation
  virtual void menu() = 0;
  virtual bool isValid() = 0;
@@ -31,7 +31,8 @@ struct gmail: validation
  
  ~gmail()
   {
-   if(!_mail.empty())_mail.clear(); 
+   delete is_val; 
+   _mail.clear(); 
   }
   
   bool isValid()
@@ -71,7 +72,8 @@ struct uol: validation
  
  ~uol()
   {
-   if(!_mail.empty())_mail.clear();  
+   delete is_val; 
+   _mail.clear(); 
   }
   
   bool isValid()
@@ -111,7 +113,8 @@ struct bol: validation
  
  ~bol()
   {
-   if(!_mail.empty())_mail.clear();  
+   delete is_val; 
+   _mail.clear();
   }
   
   bool isValid()
@@ -151,7 +154,8 @@ struct earth: validation
  
  ~earth()
   {
-   if(!_mail.empty())_mail.clear();  
+   delete is_val; 
+   _mail.clear();
   }
   
   bool isValid()
@@ -191,7 +195,8 @@ struct yahoo: validation
  
  ~yahoo()
   {
-   if(!_mail.empty())_mail.clear();  
+   delete is_val; 
+   _mail.clear();
   }
   
   bool isValid()
@@ -231,7 +236,8 @@ struct hotmail: validation
  
  ~hotmail()
   {
-   if(!_mail.empty())_mail.clear();  
+   delete is_val; 
+   _mail.clear();
   }
   
   bool isValid()
@@ -266,7 +272,7 @@ struct hotmail: validation
 void menu_All()
 {
  int op;
- validation* m_val[6];
+ validation* m_val;
  
  enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit };
  
@@ -286,59 +292,63 @@ void menu_All()
      {      
       case Gmail:
        
-       m_val[0] = new gmail();
+       m_val = new gmail();
          
-       m_val[0]->menu();
+       m_val->menu();
        
       break;
       
       case Uol:
        
-       m_val[1] = new uol();
+       m_val = new uol();
        
-       m_val[1]->menu();
+       m_val->menu();
        
       break;
       
       case Bol:
          
-       m_val[2] = new bol();
+       m_val = new bol();
          
-       m_val[2]->menu();
+       m_val->menu();
        
       break;
       
       case Earth:
        
-       m_val[3] = new earth();
+       m_val = new earth();
          
-       m_val[3]->menu();
+       m_val->menu();
        
       break;
       
       case Yahoo:
        
-       m_val[4] = new yahoo();
+       m_val = new yahoo();
          
-       m_val[4]->menu();
+       m_val->menu();
        
       break;
       
       case Hotmail:
          
-       m_val[5] = new hotmail();
+       m_val = new hotmail();
          
-       m_val[5]->menu();
+       m_val->menu();
        
       break;
       
       case Exit:
+       
        std::cout << "\n\tGood Bye!\n\n";
        exit(1);
+       
       break;
       
       default:
+       
        std::cout << "\n\tInvalid Option!\n\n";
+       
       break; 
      }
    }while(1);
