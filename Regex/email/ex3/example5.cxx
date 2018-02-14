@@ -8,6 +8,10 @@ struct validation
  //pure virtual function to enforce reimplementation
  virtual void menu() = 0;
  virtual bool isValid() = 0;
+ 
+ protected:
+  std::string str; 
+  validation* is_val;
 };
 
 void menu_All();
@@ -28,7 +32,16 @@ struct gmail: validation
   {
    if(!_mail.empty())_mail.clear(); 
   }
-    
+  
+  bool isValid()
+  {
+   std::string server("@gmail.com");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
   void menu()
   {
    do{
@@ -46,18 +59,6 @@ struct gmail: validation
   }
    
  private:
-  
-  bool isValid()
-  {
-   std::string server("@gmail.com");
-   
-   std::string piece(_mail.substr(_mail.size()-server.size()));
-   
-   return !piece.compare(server);
-  }
-  
-  std::string str;
-  validation* is_val;
   std::string _mail; 
 };
 
@@ -71,7 +72,16 @@ struct uol: validation
   {
    if(!_mail.empty())_mail.clear();  
   }
-    
+  
+  bool isValid()
+  {
+   std::string server("@uol.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
   void menu()
   {
    do{
@@ -89,18 +99,6 @@ struct uol: validation
   }
   
  private:
-  
-  bool isValid()
-  {
-   std::string server("@uol.com.br");
-   
-   std::string piece(_mail.substr(_mail.size()-server.size()));
-   
-   return !piece.compare(server);
-  }
-  
-  std::string str;
-  validation* is_val; 
   std::string _mail; 
 };
 
@@ -141,8 +139,6 @@ struct bol: validation
   }
   
  private:
-  std::string str;
-  validation* is_val;
   std::string _mail; 
 };
 
@@ -183,8 +179,6 @@ struct earth: validation
   }
   
  private:
-  std::string str;
-  validation* is_val;
   std::string _mail; 
 };
 
@@ -225,8 +219,6 @@ struct yahoo: validation
   }
   
  private:
-  std::string str;
-  validation* is_val;
   std::string _mail; 
 };
 
@@ -267,15 +259,13 @@ struct hotmail: validation
   }
   
  private:
-  std::string str;
-  validation* is_val;
   std::string _mail; 
 };
 
 void menu_All()
 {
  int op;
- validation* is_val[6];
+ validation* m_val[6];
  
  enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit };
  
@@ -294,51 +284,51 @@ void menu_All()
     switch(op)
      {      
       case Gmail:
-      
-       is_val[0] = new gmail();
+       
+       m_val[0] = new gmail();
          
-       is_val[0]->menu();
-      
+       m_val[0]->menu();
+       
       break;
       
       case Uol:
        
-       is_val[1] = new uol();
+       m_val[1] = new uol();
        
-       is_val[1]->menu();
-      
+       m_val[1]->menu();
+       
       break;
       
       case Bol:
          
-       is_val[2] = new bol();
+       m_val[2] = new bol();
          
-       is_val[2]->menu();
-      
+       m_val[2]->menu();
+       
       break;
       
       case Earth:
        
-       is_val[3] = new earth();
+       m_val[3] = new earth();
          
-       is_val[3]->menu();
-      
+       m_val[3]->menu();
+       
       break;
       
       case Yahoo:
        
-       is_val[4] = new yahoo();
+       m_val[4] = new yahoo();
          
-       is_val[4]->menu();
+       m_val[4]->menu();
        
       break;
       
       case Hotmail:
          
-       is_val[5] = new hotmail();
+       m_val[5] = new hotmail();
          
-       is_val[5]->menu();
-      
+       m_val[5]->menu();
+       
       break;
       
       case Exit:
