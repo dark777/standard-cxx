@@ -20,16 +20,7 @@ struct gmail: validation
   {
    if(!_mail.empty())_mail.clear(); 
   }
-  
-  bool isValid()
-  {
-   std::string server("@gmail.com");
-   
-   std::string piece(_mail.substr(_mail.size()-server.size()));
-   
-   return !piece.compare(server);
-  }
-  
+    
   void menu()
   {
    do{
@@ -47,6 +38,16 @@ struct gmail: validation
   }
    
  private:
+  
+  bool isValid()
+  {
+   std::string server("@gmail.com");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
   std::string str;
   validation* is_val;
   std::string _mail; 
@@ -62,16 +63,7 @@ struct uol: validation
   {
    if(!_mail.empty())_mail.clear();  
   }
-  
-  bool isValid()
-  {
-   std::string server("@uol.com.br");
-   
-   std::string piece(_mail.substr(_mail.size()-server.size()));
-   
-   return !piece.compare(server);
-  }
-  
+    
   void menu()
   {
    do{
@@ -89,6 +81,16 @@ struct uol: validation
   }
   
  private:
+  
+  bool isValid()
+  {
+   std::string server("@uol.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
   std::string str;
   validation* is_val; 
   std::string _mail; 
@@ -222,6 +224,8 @@ struct yahoo: validation
 
 struct hotmail: validation
 {
+ hotmail(){}
+ 
  hotmail(std::string mail): _mail(mail){}
  
  ~hotmail()
@@ -315,7 +319,7 @@ void menu_All()
       
       case Yahoo:
        
-       is_val[4] = new yahoo(str);
+       is_val[4] = new yahoo();
          
        is_val[4]->menu();
        
@@ -323,7 +327,7 @@ void menu_All()
       
       case Hotmail:
          
-       is_val[5] = new hotmail(str);
+       is_val[5] = new hotmail();
          
        is_val[5]->menu();
       
