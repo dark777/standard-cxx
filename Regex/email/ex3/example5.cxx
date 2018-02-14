@@ -286,10 +286,10 @@ void menu_All()
                  "\n\t[6]-Hotmail"
                  "\n\t[7]-Exit"
                  "\n\tEnter: ";
-    std::cin>>op;
+    std::cin >> op;
     
     switch(op)
-     {      
+     {     
       case Gmail:
        
        m_val = new gmail();
