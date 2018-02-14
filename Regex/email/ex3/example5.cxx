@@ -47,15 +47,15 @@ struct gmail: validation
   void menu()
   {
    do{
-      std::cout<<"\n\tEnter your google e-mail: ";
-      std::cin>>str;
+      std::cout << "\n\tEnter your google e-mail: ";
+      std::cin >> str;
           
       is_val = new gmail(str);
          
       if(is_val->isValid())
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
           
      }while(!is_val->isValid());
   }
@@ -88,15 +88,15 @@ struct uol: validation
   void menu()
   {
    do{
-      std::cout<<"\n\tEnter your uol e-mail: ";
-      std::cin>>str;
+      std::cout << "\n\tEnter your uol e-mail: ";
+      std::cin >> str;
           
       is_val = new uol(str);
          
       if(is_val->isValid())
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
           
      }while(!is_val->isValid());
   }
@@ -129,15 +129,15 @@ struct bol: validation
   void menu()
   {
    do{
-      std::cout<<"\n\tEnter your bol e-mail: ";
-      std::cin>>str;
+      std::cout << "\n\tEnter your bol e-mail: ";
+      std::cin >> str;
           
       is_val = new bol(str);
          
       if(is_val->isValid())
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
           
      }while(!is_val->isValid());
   }
@@ -170,15 +170,15 @@ struct earth: validation
   void menu()
   {
    do{
-      std::cout<<"\n\tEnter your earth e-mail: ";
-      std::cin>>str;
+      std::cout << "\n\tEnter your earth e-mail: ";
+      std::cin >> str;
           
       is_val = new earth(str);
          
       if(is_val->isValid())
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
           
      }while(!is_val->isValid());
   }
@@ -211,15 +211,15 @@ struct yahoo: validation
   void menu()
   {
    do{
-      std::cout<<"\n\tEnter your yahoo e-mail: ";
-      std::cin>>str;
+      std::cout << "\n\tEnter your yahoo e-mail: ";
+      std::cin >> str;
           
       is_val = new yahoo(str);
          
       if(is_val->isValid())
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
           
      }while(!is_val->isValid());
   }
@@ -252,15 +252,15 @@ struct hotmail: validation
   void menu()
   {
    do{
-      std::cout<<"\n\tEnter your hotmail e-mail: ";
-      std::cin>>str;
+      std::cout << "\n\tEnter your hotmail e-mail: ";
+      std::cin >> str;
           
       is_val = new hotmail(str);
          
       if(is_val->isValid())
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
           
      }while(!is_val->isValid());
   }
