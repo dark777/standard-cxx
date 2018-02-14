@@ -1,6 +1,6 @@
 #include <iostream>
 
-//base class
+//base class validation
 struct validation
 {
  validation(){}
@@ -14,6 +14,7 @@ struct validation
   validation* is_val;
 };
 
+//function foward declaration
 void menu_All();
 
 int main() 
