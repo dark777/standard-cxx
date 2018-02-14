@@ -19,11 +19,15 @@ struct email
   
  bool isMail()
  {
-  std::smatch email_smatch;
+  if(count(_mail.begin(), _mail.end(), '@') != 1)return false;
 
-  const std::regex pattern("([a-zA-Z0-9._]+@(?:(?:hotmail|terra|yahoo|bol)[.](?:com[.]br)?)?(?:(?:gmail)[.](?:com)?)?)?");
+  const std::string::size_type pos_at = _mail.find('@');
 
-  return std::regex_match(_mail, email_smatch, pattern);
+  if(pos_at == 0 || (pos_at == (_mail.length() - 1)))return false;
+
+  if(_mail.find('.', pos_at) == std::string::npos)
+  return false;
+  return true;
  }
 
  void print()
