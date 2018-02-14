@@ -1,7 +1,7 @@
 #include <limits> //numeric_limits
 #include <iostream>
  
-enum Months { January=1, February, March, April, May, June, July, August, September, October, November, December};
+enum { January=1, February, March, April, May, June, July, August, September, October, November, December};
 
 /**
  * Makes sure data isn't malicious, and signals user to re-enter proper data if invalid
