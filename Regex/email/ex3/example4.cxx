@@ -9,6 +9,14 @@ struct validation
  virtual bool isValid() = 0;
 };
 
+void menu();
+
+int main() 
+{
+ menu();
+ return 0;
+}
+
 struct gmail: validation
 {
  gmail(std::string mail): _mail(mail){}
@@ -275,10 +283,4 @@ void menu()
       break; 
      }
    }while(1);
-}
-
-int main() 
-{
- menu();
- return 0;
 }
