@@ -135,12 +135,12 @@ void menu()
       break;
                                     
       case Exit:
-       std::cout << "\n\tGoodbye!\n\n";
+       std::cout << "\n\tGood Bye!\n\n";
        exit(1);
       break;
       
       default:
-       std::cout << "\n\tInvalid!\n\n";
+       std::cout << "\n\tInvalid Option!\n\n";
      }
    }while(1); 
 }
