@@ -29,7 +29,7 @@ struct gmail: validation
  
  gmail(std::string mail): _mail(mail){}
  
- virtual ~gmail()
+ ~gmail()
   {
    delete is_val; 
    _mail.clear(); 
@@ -70,7 +70,7 @@ struct uol: validation
  
  uol(std::string mail): _mail(mail){}
  
- virtual ~uol()
+ ~uol()
   {
    delete is_val; 
    _mail.clear(); 
@@ -111,7 +111,7 @@ struct bol: validation
  
  bol(std::string mail): _mail(mail){}
  
- virtual ~bol()
+ ~bol()
   {
    delete is_val; 
    _mail.clear();
@@ -152,7 +152,7 @@ struct earth: validation
  
  earth(std::string mail): _mail(mail){}
  
- virtual ~earth()
+ ~earth()
   {
    delete is_val; 
    _mail.clear();
@@ -184,7 +184,7 @@ struct earth: validation
   }
   
  private:
-  std::string _mail; 
+  std::string _mail;
 };
 
 struct yahoo: validation
@@ -193,7 +193,7 @@ struct yahoo: validation
  
  yahoo(std::string mail): _mail(mail){}
  
- virtual ~yahoo()
+ ~yahoo()
   {
    delete is_val; 
    _mail.clear();
@@ -234,7 +234,7 @@ struct hotmail: validation
  
  hotmail(std::string mail): _mail(mail){}
  
- virtual ~hotmail()
+ ~hotmail()
   {
    delete is_val; 
    _mail.clear();
@@ -261,12 +261,12 @@ struct hotmail: validation
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
       else 
        std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
-          
+      
      }while(!is_val->isValid());
   }
   
  private:
-  std::string _mail; 
+  std::string _mail;
 };
 
 void menu_All()
