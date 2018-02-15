@@ -193,6 +193,7 @@ inline char* validation::fmtCpf(char *var, const char *fmt)
 inline void validation::print()
  {
   int i;
+  enum { Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine };
   /* 
   Se todos os digitos forem iguais
   então o CPF é inválido.
@@ -212,84 +213,104 @@ inline void validation::print()
   
   switch(cpf[i])
   {
-   case 0:
+   case Zero:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido no estado de RS.\n";
+    
    break;
    
-   case 1:
+   case One:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido em algum dos estados: DF-GO-MS-MT-TO.\n";
+    
    break;
    
-   case 2:
+   case Two:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido em algum dos estados: AC-AM-AP-PA-RO-RR.\n";
+    
    break;
    
-   case 3:
+   case Three:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido em algum dos estados: CE-MA-PI.\n";
+    
    break;
    
-   case 4:
+   case Four:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido em algum dos estados: AL-PB-PE-RN.\n";
+    
    break;
    
-   case 5:
+   case Five:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido em algum dos estados: BA-SE.\n";
+    
    break;
    
-   case 6:
+   case Six:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido no estado de MG.\n";
+    
    break;
    
-   case 7:
+   case Seven:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: "; 
     fmtCpf(_input);
     std::cout << " foi emitido em algum dos estados: ES-RJ.\n";
+    
    break;
    
-   case 8:
+   case Eight:
+    
     if(!validation(_input).isCpf())break;
     else
     std::cout << "\n\tCpf: "; 
     fmtCpf(_input);
     std::cout << " foi emitido no estado de SP.\n";
+    
    break;
    
-   case 9:
+   case Nine:
+    
     if(!validation(_input).isCpf())break;
     else 
     std::cout << "\n\tCpf: ";
     fmtCpf(_input);
     std::cout << " foi emitido em algum dos estados: PR-SC.\n";
+    
    break;
   }
     /*
