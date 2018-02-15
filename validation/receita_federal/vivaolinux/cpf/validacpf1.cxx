@@ -30,7 +30,7 @@ struct validation
  
  void fmtCpf(char *);
  
- bool verify(const int *);
+ bool is_valid(const int *);
  
  char* fmtCpf(char *, const char *);
  
@@ -88,7 +88,7 @@ inline void validation::getCpf()
     }while(!validation(input).isCpf());
  }
  
-inline bool validation::verify(const int * cpf)
+inline bool validation::is_valid(const int * cpf)
  {
   for(int i = 1; i < sizeof(cpf); i++)
    if(cpf[i] != cpf[i-1])
@@ -198,7 +198,7 @@ inline void validation::print()
   Se todos os digitos forem iguais
   então o CPF é inválido.
   */
-  if(verify(cpf) == 0)
+  if(!is_valid(cpf))
    {
     std::cout<< "\n\tCpf: ";
     fmtCpf(_input);
