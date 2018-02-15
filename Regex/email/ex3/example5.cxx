@@ -10,16 +10,16 @@ struct validation
  virtual bool isValid() = 0;
  
  protected:
-  std::string str; 
+  std::string str;
   validation* is_val;
 };
 
 //function foward declaration
 void menu_All();
 
-int main() 
+int main()
 {
- menu_All(); 
+ menu_All();
  return 0;
 }
 
@@ -31,8 +31,8 @@ struct gmail: validation
  
  ~gmail()
   {
-   delete is_val; 
-   _mail.clear(); 
+   delete is_val;
+   _mail.clear();
   }
   
   bool isValid() override
@@ -49,17 +49,17 @@ struct gmail: validation
    do{
       std::cout << "\n\tEnter your google e-mail: ";
       std::cin >> str;
-          
+      
       is_val = new gmail(str);
-         
+      
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else 
+      else
        std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
-          
+       
      }while(!is_val->isValid());
   }
-   
+  
  private:
   std::string _mail; 
 };
@@ -72,7 +72,7 @@ struct uol: validation
  
  ~uol()
   {
-   delete is_val; 
+   delete is_val;
    _mail.clear(); 
   }
   
@@ -90,14 +90,14 @@ struct uol: validation
    do{
       std::cout << "\n\tEnter your uol e-mail: ";
       std::cin >> str;
-          
+      
       is_val = new uol(str);
-         
+      
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else 
+      else
        std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
-          
+      
      }while(!is_val->isValid());
   }
   
@@ -113,7 +113,7 @@ struct bol: validation
  
  ~bol()
   {
-   delete is_val; 
+   delete is_val;
    _mail.clear();
   }
   
@@ -122,28 +122,28 @@ struct bol: validation
    std::string server("@bol.com.br");
   
    std::string piece(_mail.substr(_mail.size()-server.size()));
-  
+   
    return !piece.compare(server);
   }
- 
+  
   void menu() override
   {
    do{
       std::cout << "\n\tEnter your bol e-mail: ";
       std::cin >> str;
-          
+      
       is_val = new bol(str);
-         
+      
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else 
+      else
        std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
-          
+      
      }while(!is_val->isValid());
   }
   
  private:
-  std::string _mail; 
+  std::string _mail;
 };
 
 struct earth: validation
@@ -154,7 +154,7 @@ struct earth: validation
  
  ~earth()
   {
-   delete is_val; 
+   delete is_val;
    _mail.clear();
   }
   
@@ -172,14 +172,14 @@ struct earth: validation
    do{
       std::cout << "\n\tEnter your earth e-mail: ";
       std::cin >> str;
-          
+      
       is_val = new earth(str);
-         
+      
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else 
+      else
        std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
-          
+      
      }while(!is_val->isValid());
   }
   
@@ -195,7 +195,7 @@ struct yahoo: validation
  
  ~yahoo()
   {
-   delete is_val; 
+   delete is_val;
    _mail.clear();
   }
   
@@ -207,25 +207,25 @@ struct yahoo: validation
    
    return !piece.compare(server);
   }
- 
+  
   void menu() override
   {
    do{
       std::cout << "\n\tEnter your yahoo e-mail: ";
       std::cin >> str;
-          
+      
       is_val = new yahoo(str);
-         
+      
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else 
+      else
        std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
-          
+      
      }while(!is_val->isValid());
   }
   
  private:
-  std::string _mail; 
+  std::string _mail;
 };
 
 struct hotmail: validation
@@ -236,7 +236,7 @@ struct hotmail: validation
  
  ~hotmail()
   {
-   delete is_val; 
+   delete is_val;
    _mail.clear();
   }
   
@@ -254,12 +254,12 @@ struct hotmail: validation
    do{
       std::cout << "\n\tEnter your hotmail e-mail: ";
       std::cin >> str;
-          
+      
       is_val = new hotmail(str);
-         
+      
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else 
+      else
        std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
       
      }while(!is_val->isValid());
@@ -289,11 +289,11 @@ void menu_All()
     std::cin >> op;
     
     switch(op)
-     {     
+     {
       case Gmail:
        
        m_val = new gmail();
-         
+       
        m_val->menu();
        
       break;
@@ -307,9 +307,9 @@ void menu_All()
       break;
       
       case Bol:
-         
+       
        m_val = new bol();
-         
+       
        m_val->menu();
        
       break;
@@ -317,7 +317,7 @@ void menu_All()
       case Earth:
        
        m_val = new earth();
-         
+       
        m_val->menu();
        
       break;
@@ -325,15 +325,15 @@ void menu_All()
       case Yahoo:
        
        m_val = new yahoo();
-         
+       
        m_val->menu();
        
       break;
       
       case Hotmail:
-         
+       
        m_val = new hotmail();
-         
+       
        m_val->menu();
        
       break;
@@ -349,7 +349,7 @@ void menu_All()
        
        std::cout << "\n\tInvalid Option!\n\n";
        
-      break; 
+      break;
      }
    }while(1);
 }
