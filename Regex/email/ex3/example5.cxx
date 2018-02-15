@@ -4,7 +4,7 @@
 struct validation
 {
  validation(){}
- ~validation(){}
+ virtual ~validation(){ delete is_val; }
  //pure virtual function to enforce reimplementation
  virtual void menu() = 0;
  virtual bool isValid() = 0;
@@ -29,13 +29,13 @@ struct gmail: validation
  
  gmail(std::string mail): _mail(mail){}
  
- ~gmail()
+ virtual ~gmail()
   {
    delete is_val; 
    _mail.clear(); 
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@gmail.com");
    
@@ -44,7 +44,7 @@ struct gmail: validation
    return !piece.compare(server);
   }
   
-  void menu()
+  void menu() override
   {
    do{
       std::cout << "\n\tEnter your google e-mail: ";
@@ -70,13 +70,13 @@ struct uol: validation
  
  uol(std::string mail): _mail(mail){}
  
- ~uol()
+ virtual ~uol()
   {
    delete is_val; 
    _mail.clear(); 
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@uol.com.br");
    
@@ -85,7 +85,7 @@ struct uol: validation
    return !piece.compare(server);
   }
   
-  void menu()
+  void menu() override
   {
    do{
       std::cout << "\n\tEnter your uol e-mail: ";
@@ -111,13 +111,13 @@ struct bol: validation
  
  bol(std::string mail): _mail(mail){}
  
- ~bol()
+ virtual ~bol()
   {
    delete is_val; 
    _mail.clear();
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@bol.com.br");
   
@@ -126,7 +126,7 @@ struct bol: validation
    return !piece.compare(server);
   }
  
-  void menu()
+  void menu() override
   {
    do{
       std::cout << "\n\tEnter your bol e-mail: ";
@@ -152,13 +152,13 @@ struct earth: validation
  
  earth(std::string mail): _mail(mail){}
  
- ~earth()
+ virtual ~earth()
   {
    delete is_val; 
    _mail.clear();
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@terra.com.br");
    
@@ -167,7 +167,7 @@ struct earth: validation
    return !piece.compare(server);
   }
   
-  void menu()
+  void menu() override
   {
    do{
       std::cout << "\n\tEnter your earth e-mail: ";
@@ -193,13 +193,13 @@ struct yahoo: validation
  
  yahoo(std::string mail): _mail(mail){}
  
- ~yahoo()
+ virtual ~yahoo()
   {
    delete is_val; 
    _mail.clear();
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@yahoo.com.br");
    
@@ -208,7 +208,7 @@ struct yahoo: validation
    return !piece.compare(server);
   }
  
-  void menu()
+  void menu() override
   {
    do{
       std::cout << "\n\tEnter your yahoo e-mail: ";
@@ -234,13 +234,13 @@ struct hotmail: validation
  
  hotmail(std::string mail): _mail(mail){}
  
- ~hotmail()
+ virtual ~hotmail()
   {
    delete is_val; 
    _mail.clear();
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@hotmail.com.br");
    
@@ -249,7 +249,7 @@ struct hotmail: validation
    return !piece.compare(server);
   }
   
-  void menu()
+  void menu() override
   {
    do{
       std::cout << "\n\tEnter your hotmail e-mail: ";
