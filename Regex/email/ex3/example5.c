@@ -19,10 +19,9 @@ int main ()
 
 void menu()
 {
- int op; 
  char email[50];
  
- enum { Uol=1, Bol, Gmail, Terra, Yahoo, Hotmail, Exit };
+ enum { Uol=1, Bol, Gmail, Terra, Yahoo, Hotmail, Exit }op;
  
  do{
     
