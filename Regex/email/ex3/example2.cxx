@@ -1,46 +1,6 @@
-#include <regex> //count
 #include <iostream>
 
-
-bool isMail(std::string _mail)
-{
-  if(count(_mail.begin(), _mail.end(), '@') != 1)
-  return false;
-  
-  const std::string::size_type pos_at = _mail.find('@');
-  
-  if(pos_at == 0 || (pos_at == (_mail.length() - 1)))
-  return false;
-  
-  if(_mail.find('.', pos_at) == std::string::npos)
-  return false;
-  else
-  return true;
-}
-
-bool ValidarEmail(std::string email)
-{
- bool validEmail = false;
- 
- int indexArr = email.find('@');
- 
- if(indexArr > 0)
-  {
-   int indexDot = email.find('.', indexArr);
-   
-   if(indexDot - 1 > indexArr)
-    {
-     if(indexDot + 1 < email.length())
-      {
-       std::string indexDot2 = email.substr(indexDot + 1, 1);
-       if(indexDot2 != ".")validEmail = true;
-      }
-    }
-  }
- return validEmail;
-}
-
-bool validaEmail(std::string email)
+bool gmail(std::string email)
 {
  std::string servidor("@gmail.com");
  
@@ -49,17 +9,144 @@ bool validaEmail(std::string email)
  return !pedaco.compare(servidor);
 }
 
-
-int main()
+bool uol(std::string email)
 {
- std::string email;
+ std::string servidor("@uol.com.br");
  
- std::cout<<"\nDigite seu e-mail: ";
- std::cin>>email;
+ std::string pedaco(email.substr(email.size()-servidor.size()));
  
- if(isMail(email))
-  std::cout<<"É uma conta google.\n\n";
- else 
-  std::cout<<"Não é uma conta google.\n\n";
+ return !pedaco.compare(servidor);
+}
+
+bool bol(std::string email)
+{
+ std::string servidor("@bol.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool terra(std::string email)
+{
+ std::string servidor("@terra.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool yahoo(std::string email)
+{
+ std::string servidor("@yahoo.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool hotmail(std::string email)
+{
+ std::string servidor("@hotmail.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+void menu()
+{
+ int op;
+ std::string str;
+ enum { Gmail=1, Uol, Bol, Terra, Yahoo, Hotmail, Exit };
+ 
+ do{
+    std::cout << "\n\tValidation Email"
+                 "\n\t[1]-Gmail"
+                 "\n\t[2]-Uol"
+                 "\n\t[3]-Bol"
+                 "\n\t[4]-Terra"
+                 "\n\t[5]-Yahoo"
+                 "\n\t[6]-Hotmail"
+                 "\n\t[7]-Exit"
+                 "\n\tEnter: ";
+    std::cin>>op;
+    
+    switch(op)
+     {      
+      case Gmail:
+       std::cout<<"\n\tEnter your email: ";
+       std::cin>>str;
+       
+       if(gmail(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      break;
+      
+      case Uol:
+       std::cout<<"\n\tEnter your email: ";
+       std::cin>>str;
+       
+       if(uol(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      break;
+      
+      case Bol:
+       std::cout<<"\n\tEnter your email: ";
+       std::cin>>str;
+       
+       if(bol(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      break;
+      
+      case Terra:
+       std::cout<<"\n\tEnter your email: ";
+       std::cin>>str;
+       
+       if(terra(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      break;
+      
+      case Yahoo:
+       std::cout<<"\n\tEnter your email: ";
+       std::cin>>str;
+       
+       if(yahoo(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      break;
+      
+      case Hotmail:
+       std::cout<<"\n\tEnter your email: ";
+       std::cin>>str;
+       
+       if(hotmail(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      break;
+                                    
+      case Exit:
+       std::cout << "\n\tGood Bye!\n\n";
+       exit(1);
+      break;
+      
+      default:
+       std::cout << "\n\tInvalid Option!\n\n";
+     }
+   }while(1); 
+}
+
+int main() 
+{
+ menu();
  return 0;
 }

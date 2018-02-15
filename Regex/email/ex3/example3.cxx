@@ -1,71 +1,168 @@
 #include <iostream>
 
-bool gmail(std::string email)
+//base class
+struct validation
 {
- std::string servidor("@gmail.com");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
+ validation(){}
+ ~validation(){}
+ //pure virtual function to enforce reimplementation
+ virtual bool isValid() = 0;
+};
+
+void menu();
+
+int main() 
+{
+ menu();
+ return 0;
 }
 
-bool uol(std::string email)
+struct gmail: validation
 {
- std::string servidor("@uol.com.br");
+ gmail(std::string mail): _mail(mail){}
  
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
+ ~gmail()
+  {
+   if(!_mail.empty())_mail.clear(); 
+  }
+  
+  bool isValid()
+  {
+   std::string server("@gmail.com");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+ private:
+  std::string _mail; 
+};
 
-bool bol(std::string email)
+struct uol: validation
 {
- std::string servidor("@bol.com.br");
+ uol(std::string mail): _mail(mail){}
  
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
+ ~uol()
+  {
+   if(!_mail.empty())_mail.clear();  
+  }
+  
+  bool isValid()
+  {
+   std::string server("@uol.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+ private:
+  std::string _mail; 
+};
 
-bool terra(std::string email)
+struct bol: validation
 {
- std::string servidor("@terra.com.br");
+ bol(std::string mail): _mail(mail){}
  
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
+ ~bol()
+  {
+   if(!_mail.empty())_mail.clear();  
+  }
+  
+  bool isValid()
+  {
+   std::string server("@bol.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+ private:
+  std::string _mail; 
+};
 
-bool yahoo(std::string email)
+struct earth: validation
 {
- std::string servidor("@yahoo.com.br");
+ earth(std::string mail): _mail(mail){}
  
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
+ ~earth()
+  {
+   if(!_mail.empty())_mail.clear();  
+  }
+  
+  bool isValid()
+  {
+   std::string server("@terra.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+ private:
+  std::string _mail; 
+};
 
-bool hotmail(std::string email)
+struct yahoo: validation
 {
- std::string servidor("@hotmail.com.br");
+ yahoo(std::string mail): _mail(mail){}
  
- std::string pedaco(email.substr(email.size()-servidor.size()));
+ ~yahoo()
+  {
+   if(!_mail.empty())_mail.clear();  
+  }
+  
+  bool isValid()
+  {
+   std::string server("@yahoo.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+ private:
+  std::string _mail; 
+};
+
+struct hotmail: validation
+{
+ hotmail(std::string mail): _mail(mail){}
  
- return !pedaco.compare(servidor);
-}
+ ~hotmail()
+  {
+   if(!_mail.empty())_mail.clear();  
+  }
+  
+  bool isValid()
+  {
+   std::string server("@hotmail.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+ private:
+  std::string _mail; 
+};
 
 void menu()
 {
  int op;
  std::string str;
- enum { Gmail=1, Uol, Bol, Terra, Yahoo, Hotmail, Exit };
+ validation* is_val[6];
+ 
+ enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit };
  
  do{
-    std::cout << "\n\tValidation Email"
+    std::cout << "\n\tValidation e-mail"
                  "\n\t[1]-Gmail"
                  "\n\t[2]-Uol"
                  "\n\t[3]-Bol"
-                 "\n\t[4]-Terra"
+                 "\n\t[4]-Earth"
                  "\n\t[5]-Yahoo"
                  "\n\t[6]-Hotmail"
                  "\n\t[7]-Exit"
@@ -75,78 +172,115 @@ void menu()
     switch(op)
      {      
       case Gmail:
-       std::cout<<"\n\tEnter your email: ";
-       std::cin>>str;
-       
-       if(gmail(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{
+         std::cout<<"\n\tEnter your google e-mail: ";
+         std::cin>>str;
+          
+         is_val[0] = new gmail(str);
+         
+         if(is_val[0]->isValid())
+         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!is_val[0]->isValid());
+      
       break;
       
       case Uol:
-       std::cout<<"\n\tEnter your email: ";
-       std::cin>>str;
-       
-       if(uol(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{
+         std::cout<<"\n\tEnter your uol e-mail: ";
+         std::cin>>str;
+         
+         is_val[1] = new uol(str);
+         
+         if(is_val[1]->isValid())
+         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!is_val[1]->isValid());
+      
       break;
       
       case Bol:
-       std::cout<<"\n\tEnter your email: ";
-       std::cin>>str;
-       
-       if(bol(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{
+         std::cout<<"\n\tEnter your bol e-mail: ";
+         std::cin>>str;
+         
+         is_val[2] = new bol(str);
+         
+         if(is_val[2]->isValid())
+         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!is_val[2]->isValid());
+      
       break;
       
-      case Terra:
-       std::cout<<"\n\tEnter your email: ";
-       std::cin>>str;
-       
-       if(terra(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      case Earth:
+      
+      do{
+         std::cout<<"\n\tEnter your earth e-mail: ";
+         std::cin>>str;
+         
+         is_val[3] = new earth(str);
+         
+         if(is_val[3]->isValid())
+         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         
+        }while(!is_val[3]->isValid());
+      
       break;
       
       case Yahoo:
-       std::cout<<"\n\tEnter your email: ";
-       std::cin>>str;
-       
-       if(yahoo(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{
+         std::cout<<"\n\tEnter your yahoo e-mail: ";
+         std::cin>>str;
+         
+         is_val[4] = new yahoo(str);
+         
+         if(is_val[4]->isValid())
+         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         
+        }while(!is_val[4]->isValid());
+      
       break;
       
       case Hotmail:
-       std::cout<<"\n\tEnter your email: ";
-       std::cin>>str;
-       
-       if(hotmail(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{
+         std::cout<<"\n\tEnter your hotmail e-mail: ";
+         std::cin>>str;
+         
+         is_val[5] = new hotmail(str);
+         
+         if(is_val[5]->isValid())
+         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!is_val[5]->isValid());
+      
       break;
-                                    
+      
       case Exit:
-       std::cout << "\n\tGood Bye!\n\n";
-       exit(1);
+         std::cout << "\n\tGood Bye!\n\n";
+         exit(1);
       break;
       
       default:
-       std::cout << "\n\tInvalid Option!\n\n";
+         std::cout << "\n\tInvalid Option!\n\n";
+      break; 
      }
-   }while(1); 
-}
-
-int main() 
-{
- menu();
- return 0;
+   }while(1);
 }
