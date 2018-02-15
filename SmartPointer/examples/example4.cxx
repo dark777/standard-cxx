@@ -1,57 +1,44 @@
-#include <cstring>
 #include <iostream>
 
-class Person
+class IntSmartPointer
 {
- int *pAge;
- std::string* sName; 
-
+  int *pValue;
+  
   public:
-   Person(): sName(0),pAge(0){}
-   
-   Person(std::string* sName, int *age): sName(sName), pAge(age){}
-   
-   ~Person(){}
-
-   void display()
-   {
-    std::cout<<"\n\tName: "<<*sName<<"  Age: "<<*pAge<<"\n\n";
-   }
+    IntSmartPointer(int *p):pValue(p){}
+        
+    ~IntSmartPointer()
+     {
+      delete pValue;
+     }
+        
+     int *getValue()
+     {
+      return pValue;
+     }       
 };
 
-template < typename T >
-class GenericSmartPointer
-{
- T* pData; // Generic pointer to be stored
-         
- public:
-    
-  GenericSmartPointer(T* pValue) : pData(pValue){}
 
-  ~GenericSmartPointer()
-   {
-    delete pData;
-   }
 
-   T& operator* ()
-   {
-    return *pData;
-   }
 
-   T* operator-> ()
-   {
-    return pData;
-   }
-};
+
+
+
+
+
+
+
 
 int main()
 {
-  int idade;
-  std::string str;
+    IntSmartPointer ptr(new int(5));
 
-  std::cout<<"Digite um nome e idade: ";
-  std::cin>>str>>idade;
+    std::cout << "IntSmartPointer Valor: " << *ptr.getValue() << std::endl;
   
-  GenericSmartPointer<Person> gsp(new Person(new std::string(str), new int(idade)));
-  gsp->display(); // Não precisa apagar o ponteiro da pessoa.
+    //Ponteiro normal:
+    int* intstr = new int(6);
+    std::cout << "IntNormalPointer Valor: "  << *intstr<< std::endl;
+    delete intstr;
+    
+    return 0;
 }

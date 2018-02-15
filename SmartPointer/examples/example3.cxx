@@ -1,24 +1,23 @@
 #include <iostream>
 
-class IntSmartPointer
+class StringSmartPointer
 {
-  int *pValue;
-  
-  public:
-    IntSmartPointer(int *p):pValue(p){}
-        
-    ~IntSmartPointer()
-     {
-      delete pValue;
-     }
-        
-     int *getValue()
-     {
-      return pValue;
-     }       
+ std::string *pStr;
+    
+   public:
+   
+    StringSmartPointer(std::string *s):pStr(s){}
+    
+   ~StringSmartPointer() 
+    {
+      delete pStr;
+    }
+    
+   std::string *getString()
+   {
+    return pStr;
+   }
 };
-
-
 
 
 
@@ -31,14 +30,15 @@ class IntSmartPointer
 
 int main()
 {
-    IntSmartPointer ptr(new int(5));
-
-    std::cout << "IntSmartPointer Valor: " << *ptr.getValue() << std::endl;
-  
-    //Ponteiro normal:
-    int* intstr = new int(6);
-    std::cout << "IntNormalPointer Valor: "  << *intstr<< std::endl;
-    delete intstr;
+    StringSmartPointer str(new std::string("Testando Smart Pointers"));
+    
+    std::cout << "\n\tStringSmartPointer: "<<*str.getString();
+    
+    //Ponteiro normal:    
+    std::string *nmptr = new std::string("Testando Default Pointers");
+    
+    std::cout << "\n\n\tStringDefaultPointer: "<<*nmptr<< "\n\n";
+    delete nmptr;
     
     return 0;
 }

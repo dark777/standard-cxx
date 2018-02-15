@@ -1,48 +1,57 @@
+#include <cstring>
 #include <iostream>
 
-struct SmartPointer
-{  
-  SmartPointer(std::string *s, int *age):p_Str(s), p_Int(age){}
-    
-  ~SmartPointer() 
-   {
-    delete p_Str;
-     
-    delete p_Int;
-   }
-    
-  std::string *getString()
-  {
-   return p_Str;
-  }
+class Person
+{
+ int *pAge;
+ std::string* sName; 
+
+  public:
+   Person(): sName(0),pAge(0){}
    
-  int *getInt()
-  {
-   return p_Int;  
-  }
-  
- private:
-  std::string *p_Str;
-  int *p_Int;
+   Person(std::string* sName, int *age): sName(sName), pAge(age){}
+   
+   ~Person(){}
+
+   void display()
+   {
+    std::cout<<"\n\tName: "<<*sName<<"  Age: "<<*pAge<<"\n\n";
+   }
 };
 
+template < typename T >
+class GenericSmartPointer
+{
+ T* pData; // Generic pointer to be stored
+         
+ public:
+    
+  GenericSmartPointer(T* pValue) : pData(pValue){}
+
+  ~GenericSmartPointer()
+   {
+    delete pData;
+   }
+
+   T& operator* ()
+   {
+    return *pData;
+   }
+
+   T* operator-> ()
+   {
+    return pData;
+   }
+};
 
 int main()
 {
-  std::string str1, str2, strnome;
   int idade;
+  std::string str;
+
+  std::cout<<"Digite um nome e idade: ";
+  std::cin>>str>>idade;
   
-  std::cout<<"Enter First e Last Name: ";
-  std::cin>>str1>>str2;
-  
-  std::cout<<"Enter Age: ";
-  std::cin>>idade;
-  
-  strnome+=str1+" "+str2;
-  
-  SmartPointer sp(new std::string(strnome), new int(idade));
-    
-  std::cout << "\n\tUser: "<<*sp.getString()<<"\n\tUser Age: "<<*sp.getInt()<< " years\n\n";
-  
-  return 0;
+  GenericSmartPointer<Person> gsp(new Person(new std::string(str), new int(idade)));
+  gsp->display(); // Não precisa apagar o ponteiro da pessoa.
 }
