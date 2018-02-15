@@ -203,8 +203,6 @@ inline void validation::print()
     std::cout<< "\n\tCpf: ";
     fmtCpf(_input);
     std::cout<<" is Invalid\n";
-    cpf[0]=0;
-    _input=0;
     getCpf();
    }
    else
