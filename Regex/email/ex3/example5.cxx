@@ -4,7 +4,7 @@
 struct validation
 {
  validation(){}
- virtual ~validation(){ delete is_val; }
+ virtual ~validation(){ delete is_val; is_val=0; }
  //pure virtual function to enforce reimplementation
  virtual void menu() = 0;
  virtual bool isValid() = 0;
@@ -32,6 +32,8 @@ struct gmail: validation
  ~gmail()
   {
    delete is_val;
+   is_val=0;
+   is_val=0;
    _mail.clear();
   }
   
@@ -73,6 +75,7 @@ struct uol: validation
  ~uol()
   {
    delete is_val;
+   is_val=0;
    _mail.clear(); 
   }
   
@@ -114,6 +117,7 @@ struct bol: validation
  ~bol()
   {
    delete is_val;
+   is_val=0;
    _mail.clear();
   }
   
@@ -155,6 +159,7 @@ struct earth: validation
  ~earth()
   {
    delete is_val;
+   is_val=0;
    _mail.clear();
   }
   
@@ -196,6 +201,7 @@ struct yahoo: validation
  ~yahoo()
   {
    delete is_val;
+   is_val=0;
    _mail.clear();
   }
   
@@ -237,6 +243,7 @@ struct hotmail: validation
  ~hotmail()
   {
    delete is_val;
+   is_val=0;
    _mail.clear();
   }
   
