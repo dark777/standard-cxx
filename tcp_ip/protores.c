@@ -20,10 +20,10 @@ int main(int argc, char**argv)
  if(argc != 2)
   {
    fprintf(stderr,
-                  "use: %s [nome|número]\n"
-                  "exemplo: %s tcp\n"
-                  "exemplo: %s 1\n",
-                  *argv,*argv,*argv
+           "use: %s [nome|número]\n"
+           "exemplo: %s tcp\n"
+           "exemplo: %s 1\n",
+           *argv,*argv,*argv
           );
    return 1;
   }

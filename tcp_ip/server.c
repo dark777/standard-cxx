@@ -22,10 +22,10 @@ int main(int argc, char**argv)
  if(argc < 2)
   {
    fprintf(stderr,
-                  "use: %s porta [protocolo]\n"
-                  "exemplo: %s 80 tcp\n"
-                  "exemplo: %s smtp\n",
-                  *argv,*argv,*argv
+           "use: %s porta [protocolo]\n"
+           "exemplo: %s 80 tcp\n"
+           "exemplo: %s smtp\n",
+           *argv,*argv,*argv
           );
    return 1;
   }
@@ -49,8 +49,8 @@ int main(int argc, char**argv)
   
  //imprime o resultado
  fprintf(stdout,
-                "porta %d (%s), protocolo %s\n",
-                ntohs(se->s_port), se->s_name, se->s_proto
+         "porta %d (%s), protocolo %s\n",
+         ntohs(se->s_port), se->s_name, se->s_proto
         );
  return 0;
 }

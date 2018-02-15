@@ -22,9 +22,9 @@ int main(int argc, char**argv)
  if(argc != 2)
   {
    fprintf(stderr,
-                 "use: %s addr\n"
-                 "exemplo: %s google.com\n",
-                 *argv,*argv
+           "use: %s addr\n"
+           "exemplo: %s google.com\n",
+           *argv,*argv
           );
  return 1;
 }
