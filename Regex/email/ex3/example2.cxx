@@ -1,12 +1,18 @@
 #include <iostream>
 
-bool gmail(std::string email)
+bool uol(std::string);
+bool bol(std::string);
+bool gmail(std::string);
+bool yahoo(std::string);
+bool terra(std::string);
+bool hotmail(std::string);
+
+void menu();
+
+int main() 
 {
- std::string servidor("@gmail.com");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
+ menu();
+ return 0;
 }
 
 bool uol(std::string email)
@@ -21,6 +27,15 @@ bool uol(std::string email)
 bool bol(std::string email)
 {
  std::string servidor("@bol.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool gmail(std::string email)
+{
+ std::string servidor("@gmail.com");
  
  std::string pedaco(email.substr(email.size()-servidor.size()));
  
@@ -58,13 +73,13 @@ void menu()
 {
  int op;
  std::string str;
- enum { Gmail=1, Uol, Bol, Terra, Yahoo, Hotmail, Exit };
+ enum { Uol=1, Bol, Gmail, Terra, Yahoo, Hotmail, Exit };
  
  do{
     std::cout << "\n\tValidation Email"
-                 "\n\t[1]-Gmail"
-                 "\n\t[2]-Uol"
-                 "\n\t[3]-Bol"
+                 "\n\t[1]-Uol"
+                 "\n\t[2]-Bol"
+                 "\n\t[3]-Gmail" 
                  "\n\t[4]-Terra"
                  "\n\t[5]-Yahoo"
                  "\n\t[6]-Hotmail"
@@ -74,18 +89,8 @@ void menu()
     
     switch(op)
      {      
-      case Gmail:
-       std::cout<<"\n\tEnter your email: ";
-       std::cin>>str;
-       
-       if(gmail(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
-      break;
-      
       case Uol:
-       std::cout<<"\n\tEnter your email: ";
+       std::cout<<"\n\tEnter your uol e-mail: ";
        std::cin>>str;
        
        if(uol(str))
@@ -95,7 +100,7 @@ void menu()
       break;
       
       case Bol:
-       std::cout<<"\n\tEnter your email: ";
+       std::cout<<"\n\tEnter your bol e-mail: ";
        std::cin>>str;
        
        if(bol(str))
@@ -104,8 +109,18 @@ void menu()
        std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
       break;
       
+      case Gmail:
+       std::cout<<"\n\tEnter your google e-mail: ";
+       std::cin>>str;
+       
+       if(gmail(str))
+       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
+       else 
+       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      break;
+      
       case Terra:
-       std::cout<<"\n\tEnter your email: ";
+       std::cout<<"\n\tEnter your terra e-mail: ";
        std::cin>>str;
        
        if(terra(str))
@@ -115,7 +130,7 @@ void menu()
       break;
       
       case Yahoo:
-       std::cout<<"\n\tEnter your email: ";
+       std::cout<<"\n\tEnter your yahoo e-mail: ";
        std::cin>>str;
        
        if(yahoo(str))
@@ -125,7 +140,7 @@ void menu()
       break;
       
       case Hotmail:
-       std::cout<<"\n\tEnter your email: ";
+       std::cout<<"\n\tEnter your hotmail e-mail: ";
        std::cin>>str;
        
        if(hotmail(str))
@@ -143,10 +158,4 @@ void menu()
        std::cout << "\n\tInvalid Option!\n\n";
      }
    }while(1); 
-}
-
-int main() 
-{
- menu();
- return 0;
 }
