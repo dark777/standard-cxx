@@ -140,7 +140,7 @@ void getInput(int &day, int &month, int &year)
    }while(day > meses[month-1]);
 }
 
-int main()
+void getDetails()
 {
  int day   = 0;
  int month = 0;
@@ -155,7 +155,11 @@ int main()
    
     std::cout << "\n\tRun the program again (y/N): ";  // signify n as default with capital letter
    
-   }while('y' == getChar());
-   
-  return 0;
+   }while('y' == getChar()); 
+}
+
+int main()
+{
+ getDetails();
+ return 0;
 }
