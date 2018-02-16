@@ -89,72 +89,105 @@ void menu()
     switch(op)
      {      
       case Uol:
-       std::cout<<"\n\tEnter your uol e-mail: ";
-       std::cin>>str;
-       
-       if(uol(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{       
+         std::cout << "\n\tEnter your uol e-mail: ";
+         std::cin >> str;
+         
+         if(uol(str))
+         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!uol(str));
+            
       break;
       
       case Bol:
-       std::cout<<"\n\tEnter your bol e-mail: ";
-       std::cin>>str;
-       
-       if(bol(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{       
+         std::cout << "\n\tEnter your bol e-mail: ";
+         std::cin >> str;
+         
+         if(bol(str))
+         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!bol(str));
+              
       break;
       
       case Gmail:
-       std::cout<<"\n\tEnter your google e-mail: ";
-       std::cin>>str;
-       
-       if(gmail(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{       
+         std::cout << "\n\tEnter your google e-mail: ";
+         std::cin >> str;
+         
+         if(gmail(str))
+         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!gmail(str));
+               
       break;
       
       case Terra:
-       std::cout<<"\n\tEnter your terra e-mail: ";
-       std::cin>>str;
-       
-       if(terra(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{
+         std::cout << "\n\tEnter your terra e-mail: ";
+         std::cin >> str;
+         
+         if(terra(str))
+         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!terra(str));
+              
       break;
       
       case Yahoo:
-       std::cout<<"\n\tEnter your yahoo e-mail: ";
-       std::cin>>str;
-       
-       if(yahoo(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+      
+      do{
+         std::cout << "\n\tEnter your yahoo e-mail: ";
+         std::cin >> str;
+         
+         if(yahoo(str))
+         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!yahoo(str));
+             
       break;
       
       case Hotmail:
-       std::cout<<"\n\tEnter your hotmail e-mail: ";
-       std::cin>>str;
+      
+      do{
+         std::cout << "\n\tEnter your hotmail e-mail: ";
+         std::cin >> str;
        
-       if(hotmail(str))
-       std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-       else 
-       std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         if(hotmail(str))
+         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
+         else 
+         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+          
+        }while(!hotmail(str));
+      
       break;
                                     
       case Exit:
-       std::cout << "\n\tGood Bye!\n\n";
-       exit(1);
+       
+         std::cout << "\n\tGood Bye!\n\n";
+         exit(1);
+       
       break;
       
       default:
-       std::cout << "\n\tInvalid Option!\n\n";
+         std::cout << "\n\tInvalid Option!\n\n";
+      break;
      }
    }while(1); 
 }
