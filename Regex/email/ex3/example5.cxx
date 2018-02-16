@@ -23,49 +23,6 @@ int main()
  return 0;
 }
 
-struct gmail: validation
-{
- gmail(){}
- 
- gmail(std::string mail): _mail(mail){}
- 
- ~gmail()
-  {
-   delete is_val;
-   is_val=0;
-   is_val=0;
-   _mail.clear();
-  }
-  
-  bool isValid() override
-  {
-   std::string server("@gmail.com");
-   
-   std::string piece(_mail.substr(_mail.size()-server.size()));
-   
-   return !piece.compare(server);
-  }
-  
-  void menu() override
-  {
-   do{
-      std::cout << "\n\tEnter your google e-mail: ";
-      std::cin >> str;
-      
-      is_val = new gmail(str);
-      
-      if(is_val->isValid())
-       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else
-       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
-       
-     }while(!is_val->isValid());
-  }
-  
- private:
-  std::string _mail; 
-};
-
 struct uol: validation
 {
  uol(){}
@@ -148,6 +105,49 @@ struct bol: validation
   
  private:
   std::string _mail;
+};
+
+struct gmail: validation
+{
+ gmail(){}
+ 
+ gmail(std::string mail): _mail(mail){}
+ 
+ ~gmail()
+  {
+   delete is_val;
+   is_val=0;
+   is_val=0;
+   _mail.clear();
+  }
+  
+  bool isValid() override
+  {
+   std::string server("@gmail.com");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+  void menu() override
+  {
+   do{
+      std::cout << "\n\tEnter your google e-mail: ";
+      std::cin >> str;
+      
+      is_val = new gmail(str);
+      
+      if(is_val->isValid())
+       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
+      else
+       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+       
+     }while(!is_val->isValid());
+  }
+  
+ private:
+  std::string _mail; 
 };
 
 struct earth: validation
@@ -280,14 +280,13 @@ void menu_All()
 {
  int op;
  validation* m_val;
- 
- enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit };
+ enum { Uol=1, Bol, Gmail, Earth, Yahoo, Hotmail, Exit };
  
  do{
     std::cout << "\n\tValidation e-mail"
-                 "\n\t[1]-Gmail"
-                 "\n\t[2]-Uol"
-                 "\n\t[3]-Bol"
+                 "\n\t[1]-Uol"
+                 "\n\t[2]-Bol"
+                 "\n\t[3]-Gmail"   
                  "\n\t[4]-Earth"
                  "\n\t[5]-Yahoo"
                  "\n\t[6]-Hotmail"
@@ -297,14 +296,6 @@ void menu_All()
     
     switch(op)
      {
-      case Gmail:
-       
-       m_val = new gmail();
-       
-       m_val->menu();
-       
-      break;
-      
       case Uol:
        
        m_val = new uol();
@@ -316,6 +307,14 @@ void menu_All()
       case Bol:
        
        m_val = new bol();
+       
+       m_val->menu();
+       
+      break;
+      
+      case Gmail:
+       
+       m_val = new gmail();
        
        m_val->menu();
        
