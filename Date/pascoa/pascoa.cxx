@@ -29,31 +29,30 @@ int main()
   int m=int((a+11*h+22*L)/451);
   int mes=int((h+L-7*m+114)/31);
 
-  const char* mes1 = "Mês inválido"; //aqui nova variável para o texto do mes
+  const char* meses = "Mês inválido"; //aqui nova variável para o texto do mes
 
    switch(mes)
     { //agora com switch em vez de ifs
-     case 1: mes1 = "Janeiro"; break;
-     case 2: mes1 = "Fevereiro"; break;
-     case 3: mes1 = "Março"; break;
-     case 4: mes1 = "Abril"; break;
-     case 5: mes1 = "Maio"; break;
-     case 6: mes1 = "Junho"; break;
-     case 7: mes1 = "Julho"; break;
-     case 8: mes1 = "Agosto"; break;
-     case 9: mes1 = "Setembro"; break;
-     case 10: mes1 = "Outubro"; break;
-     case 11: mes1 = "Novembro"; break;
-     case 12: mes1 = "Dezembro"; break;
+     case 1: meses = "Janeiro"; break;
+     case 2: meses = "Fevereiro"; break;
+     case 3: meses = "Março"; break;
+     case 4: meses = "Abril"; break;
+     case 5: meses = "Maio"; break;
+     case 6: meses = "Junho"; break;
+     case 7: meses = "Julho"; break;
+     case 8: meses = "Agosto"; break;
+     case 9: meses = "Setembro"; break;
+     case 10: meses = "Outubro"; break;
+     case 11: meses = "Novembro"; break;
+     case 12: meses = "Dezembro"; break;
     }
 
  int dia=(((h+L-7*m+114)%31)+1);
 
  if(anoatual > ano || (ano == anoatual && mesatual > 4))
-  printf("\n\tA pascoa caiu.!!\n\tdia: %d do mês: %s de %4d\n\n", dia, mes1, ano);
+  printf("\n\tA pascoa caiu.!!\n\tdia: %d do mês: %s de %4d\n\n", dia, meses, ano);
  else
- if(ano == anoatual && mesatual < 5)
-  printf("\n\tA pascoa ira cair.!!\n\tdia: %d do mês: %s de %4d\n\n", dia, mes1, ano);
+  printf("\n\tA pascoa ira cair.!!\n\tdia: %d do mês: %s de %4d\n\n", dia, meses, ano);
  
  return 0;
 }
