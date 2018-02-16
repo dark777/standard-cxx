@@ -26,7 +26,7 @@ struct gmail: validation
    if(!_mail.empty())_mail.clear(); 
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@gmail.com");
    
@@ -48,7 +48,7 @@ struct uol: validation
    if(!_mail.empty())_mail.clear();  
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@uol.com.br");
    
@@ -70,7 +70,7 @@ struct bol: validation
    if(!_mail.empty())_mail.clear();  
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@bol.com.br");
    
@@ -92,7 +92,7 @@ struct earth: validation
    if(!_mail.empty())_mail.clear();  
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@terra.com.br");
    
@@ -114,7 +114,7 @@ struct yahoo: validation
    if(!_mail.empty())_mail.clear();  
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@yahoo.com.br");
    
@@ -136,7 +136,7 @@ struct hotmail: validation
    if(!_mail.empty())_mail.clear();  
   }
   
-  bool isValid()
+  bool isValid() override
   {
    std::string server("@hotmail.com.br");
    
@@ -151,7 +151,6 @@ struct hotmail: validation
 
 void menu()
 {
- int op;
  std::string str;
  validation* is_val[6];
  
