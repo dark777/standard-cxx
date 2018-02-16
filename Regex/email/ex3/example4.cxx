@@ -155,7 +155,7 @@ void menu()
  std::string str;
  validation* is_val[6];
  
- enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit };
+ enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit }op;
  
  do{
     std::cout << "\n\tValidation e-mail"
@@ -167,7 +167,7 @@ void menu()
                  "\n\t[6]-Hotmail"
                  "\n\t[7]-Exit"
                  "\n\tEnter: ";
-    std::cin>>op;
+    scanf("%d", &op);
     
     switch(op)
      {      

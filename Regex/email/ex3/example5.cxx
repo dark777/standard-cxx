@@ -278,9 +278,8 @@ struct hotmail: validation
 
 void menu_All()
 {
- int op;
  validation* m_val;
- enum { Uol=1, Bol, Gmail, Earth, Yahoo, Hotmail, Exit };
+ enum { Uol=1, Bol, Gmail, Earth, Yahoo, Hotmail, Exit }op;
  
  do{
     std::cout << "\n\tValidation e-mail"
@@ -292,7 +291,7 @@ void menu_All()
                  "\n\t[6]-Hotmail"
                  "\n\t[7]-Exit"
                  "\n\tEnter: ";
-    std::cin >> op;
+    scanf("%d", &op);
     
     switch(op)
      {
