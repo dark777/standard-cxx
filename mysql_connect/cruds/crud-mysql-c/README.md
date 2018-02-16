@@ -5,11 +5,11 @@ C code ilustration for CRUD (Create, Read, Update, Delete) with MySQL database.
 
 Linux platform with installed gcc and MySQL for database testing. For Debian/Ubuntu, you can install mysql-server and mysql-client.
 
-	$ sudo apt-get install mysql-server mysql-client
+    $ sudo apt-get install mysql-server mysql-client
 
 You also need MySQL Development library, libmysqlclient-dev.
 
-	$ sudo apt-get install libmysqlclient-dev
+    $ sudo apt-get install libmysqlclient-dev
 
 ## Database
 
@@ -19,8 +19,8 @@ For database testing, you can run database.sql script to execute database and ta
 
 Before compiling, please change database configured based on your MySQL configuration. To build demo-create-data.c, you do the following command. 
 
-	$ gcc -c -I/usr/include/mysql demo-create-data.c 
-	$ gcc -o demo-create-data demo-create-data.o -L/usr/lib/mysql -lmysqlclient
+    $ gcc -c -I/usr/include/mysql demo-create-data.c 
+    $ gcc -o demo-create-data demo-create-data.o -L/usr/lib/mysql -lmysqlclient
 
 ## Repository
 
