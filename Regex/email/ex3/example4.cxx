@@ -17,28 +17,6 @@ int main()
  return 0;
 }
 
-struct gmail: validation
-{
- gmail(std::string mail): _mail(mail){}
- 
- ~gmail()
-  {
-   if(!_mail.empty())_mail.clear(); 
-  }
-  
-  bool isValid() override
-  {
-   std::string server("@gmail.com");
-   
-   std::string piece(_mail.substr(_mail.size()-server.size()));
-   
-   return !piece.compare(server);
-  }
-  
- private:
-  std::string _mail; 
-};
-
 struct uol: validation
 {
  uol(std::string mail): _mail(mail){}
@@ -83,18 +61,18 @@ struct bol: validation
   std::string _mail; 
 };
 
-struct earth: validation
+struct gmail: validation
 {
- earth(std::string mail): _mail(mail){}
+ gmail(std::string mail): _mail(mail){}
  
- ~earth()
+ ~gmail()
   {
-   if(!_mail.empty())_mail.clear();  
+   if(!_mail.empty())_mail.clear(); 
   }
   
   bool isValid() override
   {
-   std::string server("@terra.com.br");
+   std::string server("@gmail.com");
    
    std::string piece(_mail.substr(_mail.size()-server.size()));
    
@@ -117,6 +95,28 @@ struct yahoo: validation
   bool isValid() override
   {
    std::string server("@yahoo.com.br");
+   
+   std::string piece(_mail.substr(_mail.size()-server.size()));
+   
+   return !piece.compare(server);
+  }
+  
+ private:
+  std::string _mail; 
+};
+
+struct earth: validation
+{
+ earth(std::string mail): _mail(mail){}
+ 
+ ~earth()
+  {
+   if(!_mail.empty())_mail.clear();  
+  }
+  
+  bool isValid() override
+  {
+   std::string server("@terra.com.br");
    
    std::string piece(_mail.substr(_mail.size()-server.size()));
    
@@ -154,13 +154,13 @@ void menu()
  std::string str;
  validation* is_val[6];
  
- enum { Gmail=1, Uol, Bol, Earth, Yahoo, Hotmail, Exit }op;
+ enum { Uol=1, Bol, Gmail, Earth, Yahoo, Hotmail, Exit }op;
  
  do{
     std::cout << "\n\tValidation e-mail"
-                 "\n\t[1]-Gmail"
-                 "\n\t[2]-Uol"
-                 "\n\t[3]-Bol"
+                 "\n\t[1]-Uol"
+                 "\n\t[2]-Bol"
+                 "\n\t[3]-Gmail" 
                  "\n\t[4]-Earth"
                  "\n\t[5]-Yahoo"
                  "\n\t[6]-Hotmail"
@@ -173,10 +173,10 @@ void menu()
       case Gmail:
       
       do{
-         std::cout<<"\n\tEnter your google e-mail: ";
+         std::cout<<"\n\tEnter your uol e-mail: ";
          std::cin>>str;
           
-         is_val[0] = new gmail(str);
+         is_val[0] = new uol(str);
          
          if(is_val[0]->isValid())
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
@@ -190,10 +190,10 @@ void menu()
       case Uol:
       
       do{
-         std::cout<<"\n\tEnter your uol e-mail: ";
+         std::cout<<"\n\tEnter your bol e-mail: ";
          std::cin>>str;
          
-         is_val[1] = new uol(str);
+         is_val[1] = new bol(str);
          
          if(is_val[1]->isValid())
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
@@ -207,10 +207,10 @@ void menu()
       case Bol:
       
       do{
-         std::cout<<"\n\tEnter your bol e-mail: ";
+         std::cout<<"\n\tEnter your goole e-mail: ";
          std::cin>>str;
          
-         is_val[2] = new bol(str);
+         is_val[2] = new gmail(str);
          
          if(is_val[2]->isValid())
          std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
