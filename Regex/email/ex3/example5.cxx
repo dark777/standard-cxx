@@ -4,7 +4,12 @@
 struct validation
 {
  validation(){}
- virtual ~validation(){ delete is_val; is_val=0; }
+ virtual ~validation()
+  {
+   delete is_val;
+   is_val=0;
+  }
+  
  //pure virtual function to enforce reimplementation
  virtual void menu() = 0;
  virtual bool isValid() = 0;
