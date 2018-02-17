@@ -11,3 +11,6 @@ http://www.hboehm.info/gc/
 http://www.hboehm.info/gc/#details
 http://www.hboehm.info/gc/gc_source/
 https://github.com/doublec/gc
+
+https://www.cmlab.csie.ntu.edu.tw/~chenhsiu/tech/
+https://www.cmlab.csie.ntu.edu.tw/~chenhsiu/tech/The_Art_of_C++_ch2.pdf
