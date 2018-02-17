@@ -5,10 +5,7 @@
 #include <cassert>
 #include <iostream>
 
-enum Month
-{
- Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
-};
+enum Month{ Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec };
 
 // structured binding, Datastructure for string to num conversion in month(.i.e."Mar" Month to 3)
 std::array<std::pair<std::string, Month>, 12> monthinfo = 
