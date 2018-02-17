@@ -15,60 +15,6 @@ int main()
  return 0;
 }
 
-bool uol(std::string email)
-{
- std::string servidor("@uol.com.br");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
-
-bool bol(std::string email)
-{
- std::string servidor("@bol.com.br");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
-
-bool gmail(std::string email)
-{
- std::string servidor("@gmail.com");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
-
-bool terra(std::string email)
-{
- std::string servidor("@terra.com.br");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
-
-bool yahoo(std::string email)
-{
- std::string servidor("@yahoo.com.br");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
-
-bool hotmail(std::string email)
-{
- std::string servidor("@hotmail.com.br");
- 
- std::string pedaco(email.substr(email.size()-servidor.size()));
- 
- return !pedaco.compare(servidor);
-}
-
 void menu()
 {
  std::string str;
@@ -190,4 +136,58 @@ void menu()
       break;
      }
    }while(1); 
+}
+
+bool uol(std::string email)
+{
+ std::string servidor("@uol.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool bol(std::string email)
+{
+ std::string servidor("@bol.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool gmail(std::string email)
+{
+ std::string servidor("@gmail.com");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool terra(std::string email)
+{
+ std::string servidor("@terra.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool yahoo(std::string email)
+{
+ std::string servidor("@yahoo.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
+}
+
+bool hotmail(std::string email)
+{
+ std::string servidor("@hotmail.com.br");
+ 
+ std::string pedaco(email.substr(email.size()-servidor.size()));
+ 
+ return !pedaco.compare(servidor);
 }
