@@ -4,27 +4,27 @@
 struct url
 { 
  url(std::string url): _url(url){}
-
+ 
  ~url()
   {
    if(_url.length() != 0)_url.clear();
-  } 
-
+  }
+  
   bool isUrl()
   {
     std::smatch url_smatch;
     const std::regex pattern(
                              "(?:(ftp|http[s]?:[//])?)?([w]{3}[.])?"
                              "(.*[.](com|php|net|org|br|dk|at|us|tv|info|uk|co.uk|biz|se)?)?"
-                             "(.*[.](aspx|htm|html|HTM|HTML|jhtm|jhtml|JHTM|JHTML|xhtm|xhtml|XHTM|XHTML)?)?"       
+                             "(.*[.](aspx|htm|html|HTM|HTML|jhtm|jhtml|JHTM|JHTML|xhtm|xhtml|XHTM|XHTML)?)?"
                             );
     return std::regex_match(_url, url_smatch, pattern);
   }
-
- void print()
- {
-  std::cout<<"\n\tUrl: "<<_url<<(isUrl()?" is Valid\n":" is Invalid\n");
- }
+  
+  void print()
+  {
+   std::cout<<"\n\tUrl: "<<_url<<(isUrl()?" is Valid\n":" is Invalid\n");
+  }
 
   private:
   std::string _url;
