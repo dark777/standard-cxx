@@ -7,23 +7,6 @@
 
 enum Month{ Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec };
 
-// structured binding, Datastructure for string to num conversion in month(.i.e."Mar" Month to 3)
-std::array<std::pair<std::string, Month>, 12> monthinfo = 
-{
-  std::make_pair("Jan", Month::Jan),
-  std::make_pair("Feb", Month::Feb),
-  std::make_pair("Mar", Month::Mar),
-  std::make_pair("Apr", Month::Apr),
-  std::make_pair("May", Month::May),
-  std::make_pair("Jun", Month::Jun),
-  std::make_pair("Jul", Month::Jul),
-  std::make_pair("Aug", Month::Aug),
-  std::make_pair("Sep", Month::Sep),
-  std::make_pair("Oct", Month::Oct),
-  std::make_pair("Nov", Month::Nov),
-  std::make_pair("Dec", Month::Dec)
-};
-
 // concrete daytime structure to store the data
 //template<typename T1, typename T2 = std::string>
 template<class T1, class T2 = std::string>
@@ -40,18 +23,11 @@ struct DayTime
 };
 
 // main class which would fetech/parse the current time and provide to the client
-class CurrentDateTime
+struct CurrentDateTime
 {
-  DayTime<std::string> ParseDateTime(const std::string&);
-  void StrToNumber(const DayTime<std::string>&);
-  int GetMonth(const std::string&);
-  DayTime<int> dt;
-
- public:
-
   CurrentDateTime();
-  virtual ~CurrentDateTime(){};
-
+  virtual ~CurrentDateTime(){}
+  
   int GetDay()    const { return dt.day;    }
   int GetMonth()  const { return dt.month;  }
   int GetYear()   const { return dt.year;   }
@@ -59,6 +35,30 @@ class CurrentDateTime
   int GetMin()    const { return dt.min;    }
   int GetSecond() const { return dt.second; }
   std::string  GetDayStr() const { return dt.daystr; }
+  
+  private:
+  
+  DayTime<std::string> ParseDateTime(const std::string&);
+  void StrToNumber(const DayTime<std::string>&);
+  int GetMonth(const std::string&);
+  DayTime<int> dt;
+  
+  // structured binding, Datastructure for string to num conversion in month(.i.e."Mar" Month to 3)
+  std::array<std::pair<std::string, Month>, 12> monthinfo = 
+  {
+   std::make_pair("Jan", Month::Jan),
+   std::make_pair("Feb", Month::Feb),
+   std::make_pair("Mar", Month::Mar),
+   std::make_pair("Apr", Month::Apr),
+   std::make_pair("May", Month::May),
+   std::make_pair("Jun", Month::Jun),
+   std::make_pair("Jul", Month::Jul),
+   std::make_pair("Aug", Month::Aug),
+   std::make_pair("Sep", Month::Sep),
+   std::make_pair("Oct", Month::Oct),
+   std::make_pair("Nov", Month::Nov),
+   std::make_pair("Dec", Month::Dec)
+  };
 };
 
 CurrentDateTime::CurrentDateTime()
@@ -79,7 +79,7 @@ CurrentDateTime::CurrentDateTime()
 DayTime<std::string> CurrentDateTime::ParseDateTime(const std::string& information)
 {
   DayTime<std::string> info;
-  std::regex dtimeregex(R"(^(\w{3}) (\w{3}) (\d{2}) (\d{2}):(\d{2}):(\d{2}) (\d{4}))");
+  const std::regex dtimeregex(R"(^(\w{3}) (\w{3}) (\d{2}) (\d{2}):(\d{2}):(\d{2}) (\d{4}))");
   std::smatch match;
 
   if (std::regex_search(information, match, dtimeregex)) 
