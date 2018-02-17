@@ -11,7 +11,7 @@ int hotmail(char*);
 
 void menu();
 
-int main ()
+int main()
 {
  menu();
  return 0;
