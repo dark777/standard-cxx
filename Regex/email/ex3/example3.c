@@ -132,16 +132,12 @@ void menu()
       break;
       
       case Exit:
-       
-       printf("\n\tGood Bye!\n\n");
-       exit(1);
-       
+         printf("\n\tGood Bye!\n\n");
+         exit(1);
       break;
         
       default:
-       
-       printf("\n\tInvalid Option!\n\n");
-       
+         printf("\n\tInvalid Option!\n\n");
       break;
      }
      

@@ -125,10 +125,8 @@ void menu()
       break;
                                     
       case Exit:
-       
          std::cout << "\n\tGood Bye!\n\n";
          exit(1);
-       
       break;
       
       default:
