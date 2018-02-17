@@ -148,17 +148,6 @@ void menu()
    }while(1);
 }
 
-int bol(char* email)
-{
- int j;
- char uol[12];
- int i = (strlen(email)-11);
- 
- for( i, j = 0; j < 11; j++, i++ )uol[j] = email[i];
- 
- return !strcmp(uol,"@bol.com.br");
-}
-
 int uol(char* email)
 {
  int j;
@@ -168,6 +157,17 @@ int uol(char* email)
  for( i, j = 0; j < 11; j++, i++ )uol[j] = email[i];
  
  return !strcmp(uol,"@uol.com.br");
+}
+
+int bol(char* email)
+{
+ int j;
+ char bol[12];
+ int i = (strlen(email)-11);
+ 
+ for( i, j = 0; j < 11; j++, i++ )bol[j] = email[i];
+ 
+ return !strcmp(bol,"@bol.com.br");
 }
 
 int gmail(char* email)
