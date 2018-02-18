@@ -26,7 +26,7 @@
    https://pt.stackoverflow.com/questions/264755/calculo-de-sobrevida-em-c
 */
 
-struct Date
+struct Sobrevida
 {
  int d, m, y;
 };
@@ -64,7 +64,7 @@ int daysTill(int month)
  return days;
 }
 
-int daysDiff(Date d1, Date d2)
+int daysDiff(Sobrevida d1, Sobrevida d2)
 {
  int dd1=0, dd2=0, y, yref;
  
@@ -87,7 +87,7 @@ int daysDiff(Date d1, Date d2)
 int main()
 {
 
- Date d1, d2;
+ Sobrevida d1, d2;
 
    printf(
           "\n\tDigite duas datas no formato DD/MM/YYYY"
