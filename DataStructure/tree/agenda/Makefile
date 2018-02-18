@@ -20,7 +20,7 @@ $(EBIN):$(EOBJ)
 
 	$(CXX) -o $(BIN) $(OBJ)
 
-$(SUB):$(EBIN)     
+$(SUB):$(EBIN)
 
 	./$(BIN)
 	rm -rf $* $(OBJ)
