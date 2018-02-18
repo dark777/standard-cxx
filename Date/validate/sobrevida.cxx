@@ -23,7 +23,7 @@
    int segundos(minutos*60); // qtd segundos total dos dias
    
    http://vini-brown.zip.net/
-   
+   https://pt.stackoverflow.com/questions/264755/calculo-de-sobrevida-em-c
 */
 
 struct Date
