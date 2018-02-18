@@ -59,7 +59,7 @@ struct CurrentDateTime
    std::make_pair("Nov", Month::Nov),
    std::make_pair("Dec", Month::Dec)
   };
-};
+}current;
 
 CurrentDateTime::CurrentDateTime()
 {
@@ -123,7 +123,6 @@ void CurrentDateTime::StrToNumber(const DayTime<std::string>& information)
 
 int main()
 {
- CurrentDateTime current = *new CurrentDateTime();
 
   std::cout << "\n\tCurrent Day....: " << current.GetDayStr()
             << "\n\tCurrent Date...: " << current.GetDay()
