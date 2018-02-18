@@ -1,4 +1,19 @@
 #include <iostream>
+/*
+.--------.-------------------------------.----------------------------------.
+|Formato |Britânico:                     |Americano:                        |
+|        |Dia - Mês - Ano                |Mês - Dia - Ano                   |
+|--------+-------------------------------+----------------------------------|
+|    A   | the Twenty-fourth of February,| February, the Twenty-fourth,2009 |
+|        |             2009              |                                  |
+|--------+-------------------------------+----------------------------------|
+|    B   |     24th February 2009        |     February 24th, 2009          |
+|    C   |      24 February 2009         |      February 24, 2009           |
+|    D   |          24/2/2009            |          2/24/2009               |
+|    E   |           24/2/09             |           2/24/09                |
+|    F   |          24/02/09             |          02/24/09                |
+'--------'-------------------------------'----------------------------------'
+*/
 
 int main()
 {
@@ -53,12 +68,12 @@ int main()
  int day_easter=(((h+L-7*m+114)%31)+1);
  
  if(year == year_current && month_current == 4 && day_current == day_easter)
- printf("\n\tToday %dth %s %04d is Easter Day",day_easter, months[month-1], year); 
+ printf("\n\tToday %dth %s %04d is Easter Day",day_easter, months[month-1], year); //British date format
  else
  if(year >= year_current && month_current <= 4 && (day_current < day_easter || day_current > day_easter))
- printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], day_easter, year);
+ printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], day_easter, year); //American date format
  else
- printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", day_easter, months[month-1], year);
+ printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", day_easter, months[month-1], year); //British date format
  
  return 0;
 }
