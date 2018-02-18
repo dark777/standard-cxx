@@ -25,6 +25,7 @@ int main()
  //calcular lua cheia
  int n = (44-e);
      n = (n<21) ? n = n+30 : n;
+ 
  //calcula domingo
  int d = ((5*ano)/4)-(x+10);
 
