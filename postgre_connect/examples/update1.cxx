@@ -37,11 +37,11 @@ int main(int argc, char* argv[])
       /* List down all the records */
       for(pqxx::result::const_iterator c = res.begin(); c != res.end(); ++c)
       {
-       std::cout << "ID: " << c[0].as<int>()
-                 << "Name: " << c[1].as<std::string>()
-                 << "Age: " << c[2].as<int>()
-                 << "Address: " << c[3].as<std::string>()
-                 << "Salary: " << c[4].as<float>() 
+       std::cout << "ID......: " << c[0].as<int>()
+                 << "Name....: " << c[1].as<std::string>()
+                 << "Age.....: " << c[2].as<int>()
+                 << "Address.: " << c[3].as<std::string>()
+                 << "Salary..: " << c[4].as<float>() 
                  << "\n\n";
       }
       std::cout << "\n\tOperation done successfully\n\n";
