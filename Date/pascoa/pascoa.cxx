@@ -4,20 +4,21 @@ int main()
 {
   time_t now = time(0);
   tm *ltm = localtime(&now);
-
-  int anoatual(ltm->tm_year+1900);
-  int mesatual(ltm->tm_mon+1);
-
-  printf("\n\tO ano atual é %4d",anoatual);
-
-  int ano;
-
-  printf("\n\tDigite o ano desejado para\n\tcalcularmos o dia da páscoa: ");
-  scanf("%d", &ano);
-
-  int a=(ano%19);
-  int b=int(ano/100);
-  int c=(ano%100);
+  
+  int day_current(ltm->tm_mday);
+  int month_current(ltm->tm_mon+1);
+  int year_current(ltm->tm_year+1900);
+  
+  printf("\n\tThe current year is %4d\n",year_current);
+  
+  int year;
+  
+  printf("\n\tEnter the desired year to\n\tcalculate the day of Easter: ");
+  scanf("%d", &year);
+  
+  int a=(year%19);
+  int b=int(year/100);
+  int c=(year%100);
   int d=int(b/4);
   int e=(b%4);
   int f=int((b+8)/25);
@@ -27,32 +28,37 @@ int main()
   int k=int(c%4);
   int L=((32+2*e+2*i-h-k)%7);
   int m=int((a+11*h+22*L)/451);
-  int mes=int((h+L-7*m+114)/31);
-
-  const char* meses = "Mês inválido"; //aqui nova variável para o texto do mes
-
-   switch(mes)
+  int month=int((h+L-7*m+114)/31);
+  
+  enum{ January=1, February, March, April, May, June, July, August, September, October, November, December };
+  
+  const char *months[12] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+    
+   switch(month)
     { //agora com switch em vez de ifs
-     case 1: meses = "Janeiro"; break;
-     case 2: meses = "Fevereiro"; break;
-     case 3: meses = "Março"; break;
-     case 4: meses = "Abril"; break;
-     case 5: meses = "Maio"; break;
-     case 6: meses = "Junho"; break;
-     case 7: meses = "Julho"; break;
-     case 8: meses = "Agosto"; break;
-     case 9: meses = "Setembro"; break;
-     case 10: meses = "Outubro"; break;
-     case 11: meses = "Novembro"; break;
-     case 12: meses = "Dezembro"; break;
+     case January: months[month-1]; break;
+     case February: months[month-1]; break;
+     case March: months[month-1]; break;
+     case April: months[month-1]; break;
+     case May: months[month-1]; break;
+     case June: months[month-1]; break;
+     case July: months[month-1]; break;
+     case August: months[month-1]; break;
+     case September: months[month-1]; break;
+     case October: months[month-1]; break;
+     case November: months[month-1]; break;
+     case December: months[month-1]; break;
     }
-
- int dia=(((h+L-7*m+114)%31)+1);
-
- if(anoatual > ano || (ano == anoatual && mesatual > 4))
-  printf("\n\tA pascoa caiu.!!\n\tdia: %d do mês: %s de %4d\n\n", dia, meses, ano);
+ 
+ int day_easter=(((h+L-7*m+114)%31)+1);
+ 
+ if(year == year_current && month_current == 4 && day_current == day_easter)
+ printf("\n\tToday %dth %s %04d is Easter Day",day_easter, months[month-1], year); 
  else
-  printf("\n\tA pascoa ira cair.!!\n\tdia: %d do mês: %s de %4d\n\n", dia, meses, ano);
+ if(year >= year_current && month_current <= 4 && (day_current < day_easter || day_current > day_easter))
+ printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], day_easter, year);
+ else
+ printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", day_easter, months[month-1], year);
  
  return 0;
 }

@@ -28,7 +28,7 @@
 
 int main()
 {
- enum months{ January=1, February, March, April, May, June, July, August, September, October, November, December}month;
+ enum { January=1, February, March, April, May, June, July, August, September, October, November, December}months;
  
  const char *monthName[12] = {
                               "January", "February", "March",
@@ -37,8 +37,8 @@ int main()
                               "November", "December"
                              };
    
- for(month = January; month <= December; month++)
- printf("%2d%11s\n", month, monthName[month-1]);
+ for(months = January; months <= December; months++)
+ printf("%2d%11s\n", months, monthName[months-1]);
 
  return 0;
 }
