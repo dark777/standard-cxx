@@ -164,7 +164,7 @@ int main()
         else
         {
          semana_aux=0;
-         semana_aux++;	
+         semana_aux++;
         }
        // LOOP de inserção do restante dos dias do mês - OK
        for(i=0; i<6; i++)
@@ -201,74 +201,86 @@ int main()
          {
           if(aux_m == 2)
            {
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("|Janeiro                      |");
-            printf("|Fevereiro                    |\n");
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("| dom seg ter qua qui sex sab |");
-            printf("| dom seg ter qua qui sex sab |\n");
+            printf(
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "|Janeiro                      |"
+                   "|Fevereiro                    |\n"
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "| dom seg ter qua qui sex sab |"
+                   "| dom seg ter qua qui sex sab |\n"
+                  );
            }
            
           if(aux_m == 4)
            {
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("|Março                        |");
-            printf("|Abril                        |\n");
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("| dom seg ter qua qui sex sab |");
-            printf("| dom seg ter qua qui sex sab |\n");
+            printf(
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "|Março                        |"
+                   "|Abril                        |\n"
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "| dom seg ter qua qui sex sab |"
+                   "| dom seg ter qua qui sex sab |\n"
+                  );
            }
            
           if(aux_m == 6)
            {
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("|Maio                         |");
-            printf("|Junho                        |\n");
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("| dom seg ter qua qui sex sab |");
-            printf("| dom seg ter qua qui sex sab |\n");
+            printf(
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "|Maio                         |"
+                   "|Junho                        |\n"
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "| dom seg ter qua qui sex sab |"
+                   "| dom seg ter qua qui sex sab |\n"
+                  );
            }
            
           if(aux_m == 8)
            {
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("|Julho                        |");
-            printf("|Agosto                       |\n");
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("| dom seg ter qua qui sex sab |");
-            printf("| dom seg ter qua qui sex sab |\n");
+            printf(
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "|Julho                        |"
+                   "|Agosto                       |\n"
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "| dom seg ter qua qui sex sab |"
+                   "| dom seg ter qua qui sex sab |\n"
+                  );
            }
            
           if(aux_m == 10)
            {
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("|Setembro                     |");
-            printf("|Outubro                      |\n");
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("| dom seg ter qua qui sex sab |");
-            printf("| dom seg ter qua qui sex sab |\n");
+            printf(
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "|Setembro                     |"
+                   "|Outubro                      |\n"
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "| dom seg ter qua qui sex sab |"
+                   "| dom seg ter qua qui sex sab |\n"
+                  );
            }
            
           if(aux_m == 12)
            {
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("|Novembro                     |");
-            printf("|Dezembro                     |\n");
-            printf("|-----------------------------|");
-            printf("|-----------------------------|\n");
-            printf("| dom seg ter qua qui sex sab |");
-            printf("| dom seg ter qua qui sex sab |\n");
+            printf(
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "|Novembro                     |"
+                   "|Dezembro                     |\n"
+                   "|-----------------------------|"
+                   "|-----------------------------|\n"
+                   "| dom seg ter qua qui sex sab |"
+                   "| dom seg ter qua qui sex sab |\n"      
+                  );
            }
            
           // Pega os dados que são os dias do mês contido nas Matrizes e imprime na tela.
