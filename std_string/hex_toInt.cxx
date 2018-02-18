@@ -2,24 +2,30 @@
 
 int hexToInt(std::string s)
 {
-    int res = 0;
+ int res = 0;
 
-    for (size_t i = 0; i < s.size(); i++) {
-        int multiplier = 1;
-        int exp = (s.size() - 1 - i);
-        while (exp-- > 0)
-            multiplier *= 16;
-        int ch = s[i];
-        if (ch >= '0' && ch <= '9')
-            res += multiplier * (ch - '0');
-        else if (ch >= 'a' && ch <= 'z')
-            res += multiplier * (ch - 'a'+10);
-        else if (ch >= 'A' && ch <= 'Z')
-            res += multiplier * (ch - 'A'+10);
-    }
-    return res;
-
+ for(size_t i = 0; i < s.size(); i++)
+  {
+   int multiplier = 1;
+   int exp = (s.size() - 1 - i);
+   
+   while (exp-- > 0)
+    multiplier *= 16;
+   
+   int ch = s[i];
+   
+   if(ch >= '0' && ch <= '9')
+    res += multiplier * (ch - '0');
+   else
+   if(ch >= 'a' && ch <= 'z')
+    res += multiplier * (ch - 'a'+10);
+   else
+   if(ch >= 'A' && ch <= 'Z')
+    res += multiplier * (ch - 'A'+10);
+  }
+ return res;
 }
+
 
 int main ()
 {
@@ -29,9 +35,8 @@ int main ()
                           "13","14","15","16","17","18","19","1A",
                           "1B","1C","1D","1E","1F","20"
                          }; //33
-  for(int i=0; i<33;i++)
-  std::cout<<"\n\n\thexToInt{"<<convert[i]<<"}: "<<hexToInt(convert[i]);
-  
+ for(int i=0; i<33;i++)
+ std::cout<<"\n\n\thexToInt{"<<convert[i]<<"}: "<<hexToInt(convert[i]);
   
   /*
   std::cout<<"\n\n\thexToInt{0}: "<<hexToInt("0");
@@ -68,6 +73,6 @@ int main ()
   std::cout<<"\n\n\thexToInt{1F}: "<<hexToInt("1F");
   std::cout<<"\n\n\thexToInt{20}: "<<hexToInt("20");
   */
-  std::cout<<"\n\n";
-  return 0;
-} 
+ std::cout<<"\n\n";
+ return 0;
+}
