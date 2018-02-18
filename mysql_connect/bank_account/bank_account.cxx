@@ -3,7 +3,10 @@
 
 #include "bank_account.hxx"
 
-     
+BankAccount::BankAccount(){}
+
+BankAccount::~BankAccount(){}
+
 BankAccount::BankAccount(int accno, std::string fname, std::string lname, double bal)
 {
  setAccountNumber(accno);
@@ -11,8 +14,6 @@ BankAccount::BankAccount(int accno, std::string fname, std::string lname, double
  setLastName(lname);
  setBalance(bal);
 }
-
-BankAccount::~BankAccount(){}
 
 void BankAccount::setAccountNumber(int accno)
 {

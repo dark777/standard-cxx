@@ -1,22 +1,13 @@
 #ifndef BANKTRANSACTION_HXX
 #define BANKTRANSACTION_HXX
 
-#include <mysql.h>
 #include <string>
-     
+#include <mysql/mysql.h>
+
+
+
+
 struct BankAccount;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 struct BankTransaction
@@ -41,5 +32,13 @@ struct BankTransaction
  private:
    MYSQL* db_conn;
 };
+
+
+
+
+
+
+
+
 
 #endif   // BANKTRANSACTION_HXX

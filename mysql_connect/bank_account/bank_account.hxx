@@ -9,20 +9,13 @@
 
 
 
-
-
-
-
-
-
-
 struct BankAccount
 {
  static const int MAX_SIZE = 30;
-     
- BankAccount(int, std::string, std::string, double);
+ BankAccount();    
  ~BankAccount();
-     
+ BankAccount(int, std::string, std::string, double);
+ 
  void setAccountNumber(int);
  void setLastName(std::string);
  void setFirstName(std::string);
@@ -40,5 +33,12 @@ struct BankAccount
    char lastName[MAX_SIZE];
    double balance;
 };
+
+
+
+
+
+
+
 
 #endif   // BANKACCOUNT_HXX

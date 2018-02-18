@@ -2,12 +2,12 @@
 #define BANKTRANSACTION_CXX
 
 #include <cstdlib>
+#include <iomanip>
 #include <sstream>
 #include <iostream>
-#include <iomanip>
-
-#include "bank_account.hxx"     
+#include "bank_account.hxx"
 #include "bank_transaction.hxx"
+
 
 
 BankTransaction::BankTransaction(const std::string HOST, const std::string USER, const std::string PASSWORD, const std::string DATABASE)
@@ -115,7 +115,7 @@ void BankTransaction::closeAccount(int acno)
   message("Account close successful.");
 }
 
-void BankTransaction::message(string msg)
+void BankTransaction::message(std::string msg)
 {
  std::cout << msg << std::endl;  
 }
@@ -135,42 +135,42 @@ void BankTransaction::printAllAccounts()
  
  rset = mysql_use_result(db_conn);
  
- std::cout << left << setw(10) << setfill('-') << left << '+'
-           << setw(21) << setfill('-') << left << '+'
-           << setw(21)
-           << setfill('-') << left << '+' << setw(21)
-           << setfill('-')
+ std::cout << std::left << std::setw(10) << std::setfill('-') << std::left << '+'
+           << std::setw(21) << std::setfill('-') << std::left << '+'
+           << std::setw(21)
+           << std::setfill('-') << std::left << '+' << std::setw(21)
+           << std::setfill('-')
            << '+' << '+' << std::endl;
     
- std::cout << setfill(' ') << '|' << left << setw(9)
+ std::cout << std::setfill(' ') << '|' << std::left << std::setw(9)
            << "Account"
-           << setfill(' ') << '|' << setw(20) << "First Name"
-           << setfill(' ') << '|' << setw(20) << "Last Name"
-           << setfill(' ') << '|' << right << setw(20)
+           << std::setfill(' ') << '|' << std::setw(20) << "First Name"
+           << std::setfill(' ') << '|' << std::setw(20) << "Last Name"
+           << std::setfill(' ') << '|' << std::right << std::setw(20)
            << "Balance" << '|' << std::endl;
    
- std::cout << left << setw(10) << setfill('-') << left
-           << '+' << setw(21) << setfill('-') << left << '+'
-           << setw(21)
-           << setfill('-') << left << '+' << setw(21) << setfill('-')
+ std::cout << std::left << std::setw(10) << std::setfill('-') << std::left
+           << '+' << std::setw(21) << std::setfill('-') << std::left << '+'
+           << std::setw(21)
+           << std::setfill('-') << std::left << '+' << std::setw(21) << std::setfill('-')
            << '+' << '+' << std::endl;
    
  if(rset)
   {
     while((rows = mysql_fetch_row(rset)))
      {
-      std::cout << setfill(' ') << '|' << left << setw(9) << rows[0]
-                << setfill(' ') << '|' << setw(20) << rows[1]
-                << setfill(' ') << '|' << setw(20) << rows[2]
-                << setfill(' ') << '|' << right << setw(20)
+      std::cout << std::setfill(' ') << '|' << std::left << std::setw(9) << rows[0]
+                << std::setfill(' ') << '|' << std::setw(20) << rows[1]
+                << std::setfill(' ') << '|' << std::setw(20) << rows[2]
+                << std::setfill(' ') << '|' << std::right << std::setw(20)
                 << rows[3] << '|' << std::endl;
      }
      
-     std::cout << left << setw(10) << setfill('-') << left
-               << '+' << setw(21) << setfill('-') << left << '+'
-               << setw(21)
-               << setfill('-') << left << '+' << setw(21)
-               << setfill('-')
+     std::cout << std::left << std::setw(10) << std::setfill('-') << std::left
+               << '+' << std::setw(21) << std::setfill('-') << std::left << '+'
+               << std::setw(21)
+               << std::setfill('-') << std::left << '+' << std::setw(21)
+               << std::setfill('-')
                << '+' << '+' << std::endl;
   }
   mysql_free_result(rset);
