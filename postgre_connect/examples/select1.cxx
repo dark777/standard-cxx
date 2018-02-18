@@ -23,10 +23,12 @@ int main(int argc, char* argv[])
       sql<<"select *from person where person_id = (select count(*) from person);";
       
       // Execute SQL query 
-      pqxx::result res1(non_obj.exec(sql));
+      pqxx::result numrows(non_obj.exec(sql));
       
-      for (pqxx::result::const_iterator num1 = res1.begin(); num1 != res1.end(); ++num1)
-      std::cout << "\n\tNum Rows.: " << num1[0].as<int>()<<"\n";
+      pqxx::result::const_iterator rows = numrows.begin();
+      
+      //for (pqxx::result::const_iterator rows = numrows.begin(); rows != numrows.end(); ++rows)
+      std::cout << "\n\tNum Rows.: " << rows[0].as<int>()<<"\n";
       
       std::cout<<"\n\tQual Usuario deseja listar? ";
       std::cin>>argc;
