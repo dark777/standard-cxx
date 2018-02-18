@@ -20,11 +20,11 @@ int main()
   time_t now = time(0);
   tm *ltm = localtime(&now);
   
-  int day_current(ltm->tm_mday);
-  int month_current(ltm->tm_mon+1);
-  int year_current(ltm->tm_year+1900);
+  int current_day(ltm->tm_mday);
+  int current_month(ltm->tm_mon+1);
+  int current_year(ltm->tm_year+1900);
   
-  printf("\n\tThe current year is %4d\n",year_current);
+  printf("\n\tThe current year is %4d\n",current_year);
   
   int year;
   
@@ -67,10 +67,10 @@ int main()
  
  int day_easter=(((h+L-7*m+114)%31)+1);
  
- if(year == year_current && month_current == 4 && day_current == day_easter)
+ if(year == current_year && current_month == 4 && current_day == day_easter)
  printf("\n\tToday %dth %s %04d is Easter Day",day_easter, months[month-1], year); //British date format
  else
- if(year >= year_current && month_current <= 4 && (day_current < day_easter || day_current > day_easter))
+ if(year >= current_year && current_month <= 4 && (current_day < day_easter || current_day > day_easter))
  printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], day_easter, year); //American date format
  else
  printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", day_easter, months[month-1], year); //British date format
