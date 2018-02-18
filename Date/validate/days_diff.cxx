@@ -30,54 +30,30 @@ int daysTill(int month)
  
  switch(month)
   {
-   case 1:
-    days=0;
-   break;
+   case 1: days=0; break;
    
-   case 2:
-    days=31;
-   break;
+   case 2: days=31; break;
    
-   case 3:
-    days=59;
-   break;
+   case 3: days=59; break;
    
-   case 4:
-    days=90;
-   break;
+   case 4: days=90; break;
    
-   case 5:
-    days=120;
-   break;
+   case 5: days=120; break;
    
-   case 6:
-    days=151;
-   break;
+   case 6: days=151; break;
    
-   case 7:
-    days=181;
-   break;
+   case 7: days=181; break;
    
-   case 8:
-    days=212;
-   break;
+   case 8: days=212; break;
    
-   case 9:
-    days=243;
-   break;
+   case 9: days=243; break;
    
-   case 10:
-    days=273;
-   break;
+   case 10: days=273; break;
    
-   case 11:
-    days=304;
-   break;
+   case 11: days=304; break;
    
-   case 12:
-    days=334;
-   break;
-   }
+   case 12: days=334; break;
+  }
  return days;
 }
 
