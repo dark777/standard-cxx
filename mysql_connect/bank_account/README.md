@@ -1,8 +1,8 @@
 # Compile Banck_Account
 
-    $ g++ -c *.cxx -lmysqlclient
+    bash-4.4$ g++ -c *.cxx -lmysqlclient
     
-    $ g++ -o banck *.o -lmysqlclient
+    bash-4.4$ g++ -o banck *.o -lmysqlclient
 
 
 # Link
