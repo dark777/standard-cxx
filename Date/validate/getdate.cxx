@@ -4,28 +4,28 @@ struct GetDate
 {
   int Month()
   {
-   if(timeInfo == NULL)return -1;
+   if(&timeInfo == NULL)return -1;
    else
-   return timeInfo->tm_mon+1;
+   return timeInfo.tm_mon+1;
   }
 
   int Year()
   {
-   if(timeInfo == NULL)return -1;
+   if(&timeInfo == NULL)return -1;
    else
-   return timeInfo->tm_year+1900;
+   return timeInfo.tm_year+1900;
   }
  
   int Day()
   {
-   if(timeInfo == NULL)return -1;
+   if(&timeInfo == NULL)return -1;
    else
-   return timeInfo->tm_mday;
+   return timeInfo.tm_mday;
   }
   
   private:
   time_t timeval = time(NULL);
-  tm *timeInfo = localtime(&timeval);
+  tm timeInfo = *localtime(&timeval);
 }get;
 
 
