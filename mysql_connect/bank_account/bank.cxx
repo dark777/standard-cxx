@@ -7,7 +7,7 @@
 #include "bank_account.hxx"
 #include "bank_transaction.hxx"
 
-enum Options { PRINT = 1, NEW, WITHDRAW, DEPOSIT, CLOSE, END };
+enum { Print=1, New, WithDraw, Deposit, Close, End };
 
 int mainMenu()
 {
@@ -15,10 +15,10 @@ int mainMenu()
            << "\n\t1 - Print All Account"
            << "\n\t2 - Open New Account"
            << "\n\t3 - Withdraw"
-	   << "\n\t4 - Deposit"
+           << "\n\t4 - Deposit"
            << "\n\t5 - Close Account"
-           << "\n\t6 - End Transaction";
-   
+           << "\n\t6 - End Transaction"
+           << "\n\tChoice: "; 
  int ch;
  std::cin >> ch;
  return ch;
@@ -38,16 +38,16 @@ int main(int argc, char** argv)
   {
    choice = mainMenu();
    
-   if(choice == END)
+   if(choice == End)
     break;
     
     switch(choice)
      {
-      case PRINT:
+      case Print:
        bt->printAllAccounts();
       break;
       
-      case NEW:
+      case New:
        std::cout << "\n\tEnter account no, first name,last name, balance: ";
        
        std::cin >> acno >> fname >> lname >> bal;
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
              }
              bt->createAccount(new BankAccount(acno, fname, lname, bal));
              break;
-          case WITHDRAW:
+          case WithDraw:
              std::cout << "\n\tEnter account no, amount to withdraw ";
              std::cin >> acno >> bal;
                   
@@ -72,7 +72,7 @@ int main(int argc, char** argv)
              bt->withdraw(acno, bal);
              break;
                   
-          case DEPOSIT:
+          case Deposit:
              std::cout << "\n\tEnter account no, amount to deposit? ";
              std::cin >> acno >> bal;
              if(bal < 0)
@@ -82,7 +82,7 @@ int main(int argc, char** argv)
               }
              bt->deposit(acno, bal);
              break;
-         case CLOSE:
+         case Close:
              std::cout << "\n\tEnter account no to close account? ";
              std::cin >> acno;
              bt->closeAccount(acno);

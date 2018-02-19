@@ -15,12 +15,12 @@ BankTransaction::BankTransaction(const std::string HOST, const std::string USER,
  db_conn = mysql_init(NULL);
  
  if(!db_conn)
-  message("MySQL initialization failed! ");
+  message("\tMySQL initialization failed! ");
   
  db_conn = mysql_real_connect(db_conn, HOST.c_str(), USER.c_str(), PASSWORD.c_str(), DATABASE.c_str(), 0, NULL, 0);
  
  if(!db_conn)
-  message("Connection Error! ");
+  message("\tConnection Error! ");
 }   
 
 BankTransaction::~BankTransaction()
@@ -59,7 +59,7 @@ void BankTransaction::withdraw(int acno, double amount)
  if(b != NULL)
   {
    if(b->getBalance() < amount)
-    message("Cannot withdraw. Try lower amount.");  
+    message("\tCannot withdraw. Try lower amount.\n");  
     else
      {
       b->setBalance(b->getBalance() - amount);
@@ -68,9 +68,9 @@ void BankTransaction::withdraw(int acno, double amount)
       sql << "UPDATE bank_account SET balance=" << b->getBalance() << " WHERE acc_no=" << acno;
      
       if(!mysql_query(db_conn, sql.str().c_str()))
-       message("Cash withdraw successful. Balance updated.");
+       message("\tCash withdraw successful. Balance updated.\n");
       else
-       message("Cash deposit unsuccessful! Update failed");
+       message("\tCash deposit unsuccessful! Update failed.\n");
      }
   }
 }
@@ -82,9 +82,9 @@ void BankTransaction::deposit(int acno, double amount)
  sql << "UPDATE bank_account SET balance=balance+" << amount << " WHERE acc_no=" << acno;
  
  if(!mysql_query(db_conn, sql.str().c_str()))
-  message("Cash deposit successful. Balance updated.");
+  message("\tCash deposit successful. Balance updated.\n");
   else
-  message("Cash deposit unsuccessful! Update failed");
+  message("\tCash deposit unsuccessful! Update failed.\n");
 }
 
 void BankTransaction::createAccount(BankAccount* ba)
@@ -98,9 +98,9 @@ void BankTransaction::createAccount(BankAccount* ba)
     << ba->getBalance() << ")";
     
  if(mysql_query(db_conn, ss.str().c_str()))
-  message("Failed to create account! ");
+  message("\tFailed to create account!\n");
  else
-  message("Account creation successful.");
+  message("\tAccount creation successful.\n");
 }   
  
 void BankTransaction::closeAccount(int acno)
@@ -110,9 +110,9 @@ void BankTransaction::closeAccount(int acno)
  ss << "DELETE FROM bank_account WHERE acc_no=" << acno;
  
  if(mysql_query(db_conn, ss.str().c_str()))
-  message("Failed to close account! ");
+  message("\tFailed to close account!\n");
  else
-  message("Account close successful.");
+  message("\tAccount close successful.\n");
 }
 
 void BankTransaction::message(std::string msg)
@@ -129,7 +129,7 @@ void BankTransaction::printAllAccounts()
        
  if(mysql_query(db_conn, sql.c_str()))
  {
-  message("Error printing all accounts! ");
+  message("\tError printing all accounts!\n");
   return;
  }
  
