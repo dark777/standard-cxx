@@ -38,9 +38,6 @@ int main(int argc, char** argv)
   {
    choice = mainMenu();
    
-   if(choice == End)
-    break;
-    
     switch(choice)
      {
       case Print:
@@ -59,7 +56,8 @@ int main(int argc, char** argv)
              }
              bt->createAccount(new BankAccount(acno, fname, lname, bal));
              break;
-          case WithDraw:
+      
+      case WithDraw:
              std::cout << "\n\tEnter account no, amount to withdraw ";
              std::cin >> acno >> bal;
                   
@@ -72,7 +70,7 @@ int main(int argc, char** argv)
              bt->withdraw(acno, bal);
              break;
                   
-          case Deposit:
+      case Deposit:
              std::cout << "\n\tEnter account no, amount to deposit? ";
              std::cin >> acno >> bal;
              if(bal < 0)
@@ -82,15 +80,20 @@ int main(int argc, char** argv)
               }
              bt->deposit(acno, bal);
              break;
-         case Close:
+      case Close:
              std::cout << "\n\tEnter account no to close account? ";
              std::cin >> acno;
              bt->closeAccount(acno);
              break;
-               
+           
+      case End:
+            std::cout<<"\n\tGood Bye.!!!\n";
+            return 0;    
+            break;
+          
           default:
-             std::cerr << "\n\tInvalid choice!\n";
-             break;
+            std::cerr << "\n\tInvalid choice!\n";
+            break;
      }
   }
  return 0;
