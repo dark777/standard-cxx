@@ -27,7 +27,7 @@ struct url
   }
 
   private:
-  std::string _url;
+   std::string _url;
 };
 
 int main()

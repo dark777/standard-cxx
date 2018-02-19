@@ -38,7 +38,7 @@ struct phone
  }
  
  private:
- std::string _tel;
+  std::string _tel;
 };
 
 int main(void)

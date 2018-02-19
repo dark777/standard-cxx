@@ -33,7 +33,6 @@ struct email
  
  private:
   std::string _mail;
-   
 };
 
 void getEmail()
