@@ -33,7 +33,7 @@ struct GetDate
     return timeInfo.tm_wday;
    }
   
-  std::string diaSemana()
+  std::string dayWeek()
   {
    //Algoritmo para descobrir o dia da semana
    int a = ((12 - Month()) / 10);
@@ -76,6 +76,6 @@ int main()
  month = get.Month();
  year = get.Year();
  
- std::cout<<"\n\tweekday: "<<get.diaSemana()<<" "<<day<<"/"<<month<<"/"<<year<<"\n\n";
+ std::cout<<"\n\tweekday: "<<get.dayOfWeek(day,month,year)<<"º "<<get.dayWeek()<<" "<<day<<"/"<<month<<"/"<<year<<"\n\n";
  return 0;
 }
