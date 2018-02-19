@@ -22,21 +22,27 @@ int main ()
  int dias_mes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
  
  do{
-    printf("Digite uma data no formato dd/mm/yyyy: ");
+    printf("\n\tEnter date format dd/mm/yyyy: ");
     scanf("%d/%d/%d", &dia, &mes, &ano);
     
-    if(dia > 31 || dia < 1)printf("\n\tDia %d invalido.!!\n\tDigite um dia de 01 a 31\n",dia);
+    if(dia > 31 || dia < 1)printf("\n\tDay %d is Invalid.!!\n\tEnter day between 01 and 31\n",dia);
     
-    if(mes > 12 || mes < 1)printf("\n\tMes %d invalido.!!\n\tDigite um mes de 01 a 12\n",mes);
+    if(mes > 12 || mes < 1)printf("\n\tMes %d is Invalid.!!\n\tEnter day between 01 and 12\n",mes);
     
-   }while((dia > 31 || dia < 1) || (mes > 12 || mes < 1));
+    if(ano%4 == 0 || ano%400 == 0 && ano%100 != 0)dias_mes[1]=29; // atualiza dia+1 caso  ano seja bisexto
+    
+    if(dia > dias_mes[mes-1])printf("\n\tMes %d of year %d does not have %d days!!!\n\n",mes,ano,dia);
+    
+   }while((dia > 31 || dia < 1) || (mes > 12 || mes < 1) || (dia > dias_mes[mes-1]));
    
    dias_mes[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28;
    
    for(int i = mes; i<12; i++)
-   falta_dias += dias_mes[i];
-    
-   printf("\n\nFaltam %d dias para terminar o ano %04d.\n\n", falta_dias,ano);
+   falta_dias+=dias_mes[i];
+   
+   falta_dias+=dias_mes[mes-1]-dia; // conta os dias restantes do mes indicado na entrada padrão
+   
+   printf("\n\tDays %d to complete the year %04d.\n\n", falta_dias,ano);
    
  return 0;
 }
