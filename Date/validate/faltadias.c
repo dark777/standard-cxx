@@ -27,11 +27,11 @@ int main ()
     
     if(dia > 31 || dia < 1)printf("\n\tDay %d is Invalid.!!\n\tEnter day between 01 and 31\n",dia);
     
-    if(mes > 12 || mes < 1)printf("\n\tMes %d is Invalid.!!\n\tEnter day between 01 and 12\n",mes);
+    if(mes > 12 || mes < 1)printf("\n\tMonth %d is Invalid.!!\n\tEnter day between 01 and 12\n",mes);
     
     if(ano%4 == 0 || ano%400 == 0 && ano%100 != 0)dias_mes[1]=29; // atualiza dia+1 caso  ano seja bisexto
     
-    if(dia > dias_mes[mes-1])printf("\n\tMes %d of year %d does not have %d days!!!\n\n",mes,ano,dia);
+    if(dia > dias_mes[mes-1])printf("\n\tMonth %d of year %d does not have %d days!!!\n\n",mes,ano,dia);
     
    }while((dia > 31 || dia < 1) || (mes > 12 || mes < 1) || (dia > dias_mes[mes-1]));
    
