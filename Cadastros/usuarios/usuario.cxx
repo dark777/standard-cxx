@@ -175,7 +175,7 @@ void insereUsuario(Usuario *pUsuario)
     if(arquivo == NULL)std::cout << "\n\tErro ao criar o arquivo\n\n";
     else
     fprintf(
-            arquivo, "\n;%s;%s;%s;%s;%s;",
+            arquivo, ";%s;%s;%s;%s;%s;\n",
             pUsuario->nome,
             pUsuario->rg,
             pUsuario->cpf,
@@ -235,7 +235,7 @@ void insereUsuarios(Usuario *pUsuario, int numUsuarios)
     for(int i = 0; i < (numUsuarios-1); i++)
     {
      fprintf(
-             arquivo, "\n;%s;%s;%s;%s;%s;",
+             arquivo, ";%s;%s;%s;%s;%s;\n",
              pUsuario->nome,
              pUsuario->rg,
              pUsuario->cpf,
