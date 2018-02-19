@@ -1,0 +1,17 @@
+GNUCONIO 0.1 2012
+
+Thanks for downloading the opensource and GPL license gnuconio-0.1 library.
+With this you can use colors, getch and others graphical functions based
+on the conio.h library, using the #include "conio.h" normally, in Windows
+or Gnu Linux systems.
+
+In Gnu Linux systems only copy the conio.h file to your programs folder
+to use it. You will need the NCURSES library to work on linux (libncurses-dev).
+
+In Windows you will need to compile the conio.c file, and use the conio.o file
+in your compiler library list. Tested on the compiler Code::Blocks.
+
+To start the conio use any function, except the printf and scanf. To end the
+program, make the text color == background color, and use the clrscr() function.
+
+Have Fun !

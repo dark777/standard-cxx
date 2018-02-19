@@ -1,0 +1,66 @@
+[Config]
+Relative path=1
+Compilator.FileName=
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.ParsLog=
+Compilator.HideOutput=0
+Prog1=
+Prog2=
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+conio
+	+conio
+		conio.c
+		conio_test.c
+		conio.h
+		Makefile
+		constream
+		constream_test.cpp
+		titledoc
+		web\index.html
+[Open project files]
+0=conio.h
+1=conio.c
+2=conio_test.c
+3=constream
+4=constream_test.cpp
+5=titledoc
+6=web\index.html
+[Selected Project Files]
+Main=
+Selected=conio.c
+[conio.h]
+TopLine=1
+Caret=1,8
+[conio.c]
+TopLine=1
+Caret=1,1
+[conio_test.c]
+TopLine=71
+Caret=20,102
+[constream]
+TopLine=1
+Caret=1,1
+[constream_test.cpp]
+TopLine=1
+Caret=1,1
+[titledoc]
+TopLine=1
+Caret=1,29
+[web\index.html]
+TopLine=21
+Caret=29,26
