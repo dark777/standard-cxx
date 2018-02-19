@@ -22,6 +22,16 @@ struct GetDate
    else
    return timeInfo.tm_mday;
   }
+   
+  int dayOfWeek(int day, int month, int year)
+   {
+    timeInfo.tm_year = year - 1900;
+    timeInfo.tm_mon = month - 1;
+    timeInfo.tm_mday = day;
+    timeInfo.tm_hour = 12;
+    mktime(&timeInfo);
+    return timeInfo.tm_wday;
+   }
   
   std::string diaSemana()
   {
