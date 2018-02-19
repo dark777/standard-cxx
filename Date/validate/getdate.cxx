@@ -9,7 +9,7 @@ struct GetDate
    
   struct Months
    {
-    const char *longMonths[12]={ "January","February","March","April","May","June","July","August","September","October","November","December" };
+    const char* longMonths[12]={ "January","February","March","April","May","June","July","August","September","October","November","December" };
    }month;
    
   int Month()
@@ -101,7 +101,7 @@ struct GetDate
   
   const char* shortDays[7]={"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
   
-  const char *shortMonths[12]={ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" };
+  const char* shortMonths[12]={ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" };
   
   enum { Jan=1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
 }get;
