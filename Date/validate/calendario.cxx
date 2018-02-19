@@ -6,16 +6,11 @@ int month_days[12] = {31, 28, 31, 30, 31, 30, 31 ,31 ,30, 31, 30, 31};
 
 int first_day_year(int year)
 {
- int first_day;
- int x;
- int y;
- int z;
+ int x = (year - 1.)/4.0;
+ int y = (year - 1.)/100.;
+ int z = (year - 1.)/400.;
      
- x = (year - 1.)/4.0;
- y = (year - 1.)/100.;
- z = (year - 1.)/400.;
-     
- first_day = (year + x - y + z) %7;
+ int first_day = (year + x - y + z) %7;
      
  return first_day;
 }
