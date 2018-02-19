@@ -175,7 +175,7 @@ void insereUsuario(Usuario *pUsuario)
     if(arquivo == NULL)std::cout << "\n\tErro ao criar o arquivo\n\n";
     else
     fprintf(
-            arquivo, ";%s;%s;%s;%s;%s;\n",
+            arquivo, "\n;%s;%s;%s;%s;%s;",
             pUsuario->nome,
             pUsuario->rg,
             pUsuario->cpf,
@@ -200,7 +200,7 @@ void removerUltimoUsuario()
     int i = 0;
     char linha[500];
     
-    for(; fgets(linha, sizeof(linha), arquivo); i++)
+    for(; fgets(linha, sizeof(linha)-1, arquivo); i++)
     {
      linha[strlen(linha) - 1] = '\0';
      
@@ -235,7 +235,7 @@ void insereUsuarios(Usuario *pUsuario, int numUsuarios)
     for(int i = 0; i < (numUsuarios-1); i++)
     {
      fprintf(
-             arquivo, ";%s;%s;%s;%s;%s;\n",
+             arquivo, "\n;%s;%s;%s;%s;%s;",
              pUsuario->nome,
              pUsuario->rg,
              pUsuario->cpf,
