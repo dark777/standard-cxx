@@ -36,7 +36,7 @@ struct GetDate
   int dayWeek(int day, int month, int year)
    {
     timeInfo.tm_year = year - 1900;
-    timeInfo.tm_mon = month - 1;
+    timeInfo.tm_mon  = month - 1;
     timeInfo.tm_mday = day;
     timeInfo.tm_hour = 12;
     mktime(&timeInfo);
@@ -48,18 +48,18 @@ struct GetDate
     //Testa o resultado e retorna
     switch(Month())
      {
-      case January: return shortMonths[Month()-1]; break;
-      case February: return shortMonths[Month()-1]; break;
-      case March: return shortMonths[Month()-1]; break;
-      case April: return shortMonths[Month()-1]; break;
+      case Jan: return shortMonths[Month()-1]; break;
+      case Feb: return shortMonths[Month()-1]; break;
+      case Mar: return shortMonths[Month()-1]; break;
+      case Apr: return shortMonths[Month()-1]; break;
       case May: return shortMonths[Month()-1]; break;
-      case June: return shortMonths[Month()-1]; break;
-      case July: return shortMonths[Month()-1]; break;
-      case August: return shortMonths[Month()-1]; break;
-      case September: return shortMonths[Month()-1]; break;
-      case October: return shortMonths[Month()-1]; break;
-      case November: return shortMonths[Month()-1]; break;
-      case December: return shortMonths[Month()-1]; break;
+      case Jun: return shortMonths[Month()-1]; break;
+      case Jul: return shortMonths[Month()-1]; break;
+      case Aug: return shortMonths[Month()-1]; break;
+      case Sep: return shortMonths[Month()-1]; break;
+      case Oct: return shortMonths[Month()-1]; break;
+      case Nov: return shortMonths[Month()-1]; break;
+      case Dec: return shortMonths[Month()-1]; break;
      }
      
    }
@@ -81,13 +81,13 @@ struct GetDate
     //Testa o resultado e retorna
     switch(j)
      {
-      case Zero: return shortDays[j-1]; break;
-      case One: return shortDays[j-1]; break;
-      case Two: return shortDays[j-1]; break;
+      case Zero:  return shortDays[j-1]; break;
+      case One:   return shortDays[j-1]; break;
+      case Two:   return shortDays[j-1]; break;
       case Three: return shortDays[j-1]; break;
-      case Four: return shortDays[j-1]; break;
-      case Five: return shortDays[j-1]; break;
-      case Six: return shortDays[j-1]; break;
+      case Four:  return shortDays[j-1]; break;
+      case Five:  return shortDays[j-1]; break;
+      case Six:   return shortDays[j-1]; break;
      }
    }
    
@@ -103,7 +103,7 @@ struct GetDate
   
   const char *shortMonths[12]={ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" };
   
-  enum { January=1, February, March, April, May, June, July, August, September, October, November, December};
+  enum { Jan=1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
 }get;
 
 
