@@ -8,22 +8,23 @@ struct extensions
  ~extensions()
   {
    if(_file.length() != 0)_file.clear();
-  } 
-
-  bool isFile()
-  {
-    std::smatch extensions_smatch;
-    //validas arquivos com as extensoes da regex
-    const std::regex pattern(".*[.](h|hpp|hxx|H|HPP|HXX|c|cpp|cxx|C|CPP|CXX|aspx|php|py|java|rb|d|htm|html|HTM|HTML|mp3|css)");
-    return std::regex_match(_file, extensions_smatch, pattern);
   }
+  
+ bool isFile()
+ {
+  std::smatch extensions_smatch;
+  //validas arquivos com as extensoes da regex
+  const std::regex pattern(".*[.](h|hpp|hxx|H|HPP|HXX|c|cpp|cxx|C|CPP|CXX|aspx|php|py|java|rb|d|htm|html|HTM|HTML|mp3|css)");
+  
+  return std::regex_match(_file, extensions_smatch, pattern);
+ }
 
  void print()
  {
   std::cout<<"\n\tFile: "<<_file<<(isFile()?" is Valid\n":" is Invalid\n");
  }
 
-  private:
+ private:
   std::string _file;
 };
 
