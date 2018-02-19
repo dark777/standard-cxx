@@ -109,9 +109,10 @@ struct GetDate
 
 int main()
 {
- std::cout<<"\n\tshort Weekday: "<<get.dayWeek()<<" "<<day<<"/"<<get.theMonth()<<"/"<<year<<"\n";
+ std::cout<<"\n\tshort Weekday: "<<get.dayWeek()<<" "<<get.Day()<<"/"<<get.theMonth()<<"/"<<get.Year()<<"\n";
  
- std::cout<<"\n\tlong Weekday: "<<get.week.longDays[get.dayWeek(get.Day(),get.Month(),get.Year())]<<" "<<day<<"/"<<get.month.longMonths[month-1]<<"/"<<year<<"\n\n";
+ std::cout<<"\n\tlong Weekday: "<<get.week.longDays[get.dayWeek(get.Day(),get.Month(),get.Year())]
+          <<" "<<get.Day()<<"/"<<get.month.longMonths[get.Month()-1]<<"/"<<get.Year()<<"\n\n";
  
  return 0;
 }
