@@ -42,21 +42,21 @@ unsigned long dist_dias (data inicio, data fim)
  unsigned long fdias;
  unsigned long def_anos = 0;
 
- int dias_mes[2][13] = {
-                        {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
-                        {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+ int dias_mes[2][12] = {
+                        {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+                        {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
                        };
        
  idias = inicio.dia;
  dbissexto = __isleap(inicio.ano);
  
  for (i = inicio.mes - 1; i > 0; --i)
-  idias += dias_mes[dbissexto][i];
+  idias += dias_mes[dbissexto][i-1];
    fdias = fim.dia;
     dbissexto = __isleap(fim.ano);
 
  for (i = fim.mes - 1; i > 0; --i)
-  fdias += dias_mes[dbissexto][i];    
+  fdias += dias_mes[dbissexto][i-1];    
 
  while (inicio.ano < fim.ano)
   def_anos += 365 + __isleap(inicio.ano++);
