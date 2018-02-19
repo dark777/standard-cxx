@@ -31,7 +31,7 @@ int main ()
     
    }while((dia>31 || dia<1) || (mes>12 || mes <1));
    
-   dias_mes[2] = (ano%4 == 0 && ano%100 != 0 || ano%400==0) ? 29 : 28;
+   dias_mes[2] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28;
    
    for(int i = mes; i<13; i++)
    falta_dias += dias_mes[i];
