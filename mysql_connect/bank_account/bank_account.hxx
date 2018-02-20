@@ -27,11 +27,10 @@ struct BankAccount
  double getBalance() const;
  
  private:
- 
-   int accountNumber;
-   char firstName[MAX_SIZE];
-   char lastName[MAX_SIZE];
-   double balance;
+  int accountNumber;
+  char firstName[MAX_SIZE];
+  char lastName[MAX_SIZE];
+  double balance;
 };
 
 
