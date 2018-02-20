@@ -20,7 +20,7 @@ int main(void)
       std::cout << "connected\n";
       
       con->setSchema("teste");
-      prep_stmt = con->prepareStatement("insert into person(person_id,name,age,status,id_faz) values (?,?,?,?,?))");
+      prep_stmt = con->prepareStatement("insert into person(person_id,name,age,status,id_faz) values (?,?,?,?,?)");
       
       int i = 0;
       char name[50];
