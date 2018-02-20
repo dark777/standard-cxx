@@ -1,6 +1,6 @@
 #ifndef _RVRS_C
 #define _RVRS_C
-/* função recursiva para ajustar espaços na string */
+/* função  que mostra a palavra ou frase cescrita ao contrario */
 #include <StrSet/include/strset.h>
 
 
