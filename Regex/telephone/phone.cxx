@@ -41,7 +41,7 @@ struct phone
   std::string _tel;
 };
 
-int main(void)
+int main()
 {
   std::string strphone;
   

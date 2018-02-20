@@ -33,7 +33,7 @@ struct email
 };
 
 
-int main(void)
+int main()
 { 
   std::string emails[15] = {
                             "regex_cpp@net.br",
