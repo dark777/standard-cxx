@@ -54,10 +54,7 @@ struct uol: validation
       
       is_val = std::unique_ptr<uol>(new uol(str));
       
-      if(is_val->isValid())
-       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else
-       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -95,10 +92,7 @@ struct bol: validation
       
       is_val = std::unique_ptr<bol>(new bol(str));
       
-      if(is_val->isValid())
-       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else
-       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -136,10 +130,7 @@ struct gmail: validation
       
       is_val = std::unique_ptr<gmail>(new gmail(str));
       
-      if(is_val->isValid())
-       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else
-       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
        
      }while(!is_val->isValid());
   }
@@ -177,10 +168,7 @@ struct earth: validation
       
       is_val = std::unique_ptr<earth>(new earth(str));
       
-      if(is_val->isValid())
-       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else
-       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -218,10 +206,7 @@ struct yahoo: validation
       
       is_val = std::unique_ptr<yahoo>(new yahoo(str));
       
-      if(is_val->isValid())
-       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else
-       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -259,10 +244,7 @@ struct hotmail: validation
       
       is_val = std::unique_ptr<hotmail>(new hotmail(str));
       
-      if(is_val->isValid())
-       std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-      else
-       std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }

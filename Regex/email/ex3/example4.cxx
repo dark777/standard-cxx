@@ -178,10 +178,7 @@ void menu()
           
          is_val[0] = new uol(str);
          
-         if(is_val[0]->isValid())
-         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout<<"\n\tEmail: "<<str<<(is_val[0]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[0]->isValid());
       
@@ -195,10 +192,7 @@ void menu()
          
          is_val[1] = new bol(str);
          
-         if(is_val[1]->isValid())
-         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout<<"\n\tEmail: "<<str<<(is_val[1]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[1]->isValid());
       
@@ -212,10 +206,7 @@ void menu()
          
          is_val[2] = new gmail(str);
          
-         if(is_val[2]->isValid())
-         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout<<"\n\tEmail: "<<str<<(is_val[2]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[2]->isValid());
       
@@ -229,10 +220,7 @@ void menu()
          
          is_val[3] = new earth(str);
          
-         if(is_val[3]->isValid())
-         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout<<"\n\tEmail: "<<str<<(is_val[3]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
          
         }while(!is_val[3]->isValid());
       
@@ -246,10 +234,7 @@ void menu()
          
          is_val[4] = new yahoo(str);
          
-         if(is_val[4]->isValid())
-         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout<<"\n\tEmail: "<<str<<(is_val[4]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
          
         }while(!is_val[4]->isValid());
       
@@ -263,10 +248,7 @@ void menu()
          
          is_val[5] = new hotmail(str);
          
-         if(is_val[5]->isValid())
-         std::cout<<"\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout<<"\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout<<"\n\tEmail: "<<str<<(is_val[5]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[5]->isValid());
       

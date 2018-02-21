@@ -47,10 +47,7 @@ void menu()
          printf("\n\tEnter your uol e-mail: ");
          scanf("%s", &email);
          
-         if(uol(email))
-          printf("\n\tEmail: %s is Valid.\n",email);
-         else
-          printf("\n\tEmail: %s is inValid.\n",email);
+         printf("\n\tEmail: %s %s",email,(uol(email)?" is Valid.\n\n":" is Invalid.\n\n"));
           
         }while(!uol(email));
       
@@ -62,10 +59,7 @@ void menu()
          printf("\n\tEnter your bol e-mail: ");
          scanf("%s", &email);
          
-         if(bol(email))
-          printf("\n\tEmail: %s is Valid.\n",email);
-         else
-          printf("\n\tEmail: %s is inValid.\n",email);
+         printf("\n\tEmail: %s %s",email,(bol(email)?" is Valid.\n\n":" is Invalid.\n\n"));
           
         }while(!bol(email));
       
@@ -77,10 +71,7 @@ void menu()
          printf("\n\tEnter your google e-mail: ");
          scanf("%s", &email);
          
-         if(gmail(email))
-          printf("\n\tEmail: %s is Valid.\n",email);
-         else
-          printf("\n\tEmail: %s is inValid.\n",email);
+         printf("\n\tEmail: %s %s",email,(gmail(email)?" is Valid.\n\n":" is Invalid.\n\n"));
           
         }while(!gmail(email));
       
@@ -92,10 +83,7 @@ void menu()
          printf("\n\tEnter your terra e-mail: ");
          scanf("%s", &email);
          
-         if(terra(email))
-          printf("\n\tEmail: %s is Valid.\n",email);
-         else
-          printf("\n\tEmail: %s is inValid.\n",email);
+         printf("\n\tEmail: %s %s",email,(terra(email)?" is Valid.\n\n":" is Invalid.\n\n"));
           
         }while(!terra(email));
       
@@ -107,10 +95,7 @@ void menu()
          printf("\n\tEnter your yahoo e-mail: ");
          scanf("%s", &email);
          
-         if(yahoo(email))
-          printf("\n\tEmail: %s is Valid.\n",email);
-         else
-          printf("\n\tEmail: %s is inValid.\n",email);
+         printf("\n\tEmail: %s %s",email,(yahoo(email)?" is Valid.\n\n":" is Invalid.\n\n"));
           
         }while(!yahoo(email));
       
@@ -122,10 +107,7 @@ void menu()
          printf("\n\tEnter your hotmail e-mail: ");
          scanf("%s", &email);
          
-         if(hotmail(email))
-          printf("\n\tEmail: %s is Valid.\n",email);
-         else
-          printf("\n\tEmail: %s is inValid.\n",email);
+         printf("\n\tEmail: %s %s",email,(hotmail(email)?" is Valid.\n\n":" is Invalid.\n\n"));
           
         }while(!hotmail(email));
       
