@@ -33,6 +33,7 @@ struct uol: validation
  
  ~uol()
   {
+   str.clear(); 
    _mail.clear(); 
   }
   
@@ -73,6 +74,7 @@ struct bol: validation
  
  ~bol()
   {
+   str.clear(); 
    _mail.clear();
   }
   
@@ -113,6 +115,7 @@ struct gmail: validation
  
  ~gmail()
   {
+   str.clear(); 
    _mail.clear();
   }
   
@@ -153,6 +156,7 @@ struct earth: validation
  
  ~earth()
   {
+   str.clear(); 
    _mail.clear();
   }
   
@@ -193,6 +197,7 @@ struct yahoo: validation
  
  ~yahoo()
   {
+   str.clear(); 
    _mail.clear();
   }
   
@@ -233,6 +238,7 @@ struct hotmail: validation
  
  ~hotmail()
   {
+   str.clear(); 
    _mail.clear();
   }
   
