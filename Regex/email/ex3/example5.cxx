@@ -122,7 +122,6 @@ struct gmail: validation
   {
    delete is_val;
    is_val=0;
-   is_val=0;
    _mail.clear();
   }
   
