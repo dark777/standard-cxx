@@ -67,7 +67,7 @@ struct uol: validation
   }
   
  private:
-  std::string _mail; 
+  std::string _mail;
 };
 
 struct bol: validation
@@ -151,7 +151,7 @@ struct gmail: validation
   }
   
  private:
-  std::string _mail; 
+  std::string _mail;
 };
 
 struct earth: validation
