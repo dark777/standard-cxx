@@ -309,7 +309,7 @@ void menu_All()
       
       case Gmail:
        
-       m_val =  std::make_unique<gmail>();
+       m_val = std::make_unique<gmail>();
        
        m_val->menu();
        
@@ -317,7 +317,7 @@ void menu_All()
       
       case Earth:
        
-       m_val =  std::make_unique<earth>();
+       m_val = std::make_unique<earth>();
        
        m_val->menu();
        
@@ -325,7 +325,7 @@ void menu_All()
       
       case Yahoo:
        
-       m_val =  std::make_unique<yahoo>();
+       m_val = std::make_unique<yahoo>();
        
        m_val->menu();
        
@@ -333,7 +333,7 @@ void menu_All()
       
       case Hotmail:
        
-       m_val =  std::make_unique<hotmail>();
+       m_val = std::make_unique<hotmail>();
        
        m_val->menu();
        
