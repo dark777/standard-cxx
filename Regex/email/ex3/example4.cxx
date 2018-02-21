@@ -173,12 +173,12 @@ void menu()
       case Gmail:
       
       do{
-         std::cout<<"\n\tEnter your uol e-mail: ";
-         std::cin>>str;
+         std::cout << "\n\tEnter your uol e-mail: ";
+         std::cin >> str;
           
          is_val[0] = new uol(str);
          
-         std::cout<<"\n\tEmail: "<<str<<(is_val[0]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+         std::cout << "\n\tEmail: " << str << (is_val[0]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[0]->isValid());
       
@@ -187,12 +187,12 @@ void menu()
       case Uol:
       
       do{
-         std::cout<<"\n\tEnter your bol e-mail: ";
-         std::cin>>str;
+         std::cout << "\n\tEnter your bol e-mail: ";
+         std::cin >> str;
          
          is_val[1] = new bol(str);
          
-         std::cout<<"\n\tEmail: "<<str<<(is_val[1]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+         std::cout << "\n\tEmail: " << str << (is_val[1]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[1]->isValid());
       
@@ -201,12 +201,12 @@ void menu()
       case Bol:
       
       do{
-         std::cout<<"\n\tEnter your goole e-mail: ";
-         std::cin>>str;
+         std::cout << "\n\tEnter your goole e-mail: ";
+         std::cin >> str;
          
          is_val[2] = new gmail(str);
          
-         std::cout<<"\n\tEmail: "<<str<<(is_val[2]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+         std::cout << "\n\tEmail: " << str << (is_val[2]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[2]->isValid());
       
@@ -215,12 +215,12 @@ void menu()
       case Earth:
       
       do{
-         std::cout<<"\n\tEnter your earth e-mail: ";
-         std::cin>>str;
+         std::cout << "\n\tEnter your earth e-mail: ";
+         std::cin >> str;
          
          is_val[3] = new earth(str);
          
-         std::cout<<"\n\tEmail: "<<str<<(is_val[3]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+         std::cout << "\n\tEmail: " << str << (is_val[3]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
          
         }while(!is_val[3]->isValid());
       
@@ -229,12 +229,12 @@ void menu()
       case Yahoo:
       
       do{
-         std::cout<<"\n\tEnter your yahoo e-mail: ";
-         std::cin>>str;
+         std::cout << "\n\tEnter your yahoo e-mail: ";
+         std::cin >> str;
          
          is_val[4] = new yahoo(str);
          
-         std::cout<<"\n\tEmail: "<<str<<(is_val[4]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+         std::cout << "\n\tEmail: " << str << (is_val[4]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
          
         }while(!is_val[4]->isValid());
       
@@ -243,12 +243,12 @@ void menu()
       case Hotmail:
       
       do{
-         std::cout<<"\n\tEnter your hotmail e-mail: ";
-         std::cin>>str;
+         std::cout << "\n\tEnter your hotmail e-mail: ";
+         std::cin >> str;
          
          is_val[5] = new hotmail(str);
          
-         std::cout<<"\n\tEmail: "<<str<<(is_val[5]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+         std::cout << "\n\tEmail: " << str << (is_val[5]->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!is_val[5]->isValid());
       

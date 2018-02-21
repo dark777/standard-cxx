@@ -54,7 +54,7 @@ struct uol: validation
       
       is_val = std::unique_ptr<uol>(new uol(str));
       
-      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+      std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -92,7 +92,7 @@ struct bol: validation
       
       is_val = std::unique_ptr<bol>(new bol(str));
       
-      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+      std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -130,7 +130,7 @@ struct gmail: validation
       
       is_val = std::unique_ptr<gmail>(new gmail(str));
       
-      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+      std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
        
      }while(!is_val->isValid());
   }
@@ -168,7 +168,7 @@ struct earth: validation
       
       is_val = std::unique_ptr<earth>(new earth(str));
       
-      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+      std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -206,7 +206,7 @@ struct yahoo: validation
       
       is_val = std::unique_ptr<yahoo>(new yahoo(str));
       
-      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+      std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
@@ -244,7 +244,7 @@ struct hotmail: validation
       
       is_val = std::unique_ptr<hotmail>(new hotmail(str));
       
-      std::cout << "\n\tEmail: " << str <<(is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
+      std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
      }while(!is_val->isValid());
   }
