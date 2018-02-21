@@ -1,14 +1,11 @@
+#include <memory>
 #include <iostream>
 
 //base class validation
 struct validation
 {
  validation(){}
- virtual ~validation()
-  {
-   delete is_val;
-   is_val=0;
-  }
+ virtual ~validation(){}
   
  //pure virtual function to enforce reimplementation
  virtual void menu() = 0;
@@ -16,7 +13,7 @@ struct validation
  
  protected:
   std::string str;
-  validation* is_val;
+  std::unique_ptr<validation> is_val;
 };
 
 //function foward declaration
@@ -36,8 +33,6 @@ struct uol: validation
  
  ~uol()
   {
-   delete is_val;
-   is_val=0;
    _mail.clear(); 
   }
   
@@ -56,7 +51,7 @@ struct uol: validation
       std::cout << "\n\tEnter your uol e-mail: ";
       std::cin >> str;
       
-      is_val = new uol(str);
+      is_val = std::unique_ptr<uol>(new uol(str));
       
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
@@ -78,8 +73,6 @@ struct bol: validation
  
  ~bol()
   {
-   delete is_val;
-   is_val=0;
    _mail.clear();
   }
   
@@ -98,7 +91,7 @@ struct bol: validation
       std::cout << "\n\tEnter your bol e-mail: ";
       std::cin >> str;
       
-      is_val = new bol(str);
+      is_val = std::unique_ptr<bol>(new bol(str));
       
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
@@ -120,8 +113,6 @@ struct gmail: validation
  
  ~gmail()
   {
-   delete is_val;
-   is_val=0;
    _mail.clear();
   }
   
@@ -140,7 +131,7 @@ struct gmail: validation
       std::cout << "\n\tEnter your google e-mail: ";
       std::cin >> str;
       
-      is_val = new gmail(str);
+      is_val = std::unique_ptr<gmail>(new gmail(str));
       
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
@@ -162,8 +153,6 @@ struct earth: validation
  
  ~earth()
   {
-   delete is_val;
-   is_val=0;
    _mail.clear();
   }
   
@@ -182,7 +171,7 @@ struct earth: validation
       std::cout << "\n\tEnter your earth e-mail: ";
       std::cin >> str;
       
-      is_val = new earth(str);
+      is_val = std::unique_ptr<earth>(new earth(str));
       
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
@@ -204,8 +193,6 @@ struct yahoo: validation
  
  ~yahoo()
   {
-   delete is_val;
-   is_val=0;
    _mail.clear();
   }
   
@@ -224,7 +211,7 @@ struct yahoo: validation
       std::cout << "\n\tEnter your yahoo e-mail: ";
       std::cin >> str;
       
-      is_val = new yahoo(str);
+      is_val = std::unique_ptr<yahoo>(new yahoo(str));
       
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
@@ -246,8 +233,6 @@ struct hotmail: validation
  
  ~hotmail()
   {
-   delete is_val;
-   is_val=0;
    _mail.clear();
   }
   
@@ -266,7 +251,7 @@ struct hotmail: validation
       std::cout << "\n\tEnter your hotmail e-mail: ";
       std::cin >> str;
       
-      is_val = new hotmail(str);
+      is_val = std::unique_ptr<hotmail>(new hotmail(str));
       
       if(is_val->isValid())
        std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
@@ -282,7 +267,8 @@ struct hotmail: validation
 
 void menu_All()
 {
- validation* m_val;
+ std::unique_ptr<validation> m_val;
+ 
  enum { Uol=1, Bol, Gmail, Earth, Yahoo, Hotmail, Exit }op;
  
  do{
@@ -300,8 +286,8 @@ void menu_All()
     switch(op)
      {
       case Uol:
-       
-       m_val = new uol();
+         
+       m_val = std::make_unique<uol>();
        
        m_val->menu();
        
@@ -309,7 +295,7 @@ void menu_All()
       
       case Bol:
        
-       m_val = new bol();
+       m_val = std::make_unique<bol>();
        
        m_val->menu();
        
@@ -317,7 +303,7 @@ void menu_All()
       
       case Gmail:
        
-       m_val = new gmail();
+       m_val =  std::make_unique<gmail>();
        
        m_val->menu();
        
@@ -325,7 +311,7 @@ void menu_All()
       
       case Earth:
        
-       m_val = new earth();
+       m_val =  std::make_unique<earth>();
        
        m_val->menu();
        
@@ -333,7 +319,7 @@ void menu_All()
       
       case Yahoo:
        
-       m_val = new yahoo();
+       m_val =  std::make_unique<yahoo>();
        
        m_val->menu();
        
@@ -341,7 +327,7 @@ void menu_All()
       
       case Hotmail:
        
-       m_val = new hotmail();
+       m_val =  std::make_unique<hotmail>();
        
        m_val->menu();
        
