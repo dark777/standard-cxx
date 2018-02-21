@@ -1,16 +1,22 @@
 #include <regex>
 #include <iostream>
 
-struct Contact
+class email
 {
- std::string eMail;
-}; 
-
-struct email
-{
- email(std::string mail): _mail(mail){}
-   
+ std::string _mail;
+  
+ struct Contact
+ {
+  std::string eMail;
+ };
+ 
+ public:
+ 
+ email(){}
+ 
  email(Contact& em): _mail(em.eMail){}
+ 
+ email(std::string mail): _mail(mail){}
  
  ~email()
   {
@@ -20,38 +26,21 @@ struct email
  bool isMail()
  {
   std::smatch email_smatch;
-
-  const std::regex pattern("([a-zA-Z0-9._]+@(?:(?:hotmail|terra|yahoo|bol)[.](?:com[.]br)?)?(?:(?:gmail)[.](?:com)?)?)?");
-
+  
+  const std::regex pattern("([a-zA-Z0-9._]+@(?:(?:hotmail|terra|yahoo|uol|bol)[.](?:com[.]br)?)?(?:(?:gmail)[.](?:com)?)?)?");
+  
   return std::regex_match(_mail, email_smatch, pattern);
  }
-
+ 
  void print()
  {
   std::cout<<"\n\tEmail: "<<_mail<<(isMail()?" is Valid\n":" is Invalid\n"); 
  }
  
- private:
-  std::string _mail;
-};
-
-void getEmail()
-{
-  std::string mail;
+ Contact getContact()
+ {
+  Contact c;
   
-  do{
-     std::cout << "\n\tEnter email: ";
-     getline(std::cin, mail);
-     
-     email(mail).print();
-     
-    }while(!email(mail).isMail());
-}
-
-Contact getContact()
-{
- Contact c;
- 
   do{
      std::cout << "\n\tEnter email: ";
      getline(std::cin, c.eMail);
@@ -60,15 +49,26 @@ Contact getContact()
      
     }while(!email(c).isMail());
  
- return c;
-}
-
-
+  return c;
+ }
+ 
+ void getEmail()
+ {
+  do{
+     std::cout << "\n\tEnter email: ";
+     getline(std::cin, _mail);
+     
+     email(_mail).print();
+     
+    }while(!email(_mail).isMail());
+ }
+ 
+};
 
 int main(void)
 {
- //getContact();
- getEmail();
+ email().getEmail(); 
+ //email().getContact();
  std::cout<<"\n";
  return 0;
 }
