@@ -1,6 +1,6 @@
 #ifndef _RVRS_C
 #define _RVRS_C
-/* função  que mostra a palavra ou frase cescrita ao contrario */
+/* função  que mostra a palavra ou frase escrita ao contrario */
 #include <StrSet/include/strset.h>
 
 
