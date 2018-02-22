@@ -2,13 +2,13 @@
 #include <iostream>
 
 class email
-{
- std::string _mail;
-  
+{ 
  struct Contact
  {
   std::string eMail;
  }c;
+ 
+ std::string _mail;
  
  public:
  
