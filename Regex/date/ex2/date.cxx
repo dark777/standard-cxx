@@ -27,7 +27,7 @@ struct date
  
  void print()
  {
-  std::cout<<"\n\tDate: "<<_date<<(isDate()?" is Valid\n":" is Invalid\n");
+  std::cout << "\n\tDate: " << _date << (isDate()?" is Valid\n":" is Invalid\n");
  }
  
  private:

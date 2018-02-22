@@ -21,7 +21,7 @@ struct extensions
 
  void print()
  {
-  std::cout<<"\n\tFile: "<<_file<<(isFile()?" is Valid\n":" is Invalid\n");
+  std::cout << "\n\tFile: " << _file << (isFile()?" is Valid\n":" is Invalid\n");
  }
 
  private:

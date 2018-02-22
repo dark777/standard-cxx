@@ -25,7 +25,7 @@ struct name
  
  void print()
  {
-  std::cout<<"\n\tNome: "<<_nome<<(isName()?" is Valid\n":" is Invalid\n");
+  std::cout << "\n\tNome: " << _nome << (isName()?" is Valid\n":" is Invalid\n");
  }
    
  private:

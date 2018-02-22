@@ -25,7 +25,7 @@ struct email
  
  void print()
  {
-   std::cout<<"\n\tEmail: "<<_email<<(isMail()?" is Valid\n":" is Invalid\n"); 
+   std::cout << "\n\tEmail: " << _email << (isMail()?" is Valid\n":" is Invalid\n"); 
  }
  
  private:

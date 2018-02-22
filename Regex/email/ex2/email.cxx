@@ -34,7 +34,7 @@ class email
  
  void print()
  {
-  std::cout<<"\n\tEmail: "<<_mail<<(isMail()?" is Valid\n":" is Invalid\n"); 
+  std::cout << "\n\tEmail: " << _mail << (isMail()?" is Valid\n":" is Invalid\n"); 
  }
  
  Contact getContact()

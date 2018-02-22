@@ -23,7 +23,7 @@ struct url
   
   void print()
   {
-   std::cout<<"\n\tUrl: "<<_url<<(isUrl()?" is Valid\n":" is Invalid\n");
+   std::cout << "\n\tUrl: " << _url << (isUrl()?" is Valid\n":" is Invalid\n");
   }
 
   private:
