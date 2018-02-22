@@ -193,13 +193,13 @@ void addContact()
 void display(Contact &c)
 {
  std::cout << "\n\tContact Data...: " << ContactCounter
-    << "\n\tName...........: " << c.name
-    << "\n\tAddress........: " << c.address
-    << "\n\tHome Number....: " << c.HomeNumber
-    << "\n\tWork Number....: " << c.WorkNumber
-    << "\n\tMobile Number..: " << c.MobileNumber
-    << "\n\tEmail..........: " << c.email
-    << "\n\tDate of Birth..: " << c.dobDay <<"/"<< c.dobMonth <<"/"<< c.dobYear
+           << "\n\tName...........: " << c.name
+           << "\n\tAddress........: " << c.address
+           << "\n\tHome Number....: " << c.HomeNumber
+           << "\n\tWork Number....: " << c.WorkNumber
+           << "\n\tMobile Number..: " << c.MobileNumber
+           << "\n\tEmail..........: " << c.email
+           << "\n\tDate of Birth..: " << c.dobDay <<"/"<< c.dobMonth <<"/"<< c.dobYear
            << "\n";
 }
 
