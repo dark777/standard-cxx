@@ -1,6 +1,5 @@
 C Smart Pointers
 ================
-[![Git Link](https://github.com/Snaipe/libcsptr)]
 [![Git Link](https://github.com/Snaipe/libcsptr)](https://github.com/Snaipe/libcsptr)
 [![Build Status](https://travis-ci.org/Snaipe/libcsptr.svg?branch=master)](https://travis-ci.org/Snaipe/libcsptr) 
 [![Coverage Status](https://coveralls.io/repos/Snaipe/libcsptr/badge.svg?branch=master)](https://coveralls.io/r/Snaipe/libcsptr?branch=master) 
