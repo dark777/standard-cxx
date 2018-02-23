@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int main()
 {
  int ano;
@@ -8,38 +9,36 @@ int main()
  scanf("%d",&ano);
  
  //calcula numero aureo
- int g = (ano % 19)+1;
+ int a = (ano % 19)+1;
  
  //seculo
- int c = (ano/100)+1;
+ int b = (ano/100)+1;
  
  //calcula as correcoes    
- int x = ((3*c)/4)-12;
- int z = (((8*c)+5)/25)-5;
+ int c = ((3*b)/4)-12;
+ int d = (((8*b)+5)/25)-5;
  
  //epacta
- int e = ((11*g)+ 20 + z - x)%30;
+ int e = ((11*a)+ 20 + d - c)%30;
  
- if((e == 25 && g > 11) || (e == 24))e++;
+ if((e == 25 && a > 11) || (e == 24))e++;
  
  //calcular lua cheia
- int n = (44-e);
-     n = (n<21) ? n = n+30 : n;
+ int f = (44-e);
+     f = (f<21) ? f = f+30 : f;
  
  //calcula domingo
- int d = ((5*ano)/4)-(x+10);
+ int g = ((5*ano)/4)-(c+10);
 
- n = (n+7)-((d+n)%7);
+ f = (f+7)-((g+f)%7);
     
- if(n > 31)
+ if(f > 31)
  {
-  int DiaPascoaAbril = (n-31);
-  printf("\n\tPascoa: %d de April de %d\n\n", (n-31), ano);
+  printf("\n\tPascoa: %d de April de %d\n\n", (f-31), ano);
  }
  else
  {
-  int DiaPascoaMarco = n;
-  printf("\n\tPascoa: %d de March de %d\n\n", n, ano);
+  printf("\n\tPascoa: %d de March de %d\n\n", f, ano);
  }
  return 0;
 }
