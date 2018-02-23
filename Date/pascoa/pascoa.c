@@ -1,6 +1,9 @@
 #include <stdio.h>
 
 
+
+
+
 int main()
 {
  int ano;
@@ -33,12 +36,9 @@ int main()
  f = (f+7)-((g+f)%7);
     
  if(f > 31)
- {
   printf("\n\tPascoa: %d de April de %d\n\n", (f-31), ano);
- }
  else
- {
   printf("\n\tPascoa: %d de March de %d\n\n", f, ano);
- }
+ 
  return 0;
 }
