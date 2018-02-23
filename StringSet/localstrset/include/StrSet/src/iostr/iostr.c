@@ -2,7 +2,7 @@
 #define _IOSTR_C
 
 #include "../../include/strset.h"
-#include "../rdspc/rdspc.c"
+//#include "../rdspc/rdspc.c"
 
 void iostr(char* string)
 {
