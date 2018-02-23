@@ -31,11 +31,11 @@ int main()
   printf("\n\tEnter the desired year to\n\tcalculate the day of Easter: ");
   scanf("%d", &year);
   
-  int a=(year%19);
+  int a=int(year%19);
   int b=int(year/100);
-  int c=(year%100);
+  int c=int(year%100);
   int d=int(b/4);
-  int e=(b%4);
+  int e=int(b%4);
   int f=int((b+8)/25);
   int g=int((b-f+1)/3);
   int h=((19*a+b-d-g+15)%30);
@@ -65,15 +65,15 @@ int main()
      case December: months[month-1]; break;
     }
  
- int day_easter=(((h+L-7*m+114)%31)+1);
+ int easter_day=(((h+L-7*m+114)%31)+1);
  
- if(year == current_year && current_month == 4 && current_day == day_easter)
- printf("\n\tToday %dth %s %04d is Easter Day",day_easter, months[month-1], year); //British date format
+ if(year == current_year && current_month == 4 && current_day == easter_day)
+ printf("\n\tToday %dth %s %04d is Easter Day",easter_day, months[month-1], year); //British date format
  else
- if(year >= current_year && current_month <= 4 && (current_day < day_easter || current_day > day_easter))
- printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], day_easter, year); //American date format
+ if(year >= current_year && current_month <= 4 && (current_day < easter_day || current_day > easter_day))
+ printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], easter_day, year); //American date format
  else
- printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", day_easter, months[month-1], year); //British date format
+ printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", easter_day, months[month-1], year); //British date format
  
  return 0;
 }
