@@ -6,7 +6,7 @@ pqxx::result query()
 {
   pqxx::connection login("dbname = teste user = darkstar password = darkstar hostaddr = 127.0.0.1 port = 5432");
   pqxx::work txn{login};
-
+  
   pqxx::result r = txn.exec("select person_id, name, age, status, date_person from person");
   
   for (auto row: r)
@@ -16,8 +16,8 @@ pqxx::result query()
             << row[2].as<int>()      <<", "
             << row["status"].c_str() <<", "
             << row["date_person"].c_str();
-
-   std::cout<<"\n\n";   
+       
+  std::cout << "\n\n";   
   // Not really needed, since we made no changes, but good habit to be
   // explicit about when the transaction is done.
   txn.commit();
@@ -46,8 +46,8 @@ int main(int, char *argv[])
   }
   catch (const pqxx::sql_error &e)
   {
-    std::cerr << "SQL error: " << e.what() << std::endl;
-    std::cerr << "Query was: " << e.query() << std::endl;
+    std::cerr << "SQL error: " << e.what()
+              << "\nQuery was: " << e.query() << "\n";
     return 2;
   }
   catch (const std::exception &e)

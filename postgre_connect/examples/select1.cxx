@@ -1,14 +1,14 @@
 #include <iostream>
-#include <pqxx/pqxx> 
+#include <pqxx/pqxx>
 //SELECT Operation
 
 int main(int argc, char* argv[])
 {
  try{
-      pqxx::connection login("dbname = teste user = darkstar password = darkstar hostaddr = 127.0.0.1 port = 5432");
+     pqxx::connection login("dbname = teste user = darkstar password = darkstar hostaddr = 127.0.0.1 port = 5432");
       
-      if(login.is_open())std::cout << "\n\tOpened database \""<< login.dbname() <<"\" successfully.\n\n";
-      else
+     if(login.is_open())std::cout << "\n\tOpened database \""<< login.dbname() <<"\" successfully.\n\n";
+     else
       {
        std::cout << "\n\tCan't open database\n\n";
        return 1;
@@ -36,7 +36,6 @@ int main(int argc, char* argv[])
       // Listando pessoa pelo id
       sql << "select *from person where person_id=" << argc;
       
-      
       /*
       //Listando pelo nome.
       std::cout<<"\n\tDigite o nome que deseja listar: ";
@@ -58,7 +57,7 @@ int main(int argc, char* argv[])
                 << "\n\n";
       
       std::cout << "\n\tOperation done successfully\n\n";
-          
+     
      login.disconnect();
     }
     catch(const std::exception &e)

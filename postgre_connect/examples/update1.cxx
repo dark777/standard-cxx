@@ -5,7 +5,7 @@
 int main(int argc, char* argv[])
 {
  const char *sql;
-   
+ 
  try{
       pqxx::connection login("dbname = teste user = postgres password = cohondob hostaddr = 127.0.0.1 port = 5432");
       
@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
       
       /* Create SQL SELECT statement */
       sql = "SELECT * from COMPANY";
-
+      
       /* Create a non-transactional object. */
       pqxx::nontransaction non_obj(login);
       
