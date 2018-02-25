@@ -1,29 +1,30 @@
 #include <iostream>
      
-    class Mamifero
-    {
-     public:
-       Mamifero(){}
-       ~Mamifero(){}
-       //void somMamifero() const // Error:
-       virtual void somMamifero() const  //Polimorfism Efect
-       {
-         std::cout<<"\n\tSom de mamifero.\n";
-       }
+class Mamifero
+{
+ public:
+ Mamifero(){}
+ ~Mamifero(){}
+ //void somMamifero() const // Error:
+ virtual void somMamifero() const  //Polimorfism Efect
+  {
+   std::cout<<"\n\tSom de mamifero.\n";
+  }
        
-      void menu();
-    };
+ void menu();
+};
      
-    class Boi: public Mamifero
-    {
-     public:
-       Boi(){}
-       ~Boi(){}
-       void somMamifero() const
-       {
-        std::cout<<"\n\tMuu ..! Muu..!!\n";
-       }
-    };
+class Boi: public Mamifero
+{
+ public:
+ Boi(){}
+ ~Boi(){}
+ 
+ void somMamifero() const
+  {
+   std::cout<<"\n\tMuu ..! Muu..!!\n";
+  }
+};
      
     class Gato: public Mamifero
     {
