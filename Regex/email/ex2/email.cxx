@@ -22,7 +22,7 @@ class email
   {
    if(_mail.length() != 0)_mail.clear();  
   }
-  
+ 
  bool isMail()
  {
   std::smatch email_smatch;
@@ -34,7 +34,7 @@ class email
  
  std::string print()
  {
-  return "\n\tEmail: "+_mail+(isMail()?" is Valid\n":" is Invalid\n"); 
+  return "\n\tEmail: "+_mail+(isMail()?" is Valid\n":" is Invalid\n");
  }
  
  Contact getContact()
@@ -65,7 +65,7 @@ class email
 
 int main(void)
 {
- //email().getEmail(); 
+ //email().getEmail();
  email().getContact();
  std::cout << "\n";
  return 0;
