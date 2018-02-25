@@ -13,7 +13,7 @@ struct validation
  
  protected:
   std::string str;
-  std::unique_ptr<validation> is_val;
+  std::unique_ptr<validation> is_val; //smart pointer
 };
 
 //function foward declaration
