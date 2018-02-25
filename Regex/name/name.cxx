@@ -20,6 +20,7 @@ struct name
                            "((?:[[:space:]]+[á-úA-Za-z.]{0,10})?)?" // valida nome, 2 nomes composto e sobrenome
                            "((?:[[:space:]]+[á-úA-Za-z.]{0,10})?)?" // valida nome, 3 nomes composto e sobrenome
                           );
+  
   return std::regex_match(_nome, name_smatch, pattern);
  }
  
