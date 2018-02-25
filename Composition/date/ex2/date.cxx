@@ -30,8 +30,7 @@ struct Date
  
  friend std::ostream& operator<<(std::ostream&, const Date&);
  
- private:
- 
+ private: 
   time_t mt = time(0);
   tm* tms = localtime(&mt);
 };
