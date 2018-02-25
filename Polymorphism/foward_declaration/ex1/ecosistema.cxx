@@ -10,17 +10,17 @@ struct AnimalVisitor
 {
   AnimalVisitor(){}
   ~AnimalVisitor(){}
-  virtual void visit(Boi *boi) = 0;
-  virtual void visit(Gato *gato) = 0;
-  virtual void visit(Porco *porco) = 0;
-  virtual void visit(Cachorro *cachorro) = 0;
+  virtual void visit(Boi*) = 0;
+  virtual void visit(Gato*) = 0;
+  virtual void visit(Porco*) = 0;
+  virtual void visit(Cachorro*) = 0;
 };
 
 struct Animal 
 {
   Animal(){}
   ~Animal(){}
-  virtual void accept(AnimalVisitor *visitor) = 0;
+  virtual void accept(AnimalVisitor*) = 0;
 };
 
 struct EmissorDeSom: AnimalVisitor 
