@@ -32,9 +32,9 @@ struct phone
   return std::regex_match(_tel, phone_smatch, pattern);
  }
  
- void print()
+ std::string print()
  {
-  std::cout << "\n\tPhone: " << _tel << (isPhone()?" is Valid\n":" is Invalid\n");
+  return "\n\tPhone: "+_tel+(isPhone()?" is Valid\n":" is Invalid\n");
  }
  
  private:
@@ -50,8 +50,8 @@ int main()
      std::cout << "\n\tEnter fone mask(00) 00000-0000: ";
      getline(std::cin, strphone);
     
-     phone(strphone).print();
-     std::cout<<"\n";
+     std::cout << phone(strphone).print();
+     std::cout << "\n";
     
     }while(!phone(strphone).isPhone());
   

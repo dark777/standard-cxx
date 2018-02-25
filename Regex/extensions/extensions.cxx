@@ -19,9 +19,9 @@ struct extensions
   return std::regex_match(_file, extensions_smatch, pattern);
  }
 
- void print()
+ std::string print()
  {
-  std::cout << "\n\tFile: " << _file << (isFile()?" is Valid\n":" is Invalid\n");
+  return "\n\tFile: "+_file+(isFile()?" is Valid\n":" is Invalid\n");
  }
 
  private:
@@ -48,7 +48,7 @@ int main()
                                  "file15.aa"
                                 };
     for(int i=0; i<15; i++)
-     extensions(files[i]).print();
-      std::cout<<"\n";
+     std::cout << extensions(files[i]).print();
+      std::cout << "\n";
    return 0;   
 }

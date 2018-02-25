@@ -23,11 +23,11 @@ struct url
    return std::regex_match(_url, url_smatch, pattern);
   }
   
-  void print()
+  std::string print()
   {
-   std::cout << "\n\tUrl: " << _url << (isUrl()?" is Valid\n":" is Invalid\n");
+   return "\n\tUrl: "+_url+(isUrl()?" is Valid\n":" is Invalid\n");
   }
-
+  
   private:
    std::string _url;
 };
@@ -49,7 +49,7 @@ int main()
                                };
   
   for(int i=0; i<11; i++)
-   url(urls[i]).print();
-    std::cout<<"\n";
+   std::cout << url(urls[i]).print();
+    std::cout << "\n";
   return 0;  
 }

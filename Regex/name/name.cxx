@@ -24,9 +24,9 @@ struct name
   return std::regex_match(_nome, name_smatch, pattern);
  }
  
- void print()
+ std::string print()
  {
-  std::cout << "\n\tNome: " << _nome << (isName()?" is Valid\n":" is Invalid\n");
+  return "\n\tNome: "+_nome+(isName()?" is Valid\n":" is Invalid\n");
  }
    
  private:
@@ -39,8 +39,8 @@ int main()
     std::cout << "\n\tEnter full name: ";
     getline(std::cin, _nome);
        
-    name(_nome).print();
-    std::cout<<"\n";
+    std::cout << name(_nome).print();
+    std::cout << "\n";
        
    }while(!name(_nome).isName());
  
