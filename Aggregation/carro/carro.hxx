@@ -1,6 +1,27 @@
 ﻿#ifndef CARRO_HXX
 #define CARRO_HXX
 
+#if defined(linux) || defined(__linux) || \
+defined(__linux__) || defined(__gnu_linux__)
+
+ #include <stdio_ext.h>
+
+#endif
+
+void cbuff()
+{
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(_WIN64)
+ 
+  fflush(stdin);
+  
+#elif defined(linux) || defined(__linux) || \
+      defined(__linux__) || defined(__gnu_linux__)
+
+  __fpurge(stdin);
+
+#endif  
+}
+
 #include "modelo.hxx"
 #include "motor.hxx"
 

@@ -4,7 +4,7 @@
 
 void cbuff()
 {
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(_WIN64)
  
   fflush(stdin);
   

@@ -13,7 +13,7 @@ int main(void)
  std::cin>>varIdMarca;
  
  
- __fpurge(stdin);
+ cbuff();
  std::cout<<"\n\tDESCRICAO DA MARCA: ";
  getline(std::cin,varDescriMarca);
  
@@ -30,7 +30,7 @@ int main(void)
  std::cout<<"\n\tID DO MODELO: ";
  std::cin>>varIdModelo;
  
- __fpurge(stdin);
+ cbuff();
  std::cout<<"\n\tDESCRICAO DO MODELO: ";
  getline(std::cin,varDescriModelo);
  
@@ -51,12 +51,12 @@ int main(void)
  std::cin>>varIdMotor;
  
  
- __fpurge(stdin);
+ cbuff();
  std::cout<<"\n\tDESCRICAO DO MOTOR: ";
  getline(std::cin,varDescriMotor);
  
  
- __fpurge(stdin);
+ cbuff();
  std::cout<<"\n\tPOTENCIA DO MOTOR: ";
  getline(std::cin,varPotenMotor);
  
@@ -73,7 +73,7 @@ int main(void)
  std::cout<<"\n\tID DO CARRO: ";
  std::cin>>varIdCarro;
 
- __fpurge(stdin);
+ cbuff();
  std::cout<<"\n\tDESCRICAO DO CARRO: ";
  getline(std::cin,varDescriCarro);
  
