@@ -15,7 +15,7 @@
 
 const char *DIRECTORY = "c:\\";
 
-#elif defined(__linux) || defined(linux)
+#elif defined(__linux__) || defined(__gnu_linux__)
 
 //Linux definition
 #define IS_DIR 0x4

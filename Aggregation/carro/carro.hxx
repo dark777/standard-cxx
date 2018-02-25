@@ -1,8 +1,7 @@
 ﻿#ifndef CARRO_HXX
 #define CARRO_HXX
 
-#if defined(linux) || defined(__linux) || \
-defined(__linux__) || defined(__gnu_linux__)
+#if defined(__linux__) || defined(__gnu_linux__)
 
  #include <stdio_ext.h>
 
@@ -10,7 +9,7 @@ defined(__linux__) || defined(__gnu_linux__)
 
 void cbuff()
 {
-#if defined(_WIN32) || defined(_WIN64)
+#if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
 
  fflush(stdin);
 
