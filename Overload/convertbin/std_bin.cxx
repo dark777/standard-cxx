@@ -12,11 +12,11 @@ namespace std
   {
    return std::bitset<sizeof(T)*3>(n).to_string();
   }
- 
+  
   BinStream(std::ostream& os):os(os){}
- 
+  
   template<class T>
-  BinStream& operator<<(T& value)     
+  BinStream& operator<<(T& value)
   {
    os << value;
    return *this;
@@ -36,23 +36,23 @@ namespace std
   private:
    std::ostream& os;
  };
-
+ 
  struct Bin
  {
   friend BinStream operator<<(std::ostream& os, const Bin& f);
  }bin;
-
+ 
  BinStream operator<<(std::ostream& os, const Bin& f)
  {
   return BinStream(os);
  }
-
+ 
  std::ostream& line(std::ostream& outs)
  {
   outs<<"\n\n";
   return outs;
  }
-
+ 
 } //fim namespace
 
 
