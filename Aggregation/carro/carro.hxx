@@ -10,16 +10,15 @@ defined(__linux__) || defined(__gnu_linux__)
 
 void cbuff()
 {
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(_WIN64)
- 
-  fflush(stdin);
-  
-#elif defined(linux) || defined(__linux) || \
-      defined(__linux__) || defined(__gnu_linux__)
+#if defined(_WIN32) || defined(_WIN64)
+
+ fflush(stdin);
+
+#elif defined(__linux__) || defined(__gnu_linux__)
 
   __fpurge(stdin);
 
-#endif  
+#endif
 }
 
 #include "modelo.hxx"

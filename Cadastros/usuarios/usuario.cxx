@@ -1,19 +1,19 @@
 #include "usuario.hxx"
 //https://github.com/codenome/Lista0-EstruturaDeDados/blob/master/Exericicio 7/
 //https://pt.stackoverflow.com/questions/186716/como-excluir-a-%C3%BAltima-linha-de-um-arquivo-texto-na-linguagem-c
-
+//https://stackoverflow.com/questions/142508/how-do-i-check-os-with-a-preprocessor-directive
+//https://sourceforge.net/p/predef/wiki/OperatingSystems/
 void cbuff()
 {
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(_WIN64)
- 
+#if defined(_WIN32) || defined(_WIN64)
+
   fflush(stdin);
-  
-#elif defined(linux) || defined(__linux) || \
-      defined(__linux__) || defined(__gnu_linux__)
+
+#elif defined(__linux__) || defined(__gnu_linux__)
 
   __fpurge(stdin);
 
-#endif  
+#endif
 }
 
 Usuario *_usuario;
