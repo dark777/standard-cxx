@@ -24,7 +24,6 @@ void menu()
  enum { Uol=1, Bol, Gmail, Terra, Yahoo, Hotmail, Exit }op;
  
  do{
-    
     printf(
            "\n\tValidation e-mail"
            "\n\t[1]-Uol"
