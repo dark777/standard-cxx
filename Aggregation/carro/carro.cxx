@@ -7,11 +7,10 @@
 int main(void)
 {   
  int varIdMarca = 0;
- std::string varDescriMarca;
+ std::string varDescriMarca = "";
  
  std::cout<<"\n\tID DA MARCA: ";
  std::cin>>varIdMarca;
- 
  
  cbuff();
  std::cout<<"\n\tDESCRICAO DA MARCA: ";
@@ -29,7 +28,7 @@ int main(void)
  
  std::cout<<"\n\tID DO MODELO: ";
  std::cin>>varIdModelo;
- 
+  
  cbuff();
  std::cout<<"\n\tDESCRICAO DO MODELO: ";
  getline(std::cin,varDescriModelo);
@@ -43,18 +42,16 @@ int main(void)
  
  
  int varIdMotor = 0;
- std::string varDescriMotor;
- std::string varPotenMotor;
+ std::string varDescriMotor = "";
+ std::string varPotenMotor = "";
  
  
  std::cout<<"\n\tID DO MOTOR: ";
  std::cin>>varIdMotor;
  
- 
  cbuff();
  std::cout<<"\n\tDESCRICAO DO MOTOR: ";
  getline(std::cin,varDescriMotor);
- 
  
  cbuff();
  std::cout<<"\n\tPOTENCIA DO MOTOR: ";
@@ -68,7 +65,7 @@ int main(void)
  (*mot).descriPotencia = varPotenMotor;
  
  int varIdCarro = 0;
- std::string varDescriCarro;
+ std::string varDescriCarro = "";
 
  std::cout<<"\n\tID DO CARRO: ";
  std::cin>>varIdCarro;
