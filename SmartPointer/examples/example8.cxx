@@ -3,7 +3,6 @@
 
 struct Foo
 { // object to manage
-  
  Foo() { std::cout << "Foo ctor\n"; }
     
  Foo(const Foo&) { std::cout << "Foo copy ctor\n"; }
