@@ -24,9 +24,9 @@ struct date
   return std::regex_match(_date, date_smatch, pattern);
  }
  
- void print()
+ std::string print()
  {
-  std::cout << "\n\tDate: " << _date << (isDate()?" is Valid\n":" is Invalid\n");
+  return "\n\tDate: "+_date+(isDate()?" is Valid\n":" is Invalid\n");
  }
  
  private:
@@ -42,8 +42,8 @@ int main()
     std::cout << "\n\tEnter date: ";
     getline(std::cin, str);
     
-    date(str).print();
-    std::cout<<"\n";
+    std::cout << date(str).print();
+    std::cout << "\n";
     
    }while(!date(str).isDate());
   
