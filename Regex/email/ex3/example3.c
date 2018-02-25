@@ -80,7 +80,7 @@ void menu()
       case Terra:
       
       do{
-         printf("\n\tEnter your terra e-mail: ");
+         printf("\n\tEnter your earth e-mail: ");
          scanf("%s", &email);
          
          printf("\n\tEmail: %s %s",email,(terra(email)?" is Valid.\n\n":" is Invalid.\n\n"));
