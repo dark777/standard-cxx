@@ -41,9 +41,9 @@ int main()
   int h=((19*a+b-d-g+15)%30);
   int i=int(c/4);
   int k=int(c%4);
-  int L=((32+2*e+2*i-h-k)%7);
-  int m=int((a+11*h+22*L)/451);
-  int month=int((h+L-7*m+114)/31);
+  int l=((32+2*e+2*i-h-k)%7);
+  int m=int((a+11*h+22*l)/451);
+  int month=int((h+l-7*m+114)/31);
   
   enum{ January=1, February, March, April, May, June, July, August, September, October, November, December };
   
@@ -65,7 +65,7 @@ int main()
      case December: months[month-1]; break;
     }
  
- int easter_day=(((h+L-7*m+114)%31)+1);
+ int easter_day=(((h+l-7*m+114)%31)+1);
  
  if(year == current_year && current_month == 4 && current_day == easter_day)
  printf("\n\tToday %dth %s %04d is Easter Day",easter_day, months[month-1], year); //British date format
