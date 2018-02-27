@@ -4,10 +4,14 @@
 #if defined(__linux__) || defined(__gnu_linux__)
 
  #include <stdio_ext.h>
+ 
+#elif defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
+
+ #include <stdio_ext>
 
 #endif
 
-void cbuff()
+void cbuff(void)
 {
 #if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
 
@@ -15,7 +19,12 @@ void cbuff()
 
 #elif defined(__linux__) || defined(__gnu_linux__)
 
-  __fpurge(stdin);
+ __fpurge(stdin);
+
+#else
+
+ int ch;
+ while((ch=getchar()) != EOF && ch != '\n');
 
 #endif
 }
@@ -37,8 +46,7 @@ struct Carro
   
  std::string imprimeDadosCarro()
  {
-  return 
-         "\n\n\tID. DO CARRO: " + std::to_string(idCarro) +
+  return "\n\n\tID. DO CARRO: " + std::to_string(idCarro) +
          "\n\n\tDESCRI. DO CARRO: " + descriCarro +
          "\n\n\tID. DA MARCA: " + std::to_string(marca.idMarca) +
          "\n\n\tDESCRI. DA MARCA: " + marca.descriMarca +
