@@ -28,10 +28,10 @@ int h=((19*a+b-d-g+15)%30);
 int i=int(c/4);
 int k=(c%4);
 
-int L=((32+2*e+2*i-h-k)%7);
-int m=int((a+11*h+22*L)/451);
+int l=((32+2*e+2*i-h-k)%7);
+int m=int((a+11*h+22*l)/451);
 
-int mes=int((h+L-7*m+114)/31); //esta ainda igual também
+int mes=int((h+l-7*m+114)/31); //esta ainda igual também
 
 char* mes1 = "Mês inválido"; //aqui nova variável para o texto do mes
 
@@ -50,15 +50,18 @@ switch (mes){ //agora com switch em vez de ifs
     case 12: mes1 = "Dezembro"; break;
 }
 
-int dia=((h+L-7*m+114)%31)+1;
+int dia=((h+l-7*m+114)%31)+1;
 
-if (anoatual>ano) { //printfs agora sem &
-    printf("A pascoa caiu no dia: %d.",dia);
-    printf("Do mês: %s", mes1);
+if(anoatual>ano)
+{
+ printf("A pascoa caiu no dia: %d.",dia);
+ printf("Do mês: %s", mes1);
 }
-else if (anoatual<ano) { //printfs agora sem &
-    printf("A pascoa ira cair no dia: %d.",dia);
-    printf("Do mês: %s", mes1);
+else
+if(anoatual<ano)
+{
+ printf("A pascoa ira cair no dia: %d.",dia);
+ printf("Do mês: %s", mes1);
 }
 
  return 0;
