@@ -4,12 +4,12 @@ struct GetDate
 {
   struct Weeks
    {
-    const char* longDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    const char* longDays[7]={ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
    }week;
    
   struct Months
    {
-    const char* longMonths[12]={ "January","February","March","April","May","June","July","August","September","October","November","December" };
+    const char* longMonths[12]={ "January", "February", "March", "April", "May","June", "July", "August", "September", "October", "November", "December" };
    }month;
    
   int Month()
@@ -99,7 +99,7 @@ struct GetDate
   
   enum { Zero, One, Two, Three, Four, Five, Six };
   
-  const char* shortDays[7]={"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+  const char* shortDays[7]={ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
   
   enum { Jan=1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec };
   
