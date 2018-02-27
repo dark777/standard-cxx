@@ -50,8 +50,7 @@ int main()
      std::cout << "\n\tEnter fone mask(00) 00000-0000: ";
      getline(std::cin, strphone);
     
-     std::cout << phone(strphone).print();
-     std::cout << "\n";
+     std::cout << phone(strphone).print() << "\n";
     
     }while(!phone(strphone).isPhone());
   

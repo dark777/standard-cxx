@@ -39,8 +39,7 @@ int main()
     std::cout << "\n\tEnter full name: ";
     getline(std::cin, _nome);
        
-    std::cout << name(_nome).print();
-    std::cout << "\n";
+    std::cout << name(_nome).print() << "\n";
        
    }while(!name(_nome).isName());
  
