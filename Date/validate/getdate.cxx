@@ -99,11 +99,11 @@ struct GetDate
   
   enum { Zero, One, Two, Three, Four, Five, Six };
   
-  const char* shortDays[7]={"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+  const char* shortDays[7]={"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+  
+  enum { Jan=1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec };
   
   const char* shortMonths[12]={ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" };
-  
-  enum { Jan=1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
 }get;
 
 
