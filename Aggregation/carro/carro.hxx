@@ -20,6 +20,7 @@ void cbuff()
 #endif
 }
 
+#include "marca.hxx"
 #include "modelo.hxx"
 #include "motor.hxx"
 

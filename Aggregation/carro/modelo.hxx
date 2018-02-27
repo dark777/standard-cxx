@@ -1,7 +1,7 @@
 ﻿#ifndef MODELO_HXX
 #define MODELO_HXX
 
-#include "marca.hxx"
+struct Marca;
 
 struct Modelo
 {
