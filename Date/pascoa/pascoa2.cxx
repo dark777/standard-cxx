@@ -24,6 +24,8 @@ int main()
   int current_month(ltm->tm_mon+1);
   int current_year(ltm->tm_year+1900);
   
+  const char *months[12] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+  
   printf("\n\tThe current year is %4d\n",current_year);
   
   int year;
@@ -44,36 +46,22 @@ int main()
   int l=((32+2*e+2*i-h-k)%7);
   int m=int((a+11*h+22*l)/451);
   int month=int((h+l-7*m+114)/31);
-  
-  enum{ January=1, February, March, April, May, June, July, August, September, October, November, December };
-  
-  const char *months[12] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+  int easter_day=(((h+l-7*m+114)%31)+1);
+ 
+  if(current_year >= year && easter_day > current_day && current_month > month)
+   printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", easter_day, months[month-1], year); //British date format
+  else
+  if(current_year <= year && easter_day < current_day && current_month < month)
+   printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], easter_day, year); //American date format
     
-   switch(month)
-    { //agora com switch em vez de ifs
-     case January: months[month-1]; break;
-     case February: months[month-1]; break;
-     case March: months[month-1]; break;
-     case April: months[month-1]; break;
-     case May: months[month-1]; break;
-     case June: months[month-1]; break;
-     case July: months[month-1]; break;
-     case August: months[month-1]; break;
-     case September: months[month-1]; break;
-     case October: months[month-1]; break;
-     case November: months[month-1]; break;
-     case December: months[month-1]; break;
-    }
- 
- int easter_day=(((h+l-7*m+114)%31)+1);
- 
+  return 0;
+}
+/*
  if(year == current_year && current_month == 4 && current_day == easter_day)
  printf("\n\tToday %dth %s %04d is Easter Day",easter_day, months[month-1], year); //British date format
  else
  if(year >= current_year && current_month <= 4 && (current_day < easter_day || current_day > easter_day))
  printf("\n\tEaster will fall. !!\n\t%s %dth, %04d\n\n", months[month-1], easter_day, year); //American date format
  else
- printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", easter_day, months[month-1], year); //British date format
- 
- return 0;
-}
+printf("\n\tEaster has fallen. !!\n\t%dth %s %04d\n\n", easter_day, months[month-1], year); //British date format
+ */
