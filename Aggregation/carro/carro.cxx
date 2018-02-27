@@ -3,7 +3,7 @@
 
 #include "carro.hxx"
 
-int main(void)
+int main()
 {   
  int varIdMarca = 0;
  std::string varDescriMarca = "";
