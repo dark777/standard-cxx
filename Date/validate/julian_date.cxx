@@ -51,31 +51,31 @@ int main()
   switch(dayOfWeek)
    {
     case Monday:
-    days="Monday";
+    days = "Monday";
     break;
     
     case Tuesday:
-    days="Tuesday";    
+    days = "Tuesday";    
     break;
     
     case Wednesday:
-    days="Wednesday";
+    days = "Wednesday";
     break;
     
     case Thursday:
-    days="Thursday";
+    days = "Thursday";
     break;
     
     case Friday:
-    days="Friday";
+    days = "Friday";
     break;
     
     case Saturday:
-    days="Saturday";
+    days = "Saturday";
     break;
     
     case Sunday:
-    days="Sunday";
+    days = "Sunday";
     break;
    }
 
