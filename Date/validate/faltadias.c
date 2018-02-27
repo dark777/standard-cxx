@@ -30,13 +30,11 @@ int main ()
     
     if(mes > 12 || mes < 1)printf("\n\tMonth %d is Invalid.!!\n\tEnter day between 01 and 12\n",mes);
     
-    if(ano%4 == 0 || ano%400 == 0 && ano%100 != 0)dias_mes[1]=29; // atualiza dia+1 caso  ano seja bisexto
+    dias_mes[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28; // atualiza dia+1 caso  ano seja bisexto
     
     if(dia > dias_mes[mes-1])printf("\n\t%s of year %d does not have %d days!!!\n\n",strmes[mes-1],ano,dia);
     
    }while((dia > 31 || dia < 1) || (mes > 12 || mes < 1) || (dia > dias_mes[mes-1]));
-   
-   dias_mes[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28;
    
    for(int i = mes; i<12; i++)
    falta_dias+=dias_mes[i];
