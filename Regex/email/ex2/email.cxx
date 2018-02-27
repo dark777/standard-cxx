@@ -6,7 +6,7 @@ class email
  struct Contact
  {
   std::string eMail;
- }c;
+ };
  
  std::string _mail;
  
@@ -39,6 +39,8 @@ class email
  
  Contact getContact()
  {
+  Contact c;
+  
   do{
      std::cout << "\n\tEnter email: ";
      getline(std::cin, c.eMail);
