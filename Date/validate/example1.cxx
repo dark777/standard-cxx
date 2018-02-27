@@ -146,7 +146,7 @@ void getDetails()
  int month = 0;
  int year  = 0;
  
- const std::string weekDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+ const char* weekDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
  
  do{
     getInput(day, month, year);
