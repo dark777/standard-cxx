@@ -2,7 +2,6 @@
 #define CARRO_CXX
 
 #include "carro.hxx"
-#include <stdio_ext.h>
 
 int main(void)
 {   
