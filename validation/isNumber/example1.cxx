@@ -53,25 +53,24 @@ int isNumber(std::string str)
 
 bool isIntReg(std::string numero)
 {
- std::regex rgx("^[0-9]+$");
-
- if(std::regex_match(numero,rgx))
-  return true;
-  else
- return false;
+ std::smatch number_smatch;
+ 
+ std::regex pattern("^[0-9]+$");
+ 
+ return std::regex_match(numero, number_smatch, pattern);
 }
 
 void getIntReg()
 {
-  std::string num;
-  do{
-     std::cout<<"\n\tDigite um numero: ";
-     std::cin>>num;
+ std::string num;
   
-     if(isIntReg(num))std::cout<<"\n\tIs Num.\n";
-     else
-      std::cout<<"\n\tNot is Num.\n";
-   }while(true);
+ do{
+    std::cout<<"\n\tDigite um numero: ";
+    std::cin>>num;
+    
+    std::cout<<"\n\tNumber: "+num+(isIntReg(num)?" is Valid\n\n":" is Invalid\n");
+     
+   }while(!isIntReg(num));
 }
 
 void getNum1()
@@ -135,6 +134,7 @@ void getBool()
      std::cout<<"\n\tNao é um numero\n\n";
     else
      std::cout<<"\n\tÉ um numero.\n\n";
+    
    }while(checkNumber(num) == 0);  
 }
 
