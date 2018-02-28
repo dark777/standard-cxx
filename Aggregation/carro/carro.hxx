@@ -7,7 +7,11 @@
  
 #elif defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
 
- #include <cstdio>
+ #include <stdio.h>
+
+#else
+
+ #include <stdio.h>
 
 #endif
 
