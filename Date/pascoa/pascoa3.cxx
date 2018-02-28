@@ -76,33 +76,103 @@ int mesdocarnaval(int ano, int diacarnaval, int diapascoa, int mespascoa)
  return mescarnaval;
 }
 
+int mescorpus(int ano)
+{
+ int a=(ano%19);
+ int b=(ano/100);
+ int c=(ano%100);
+ int d=(b/4);
+ int e=(b%4);
+ int f=((b+8)/25);
+ int g=((b-f+1)/3);
+ int h=((19 * a + b - d - g + 15)%30);
+ int i=(c/4);
+ int j=(c%4);
+ int k=((32 + 2 * e + 2 * i - h - j)%7);
+ int l=((a + 11 * h + 22 * k)/451);
+ int mes=((h + k - 7 * l + 114)/31);
+ int dia=(((h + k - 7 * l + 114)%31)+1);
+ 
+ if(mes == 3)
+ {
+  if(int((dia+60)-30) <= 30)
+   return mes+1;
+  else
+   return mes+2;
+ }
+ else
+ if(mes == 4)
+ {
+  if(int((dia+60)-31) <= 31)
+   return mes+1;
+  else
+   return mes+2;
+ }
+}
+
+int diacorpus(int ano)
+{
+ int a=(ano%19);
+ int b=(ano/100);
+ int c=(ano%100);
+ int d=(b/4);
+ int e=(b%4);
+ int f=((b+8)/25);
+ int g=((b-f+1)/3);
+ int h=((19 * a + b - d - g + 15)%30);
+ int i=(c/4);
+ int j=(c%4);
+ int k=((32 + 2 * e + 2 * i - h - j)%7);
+ int l=((a + 11 * h + 22 * k)/451);
+ int mes=((h + k - 7 * l + 114)/31);
+ int dia=(((h + k - 7 * l + 114)%31)+1);
+ 
+ if(mes == 3)
+ {
+  if(int((dia+60)-30) <= 30)
+   return int((dia+60)-30);
+  else
+   return int(((dia+60)-30)-31);
+ }
+ else
+ if(mes == 4)
+ {
+  if(int((dia+60)-31) <= 31)
+   return int(((dia+60)-31)+1);
+  else
+   return int(((dia+60)-31)-30);
+ }
+}
+
 int main()
 {
  int ano;
- int dp; // dia pascoa
- int mp; // mes pascoa
- int mc; // mes carnaval
- int dc; // dia carnaval
- int dmc[12]; 
+ int dmc[12];
  
  printf("Qual o ano que quer consultar? ");
  scanf("%d" ,&ano);
  
- dp=diadapascoa(ano);
+ int dp = diadapascoa(ano); // dia pascoa
  
- mp=mesdapascoa(ano);
+ int mp = mesdapascoa(ano); // mes pascoa
  
  dmc[2]=dias_mes(ano); //se ano bisexto mes 2 tem 29 dias
  
- dc=diadocarnaval(ano,dmc,dp,mp);
+ int dc = diadocarnaval(ano,dmc,dp,mp); // dia carnaval
  
- mc=mesdocarnaval(ano,dc,dp,mp);
+ int mc = mesdocarnaval(ano,dc,dp,mp); // mes carnaval
  
- printf("\n\tA Páscoa será no dia %d do mes %d do ano %d." ,dp,mp,ano);
+ int dcc = diacorpus(ano); // dia corpus christ
+ 
+ int mcc = mescorpus(ano); // mes corpus christ
+ 
+ printf("\n\tCorpus Christ será no dia %02d do mes %02d do ano %4d.",dcc, mcc,ano);
+ 
+ printf("\n\tA Páscoa será no dia %02d do mes %02d do ano %4d." ,dp,mp,ano);
  if(mc == 3)
- printf("\n\tO carnaval será no dia %d do mes %d do ano %d.\n\n",((2-dc)-2),mc,ano);
+ printf("\n\tO carnaval será no dia %02d do mes %02d do ano %4d.\n\n",((2-dc)-2),mc,ano);
  else
- printf("\n\tO carnaval será no dia %d do mes %d do ano %d.\n\n",(dc-2),mc,ano);
+ printf("\n\tO carnaval será no dia %02d do mes %02d do ano %4d.\n\n",(dc-2),mc,ano);
  
  return 0;
 }
