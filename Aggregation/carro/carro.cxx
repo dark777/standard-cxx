@@ -82,7 +82,7 @@ int main()
  (*car).modelo = *mod;
  (*car).motor = *mot;
  
- std::cout << "\n\t"<<(*car).imprimeDadosCarro() << "\n\n";
+ std::cout << "\n\t" << (*car).imprimeDadosCarro() << "\n\n";
  
  return 0;
 }
