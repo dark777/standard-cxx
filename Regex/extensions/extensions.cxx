@@ -30,7 +30,7 @@ struct extensions
 
 int main()
 {
-  const char* files[32] = {
+  const char* files[33] = {
                            "file1.c",
                            "file2.cc",
                            "file3.cpp",
@@ -62,10 +62,11 @@ int main()
                            "file29.rb",
                            "file30.d",
                            "file31.mp3",
-                           "file32.css"
+                           "file32.css",
+                           "file33.CSS"
                           };
     
-  for(int i=0; i<32; i++)
+  for(int i=0; i<33; i++)
    std::cout << extensions(files[i]).print();
     std::cout << "\n";
     
