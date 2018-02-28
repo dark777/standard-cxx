@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 
-class mamifero 
+class mamifero
 {
  public: //Class is private by default then it is necessary to use public so that other classes or structs have access to the members
   mamifero(){}
@@ -12,74 +12,74 @@ class mamifero
 };
 
 //Class is private by default so it is necessary to use public
-class cachorro: public mamifero 
+class cachorro: public mamifero
 {
  public:
   cachorro(){}
   ~cachorro(){}
-  cachorro *reproduz(){ return new cachorro; }
-  std::string nome(){ return "cachorro"; }
-  std::string som() { return "latido"; }
+  cachorro *reproduz() override{ return new cachorro; }
+  std::string nome() override{ return "cachorro"; }
+  std::string som() override{ return "latido"; }
 };
 
-class gato: public mamifero 
+class gato: public mamifero
 {
  public:
   gato(){}
   ~gato(){}
-  gato *reproduz() { return new gato; }
-  std::string nome(){ return "gato"; }
-  std::string som() { return "miado"; }
+  gato *reproduz() override{ return new gato; }
+  std::string nome() override{ return "gato"; }
+  std::string som() override{ return "miado"; }
 };
 
-class homem: public mamifero 
+class homem: public mamifero
 {
  public:
   homem(){}
   ~homem(){}
-  homem *reproduz() { return new homem; }
-  std::string nome(){ return "homem"; }
-  std::string som() { return "fala"; }
+  homem *reproduz() override{ return new homem; }
+  std::string nome() override{ return "homem"; }
+  std::string som() override{ return "fala"; }
 };
 
-class cavalo: public mamifero 
+class cavalo: public mamifero
 {
  public:
   cavalo(){}
   ~cavalo(){}
-  cavalo *reproduz() { return new cavalo; }
-  std::string nome(){ return "cavalo"; }
-  std::string som() { return "relincho"; }
+  cavalo *reproduz() override{ return new cavalo; }
+  std::string nome() override{ return "cavalo"; }
+  std::string som() override{ return "relincho"; }
 };
 
-class cabra: public mamifero 
+class cabra: public mamifero
 {
  public:
   cabra(){}
   ~cabra(){}
-  cabra *reproduz() { return new cabra; }
-  std::string nome(){ return "cabra"; }
-  std::string som() { return "berro"; }
+  cabra *reproduz() override{ return new cabra; }
+  std::string nome() override{ return "cabra"; }
+  std::string som() override{ return "berro"; }
 };
 
-class leao: public mamifero 
+class leao: public mamifero
 {
  public:
   leao(){}
   ~leao(){}
-  leao *reproduz() { return new leao; }
-  std::string nome(){ return "leao"; }
-  std::string som() { return "rugido"; }
+  leao *reproduz() override { return new leao; }
+  std::string nome() override{ return "leao"; }
+  std::string som() override{ return "rugido"; }
 };
 
-class boi: public mamifero 
+class boi: public mamifero
 {
  public:
   boi(){}
   ~boi(){}
-  boi *reproduz() { return new boi; }
-  std::string nome(){ return "boi"; }
-  std::string som() { return "sturro"; }
+  boi *reproduz() override { return new boi; }
+  std::string nome() override{ return "boi"; }
+  std::string som() override{ return "sturro"; }
 };
 
 std::vector<mamifero *> opcoes
@@ -101,7 +101,7 @@ mamifero *menu(void)
  int n=0;
  std::cout << "\n\tDiga qual animal vai se reproduzir: ";
  for(const auto &animal: opcoes)
- std::cout << "\n\t" << n++ << ": " << animal->nome() << "";
+ std::cout << "\n\t" << n++ << ": " << animal->nome()<< "";
  std::cout << "\n\t--> ";
  std::cin >> n;
  std::cin.ignore(1, '\n');

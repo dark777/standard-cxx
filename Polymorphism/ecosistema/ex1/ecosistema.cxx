@@ -122,6 +122,7 @@ void Mamifero::menu2()
        
      default:
       std::cout<<"\n\tOpção Inválida ..!!!\n";
+     break; 
     }
   }
 }
@@ -181,11 +182,11 @@ int main()
 {
  Mamifero *m = new Mamifero();
  
- (*m).menu1(); //OK
+ //(*m).menu1(); //OK
  
  //(*m).menu2(); //OK
  
- //(*m).menu3(); //OK
+ (*m).menu3(); //OK
  
  return 0;    
 }
