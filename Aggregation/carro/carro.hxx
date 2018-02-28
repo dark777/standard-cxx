@@ -7,7 +7,7 @@
  
 #elif defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
 
- #include <stdio_ext>
+ #include <cstdio>
 
 #endif
 
