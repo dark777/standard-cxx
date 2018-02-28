@@ -79,20 +79,20 @@ int mesdocarnaval(int ano, int diacarnaval, int diapascoa, int mespascoa)
 int main()
 {
  int ano;
- int dp;
- int mp;
- int mc;
- int dc;
- int dmc[12];
+ int dp; // dia pascoa
+ int mp; // mes pascoa
+ int mc; // mes carnaval
+ int dc; // dia carnaval
+ int dmc[12]; 
  
  printf("Qual o ano que quer consultar? ");
  scanf("%d" ,&ano);
  
- mp=mesdapascoa(ano);
- 
  dp=diadapascoa(ano);
  
- dmc[2]=dias_mes(ano);
+ mp=mesdapascoa(ano);
+ 
+ dmc[2]=dias_mes(ano); //se ano bisexto mes 2 tem 29 dias
  
  dc=diadocarnaval(ano,dmc,dp,mp);
  
