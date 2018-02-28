@@ -32,48 +32,31 @@ int diadapascoa(int ano)
  
  return int(((i+28)-(31*(j/4))));
 }
- 
-/* Calcular a quantidade de dias dos meses*/
-int dias_mes(int ano)
-{
- int diasmes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
- 
- return diasmes[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28; // atualiza dia+1 caso  ano seja bisexto
-}
 
 /* Calcular o dia de carnaval */
-int diadocarnaval(int ano, int mes[12], int diapascoa, int mespascoa)
+int diadocarnaval(int ano, int diapascoa, int mespascoa)
 {
- int diacarnaval2;
- int diacarnaval;
+ int mes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
  
- diacarnaval2 = mes[2]+diapascoa-47;
+ mes[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28; // atualiza dia+1 caso  ano seja bisexto
  
- if(mespascoa == 3)
-  diacarnaval = mes[2]+diapascoa-47;
+ if(mespascoa == 3)return int(mes[1]+diapascoa-47);
  else
- if(diapascoa+31-diacarnaval2 > 47)
-  diacarnaval = (47-(diapascoa+31));
+ if(((diapascoa+31)-(mes[1]+diapascoa-47)) > 47)
+  return int(47-(diapascoa+31));
  else
-  diacarnaval = (47-((31+diapascoa)+mes[2]));
- 
- return diacarnaval;
+  return int(47-((31+diapascoa)+mes[1]));
 }
 
 /*Calcular o mes de carnaval*/
-int mesdocarnaval(int ano, int diacarnaval, int diapascoa, int mespascoa)
+int mesdocarnaval(int diacarnaval, int diapascoa, int mespascoa)
 {
- int mescarnaval;
- 
- if(mespascoa == 3)mescarnaval = 2;
+ if(mespascoa == 3)return int(2);
  else
- 
  if(((diapascoa+31)-diacarnaval) > 47)
-  mescarnaval = 3;
+  return int(3);
  else
-  mescarnaval = 2;
- 
- return mescarnaval;
+  return int(2);
 }
 
 int mescorpus(int ano)
@@ -95,18 +78,18 @@ int mescorpus(int ano)
  
  if(mes == 3)
  {
-  if(int((dia+60)-30) <= 30)
-   return mes+1;
+  if(((dia+60)-30) <= 30)
+   return int(mes+1);
   else
-   return mes+2;
+   return int(mes+2);
  }
  else
  if(mes == 4)
  {
-  if(int((dia+60)-31) <= 31)
-   return mes+1;
+  if(((dia+60)-31) <= 31)
+   return int(mes+1);
   else
-   return mes+2;
+   return int(mes+2);
  }
 }
 
@@ -129,7 +112,7 @@ int diacorpus(int ano)
  
  if(mes == 3)
  {
-  if(int((dia+60)-30) <= 30)
+  if(((dia+60)-30) <= 30)
    return int((dia+60)-30);
   else
    return int(((dia+60)-30)-31);
@@ -137,7 +120,7 @@ int diacorpus(int ano)
  else
  if(mes == 4)
  {
-  if(int((dia+60)-31) <= 31)
+  if(((dia+60)-31) <= 31)
    return int(((dia+60)-31)+1);
   else
    return int(((dia+60)-31)-30);
@@ -147,20 +130,17 @@ int diacorpus(int ano)
 int main()
 {
  int ano;
- int dmc[12];
  
  printf("Qual o ano que quer consultar? ");
- scanf("%d" ,&ano);
+ scanf("%d", &ano);
  
  int dp = diadapascoa(ano); // dia pascoa
  
  int mp = mesdapascoa(ano); // mes pascoa
  
- dmc[2]=dias_mes(ano); //se ano bisexto mes 2 tem 29 dias
+ int dc = diadocarnaval(ano,dp,mp); // dia carnaval
  
- int dc = diadocarnaval(ano,dmc,dp,mp); // dia carnaval
- 
- int mc = mesdocarnaval(ano,dc,dp,mp); // mes carnaval
+ int mc = mesdocarnaval(dc,dp,mp); // mes carnaval
  
  int dcc = diacorpus(ano); // dia corpus christ
  
