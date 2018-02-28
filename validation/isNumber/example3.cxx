@@ -4,28 +4,41 @@
 
 bool isReal(std::string input)
 {
- std::regex rr("((\\+|-)?[[:digit:]]+)[.](([[:digit:]]+)?)?((e|E)((\\+|-)?)[[:digit:]]+)?");
- //As long as the input is correct ask for another number
+ std::smatch number_smatch;
  
- while(true)
-  {
-   std::cout<<"Digite um numero real(float or double): ";
-   std::cin>>input;
-   
-   //Exit when the user inputs q
-   if(input == "q")break;
-   
-   if(std::regex_match(input,rr))std::cout<<"\n\tNumber: "<<input<<" is Float.\n\n";
-   else
-   std::cout<<"\n\tInvalid input\n\n";
-  }
+ const std::regex pattern("((\\+|-)?[[:digit:]]+)[.](([[:digit:]]+)?)?((e|E)((\\+|-)?)[[:digit:]]+)?");
+ //As long as the input is correct ask for another number
+  
+ return std::regex_match(input, number_smatch, pattern);
 }
 
-int main()
+void getNumber()
 {
  std::string input;
  
- while(!isReal(input));
- 
+ do{
+    std::cout<<"\n\tDigite um numero real(float or double): ";
+    std::cin>>input;
+   
+    std::cout<<"\n\tNumber: "+input+(isReal(input)?" is Valid\n\n":" is Invalid\n");
+    
+   }while(!isReal(input));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main()
+{
+ getNumber();
  return 0;
 }
