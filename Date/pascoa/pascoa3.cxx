@@ -98,11 +98,11 @@ int main()
  
  mc=mesdocarnaval(ano,dc,dp,mp);
  
- printf("A Páscoa será no dia %d do mes %d do ano %d.\n" ,dp,mp,ano);
+ printf("\n\tA Páscoa será no dia %d do mes %d do ano %d." ,dp,mp,ano);
  if(mc == 3)
- printf("O carnaval será no dia %d do mes %d do ano %d.\n",((2-dc)-2),mc,ano);
+ printf("\n\tO carnaval será no dia %d do mes %d do ano %d.\n\n",((2-dc)-2),mc,ano);
  else
- printf("O carnaval será no dia %d do mes %d do ano %d.\n",(dc-2),mc,ano);
+ printf("\n\tO carnaval será no dia %d do mes %d do ano %d.\n\n",(dc-2),mc,ano);
  
  return 0;
 }
