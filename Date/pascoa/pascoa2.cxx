@@ -25,11 +25,11 @@ int main()
  int g=int((b-f+1)/3);
  int h=((19*a+b-d-g+15)%30);
  int i=int(c/4);
- int k=(c%4);
- int l=((32+2*e+2*i-h-k)%7);
- int m=int((a+11*h+22*l)/451);
- int easter_month=int((h+l-7*m+114)/31);
- int easter_day=int((h+l-7*m+114)%31)+1;
+ int j=(c%4);
+ int k=((32+2*e+2*i-h-j)%7);
+ int l=int((a+11*h+22*k)/451);
+ int easter_month=int((h+k-7*l+114)/31);
+ int easter_day=int((h+k-7*l+114)%31)+1;
  
  enum { January=1, February, March, April, May, June, July, August, September, October, November, December };
 

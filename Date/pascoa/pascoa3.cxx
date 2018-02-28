@@ -42,7 +42,7 @@ int dias_mes(int ano)
 }
 
 /* Calcular o dia de carnaval */
-int diadocarnaval (int ano, int mes[12], int diapascoa, int mespascoa)
+int diadocarnaval(int ano, int mes[12], int diapascoa, int mespascoa)
 {
  int diacarnaval2;
  int diacarnaval;
