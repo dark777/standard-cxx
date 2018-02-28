@@ -14,7 +14,7 @@ struct extensions
  {
   std::smatch extensions_smatch;
   //validas arquivos com as extensoes da regex
-  const std::regex pattern(".*[.](h|h(?:h|pp|xx|\\++)|H|H(?:H|PP|XX|\\++)|c|c(?:c|pp|xx|\\++)|C|C(?:C|PP|XX|\\++)|h(?:tm|tml)|H(?:TM|TML)|aspx|php|py|java|rb|d|mp3|css)");
+  const std::regex pattern(".*[.](aspx|php|py|java|rb|d|mp3|H|h|C|c|h(?:h|pp|xx|\\++)|H(?:H|PP|XX|\\++)|c(?:c|pp|xx|\\++|ss)|C(?:C|PP|XX|\\++|SS)|h(?:tm|tml)|H(?:TM|TML))");
   
   return std::regex_match(_file, extensions_smatch, pattern);
  }
