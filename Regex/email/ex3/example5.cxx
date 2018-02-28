@@ -274,61 +274,42 @@ void menu_All()
     switch(op)
      {
       case Uol:
-         
        m_val = std::make_unique<uol>();
-       
        m_val->menu();
-       
       break;
       
       case Bol:
-       
        m_val = std::make_unique<bol>();
-       
        m_val->menu();
-       
       break;
       
       case Gmail:
-       
        m_val = std::make_unique<gmail>();
-       
        m_val->menu();
-       
       break;
       
       case Earth:
-       
        m_val = std::make_unique<earth>();
-       
        m_val->menu();
-       
       break;
       
       case Yahoo:
-       
        m_val = std::make_unique<yahoo>();
-       
        m_val->menu();
-       
       break;
       
       case Hotmail:
-       
        m_val = std::make_unique<hotmail>();
-       
        m_val->menu();
-       
       break;
       
       case Exit:
        std::cout << "\n\tGood Bye!\n\n";
-       exit(1);
       break;
       
       default:
        std::cout << "\n\tInvalid Option!\n\n";
       break;
      }
-   }while(1);
+   }while(op != Exit);
 }
