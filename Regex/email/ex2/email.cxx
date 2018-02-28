@@ -45,7 +45,7 @@ class email
      std::cout << "\n\tEnter email: ";
      getline(std::cin, c.eMail);
      
-     std::cout << email(c).print();
+     std::cout << email(c).print() << "\n";
      
     }while(!email(c).isMail());
  
@@ -58,7 +58,7 @@ class email
      std::cout << "\n\tEnter email: ";
      getline(std::cin, _mail);
      
-     std::cout << email(_mail).print();
+     std::cout << email(_mail).print() << "\n";
      
     }while(!email(_mail).isMail());
  }
