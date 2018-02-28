@@ -1,22 +1,27 @@
 #include <iostream>
-
+//https://giovanibettiol.wordpress.com/2009/10/06/algoritmo-para-calcular-o-periodo-do-horario-de-verao/
 int DomingoDePascoa(int ano)
 {
- int a = (ano%19);
- int b = (ano/100);
- int c = (ano%100);
- int d = (b/4);
- int e = (b%4);
- int f = ((b+8)/25);
- int g = ((b-f+1)/3);
- int h = ((19 * a + b - d - g + 15)%30);
- int i = (c/4);
- int j = (c%4);
- int k = ((32 + 2 * e + 2 * i - h - j)%7);
- int l = ((a + 11 * h + 22 * k)/451);
- int mes = ((h + k - 7 * l + 114)/31);
- int dia = (((h + k - 7 * l + 114)%31)+1);
+ int a=(ano%19);
+ int b=(ano/100);
+ int c=(ano%100);
+ int d=(b/4);
+ int e=(b%4);
+ int f=((b+8)/25);
+ int g=((b-f+1)/3);
+ int h=((19 * a + b - d - g + 15)%30);
+ int i=(c/4);
+ int j=(c%4);
+ int k=((32 + 2 * e + 2 * i - h - j)%7);
+ int l=((a + 11 * h + 22 * k)/451);
+ int mes=((h + k - 7 * l + 114)/31);
+ int dia=(((h + k - 7 * l + 114)%31)+1);
  //return new dateTime(ano, mes, dia);
+}
+
+int DomingoDeCarnaval(unsigned int ano)
+{
+ return DomingoDePascoa(ano)-49;
 }
 
 /*Calcular o mes da pascoa*/
