@@ -1,5 +1,5 @@
-﻿#ifndef MARCA_HXX
-#define MARCA_HXX
+﻿#ifndef _MARCA_HXX
+#define _MARCA_HXX
 
 #include <iostream>
 

@@ -1,5 +1,5 @@
-﻿#ifndef CARRO_CXX
-#define CARRO_CXX
+﻿#ifndef _CARRO_CXX
+#define _CARRO_CXX
 
 #include "carro.hxx"
 

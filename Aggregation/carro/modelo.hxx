@@ -1,5 +1,5 @@
-﻿#ifndef MODELO_HXX
-#define MODELO_HXX
+﻿#ifndef _MODELO_HXX
+#define _MODELO_HXX
 
 struct Marca;
 

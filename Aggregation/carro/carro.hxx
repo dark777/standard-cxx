@@ -1,5 +1,5 @@
-﻿#ifndef CARRO_HXX
-#define CARRO_HXX
+﻿#ifndef _CARRO_HXX
+#define _CARRO_HXX
 
 #if defined(__linux__) || defined(__gnu_linux__)
 

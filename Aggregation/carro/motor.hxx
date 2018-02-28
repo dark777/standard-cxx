@@ -1,5 +1,5 @@
-﻿#ifndef MOTOR_HXX
-#define MOTOR_HXX
+﻿#ifndef _MOTOR_HXX
+#define _MOTOR_HXX
 
 #include <iostream>
 
