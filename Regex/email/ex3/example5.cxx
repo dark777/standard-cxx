@@ -263,7 +263,7 @@ void menu_All()
     std::cout << "\n\tValidation e-mail"
                  "\n\t[1]-Uol"
                  "\n\t[2]-Bol"
-                 "\n\t[3]-Gmail"   
+                 "\n\t[3]-Gmail"
                  "\n\t[4]-Earth"
                  "\n\t[5]-Yahoo"
                  "\n\t[6]-Hotmail"
