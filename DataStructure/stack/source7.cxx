@@ -8,13 +8,13 @@ int main(void)
 {
  int x[10], i, n, achou, inicio, fim, meio;
 
- for(i=0; i<=9; i++)
+ for(i=0; i<10; i++)
   {
    std::cout << "\n\tDigite um numero para a posicao " << i+1 << "º: ";
    std::cin >> x[i];
   }
 
- std::cout << "\nDigite o numero a ser buscado no vetor: ";
+ std::cout << "\n\tDigite o numero a ser buscado no vetor: ";
  std::cin >> n;
 
  achou = 0;
