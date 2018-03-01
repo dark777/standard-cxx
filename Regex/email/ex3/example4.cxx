@@ -170,7 +170,7 @@ void menu()
     
     switch(op)
      {      
-      case Gmail:
+      case Uol:
       
       do{
          std::cout << "\n\tEnter your uol e-mail: ";
@@ -184,7 +184,7 @@ void menu()
       
       break;
       
-      case Uol:
+      case Bol:
       
       do{
          std::cout << "\n\tEnter your bol e-mail: ";
@@ -198,7 +198,7 @@ void menu()
       
       break;
       
-      case Bol:
+      case Gmail:
       
       do{
          std::cout << "\n\tEnter your goole e-mail: ";
