@@ -157,17 +157,16 @@ Contact newContact()
 
 void writeContacts(Contact &c, std::ofstream &os)
 {
- os << "\n\tContact Data..: " << ContactCounter
-    << "\n\tName..........: " << c.name
-    << "\n\tAddress.......: " << c.address
-    << "\n\tHome Number...: " << c.HomeNumber
-    << "\n\tWork Number...: " << c.WorkNumber
-    << "\n\tMobile Number.: " << c.MobileNumber
-    << "\n\tEmail.........: " << c.email
-    << "\n\tDay...........: " << c.dobDay
-    << "\n\tMont..........: " << c.dobMonth
-    << "\n\tYear..........: " << c.dobYear
-    << "\n";
+ os << "\nContact Data..: " << ContactCounter
+    << "\nName..........: " << c.name
+    << "\nAddress.......: " << c.address
+    << "\nHome Number...: " << c.HomeNumber
+    << "\nWork Number...: " << c.WorkNumber
+    << "\nMobile Number.: " << c.MobileNumber
+    << "\nEmail.........: " << c.email
+    << "\nDay...........: " << c.dobDay
+    << "\nMont..........: " << c.dobMonth
+    << "\nYear..........: " << c.dobYear;
 }
 
 void readContacts(Contact &c, std::ifstream &is)
@@ -186,6 +185,7 @@ void readContacts(Contact &c, std::ifstream &is)
 void addContact()
 {
  std::cout << "\n\tInput new contact data: ";
+ 
  listContact[ContactCounter] = newContact();
  ContactCounter++;
 }
@@ -208,9 +208,12 @@ void displayContact()
  int c;
  do{
     std::cout << "\n\tEnter number of contact: ";
+    
     std::cin >> c;
+    
    }while(c<0 || c>=ContactCounter);
-   display(listContact[c]);
+   
+ display(listContact[c]);
 }
 
 void displayAll()
@@ -233,10 +236,14 @@ void readFile()
 {
  try{
      std::ifstream inFile("Cadastros.txt", std::ios::in);
+     
      inFile >> ContactCounter;
      inFile.ignore();
+     
      for(int i=0; i<ContactCounter; i++)
-     display(listContact[i]);
+     readContacts(listContact[i], inFile);
+     //display(listContact[i]);
+     
      inFile.close();
      std::cout << "\n\tContact List Loaded.\n";
     }
@@ -249,14 +256,14 @@ void readFile()
 void writeFile()
 {
  try{
-     std::ofstream outFile("Cadastros.txt", std::ios::ate);
+     std::ofstream outFile("Cadastros.txt", std::ios::app);
      if(outFile.is_open())
       {
-       outFile << ContactCounter << "\n";
        for(int i=0; i<ContactCounter; i++)
        writeContacts(listContact[i], outFile);
+       outFile<<"\n########################################################################################################";
       }
-       outFile.close();
+      outFile.close();
      std::cout << "\n\tContact List Saved.\n";
     } 
     catch(std::exception e)
@@ -303,5 +310,4 @@ int main()
 {
  readFile();
  doMenu();
- writeFile();
 }
