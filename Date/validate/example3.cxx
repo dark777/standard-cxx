@@ -18,10 +18,10 @@ int main(void)
  
     int m, y, d;
  
-    if (scanf("%d/%d/%d", &d, &m, &y) != 3)
+    if(scanf("%d/%d/%d", &d, &m, &y) != 3)
     {
-        fprintf(stderr, "Invalid input, brah\n");
-        return EXIT_FAILURE;
+     fprintf(stderr, "Invalid input, brah\n");
+     return EXIT_FAILURE;
     }
  
     /* Initialize to a sane default */

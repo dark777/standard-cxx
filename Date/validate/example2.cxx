@@ -37,7 +37,7 @@ int main(void)
      * Atualiza os valores dia, mes e ano da estrutura tm
      */
     timeInfo->tm_mday = dia;
-    timeInfo->tm_mon = mes - 1; /* Mes vai de 0 a 11 */
+    timeInfo->tm_mon  = mes - 1; /* Mes vai de 0 a 11 */
     timeInfo->tm_year = ano - 1900; /* Ano inicial é 1900 */
     
     /**
