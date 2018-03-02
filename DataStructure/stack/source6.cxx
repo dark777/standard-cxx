@@ -25,7 +25,7 @@
 
 struct pilha
 {
- int op; 
+ int op;
  int num;
  pilha *prox;
 };

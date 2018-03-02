@@ -24,7 +24,7 @@
 */
 struct fila
 {
- int op; 
+ int op;
  int num;
  fila *prox;
 };
