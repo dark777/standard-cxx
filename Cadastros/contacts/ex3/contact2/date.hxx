@@ -18,7 +18,7 @@ struct date
  date()
  {
   _day   = now->tm_mday;
-  _month = now->tm_mon;
+  _month = now->tm_mon+1;
   _year  = now->tm_year+1900;
  }
  
