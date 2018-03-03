@@ -9,7 +9,7 @@
 
 
 
-
+/*
 #if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
 
 void cbuff(void)
@@ -33,9 +33,24 @@ void cbuff(void)
 }
 
 #endif
+*/
+void cbuff(void)
+{
+#if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
 
+ fflush(stdin);
 
+#elif defined(__linux__) || defined(__gnu_linux__)
 
+__fpurge(stdin);
+
+#else
+
+ int ch;
+ while((ch=getchar()) != EOF && ch != '\n');
+
+#endif
+}
 
 
 
