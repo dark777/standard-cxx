@@ -9,20 +9,20 @@ struct Date
  std::string month="";
  std::string year="";
  
-   Date();
+ Date();
    
-   ~Date();
+ ~Date();
     
-   std::string toString();
+ std::string toString();
    
-   std::string currentDateTime();
+ std::string currentDateTime();
    
-  private:
+ private:
      
-  friend std::ostream& operator<<(std::ostream&, const Date&);
+ friend std::ostream& operator<<(std::ostream&, const Date&);
   
-  time_t currentTime = time(NULL);
-  tm * timeInfo = localtime(&currentTime);
+ time_t currentTime = time(NULL);
+ tm * timeInfo = localtime(&currentTime);
 };
 
 
