@@ -39,10 +39,10 @@ namespace std
  
  struct Bin
  {
-  friend BinStream operator<<(std::ostream& os, const Bin& f);
+  friend BinStream operator<<(std::ostream& os, const Bin&);
  }bin;
  
- BinStream operator<<(std::ostream& os, const Bin& f)
+ BinStream operator<<(std::ostream& os, const Bin&)
  {
   return BinStream(os);
  }
