@@ -7,12 +7,12 @@ type _##name; \
 public: \
 void set##name(const type& var) \
 {\
-        _##name = var;\
+   _##name = var;\
 }\
 \
 type get##name() \
 {\
-        return _##name; \
+   return _##name; \
 } \
 
 };
