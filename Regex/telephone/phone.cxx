@@ -22,7 +22,6 @@ struct phone
    * e o $ significa que precisa obrigatoriamente terminar ali.
    * https://pt.stackoverflow.com/questions/166484/validar-n%C3%BAmero-de-telefone-com-nono-d%C3%ADgito-opcional
    */
- 
  bool isPhone()
  {
   std::smatch phone_smatch;
