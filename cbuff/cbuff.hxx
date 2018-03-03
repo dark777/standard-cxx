@@ -27,7 +27,7 @@ void cbuff(void);
 #elif defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__) || \
 defined(__unix__) || defined(__sun) || defined(__FreeBSD__) || \
 defined(__OpenBSD__) || defined(__APPLE__) || defined(__hpux) || \
-defined(__osf__) || defined(__sgi) || defined(_AIX)
+defined(__osf__) || defined(__sgi) || defined(_AIX) || defined(__QNX__)
 
  #include <stdio.h>
 
