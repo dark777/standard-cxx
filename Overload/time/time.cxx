@@ -15,7 +15,7 @@
 
    Time::~Time()
    {
-    if(hours.length() !=0)
+    if(hours.length() != 0)
     hours.clear();
     
     if(minutes.length() != 0)
@@ -37,7 +37,7 @@
     seconds.insert(0, "0");
     
     return std::string(hours+":"+minutes+":"+seconds);
-  }
+   }
 
    std::ostream& operator<<(std::ostream& os, const Time& mt)
    {
