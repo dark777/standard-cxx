@@ -19,10 +19,10 @@ type get##name() \
 
 struct Teste: public GetSet
 {
- declare(int, w); //declarando um atributo x do tipo int e seu método get e set
+ declare(int, w); //declarando um atributo w do tipo int e seu método get e set
  declare(int, x); //declarando um atributo x do tipo int e seu método get e set
  declare(int, y); //declarando um atributo y do tipo int e seu método get e set
- declare(std::string, z); //declarando um atributo s do tipo string e seu método get e set
+ declare(std::string, z); //declarando um atributo z do tipo string e seu método get e set
 };
 
 int main()
