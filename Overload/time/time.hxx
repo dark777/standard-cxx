@@ -3,24 +3,42 @@
 
 #include <iostream>
 
+
+
+
+
+
+
+
+
+
+
 struct Time
 {
  std::string hours="";
  std::string minutes="";
  std::string seconds="";
  
-   Time();
-
-   ~Time();
+ Time();
+ 
+ ~Time();
    
-   std::string toString();
+ std::string toString();
   
-  private:
+ private:
     
-  friend std::ostream& operator<<(std::ostream&, const Time&);
+ friend std::ostream& operator<<(std::ostream&, const Time&);
   
-  time_t currentTime=0;
-  tm * timeInfo;   
+ time_t currentTime=0;
+ tm *timeInfo;   
 };
+
+
+
+
+
+
+
+
 
 #endif
