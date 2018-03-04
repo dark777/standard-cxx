@@ -170,7 +170,7 @@ inline void validation::fmtCpf(char *fmt)
 inline char* validation::fmtCpf(char *var, const char *fmt)
  {
   int i = 0;
-  char aux[strlen(var)];
+  char aux[strlen(var)-1];
    
    while(*var)
     {
