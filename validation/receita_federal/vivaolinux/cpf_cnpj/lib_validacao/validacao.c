@@ -33,13 +33,13 @@
 /*    Retorna 1 caso a String seja um numero valido ou 0 caso algum caracte-*/
 /* re dessa String nao seja um digito.                                      */
 /****************************************************************************/
-char isNumero ( char *numero ) {
-   register char i; /* Variavel de controle da iteracao */
+char isNumero ( char *numero )
+{
+ register char i; /* Variavel de controle da iteracao */
    
-   for ( i = 0; i <= strlen( numero ) - 1; i++ )
-      if ( ! isdigit( *( numero + i ) ) )
-         return 0;
-   
+ for(i = 0; i <= strlen( numero ) - 1; i++ )
+  if(!isdigit(*( numero + i )))
+   return 0;
    return 1;
 }
 
