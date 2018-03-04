@@ -45,13 +45,13 @@ int main()
   std::string strphone;
   
   do{
-    
+         
      std::cout << "\n\tEnter fone mask(00) 00000-0000: ";
      getline(std::cin, strphone);
-    
+     
      std::cout << phone(strphone).print() << "\n";
-    
+     
     }while(!phone(strphone).isPhone());
-  
+    
   return 0;
 }
