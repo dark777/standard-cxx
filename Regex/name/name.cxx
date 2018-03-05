@@ -26,7 +26,7 @@ struct name
  
  std::string print()
  {
-  return "\n\tNome: "+_nome+(isName()?" is Valid\n":" is Invalid\n");
+  return "\n\tName: "+_nome+(isName()?" is Valid\n":" is Invalid\n");
  }
    
  private:

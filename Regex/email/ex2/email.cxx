@@ -34,7 +34,7 @@ class email
  
  std::string print()
  {
-  return "\n\tEmail: "+_mail+(isMail()?" is Valid\n":" is Invalid\n");
+  return "\n\tE-mail: "+_mail+(isMail()?" is Valid\n":" is Invalid\n");
  }
  
  Contact getContact()
