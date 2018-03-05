@@ -77,6 +77,10 @@ int main()
   {
    printf("\n\tEaster will fall on %s %dth %4d.\n\n", months[easter_month-1],easter_day,year);
   }
-    
+ else
+ if(year == current_year && current_month == easter_month && current_day > easter_day)
+  {
+   printf("\n\tEaster fell on %dth %s %4d.\n\n", months[easter_month-1],easter_day,year);
+  }    
   return 0;
 }
