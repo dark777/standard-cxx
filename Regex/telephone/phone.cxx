@@ -53,7 +53,7 @@ int main()
      
      std::cout << phone(strphone).print() << "\n";
      
-    }while(phone(strphone).isPhone());
+    }while(!phone(strphone).isPhone());
     
   return 0;
 }
