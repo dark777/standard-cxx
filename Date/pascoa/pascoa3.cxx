@@ -148,11 +148,19 @@ int main()
  
  printf("\n\tCorpus Christ será no dia %02d do mes %02d do ano %4d.",dcc, mcc,ano);
  
- printf("\n\tA Páscoa será no dia %02d do mes %02d do ano %4d." ,dp,mp,ano);
+ printf("\n\tA Páscoa será no dia %02d do mes %02d do ano %4d.",dp,mp,ano);
  if(mc == 3)
- printf("\n\tO carnaval será no dia %02d do mes %02d do ano %4d.\n\n",((2-dc)-2),mc,ano);
+ printf(
+        "\n\tO carnaval será no dia %02d do mes %02d do ano %4d.\n\n"
+        "\n\tDia de cinzas será  no dia %02d do mes %02d do ano %4d.\n\n",
+        ((2-dc)-2),mc,ano,((1-dc)-1),mc,ano
+       );
  else
- printf("\n\tO carnaval será no dia %02d do mes %02d do ano %4d.\n\n",(dc-2),mc,ano);
+ printf(
+        "\n\tO carnaval será no dia %02d do mes %02d do ano %4d."
+        "\n\tDia de cinzas será  no dia %02d do mes %02d do ano %4d.\n\n",
+        (dc-2),mc,ano,(dc-1),mc,ano
+       );
  
  return 0;
 }
