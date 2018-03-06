@@ -12,12 +12,13 @@ bool is_email_valid(std::string email)
 
 int main()
 {
- std::string email[3] = {
+ std::string email[4] = {
                          "text_example@gmail.com",
                          "text.exa_mple@yahoo.com.br",
+                         "text.example@terra.com.br",
                          "text.example@terra.com.br.net"
                         };
- for(int i=0; i<3;i++)
+ for(int i=0; i<4;i++)
  std::cout << "\n\tEmail: " << email[i] << " : " << (is_email_valid(email[i]) ?" is Valid\n" : " is inValid\n");
  
  return 0;
