@@ -64,7 +64,7 @@ const char* validMails(std::string input)
  if(at == std::string::npos)return "Missing @ symbol\n";
  
  size_t dot1 = input.find('.', at+1);
- if(dot1 == std::string::npos)return"Missing . symbol after @\n";
+ if(dot1 == std::string::npos)return "Missing . symbol after @\n";
   
  size_t dot2 = input.find('.', dot1+1);
  if(dot2 == std::string::npos)return "Missing . symbol after first .\n";
