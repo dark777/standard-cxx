@@ -57,6 +57,32 @@ bool validaEmail(std::string email)
  return !pedaco.compare(servidor);
 }
 
+int validMail(std::string input)
+{
+ size_t at = input.find('@');
+ 
+ if(at == std::string::npos)
+  {
+   std::cout << "Missing @ symbol\n";
+   return 1;
+  }
+
+ size_t dot = input.find('.', at+1);
+ if(dot == std::string::npos)
+  {
+   std::cout << "Missing . symbol after @\n";
+   return 2;
+  }
+  
+ size_t dot2 = input.find('.', dot+1);
+ if(dot2 == std::string::npos)
+  {
+   std::cout << "Missing . symbol after first .\n";
+   return 2;
+  }
+ std::cout << "Email accepted.\n";
+ return 0;
+}
 
 int main()
 {
@@ -65,9 +91,11 @@ int main()
  std::cout<<"\nDigite seu e-mail: ";
  std::cin>>email;
  
+ validMail(email);
+ /*
  if(isMail(email))
   std::cout<<"É uma conta google.\n\n";
  else 
-  std::cout<<"Não é uma conta google.\n\n";
+  std::cout<<"Não é uma conta google.\n\n"; */
  return 0;
 }
