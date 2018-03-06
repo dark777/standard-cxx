@@ -57,6 +57,19 @@ bool validaEmail(std::string email)
  return !pedaco.compare(servidor);
 }
 
+const char* validMail(std::string input)
+{
+ size_t at = input.find('@');
+ 
+ if(at == std::string::npos)return "Missing @ symbol\n";
+ 
+ size_t dot = input.find('.', at+1);
+ if(dot == std::string::npos)return"Missing . symbol after @\n";
+  
+ size_t dot2 = input.find('.', dot+1);
+ if(dot2 == std::string::npos)return "Missing . symbol after first .\n";
+}
+
 int validMail(std::string input)
 {
  size_t at = input.find('@');
