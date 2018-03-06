@@ -79,22 +79,23 @@ int validMail(std::string input)
    std::cout << "Missing @ symbol\n";
    return 1;
   }
-
- size_t dot = input.find('.', at+1);
- if(dot == std::string::npos)
-  {
-   std::cout << "Missing . symbol after @\n";
-   return 2;
+  
+ size_t dot1 = input.find('.', at+1); 
+ if(at < std::string::npos)
+  { 
+   if(dot1 == std::string::npos)
+    {
+     std::cout << "Missing . symbol after @\n";
+     return 2;
+    }
   }
   
- size_t dot2 = input.find('.', dot+1);
+ size_t dot2 = input.find('.', dot1+1);
  if(dot2 == std::string::npos)
   {
    std::cout << "Missing . symbol after first .\n";
    return 2;
   }
- std::cout << "Email accepted.\n";
- return 0;
 }
 
 int main()
@@ -103,7 +104,7 @@ int main()
  
  std::cout<<"\nDigite seu e-mail: ";
  std::cin>>email;
- 
+ validMail(email);
  /*
  if(checkEmail(email))
   std::cout<<"Email is Valid.\n\n";
