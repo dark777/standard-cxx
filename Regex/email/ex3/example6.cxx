@@ -13,7 +13,7 @@ bool is_email_valid(std::string email)
 int main()
 {
  std::string email[3] = {
-                         "text.example@gmail.com",
+                         "text_example@gmail.com",
                          "text.exa_mple@yahoo.com.br",
                          "text.example@terra.com.br.net"
                         };
