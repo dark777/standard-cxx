@@ -57,16 +57,16 @@ bool validaEmail(std::string email)
  return !pedaco.compare(servidor);
 }
 
-const char* validMail(std::string input)
+const char* validMails(std::string input)
 {
  size_t at = input.find('@');
  
  if(at == std::string::npos)return "Missing @ symbol\n";
  
- size_t dot = input.find('.', at+1);
- if(dot == std::string::npos)return"Missing . symbol after @\n";
+ size_t dot1 = input.find('.', at+1);
+ if(dot1 == std::string::npos)return"Missing . symbol after @\n";
   
- size_t dot2 = input.find('.', dot+1);
+ size_t dot2 = input.find('.', dot1+1);
  if(dot2 == std::string::npos)return "Missing . symbol after first .\n";
 }
 
@@ -104,11 +104,17 @@ int main()
  std::cout<<"\nDigite seu e-mail: ";
  std::cin>>email;
  
- validMail(email);
  /*
+ if(checkEmail(email))
+  std::cout<<"Email is Valid.\n\n";
+ else
+  std::cout<<"Email is inValid.\n\n";
+ 
  if(isMail(email))
   std::cout<<"É uma conta google.\n\n";
- else 
-  std::cout<<"Não é uma conta google.\n\n"; */
+ else
+  std::cout<<"Não é uma conta google.\n\n";
+ */
+ 
  return 0;
 }
