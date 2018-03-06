@@ -1,6 +1,14 @@
 #include <regex> //count
 #include <iostream>
 
+int checkEmail(std::string email)
+{
+ email.find("@");
+ if(email.find("@")>email.length())
+  return 0;
+ else 
+  return 1;
+}
 
 bool isMail(std::string _mail)
 {
