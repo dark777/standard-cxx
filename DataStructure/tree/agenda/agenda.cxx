@@ -66,7 +66,7 @@ int main()
              if(*op == 'y' || *op == 'Y')menu(&num);
              else
              return 0;
-           }
+           z}
            else
            {
             printf(
