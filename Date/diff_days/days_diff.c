@@ -111,8 +111,8 @@ unsigned long long calculaDiferencaEmDias(MinhaDataHora d1, MinhaDataHora d2)
 int main(int argc, char **argv)
 {
  MinhaDataHora d1, d2;
- defineDataHora(&d1, 0, 0, 0, 12, 3, 2011);
- defineDataHora(&d2, 0, 0, 0, 5, 10, 2014);
+ defineDataHora(&d1, 23, 05, 00, 29, 03, 1987);
+ defineDataHora(&d2, 03, 50, 00, 07, 03, 2018);
  
  printf("d1: ");
  imprimeDataHora(d1);
