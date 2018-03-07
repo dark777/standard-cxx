@@ -43,8 +43,9 @@ void dias_do_mes(int ano)
   aux1 = (b6+31+dia)-47;
   
   if(aux1>31)
-   printf("\n%d/%d/%d - carnaval\n",aux1-31,mes-1,ano);
+   printf("\n%d/%d/%d - cinzas\n%d/%d/%d - carnaval\n",aux1-30,mes-1,ano,aux1-31,mes-1,ano);
   else
+   printf("\n%d/%d/%d - cinzas\n",aux1+1,mes-2,ano); 
    printf("\n%d/%d/%d - carnaval\n",aux1,mes-2,ano);
    printf("\n%d/%d/%d - Sexta-feira Santa\n",dia-2,mes,ano);
    printf("\n%d/%d/%d - Pascoa\n",dia,mes,ano);
@@ -60,8 +61,9 @@ void dias_do_mes(int ano)
   printf("\nferiados que ocorreram em %d:\n\n",ano);
   aux1 = (b6+31+dia)-47;
   if(aux1 > b6)
-   printf("\n%d/%d/%d - carnaval\n",aux1-28,mes-1,ano);
+   printf("\n%d/%d/%d - cinzas\n%d/%d/%d - carnaval\n"aux1-27,mes-1,ano,aux1-28,mes-1,ano);
   else
+   printf("\n%d/%d/%d - cinzas\n",aux1+1,mes-2,ano); 
    printf("\n%d/%d/%d - carnaval\n",aux1,mes-2,ano);
    printf("\n%d/%d/%d - Sexta-feira Santa\n",dia-2,mes,ano);
    printf("\n%d/%d/%d - Pascoa\n",dia,mes,ano);
