@@ -1,6 +1,4 @@
 #include <stdio.h> // perror
-#include <string.h>
-#include <stdlib.h>
 #include <sys/stat.h> //mkdir
 
 int main()
@@ -11,17 +9,17 @@ int main()
  scanf("%s", name);
  
  if(mkdir(name,0777) == 0)
-  printf("\n\tDirectory %s created successfully\n", name);
+  printf("\n\tDirectory \"%s\" created successfully\n", name);
  else
-  printf("\n\tDirectory %s not created\n", name);
+  printf("\n\tDirectory \"%s\" not created\n", name);
  
  printf("\n\tDigite o nome do diretorio para remover: ");
  scanf("%s", name);
  
  if(remove(name) == 0)
-  printf("\n\tDirectory %s deleted successfully\n", name);
+  printf("\n\tDirectory \"%s\" deleted successfully\n", name);
  else
-  printf("\n\tDirectory %s not deleted\n", name);
+  printf("\n\tDirectory \"%s\" not deleted\n", name);
   
  return 0;
 }
