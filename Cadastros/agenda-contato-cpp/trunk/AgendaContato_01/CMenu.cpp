@@ -17,21 +17,19 @@
  */
 
 #include "CMenu.h"
-#include <iostream>
-#include <vector>
+
 #include <cstdlib>
 
 using std::cout;
 using std::cin;
 using std::endl;
-using std::vector;
 
-CMenu::CMenu( ) {
+CMenu::CMenu()
+{
 	this->idContato = 0;
 }
 
-CMenu::~CMenu() {
-}
+CMenu::~CMenu(){}
 
 void CMenu::showMenu( ){
 	int opcao = 0;

@@ -16,11 +16,9 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "CContato.h"
-#include <string>
 #include <iostream>
+#include "CContato.h"
 
-using std::string;
 using std::cout;
 using std::endl;
 

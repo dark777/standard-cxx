@@ -20,6 +20,7 @@
 #define CMENU_H_
 
 #include <vector>
+#include <iostream>
 #include "CContato.h"
 
 using std::vector;
