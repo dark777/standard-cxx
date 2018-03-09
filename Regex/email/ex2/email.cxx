@@ -27,7 +27,7 @@ class email
  {
   std::smatch email_smatch;
   
-  const std::regex pattern("^([a-zA-Z0-9._]+@(?:(?:hotmail|terra|yahoo|uol|bol)[.](?:com[.]br)?)?(?:(?:gmail)[.](?:com)?)?)$");
+  const std::regex pattern("^([a-zA-Z0-9._]+@((?:hotmail|terra|yahoo|uol|bol)[.](?:com[.]br))?((?:gmail)[.](?:com))?)$");
   
   return std::regex_match(_mail, email_smatch, pattern);
  }
@@ -63,12 +63,12 @@ class email
     }while(!email(_mail).isMail());
  }
  
-};
+}email;
 
 int main(void)
 {
- //email().getEmail();
- email().getContact();
+ //email.getEmail();
+ email.getContact();
  std::cout << "\n";
  return 0;
 }
