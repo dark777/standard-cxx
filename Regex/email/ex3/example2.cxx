@@ -40,10 +40,7 @@ void menu()
          std::cout << "\n\tEnter your uol e-mail: ";
          std::cin >> str;
          
-         if(uol(str))
-         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout << "\n\tEmail: " << str << (uol(str)?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!uol(str));
             
@@ -55,10 +52,7 @@ void menu()
          std::cout << "\n\tEnter your bol e-mail: ";
          std::cin >> str;
          
-         if(bol(str))
-         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout << "\n\tEmail: " << str << (bol(str)?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!bol(str));
               
@@ -70,10 +64,7 @@ void menu()
          std::cout << "\n\tEnter your google e-mail: ";
          std::cin >> str;
          
-         if(gmail(str))
-         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout << "\n\tEmail: " << str << (gmail(str)?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!gmail(str));
                
@@ -85,10 +76,7 @@ void menu()
          std::cout << "\n\tEnter your terra e-mail: ";
          std::cin >> str;
          
-         if(terra(str))
-         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout << "\n\tEmail: " << str << (terra(str)?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!terra(str));
               
@@ -100,10 +88,7 @@ void menu()
          std::cout << "\n\tEnter your yahoo e-mail: ";
          std::cin >> str;
          
-         if(yahoo(str))
-         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout << "\n\tEmail: " << str << (yahoo(str)?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!yahoo(str));
              
@@ -115,10 +100,7 @@ void menu()
          std::cout << "\n\tEnter your hotmail e-mail: ";
          std::cin >> str;
        
-         if(hotmail(str))
-         std::cout << "\n\tEmail: " << str << " is Valid.\n\n";
-         else 
-         std::cout << "\n\tEmail: " << str << " is Invalid.\n\n";
+         std::cout << "\n\tEmail: " << str << (hotmail(str)?" is Valid.\n\n":" is Invalid.\n\n");
           
         }while(!hotmail(str));
       
