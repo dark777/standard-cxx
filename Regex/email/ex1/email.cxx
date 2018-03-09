@@ -27,7 +27,7 @@ struct email
  
  std::string print()
  {
-   return "\n\tE-mail: "+_email+(isMail()?" is Valid\n":" is Invalid\n"); 
+   return "\n\tEmail: "+_email+(isMail()?" is Valid\n":" is Invalid\n"); 
  }
  
  private:
