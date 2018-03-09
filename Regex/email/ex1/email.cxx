@@ -36,26 +36,26 @@ struct email
 
 
 int main()
-{ 
-  std::string emails[15] = {
-                            "regex_cpp@net.br",
-                            "regex_cpp@terra.com.br",
-                            "regex_cpp@hotmail.com.br.net",
-                            "regex_cpp@hotmail.com",
-                            "regex_cpp@yahoo.com.br",
-                            "regex_cpp@gmail.com",
-                            "reg_ex.cpp@gmail.com.br",    
-                            "regex_cpp@uol.com.br",
-                            "regex_cpp@uol.com",
-                            "regex_cpp@bol.com.br",
-                            "regex.cpp@bol.com",
-                            "reg_ex.cpp@org.nz",
-                            "reg_ex.cpp@net.org.br",
-                            "regex_email@terra.com",
-                            "regex_email@terra.com.br"    
-                           };
-  for(int i=0; i<15; i++)
-   std::cout << email(emails[i]).print();
-    std::cout << "\n";
-  return 0;
+{
+ std::string emails[15] = {
+                           "regex_cpp@net.br",
+                           "regex_cpp@terra.com.br",
+                           "regex_cpp@hotmail.com.br.net",
+                           "regex_cpp@hotmail.com",
+                           "regex_cpp@yahoo.com.br",
+                           "regex_cpp@gmail.com",
+                           "reg_ex.cpp@gmail.com.br",    
+                           "regex_cpp@uol.com.br",
+                           "regex_cpp@uol.com",
+                           "regex_cpp@bol.com.br",
+                           "regex.cpp@bol.com",
+                           "reg_ex.cpp@org.nz",
+                           "reg_ex.cpp@net.org.br",
+                           "regex_email@terra.com",
+                           "regex_email@terra.com.br"    
+                          };
+ for(int i=0; i<15; i++)
+  std::cout << email(emails[i]).print();
+   std::cout << "\n";
+ return 0;
 }
