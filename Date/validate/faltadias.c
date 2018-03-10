@@ -34,7 +34,7 @@ int main ()
     
     if(dia > dias_mes[mes-1])printf("\n\t%s of year %d does not have %d days!!!\n\n",strmes[mes-1],ano,dia);
     
-   }while((dia > 31 || dia < 1) || (mes > 12 || mes < 1) || (dia > dias_mes[mes-1]));
+   }while(dia < 1 || mes < 1 || dia > dias_mes[mes-1]);
    
    for(int i = mes; i<12; i++)
    falta_dias+=dias_mes[i];
