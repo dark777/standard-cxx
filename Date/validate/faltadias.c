@@ -41,7 +41,7 @@ int main ()
    
    falta_dias+=dias_mes[mes-1]-dia; // conta os dias restantes do mes indicado na entrada padrão
    
-   printf("\n\tDays %d to complete the year %04d.\n\n", falta_dias,ano);
+   printf("\n\tDays %d to complete the year %04d.\n\n", falta_dias, ano);
    
  return 0;
 }
