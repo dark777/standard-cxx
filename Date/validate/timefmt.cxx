@@ -1,6 +1,6 @@
 #include <iterator>
 #include <iostream>
-
+//https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c
 
 
 class timefmt
@@ -41,4 +41,4 @@ std::ostream& operator <<(std::ostream& os, timefmt const& mt)
 int main()
 {
     std::cout << timefmt("%c");
-} 
+}
