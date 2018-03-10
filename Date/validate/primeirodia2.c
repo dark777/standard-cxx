@@ -9,7 +9,7 @@
 //script que mostra o dia da semana de uma data.
 int main(void)
 {
- const char *ds[7] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+ const char *weekdays[7] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
  
  const char *monthName[12] = {
                               "January", "February", "March",
@@ -39,6 +39,6 @@ int main(void)
  datime = mktime(dt); 
  dt = localtime(&datime);
  
- printf("\n\t%d de %s de %d foi %s.\n",d,monthName[dt->tm_mon],y,ds[dt->tm_wday]);
+ printf("\n\t%d de %s de %d foi %s.\n",d,monthName[dt->tm_mon],y,weekdays[dt->tm_wday]);
  return 0;
 }
