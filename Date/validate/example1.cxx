@@ -1,6 +1,7 @@
 #include <limits> //numeric_limits
 #include <iostream>
- 
+//https://codereview.stackexchange.com/questions/67636/is-it-friday-yet
+//dayOfWeek.cpp
 enum { January=1, February, March, April, May, June, July, August, September, October, November, December};
 
 /**
