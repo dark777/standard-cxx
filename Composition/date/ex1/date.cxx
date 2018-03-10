@@ -54,6 +54,20 @@ struct Date
     return sday+sep+smonth+sep+year;
    }
    
+   const std::string currentDateTime()
+   {
+    char buf[80]; 
+    tm  tstruct;
+    time_t now = time(0);
+        
+    tstruct = *localtime(&now);
+    // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
+    // for more information about date/time format
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
+
+    return buf;
+   }
+   
    std::string dateTime()
    {
     strftime(buf, sizeof(buf), "%a, %d %b %Y %H:%M:%S GMT", now);
