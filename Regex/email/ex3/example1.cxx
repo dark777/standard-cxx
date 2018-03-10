@@ -1,6 +1,6 @@
 #include <regex> //count
 #include <iostream>
-
+/*
 int checkEmail(std::string email)
 {
  email.find("@");
@@ -61,13 +61,13 @@ const char* validMails(std::string input)
 {
  size_t at = input.find('@');
  
- if(at == std::string::npos)return "Missing @ symbol\n";
+ if(at == std::string::npos)return "Falta @ simbolo\n";
  
  size_t dot1 = input.find('.', at+1);
- if(dot1 == std::string::npos)return "Missing . symbol after @\n";
+ if(dot1 == std::string::npos)return "Falta . simbolo after @\n";
   
  size_t dot2 = input.find('.', dot1+1);
- if(dot2 == std::string::npos)return "Missing . symbol after first .\n";
+ if(dot2 == std::string::npos)return "Falta . simbolo after first .\n";
 }
 
 int validMail(std::string input)
@@ -76,7 +76,7 @@ int validMail(std::string input)
  
  if(at == std::string::npos)
   {
-   std::cout << "Missing @ symbol\n";
+   std::cout << "Falta @ simbolo\n";
    return 1;
   }
   
@@ -85,7 +85,7 @@ int validMail(std::string input)
   { 
    if(dot1 == std::string::npos)
     {
-     std::cout << "Missing . symbol after @\n";
+     std::cout << "Falta . simbolo after @\n";
      return 2;
     }
   }
@@ -93,9 +93,34 @@ int validMail(std::string input)
  size_t dot2 = input.find('.', dot1+1);
  if(dot2 == std::string::npos)
   {
-   std::cout << "Missing . symbol after first .\n";
+   std::cout << "Falta . simbolo after first .\n";
    return 2;
   }
+}
+*/
+
+void valid(std::string email)
+{
+ int at = email.find('@');
+
+ int ponto1 = email.find('.',at+1);
+ int ponto2 = email.find('.',ponto1+1);
+ 
+ int br = email.find(".br",ponto2+1);
+ int com = email.find(".com",ponto1+1);
+ int combr = email.find(".com.br",ponto1+1);
+ 
+ if(email.length() > email.find('@') && email.length() > ponto1 && email.length() < combr)std::cout << "Falta . simbolo antes de segundo .\n"; //usuario@yahoocom.br usuario@terracom.br usuario@hotmailcom.br
+ else
+ if(email.length() > email.find('@') && email.length() > ponto1 && email.length() < br)std::cout << "Falta . simbolo apos primeiro .\n"; //usuario@yahoo.combr usuario@terra.combr usuario@hotmail.combr
+ else
+ if(email.length() < email.find('@') && email.length() > ponto1 && email.length() < br)std::cout << "Falta @ simbolo e . simbolo\n"; //usuarioyahoo.combr  usuarioterra.combr usuariohotmail.combr
+ else
+ if(email.length() < email.find('@') && email.length() < com)std::cout << "Falta @ simbolo e . simbolo\n"; //usuariogmailcom
+ else
+ if(email.length() > email.find('@') && email.length() < ponto1)std::cout << "Falta . simbolo apos @\n"; //usuario@gmailcom
+ else
+ if(email.length() < email.find('@')) std::cout << "Falta @ simbolo\n"; //usuariogmail.com , usuario{yahoo,terra,hotmail}.com.br
 }
 
 int main()
@@ -104,7 +129,7 @@ int main()
  
  std::cout<<"\nDigite seu e-mail: ";
  std::cin>>email;
- validMail(email);
+ valid(email);
  /*
  if(checkEmail(email))
   std::cout<<"Email is Valid.\n\n";
