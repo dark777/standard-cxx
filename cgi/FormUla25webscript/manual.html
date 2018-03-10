@@ -1,0 +1,144 @@
+<html>
+<head topmargin="0" rightmargin="0" leftmargin="0" marginwidth="0" marginheight="0" >
+<meta http-equiv="REFRESH" content=" 600; URL=http://www.webscriptonline.kit.net/">
+<title>WebScript</title>
+<style><!--A:link:{text-decoration:none; color:#ffffff;}A:visited:{text-decoration:none; color:#ffffff;}A:hover:{text-decoration:none; color:#ffffff;}A:active:{text-decoration:underline; color:#ffffff;}}--></style>
+</head>
+<body bgcolor="#000000">
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="95%" bgcolor="#0000FF">
+    <tr>
+      <td width="100%" align="center"><b><a href="http://www.webscriptonline.kit.net"><font face="Verdana" color="#FFFFFF" size="2">WebScript</font></a></b></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <table border="0" cellpadding="0" cellspacing="0" width="95%" height="90%" bgcolor="#FFFFFF">
+    <tr>
+      <td width="10%" valign="top" bgcolor="#FF0000">&nbsp;</td>
+      <td width="80%" valign="top">
+        <div align="center">
+          <center>
+          <table border="0" cellspacing="0" width="95%" cellpadding="0">
+            <tr>
+              <td width="100%">
+                <p align="center"><b>
+                <font size="1" face="Verdana" color="#000000"><a href="http://www.webscriptonline.kit.net"><br>
+                <br>
+                </a></font></b><font color="#FF0000" size="5" face="Arial">FormUla
+                2.5</font><font face="Verdana" size="4" color="#FF0000"><br>
+                </font><font face="Verdana" size="1" color="#000000">versão 2.5<br>
+                </font><font face="Verdana" size="1" color="#808080">17/09/2002</font>
+                <p align="center">&nbsp;</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+        <div align="center">
+          <table border="0" cellspacing="0" width="95%" cellpadding="0">
+            <tr>
+              <td width="100%" valign="top">
+                <div align="center">
+                  <center>
+                  <table border="0" cellpadding="0" cellspacing="1" width="99%">
+                    <tr>
+                      <td width="50%"><font face="Verdana" size="2"><b>Neste arquivo
+                você terá os seguintes itens:<br>
+                        - </b>Como configurar?<br>
+                        - </font><font size="2" face="Verdana" color="#000000">Enviando para o servidor<br>
+                        - Como utilizar o FormUla?</font></td>
+                      <td width="50%">
+                        <p align="center"><font size="2" face="Verdana" color="#000000"><b>TiraDúvidas&nbsp;<br>
+                        </b> visite o canal #CGI da BRASNET</font></td>
+                    </tr>
+                  </table>
+                  </center>
+                </div>
+                <p align="left"><font size="2" face="Verdana" color="#000000">______________________</font><p align="left"><b><font face="Verdana" size="3">Como configurar?</font><font face="Verdana" size="2"><br>
+                </font>
+                </b><font face="Verdana" size="2">Para configurar edite as linhas do arquivo
+                <font color="#000080">formula.cgi</font>
+                indicadas abaixo:</font><p align="left"><font size="2" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;
+                <b><font color="#000000">#!</font><font color="#000080">/usr/bin/perl</font></b><font color="#000080"><br>
+                </font>
+                Pergunte para seu provedor de hospedagem qual o path do PERL em seu
+                servidor. Essa é a primeira linha do script.</font><p align="left"><b><font color="#000000" size="2" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                $seuemail = <a href="mailto:'seuemail@webscript.kit.net">
+                '</a></font><font color="#000080" size="2" face="Verdana">seuemail</font><font SIZE="2" face="Verdana" color="#000000">@webscript.kit.net';</font></b><font SIZE="2"><font face="Verdana"><br>
+                Coloque o seu e-mail que vai receber os campos do formulário.<br>
+                Existe possibilidade de colocar uma \ (barra) antes da @
+                (arroba) caso o script não funcione. Exemplo: seuemail\@webscript</font></font><p align="left"><b><font SIZE="2" face="Verdana" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                @referers = ('www.webscriptonline.kit.net','webscriptonline.kit.net');</font><font size="2" face="Verdana" color="#996600"><br>
+                </font></b><font size="2" face="Verdana" color="#000000">Edite
+                para o endereço do seu site.&nbsp;</font><p align="left"><font size="2" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;
+                </font><b><font color="#000000" size="2" face="Verdana">$sendmail =
+                '/usr/sbin/sendmail';</font><font color="#996600" size="2" face="Verdana"><br>
+                </font></b><font size="2" face="Verdana" color="#000000">Modifique
+                o path do sendmail,&nbsp; programa de email do servidor.</font><b><font size="2" face="Verdana" color="#996600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </font></b><p align="left"><b><font size="2" face="Verdana" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <font SIZE="2">$erro = &quot;http://www.webscriptonline.net.kit/erro.html&quot;;</font><br>
+                </font></b><font size="2" face="Verdana" color="#000000">Edite
+                para o endereço do seu site e crie um arquivo chamado erro.html
+                que avisa que faltou dados a preencher no formulário ou foi
+                preenchido indevidamente.</font><p align="left"><font size="2" face="Verdana" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;</font><b><font size="2" face="Verdana" color="#000000">
+                <font SIZE="2">$fim = &quot;http://www.webscriptonline.kit.net/confirmado.html&quot;;<br>
+                </font></font></b> <font size="2" face="Verdana"> Pagina de confirmação de envio do formulário.<font size="2" face="Verdana" color="#000000">Edite
+                para o endereço do seu site e crie um arquivo chamado
+                confirmado.html</font><b><font color="#000000" size="2" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></font><p align="left"><font size="2" face="Verdana" color="#000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;
+                $Subject = &quot;</b></font><b><font size="2" face="Verdana" color="#000000">nomedosite</font><font size="2" face="Verdana" color="#000000">&quot;;<br>
+                </font></b><font size="2" face="Verdana" color="#000000">Troque
+                o termo &quot;nome do site&quot; pelo nome do seu site ou pelo
+                que vai aparecer em &quot;assunto&quot; do e-mail.</font><p align="left"><b><font face="Verdana" color="#000000" size="3">Enviando
+                para o servidor</font><font face="Verdana" color="#000000"><br>
+                </font></b><font size="2"><font face="Verdana"><font color="#000000">Depois de
+                tudo configurado, você deve passar os arquivos para o servidor.
+                Vejamos então:<br>
+                » Transfira o arquivo </font><font color="#000080">formula</font><font face="Verdana" color="#000080">.cgi
+                </font><font face="Verdana" color="#000000">para o seu
+                diretório /cgi-bin/&nbsp; e dê permissão 755 (chmod 755)<br>
+                » Transfira o arquivo que contém o formulário, para qualquer
+                diretório do seu site.</font></font></font><p align="left"><b><font face="Verdana" color="#000000" size="3">Como
+                utilizar o FormUla 2.5 ?</font><font face="Verdana" color="#000000"><br>
+                </font>
+                </b><font size="2"><font face="Verdana"><font color="#000000">Nos arquivos
+                formulario.html e formulario2.html existem modelos de formulário. Você deverá no
+                código fonte, mudar a linha: &quot;</font><font face="Verdana" color="#000080">http://www.webscriptonline.kit.net/cgi-bin/formula.cgi&quot;&nbsp;
+                de acordo com seu site.</font></font></font><p align="left"><font size="2" face="Verdana" color="#000000">Depois
+                cole o formulário na página de seu site e pronto.&nbsp;<br>
+                OBS: para os que não sabem, o formulário está entre &lt;form&gt;
+                e &lt;/form&gt; (inclusive)</font><p align="left"><font size="2" face="Verdana" color="#000000">Boa
+                Sorte !!!</font>
+                <p align="left"><font size="2" face="Verdana" color="#000000">
+                TiraDúvidas: visite o canal #CGI da BRASNET</font></p>
+                <p align="left"><font size="2" face="Verdana"><a href="http://www.oceanodigital.com"><font color="#000080">Oceano
+                Digital</font></a></font><!-- html --></td>
+            </tr>
+            <tr>
+              <td width="100%" valign="top">
+              &nbsp;
+              <p>&nbsp;
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td width="10%" valign="top" bgcolor="#FF0000">
+        <p align="left">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="95%" bgcolor="#0000FF">
+    <tr>
+      <td width="100%" align="center"><b><font face="Verdana" color="#FFFFFF" size="2">WebScript</font></b></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>
