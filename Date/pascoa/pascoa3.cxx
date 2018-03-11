@@ -33,6 +33,42 @@ int diadapascoa(int ano)
  return int(((i+28)-(31*(j/4))));
 }
 
+const char* findPascoa(int ano)
+{
+  char *pas;
+  
+  int dia;
+  int mes;
+  int X = 24; 
+  int Y = 5;
+  // X=24 e Y=5 sao para os anos de 1900 a 2099
+  
+  int a = (ano % 19);
+  int b = (ano % 4);
+  int c = (ano % 7);
+  int d = ((19 * a + X) % 30);
+  int e = ((2 * b + 4 * c + 6 * d + Y) % 7);
+  
+  if((d + e) > 9)
+   {
+    dia = (d + e - 9);
+    mes = 4;
+   }
+  else
+   { 
+    dia = (d + e + 22);
+    mes = 3;
+   }
+   
+  if((dia == 26) && (mes == 4))dia = 19;
+  
+  if((dia == 25) && (mes == 4) && (d == 28) && (a > 10))dia = 18;
+  
+  sprintf(pas,"%02d-%02d-%04d", dia, mes, ano);
+  
+  return (const char*)pas;
+}
+
 /* Calcular o dia de carnaval */
 int diadocarnaval(int ano, int diapascoa, int mespascoa)
 {
