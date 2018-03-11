@@ -1,5 +1,6 @@
 #include <iostream>
 //calcula distancia entre dias
+//https://stackoverflow.com/a/6057429/5429980
 struct data
 {
 int dia;
