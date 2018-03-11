@@ -34,7 +34,30 @@ scanf("%d", &dia2.ano);
 printf("\n\tA distancia em dias: %lu\n\n", dist_dias(dia1, dia2));
 }
 
-unsigned long dist_dias (data inicio, data fim) 
+int daystotal (int d, int m, int y)
+{
+ static char daytab[2][12] =
+  {
+   {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+   {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+  };
+        
+ int daystotal = d;
+ for(int year = 1 ; year <= y ; year++)
+  {
+   int max_month = ( year < y ? 12 : m-1 );
+   int leap = (year%4 == 0);
+   if(year%100 == 0 && year%400 != 0)leap = 0;
+   
+   for(int month = 1 ; month <= max_month ; month++)
+    {
+     daystotal += daytab[leap][month-1];
+    }
+  }
+ return daystotal;
+}
+
+unsigned long dist_dias(data inicio, data fim) 
 {
  int dbissexto;
  register int i;
