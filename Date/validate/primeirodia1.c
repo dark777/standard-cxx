@@ -52,7 +52,7 @@ int main(void)
   dt = localtime(&datime);
     
   /* Rock on! */
-  printf("\n\t%d de %s do ano %d foi %s\n", d, monthName[dt->tm_mon], y, weekdays[dt->tm_wday]);
+  printf("\n\t%d de %s do ano %d é %s\n\n", d, monthName[dt->tm_mon], y, weekdays[dt->tm_wday]);
  
   return EXIT_SUCCESS;
 }
