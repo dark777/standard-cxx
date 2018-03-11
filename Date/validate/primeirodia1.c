@@ -9,12 +9,22 @@
 
 int main(void)
 {
- const char *weekdays[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+ const char *weekdays[7] = {
+                            "Sunday",
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday", 
+                            "Thursday",
+                            "Friday",
+                            "Saturday"
+                           };
  
  const char *monthName[12] = {
-                              "January", "February", "March",
-                              "April", "May", "June", "July",
-                              "August", "September", "October",
+                              "January", "February",
+                              "March", "April",
+                              "May", "June",
+                              "July", "August",
+                              "September", "October",
                               "November", "December"
                              };
       
@@ -30,19 +40,19 @@ int main(void)
    
   /* Initialize to a sane default */
   time_t datime = time(NULL);
-  struct tm *dadate = localtime(&datime);
+  struct tm *dt = localtime(&datime);
   
   /* Apply adjustments based on input */
-  dadate->tm_mon = m - 1;
-  dadate->tm_mday = d;
-  dadate->tm_year = y - 1900;
+  dt->tm_mday = d;
+  dt->tm_mon = m-1;
+  dt->tm_year = y-1900;
   
   /* Normalize the adjustments */
-  datime = mktime(dadate);
-  dadate = localtime(&datime);
+  datime = mktime(dt);
+  dt = localtime(&datime);
     
   /* Rock on! */
-  printf("\n\t%d de %s do ano %d foi %s\n", d, monthName[dadate->tm_mon], y, weekdays[dadate->tm_wday]);
+  printf("\n\t%d de %s do ano %d foi %s\n", d, monthName[dt->tm_mon], y, weekdays[dt->tm_wday]);
  
   return EXIT_SUCCESS;
 }

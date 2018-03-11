@@ -9,12 +9,22 @@
 //script que mostra o dia da semana de uma data.
 int main(void)
 {
- const char *weekdays[7] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+ const char *weekdays[7] = {
+                            "Sunday",
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday"
+                           };
  
  const char *monthName[12] = {
-                              "January", "February", "March",
-                              "April", "May", "June", "July",
-                              "August", "September", "October",
+                              "January", "February",
+                              "March", "April",
+                              "May", "June",
+                              "July", "August",
+                              "September", "October",
                               "November", "December"
                              };
  
