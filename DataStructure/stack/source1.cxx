@@ -24,9 +24,9 @@
 */
 int main()
 {
- int i, n, op, qtd, achou, X[10];
+ int i, n, esc, qtd, achou, X[10];
 
- while (op != 3)
+ while (esc != 3)
   {
    std::cout << "\n\tALGORITMOS DE BUSCA SEQUENCIAL"
                 "\n\tORDENADA E NÃO ORDENADA\n"
@@ -35,9 +35,9 @@ int main()
                 "\n\t[2]-NUMEROS ORDENADOS "
                 "\n\t[3]-SAIR"
                 "\n\tESCOLHA: ";
-   std::cin >> op;
+   std::cin >> esc;
          
-   if(op == 1)
+   if(esc == 1)
     {
      std::cout << "\n\tVETOR COM NUMEROS NÃO ORDENADOS!!!!\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
      std::cin >> qtd;
@@ -68,7 +68,7 @@ int main()
        }while(!achou);
     }
     else      
-    if(op == 2)
+    if(esc == 2)
      {
       std::cout << "\n\tVETOR COM NÚMEROS ORDENADOS!!!!\n\tQUANTOS NÚMEROS DESEJA INSERIR?\n\tDIGITE: ";
       std::cin >> qtd;
@@ -97,10 +97,10 @@ int main()
         std::cout << "\n\tNUMERO " << n << " ENCONTRADO NA POSIÇÃO: " << i+1 << "\n";
        }while(!achou);
      }
-     if(op < 1 || op > 3)
+     if(esc < 1 || esc > 3)
      std::cout << "\n\tOPÇÃO INVÁLIDA!!!";
       else
-     if(op == 3)  
+     if(esc == 3)  
      std::cout << "\n\tGOOD BYE ...!!\n\n";
   }
  return 0;

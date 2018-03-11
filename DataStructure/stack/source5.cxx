@@ -24,14 +24,14 @@
 */
 struct fila
 {
- int op;
  int num;
  fila *prox;
 };
 
 int main()
 {
- fila opt;
+ int esc;
+ int qtd;
  fila *aux;
  fila *fim = NULL;
  fila *inicio = NULL;
@@ -45,14 +45,14 @@ int main()
                  "\n\t[4]-ESVAZIAR A FILA"
                  "\n\t[5]-SAIR"
                  "\n\tESCOLHA: ";
-     std::cin >> opt.op;
+     std::cin >> esc;
      
-     if(opt.op == 1)
+     if(esc == 1)
       {
        std::cout << "\n\tQUANTOS NUMEROS DESEJA INSERIR?\n\tDIGITE: ";
-       std::cin >> opt.num;
+       std::cin >> qtd;
        
-       for(int i = 0; i < opt.num; i++)
+       for(int i = 0; i < qtd; i++)
         {
          std::cout << "\n\tINSIRA NA FILA O NUMERO " << i+1 << "º: ";
          fila *novo = new fila();
@@ -73,7 +73,7 @@ int main()
         } 
       }
        
-     if(opt.op == 2)
+     if(esc == 2)
       {
        if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
        else
@@ -89,7 +89,7 @@ int main()
         }
       }
        
-     if(opt.op == 3)
+     if(esc == 3)
       {
        if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
        else
@@ -101,7 +101,7 @@ int main()
         }
       }
        
-     if(opt.op == 4)
+     if(esc == 4)
       {
        if(inicio == NULL)std::cout << "\n\tFILA VAZIA ..!!!\n";
        else
@@ -117,12 +117,12 @@ int main()
         }
       }
        
-      if(opt.op < 1 || opt.op > 5)
+      if(esc < 1 || esc > 5)
       std::cout << "\n\tOPÇÃO INVÁLIDA!!!";
        else
-      if(opt.op == 5)  
+      if(esc == 5)  
       std::cout << "\n\tGOOD BYE ...!!\n\n";
       
-   }while(opt.op != 5);
+   }while(esc != 5);
  return 0;
 }

@@ -24,14 +24,14 @@
 */
 struct lista
 {
- int op; 
  int num;
  lista *prox;
 };
 
 int main()
 {
- lista opt; 
+ int esc;
+ int qtd; 
  lista *aux;
  lista *ant;
  lista *fim = NULL;
@@ -47,14 +47,14 @@ int main()
                  "\n\t[5]-ESVAZIAR"
                  "\n\t[6]-SAIR"
                  "\n\tESCOLHA: ";
-    std::cin >> opt.op;
+    std::cin >> esc;
     
-      if(opt.op == 1)
+      if(esc == 1)
        {
         std::cout << "\n\tQUANTOS NUMEROS DESEJA INSERIR NO INICIO?\n\tDIGITE: ";
-        std::cin >> opt.num;
+        std::cin >> qtd;
        
-        for(int i = 0;i < opt.num; i++)
+        for(int i = 0;i < qtd; i++)
          {
           std::cout << "\n\tINSIRA NO INICIO O NUMERO " << i+1 << "º: ";
           lista *novo = new lista();
@@ -76,12 +76,12 @@ int main()
          }
        }
        
-      if(opt.op == 2)
+      if(esc == 2)
        {
         std::cout << "\n\tQUANTOS NUMEROS DESEJA INSERIR NO FIM?\n\tDIGITE: ";
-        std::cin>>opt.num;
+        std::cin>>qtd;
        
-        for(int i=0;i < opt.num;i++)
+        for(int i=0;i < qtd;i++)
          {
           std::cout << "\n\tINSIRA NO FIM O NUMERO " << i+1 << "º: ";
           lista *novo = new lista();
@@ -103,7 +103,7 @@ int main()
          }
        }
        
-      if(opt.op == 3)
+      if(esc == 3)
        {
         if(inicio == NULL)std::cout << "\n\tLISTA VAZIA!!!";
         else
@@ -117,7 +117,7 @@ int main()
          }
        }
        
-      if(opt.op == 4)
+      if(esc == 4)
        {
         int achou = 0; 
         int numero = 0;
@@ -186,7 +186,7 @@ int main()
          }
        }
        
-      if(opt.op == 5)
+      if(esc == 5)
        {
         if(inicio == NULL)std::cout << "\n\tLISTA VAZIA!!!";
         else
@@ -203,12 +203,12 @@ int main()
          }
        }
        
-       if(opt.op < 1 || opt.op > 6)
+       if(esc < 1 || esc > 6)
        std::cout << "\n\tOPÇÃO INVÁLIDA!!!";
         else
-       if(opt.op == 6)  
+       if(esc == 6)  
        std::cout << "\n\tGOOD BYE ...!!\n\n";
    
-   }while(opt.op != 6);
+   }while(esc != 6);
  return 0;
 }
