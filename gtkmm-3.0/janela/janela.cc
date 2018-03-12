@@ -10,4 +10,4 @@ int main(int argc, char *argv[])
     window.set_title("Tutorial 1");
 
     return app->run(window);
-} 
+}
