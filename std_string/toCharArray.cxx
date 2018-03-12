@@ -11,7 +11,7 @@ char *chrncsnt(const char* str)
 const char *csntchr(char* str)
 {
  const char* const_char=(const char*)str;
- //char* const_char=const_cast<const char*>(str);
+ //const char* const_char=const_cast<const char*>(str);
  return const_char;
 }
 
