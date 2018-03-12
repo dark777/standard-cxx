@@ -1,9 +1,10 @@
-
 Hospital System Osiris (HIS)
 
-O sistema hospitalar osiris, é um programa para a administração de hopistal,
-construído em Glade + Mono + Sharp + GTK # e execute o GNU / Linux
-Características Se inclui a agenda para o controle de citas a paciente e quirofano
+O sistema hospitalar osiris,
+é um programa para a administração de hopistales,
+construído em Glade + Mono + Sharp + GTK # e execute o GNU / Linux.
+
+Se inclui a agenda para o controle de citas a paciente e quirofano.
 Se continua agregando melhoras continuas a todos los modulos.
 
 https://sourceforge.net/projects/systemsosirisho/files/
