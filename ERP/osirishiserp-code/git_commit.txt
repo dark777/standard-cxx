@@ -1,0 +1,11 @@
+
+$ git log
+
+// agrega archivos nuevos
+$ git add *
+
+// Para hacer commit
+$ git commit -m "Commit Sistema Hospitalario OSIRIS"
+
+// Para subir el proyecto a sourceforge
+$ git push origin master

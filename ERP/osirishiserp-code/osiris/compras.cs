@@ -1,0 +1,125 @@
+///////////////////////////////////////////////////////
+// created on 24/10/2007 at 05:20 p
+// Sistema Hospitalario OSIRIS
+// Monterrey - Mexico
+//
+// Autor    	: Ing. Daniel Olivares (Programacion)
+//				 
+// 				  
+// Licencia		: GLP
+//////////////////////////////////////////////////////////
+//
+// proyect osiris is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+// 
+// proyect osiris is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with Foobar; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+// 
+//////////////////////////////////////////////////////////
+// Programa		: compras.cs
+// Proposito	: Modulo generral de compras y requisiciones
+// Objeto		: 
+//////////////////////////////////////////////////////////	
+using System;
+using Npgsql;
+using System.Data;
+using Gtk;
+using Glade;
+
+namespace osiris
+{
+	public class compras_consultas
+	{
+		// Boton general para salir de las ventanas
+		// Todas la ventanas en glade este boton debe estra declarado identico
+		[Widget] Gtk.Button button_salir;
+		
+		// Declarando ventana del menu de costos
+		[Widget] Gtk.Window menu_compras = null;
+		[Widget] Gtk.Button button_requisicion_materiales = null;
+		[Widget] Gtk.Button button_catalogo_proveedores = null;
+		[Widget] Gtk.Button button_alta_productos_de_proveedores = null;
+		[Widget] Gtk.Button button_ordenes_compra = null;
+		[Widget] Gtk.Button button_ver_ordencompra = null;
+				
+		string LoginEmpleado;
+    	string NomEmpleado;
+    	string AppEmpleado;
+    	string ApmEmpleado;
+		string connectionString;
+		string nombrebd;
+    	
+    	//Declaracion de ventana de error
+		protected Gtk.Window MyWinError;
+		protected Gtk.Window MyWin;
+		
+		class_conexion conexion_a_DB = new class_conexion();
+		class_public classpublic = new class_public();
+		
+		public compras_consultas(string LoginEmp_, string NomEmpleado_, string AppEmpleado_, string ApmEmpleado_, string nombrebd_)
+		{
+			LoginEmpleado = LoginEmp_;
+    		NomEmpleado = NomEmpleado_;
+    		AppEmpleado = AppEmpleado_;
+    		ApmEmpleado = ApmEmpleado_;
+    		connectionString = conexion_a_DB._url_servidor+conexion_a_DB._port_DB+conexion_a_DB._usuario_DB+conexion_a_DB._passwrd_user_DB;
+			nombrebd = conexion_a_DB._nombrebd;
+    		
+			Glade.XML gxml = new Glade.XML (null, "almacen_costos_compras.glade", "menu_compras", null);
+			gxml.Autoconnect (this);
+			menu_compras.Show();
+			
+			button_requisicion_materiales.Clicked += new EventHandler(on_button_requisicion_materiales_clicked);
+			button_ordenes_compra.Clicked += new EventHandler(on_button_ordenes_compra_clicked);
+			button_catalogo_proveedores.Clicked += new EventHandler(on_button_catalogo_proveedores_clicked);
+			button_alta_productos_de_proveedores.Clicked += new EventHandler(on_button_alta_productos_de_proveedores_clicked);
+			button_ver_ordencompra.Clicked += new EventHandler(on_button_ver_ordencompra_clicked);
+			button_salir.Clicked += new EventHandler(on_cierraventanas_clicked);
+		}
+		
+		void on_button_ordenes_compra_clicked(object sender, EventArgs args)
+		{
+			// ordenes_de_compras.cs
+			new osiris.crea_ordenes_de_compra(LoginEmpleado,NomEmpleado,AppEmpleado,ApmEmpleado,nombrebd);
+		}
+		
+		void on_button_ver_ordencompra_clicked(object sender, EventArgs args)
+		{
+			new osiris.consulta_ordencompra(LoginEmpleado,NomEmpleado,AppEmpleado,ApmEmpleado,nombrebd);
+		}
+		
+		void on_button_catalogo_proveedores_clicked(object sender, EventArgs args)
+		{
+			new osiris.catalogos_generales("proveedores",LoginEmpleado,NomEmpleado,AppEmpleado,ApmEmpleado,nombrebd);
+		}
+		
+		void on_button_alta_productos_de_proveedores_clicked(object sender, EventArgs args)
+		{
+			new osiris.alta_productos_proveedores(LoginEmpleado,NomEmpleado,AppEmpleado,ApmEmpleado,nombrebd);
+		}
+		
+		void on_button_requisicion_materiales_clicked(object sender, EventArgs args)
+		{
+			// centro de costo se debe enviar en el array y la clase 17   --   17
+			// osiris_his_tipo_admisiones   id_grupoprod_requisicion
+			string acceso_a_grupos = "AND osiris_grupo_producto.id_grupo_producto IN ("+(string) classpublic.lee_registro_de_tabla("osiris_his_tipo_admisiones","id_grupoprod_requisicion"," WHERE osiris_his_tipo_admisiones.id_tipo_admisiones = '17' ","id_grupoprod_requisicion","string")+")";
+			int [] array_idtipoadmisiones = {0,1,2,3,4,10,11,12,13,14,15,16,17,18,19,100,200,205,300,400,500,600,700,710,810,820,830,930,950,960,970,980};
+			new osiris.requisicion_materiales_compras(LoginEmpleado,NomEmpleado,AppEmpleado,ApmEmpleado,nombrebd,"COMPRAS",17,acceso_a_grupos,array_idtipoadmisiones,0);
+		}
+		
+		// cierra ventanas emergentes
+		void on_cierraventanas_clicked (object sender, EventArgs args)
+		{
+			Widget win = (Widget) sender;
+			win.Toplevel.Destroy();
+		}
+	}	
+}

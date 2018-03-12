@@ -1,0 +1,23 @@
+<Combine fileversion="2.0" description="Sistema Hospitalario OSIRIS" name="osiris">
+  <Policies>
+    <DotNetNamingPolicy DirectoryNamespaceAssociation="None" ResourceNamePolicy="FileFormatDefault" />
+    <VersionControlPolicy inheritsSet="Mono" />
+    <ChangeLogPolicy UpdateMode="None" inheritsSet="Mono">
+      <MessageStyle LineAlign="0" />
+    </ChangeLogPolicy>
+  </Policies>
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry build="True" name="osiris" configuration="Debug" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry build="True" name="osiris" configuration="Debug" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="osiris" single="True">
+    <Execute type="None" entry="osiris" />
+  </StartMode>
+  <Entries>
+    <Entry filename="osiris/osiris.mdp" />
+  </Entries>
+</Combine>
