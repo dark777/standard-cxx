@@ -3,7 +3,7 @@
 
 
 
-
+//https://forum.imasters.com.br/topic/491648-calcular-dia-da-semana-determinado-ano/
 int main()
 {
  int ano;
