@@ -3,14 +3,8 @@
 
 //http://algoritmosurgentes.com/algoritmo.php?a=39
 //http://algoritmosurgentes.com/algoritmo.php?a=46
-
-
-
-
-
-
-
-
+//http://www.contadordedias.com.br/
+//https://www.calendario-365.com.br/numeros-dos-dias/2000.html
 
 
 
