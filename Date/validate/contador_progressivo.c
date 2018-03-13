@@ -5,16 +5,14 @@
 //contador progressivo
 int main()
 {
+ int hr = 0;
+ 
+ int min = 0;
+ 
+ int sec = 0;
+ 
  int mm = 0;
  
- int sec=0;
- 
- int min=0;
- 
- int hr=0;
-
- int i=0;
-
  //for(int i = 0; i < 5; --i)
  while(1)
   {
