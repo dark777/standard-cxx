@@ -66,7 +66,7 @@ void emitirSom(Mamifero* animais)
 {
  /*
   Em C++ não temos a palavra-chave instanceof, mas podemos usar a função typeid().
-  Segundo [1], se o argumento dessa função for uma referência ou um ponteiro 
+  se o argumento dessa função for uma referência ou um ponteiro 
   referenciado para uma classe polimórfica, 
   ela retornará um type_info correspondendo ao 
   tipo do objeto em tempo de execução.
