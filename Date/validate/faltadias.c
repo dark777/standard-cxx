@@ -30,7 +30,7 @@ int main ()
     
     if(mes > 12 || mes < 1)printf("\n\tMonth %d is Invalid.!!\n\tEnter day between 01 and 12\n",mes);
     
-    dias_mes[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28; // atualiza dia+1 caso  ano seja bisexto
+    dias_mes[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28; // atualiza dia para 29 caso ano seja bisexto
     
     if(dia > dias_mes[mes-1])printf("\n\t%s of year %d does not have %d days!!!\n\n",strmes[mes-1],ano,dia);
     
@@ -39,11 +39,13 @@ int main ()
    for(int i = mes; i<12; i++)
    falta_dias+=dias_mes[i];
    
-   falta_dias+=((dias_mes[mes-1]-dia)+1); // conta os dias restantes do mes indicado na entrada padrão
+   falta_dias+=(dias_mes[mes-1]-dia); // conta os dias restantes do mes indicado na entrada padrão
    
-   int decorridos = (365-falta_dias);
+   int dias_totais = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 366 : 365; // atualiza dia+1 caso  ano seja bisexto
    
-   printf("\n\t%d days have passed, %d days to complete the year %4d.\n\n", decorridos, falta_dias, ano);
+   int decorridos = (dias_totais-falta_dias);
+   
+   printf("\n\t%02d days have passed since 01/01/%4d.\n\t%d days remaining to complete %4d.\n\n", decorridos, ano, falta_dias, ano);
    
  return 0;
 }
