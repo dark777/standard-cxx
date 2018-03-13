@@ -35,7 +35,6 @@ system("clear");
 
 #endif
    
-   
    mm++;
    if(mm == 285) // faz com que os segundos sejan contados no mesmo tempo que o relogio do computador
    {
