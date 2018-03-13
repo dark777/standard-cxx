@@ -39,10 +39,13 @@ int main ()
    
    int decorridos = (dias_totais-falta_dias);
    
-   printf("\n\t01/%s/%d until %02d/%s/%d."
-          "\n\t%d days were elapsed and %d days before %d/%s/%d\n\n",
-          strmes[0], ano, dia, strmes[mes-1], ano,
-          decorridos,falta_dias,dias_mes[11],strmes[11],ano  
+   printf("\n\tDe %02d/%s/%d até %02d/%s/%d."
+          "\n\tForam decorridos %d dias."
+          "\n\tFaltam %d dias até %d/%s/%d.\n\n",
+          (dias_mes[0]-30), strmes[0], ano,
+          dia, strmes[mes-1], ano,
+          decorridos,
+          falta_dias, dias_mes[11], strmes[11], ano  
          );
  
  return 0;
