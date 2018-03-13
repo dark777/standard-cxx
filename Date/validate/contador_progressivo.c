@@ -14,14 +14,15 @@ int main()
 
  int i=0;
 
+ //for(int i = 0; i < 5; --i)
  while(1)
   {
-   printf("\n\t%02dh:%02dm:%02ds %02dmm",hr,min,sec,mm);
+   printf("\n\t%02dh:%02dm:%02ds",hr,min,sec);
    //sleep(1000);
    system("clear");
    
    mm++;
-   if(mm == 60)
+   if(mm == 285) // faz com que os segundos sejan contados no mesmo tempo que o relogio do computador
    {
     mm=0;
     sec++;
