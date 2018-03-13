@@ -34,11 +34,15 @@ int main()
  int g = ((5*ano)/4)-(c+10);
 
  f = (f+7)-((g+f)%7);
-    
- if(f > 31)
-  printf("\n\tPascoa: %d de April de %d\n\n", (f-31), ano);
+ 
+ int mes = (f > 31) ? 4 :  3;
+ 
+ const char *months[12]={ "January","February","March","April","May","June","July","August","September","October","November","December" };
+ 
+ if(mes == 4)
+  printf("\n\tPascoa: %d de %s de %d\n\n", (f-31), months[mes-1], ano);
  else
-  printf("\n\tPascoa: %d de March de %d\n\n", f, ano);
+  printf("\n\tPascoa: %d de %s de %d\n\n", f, months[mes-1], ano);
  
  return 0;
 }
