@@ -38,7 +38,7 @@ int main(int argc, char** argv)
     {
         g_warning( "%s", error->message );
         g_free( error );
-        return( 1 );
+        return 1;
     }
 
     /* Get main window pointer from UI */
