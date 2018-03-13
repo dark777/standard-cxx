@@ -19,7 +19,7 @@ GTK3LIB=`pkg-config --cflags --libs gtk+-3.0`
 GTK2LIB=`pkg-config --cflags --libs gtk+-2.0 gmodule-2.0`
 
 # linker
-LDFLAGS=$(PTHREAD) $(GTK2LIB) -export-dynamic
+LDFLAGS=$(PTHREAD) $(GTK3LIB) -export-dynamic
  
 OBJS=$(TARGET).o
  
@@ -28,7 +28,7 @@ all: $(OBJS)
 	
 $(TARGET).o: $(TARGET).c
 
-	$(CC) -c $(CCFLAGS) $(TARGET).c $(GTK2LIB)
+	$(CC) -c $(CCFLAGS) $(TARGET).c $(GTK3LIB)
 
 exec:
 	./$(TARGET)
