@@ -4,7 +4,8 @@
 int GetDates(int day, int month, int year) // Function that calculates the julian date.
 {
  long intRes1((2 - year / 100) + (year / 400)); // Calculation formula.
- long intRes2((int)(365.25 * year));
+ long dias_totais = (year%4 == 0 || year%400 == 0 && year%100 != 0) ? 366 : 365.25; 
+ long intRes2((int)(dias_totais * year));
  long intRes3((int)(30.6001 * (month + 1)));
 
  int jdn(intRes1 + intRes2 + intRes3 + day + 1720994.5);
@@ -79,7 +80,7 @@ int main()
     break;
    }
 
-   std::cout <<"\n\t" << days << " is " << dayOfWeek << " day on date " << day << "/" // Outputs day of week results.
+   std::cout <<"\n\t" << days << " is " << dayOfWeek+1 << " day on date " << day << "/" // Outputs day of week results.
              << month << "/" << year << "\n\n";
   
    return 0;
