@@ -39,9 +39,11 @@ int main ()
    for(int i = mes; i<12; i++)
    falta_dias+=dias_mes[i];
    
-   falta_dias+=dias_mes[mes-1]-dia; // conta os dias restantes do mes indicado na entrada padrão
+   falta_dias+=((dias_mes[mes-1]-dia)+1); // conta os dias restantes do mes indicado na entrada padrão
    
-   printf("\n\tDays %d to complete the year %04d.\n\n", falta_dias, ano);
+   int decorridos = (365-falta_dias);
+   
+   printf("\n\t%d days have passed, %d days to complete the year %4d.\n\n", decorridos, falta_dias, ano);
    
  return 0;
 }
