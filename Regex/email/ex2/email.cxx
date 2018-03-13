@@ -32,9 +32,9 @@ class email
   return std::regex_match(_mail, email_smatch, pattern);
  }
  
- std::string print()
+ void print()
  {
-  return "\n\tEmail: "+_mail+(isMail()?" is Valid\n":" is Invalid\n");
+  std::cout << "\n\tEmail: "+_mail+(isMail()?" is Valid\n":" is Invalid\n");
  }
  
  Contact getContact()
@@ -45,7 +45,8 @@ class email
      std::cout << "\n\tEnter email: ";
      getline(std::cin, c.eMail);
      
-     std::cout << email(c).print() << "\n";
+     email(c).print();
+     std::cout << "\n";
      
     }while(!email(c).isMail());
  
@@ -58,7 +59,8 @@ class email
      std::cout << "\n\tEnter email: ";
      getline(std::cin, _mail);
      
-     std::cout << email(_mail).print() << "\n";
+     email(_mail).print();
+     std::cout << "\n";
      
     }while(!email(_mail).isMail());
  }

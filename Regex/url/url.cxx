@@ -23,9 +23,9 @@ struct url
    return std::regex_match(_url, url_smatch, pattern);
   }
   
-  std::string print()
+  void print()
   {
-   return "\n\tUrl: "+_url+(isUrl()?" is Valid\n":" is Invalid\n");
+   std::cout << "\n\tUrl: "+_url+(isUrl()?" is Valid\n":" is Invalid\n");
   }
   
   private:
@@ -49,7 +49,7 @@ int main()
                                };
   
   for(int i=0; i<11; i++)
-   std::cout << url(urls[i]).print();
+   url(urls[i]).print();
     std::cout << "\n";
   return 0;  
 }
