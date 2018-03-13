@@ -34,7 +34,7 @@ void calendario(int ano)
  
  for(int mes = 1; mes <=12; mes++)
  {
-  std::cout<<"Month: "<<getMonthNames(mes)<<"-"<<ano<<"\nSun Mon Tue Wed Thu Fri Sat\n";
+  std::cout<<getMonthNames(mes)<<"\t\t       "<<ano<<"\nSun Mon Tue Wed Thu Fri Sat\n";
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   
@@ -58,7 +58,7 @@ void calendario(int mes, int ano)
 {
   std::cout<<"\n";
  
-  std::cout<<"Month: "<<getMonthNames(mes)<<"-"<<ano<<"\nSun Mon Tue Wed Thu Fri Sat\n";
+  std::cout<<getMonthNames(mes)<<"\t\t       "<<ano<<"\nSun Mon Tue Wed Thu Fri Sat\n";
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   
