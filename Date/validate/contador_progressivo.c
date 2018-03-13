@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+
+#if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
+
+#include <windows.h>
+
+#endif
 //contador progressivo
 int main()
 {
@@ -18,8 +23,18 @@ int main()
  while(1)
   {
    printf("\n\t%02dh:%02dm:%02ds",hr,min,sec);
-   //sleep(1000);
-   system("clear");
+   
+#if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
+
+Sleep(1000);
+system("cls");
+
+#elif defined(__linux__) || defined(__gnu_linux__) || defined(__unix__)
+
+system("clear");
+
+#endif
+   
    
    mm++;
    if(mm == 285) // faz com que os segundos sejan contados no mesmo tempo que o relogio do computador
