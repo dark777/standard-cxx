@@ -39,7 +39,11 @@ int main ()
    
    int decorridos = (dias_totais-falta_dias);
    
-   printf("\n\t%02d days have passed since 01/01/%4d.\n\t%d days remaining to complete %4d.\n\n", decorridos, ano, falta_dias, ano);
-   
+   printf("\n\t01/%s/%d until %02d/%s/%d."
+          "\n\t%d days were elapsed and %d days before %d/%s/%d\n\n",
+          strmes[0], ano, dia, strmes[mes-1], ano,
+          decorridos,falta_dias,dias_mes[11],strmes[11],ano  
+         );
+ 
  return 0;
 }
