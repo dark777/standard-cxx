@@ -138,6 +138,18 @@ void getBool()
    }while(checkNumber(num) == 0);  
 }
 
+bool EsUnNumero(const char* cadena)
+{
+  for( ; *cadena; ++cadena )
+  {
+    // En cuanto un caracter no sea numérico
+    if( '0' > *cadena || '9' < *cadena )
+      return false;
+  }
+
+  return true;
+}
+
 int isInt()
 {
  int dado = -1;
