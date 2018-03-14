@@ -57,26 +57,26 @@ void TermPaper::setLetterGrade(char grade)
 
 void TermPaper::GetDetails()
 {
-    std::string firstName;
-    std::string lastName;
-    std::string subject;
-    char grade;
+  std::string firstName;
+  std::string lastName;
+  std::string subject;
+  char grade;
   
   std::cout << "\n\n\t  Please Enter\n\n\tFirst Name: ";
   std::cin >> firstName;
-  this.setFName(firstName);
+  setFName(firstName);
   
   std::cout << "\n\tLast Name: ";
   std::cin >> lastName;
-  this.setLName(lastName);
+  setLName(lastName);
   
   std::cout << "\n\tSubject: ";
   std::cin >> subject;
-  this.setSubject(subject);
+  setSubject(subject);
   
   std::cout << "\n\tLetter Grade: ";
   std::cin >> grade;
-  this.setLetterGrade(grade);
+  setLetterGrade(grade);
 }
 /*
 void TermPaper::GetDetails()
