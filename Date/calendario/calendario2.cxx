@@ -1,5 +1,20 @@
 #include <iostream>
 
+int primeiro_dia(int, int);
+int getMonthDays(int, int);
+const char* getMonthNames(int);
+void calendario(int);
+void calendario(int, int);
+
+int main()
+{
+ int mes, ano;
+ std::cout<<"Digite o mes e ano: ";
+ std::cin>>mes>>ano;
+ calendario(mes, ano);
+ return 0;
+}
+
 // pega primeiro dia do mes
 int primeiro_dia(int mes, int ano)
 {
@@ -74,13 +89,4 @@ void calendario(int mes, int ano)
    if(primeiro%7 == 0)std::cout<<"\n";
   }
   std::cout<<"\n\n";
-}
-
-int main()
-{
- int mes, ano;
- std::cout<<"Digite o mes e ano: ";
- std::cin>>mes>>ano;
- calendario(mes, ano);
- return 0;
 }
