@@ -2,19 +2,26 @@
 #include <iostream>
 
 class email
-{ 
- struct Contact
+{
+ struct Person
  {
   std::string eMail;
  };
  
+ struct Contact
+ {
+  std::string eMail;
+ };
+  
  std::string _mail;
  
  public:
  
  email(){}
  
- email(Contact& em): _mail(em.eMail){}
+ email(Person& p): _mail(p.eMail){}
+ 
+ email(Contact& c): _mail(c.eMail){}
  
  email(std::string mail): _mail(mail){}
  
