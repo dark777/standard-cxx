@@ -9,8 +9,10 @@ void calendario(int, int);
 int main()
 {
  int mes, ano;
+ 
  std::cout<<"Digite o mes e ano: ";
  std::cin>>mes>>ano;
+ 
  calendario(mes, ano);
  return 0;
 }
