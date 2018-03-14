@@ -1,5 +1,5 @@
 #include "bicicleta.hxx"
-
+#include "montanha.hxx"
 
 
 
@@ -9,7 +9,6 @@
 
 int main(void)
 {
- 
   // Metodo com Construtor Default
   Bicicleta bike1;
   bike1.modelo = "ZR069";
@@ -17,17 +16,17 @@ int main(void)
   bike1.rodas = "Ferro";
   bike1.freios = "Pastilhas";
   
-  std::cout<<"\n\tMetodo com Construtor Default";
+  std::cout<<"\n\tMetodo com Construtor Default\n";
   bike1.bicicleta();
  
   
   // Construtor Override
   Bicicleta bike2("XA 200", "Aluminio", "Pastilhas", "Aluminio");
-  std::cout<<"\n\tMetodo com Construtor Override";
+  std::cout<<"\n\tMetodo com Construtor Override\n";
   bike2.bicicleta();
  
   // Herança - Montain Bike
-  BicicletaMontanha  bike3;
+  Montanha  bike3;
   bike3.modelo = "Attack 500";
   bike3.quadro = "Fibra de Carbono";
   bike3.rodas = "Aluminio";
