@@ -1,5 +1,5 @@
-#include <stdexcept>
 #include <iostream>
+#include <stdexcept>
 
 struct Operator
 {
@@ -22,6 +22,9 @@ struct Operator
    ::operator delete(ptr);
   }
 };
+
+
+
 
 int main()
 {

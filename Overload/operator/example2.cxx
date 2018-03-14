@@ -1,4 +1,10 @@
 #include <iostream>
+
+
+
+
+
+
 // sized class-specific deallocation functions
 struct Operator
 {
@@ -14,6 +20,14 @@ struct Operator
      ::operator delete(ptr);
     }
 };
+
+
+
+
+
+
+
+
 
 int main()
 {

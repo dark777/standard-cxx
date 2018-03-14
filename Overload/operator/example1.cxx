@@ -1,6 +1,12 @@
 #include <cstdio>
 #include <cstdlib>
 
+
+
+
+
+
+
 // replacement of a minimal set of functions:
 void* operator new(std::size_t sz)
 {
@@ -13,6 +19,12 @@ void operator delete(void* ptr) noexcept
  std::puts("global op delete called");
  std::free(ptr);
 }
+
+
+
+
+
+
 
 int main()
 {
