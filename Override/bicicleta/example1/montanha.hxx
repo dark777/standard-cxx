@@ -3,7 +3,7 @@
 struct Bicicleta;
 
 struct Montanha: Bicicleta
- {
+{
    Montanha(){} 
    std::string marchas;
    std::string amortecedores;

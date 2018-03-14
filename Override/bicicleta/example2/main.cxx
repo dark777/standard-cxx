@@ -1,4 +1,3 @@
-#include "bicicleta.hxx"
 #include "montanha.hxx"
 
 

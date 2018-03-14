@@ -23,4 +23,4 @@ struct Bicicleta
              << "\n\tFreios....: " + freios
              << "\n\n";
   }
-}; 
+};
