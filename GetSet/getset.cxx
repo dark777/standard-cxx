@@ -2,19 +2,20 @@
 //https://murilo.wordpress.com/2009/05/21/como-implementar-facilmente-getters-e-setters-em-c/
 class GetSet
 {
-#define declare(type, name) \
-type _##name; \
-public: \
-void set##name(const type& var) \
-{\
-   _##name = var;\
-}\
-\
-type get##name() \
-{\
-   return _##name; \
-} \
+ protected:
 
+ #define declare(type, name) \
+ type _##name; \
+ public: \
+ void set##name(const type& var) \
+ {\
+   _##name = var;\
+ }\
+ \
+ type get##name() \
+ {\
+  return _##name; \
+ }
 };
 
 struct Teste: public GetSet
