@@ -55,8 +55,7 @@ void calendario(int ano)
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   
-  for(int i=0; i < primeiro; i++)
-  std::cout << "    ";
+  for(int i=0; i < primeiro; i++)std::cout << "    ";
   
   int dia_mes = getMonthDays(mes, ano);
   
@@ -77,8 +76,7 @@ void calendario(int mes, int ano)
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   
-  for(int i=0; i < primeiro; i++)
-  std::cout << "    ";
+  for(int i=0; i < primeiro; i++)std::cout << "    ";
   
   int dia_mes = getMonthDays(mes, ano);
   

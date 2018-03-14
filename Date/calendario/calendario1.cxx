@@ -30,7 +30,7 @@ int calendar(int month, int year, int first_day)
  printf("Sun  Mon  Tue  Wed  Thu  Fri  Sat\n");
      
   //volta ao i=0 que era o que tinha. month também tem agora -1 que veio de cima
- for(i = 0; i < month; i++) 
+ for(i = 0; i < month; i++)
  first_day = ((first_day + month_days[i])%7); 
       
  for(i = 1; i <= 1 + first_day * 5; i++)printf(" ");
