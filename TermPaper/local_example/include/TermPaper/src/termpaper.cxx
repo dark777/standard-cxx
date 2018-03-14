@@ -54,10 +54,10 @@ void TermPaper::setLetterGrade(char grade)
 
 void TermPaper::GetDetails()
 {
-    std::string firstName;
-    std::string lastName;
-    std::string subject;
-    char grade;
+  std::string firstName;
+  std::string lastName;
+  std::string subject;
+  char grade;
   
   std::cout << "\n\n\t  Please Enter\n\n\tFirst Name: ";
   std::cin >> firstName;
