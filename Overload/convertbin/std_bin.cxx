@@ -30,7 +30,7 @@ namespace std
   
   std::ostream &operator<<(decltype(std::dec)& _Pfn)
   {
-   return os <<_Pfn;
+   return os << _Pfn;
   }
   
   private:
@@ -49,7 +49,7 @@ namespace std
  
  std::ostream& line(std::ostream& outs)
  {
-  outs<<"\n\n";
+  outs << "\n\n";
   return outs;
  }
  
