@@ -7,7 +7,7 @@ struct extensions
 
  ~extensions()
   {
-   if(_file.length() != 0)_file.clear();
+   if(!_file.empty())_file.clear();
   }
   
  bool isFile()

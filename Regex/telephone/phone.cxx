@@ -7,7 +7,7 @@ struct phone
  
  ~phone()
   {
-   if(_tel.length() != 0)_tel.clear();
+   if(!_tel.empty())_tel.clear();
   }
   /*
    * ^(\\(?[0-9]{2}\\)?|[-. ]?)[-. ]?[0-9]{4}[-. ]?[0-9]{4}$

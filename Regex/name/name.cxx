@@ -7,7 +7,7 @@ struct name
    
  ~name()
   {
-   if(_name.length() != 0)_name.clear();    
+   if(!_name.empty())_name.clear();    
   }
    
  bool isName()
