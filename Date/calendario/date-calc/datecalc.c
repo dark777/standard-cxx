@@ -12,7 +12,7 @@
 #include <stdlib.h>                                 /*  MODULE TYPE:  (sys)  */
 #include <string.h>                                 /*  MODULE TYPE:  (sys)  */
 #include <time.h>                                   /*  MODULE TYPE:  (sys)  */
-#include "ToolBox.h"                                /*  MODULE TYPE:  (dat)  */
+#include "toolbox.h"                                /*  MODULE TYPE:  (dat)  */
 /*****************************************************************************/
 /*  MODULE INTERFACE:                                                        */
 /*****************************************************************************/

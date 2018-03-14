@@ -11,8 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ToolBox.h"
-#include "DateCalc.h"
+#include "toolbox.h"
+#include "datecalc.h"
 
 int main(int argc, char *argv[])
 {
