@@ -23,7 +23,7 @@ int primeiro_dia(int mes, int ano)
  int m = ((mes+(12*a))-2);
  int dia = 1;
  
- return dia = ((dia+y+(y/4)-(y/100)+(y/400)+((31*m)/12))%7);
+ return dia = (((dia+y)+(y/4)-(y/100)+(y/400)+((31*m)/12))%7);
 }
 
 int getMonthDays(int mes, int ano)
