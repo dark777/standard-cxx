@@ -10,8 +10,8 @@ int main()
 {
  int mes, ano;
  
- std::cout<<"Digite o mes e ano: ";
- std::cin>>mes>>ano;
+ std::cout << "\nDigite o mes e ano: ";
+ std::cin >> mes >> ano;
  
  calendario(mes, ano);
  return 0;
@@ -47,16 +47,16 @@ const char* getMonthNames(int mes)
 //imprime calendario de todos os meses do ano
 void calendario(int ano)
 {
- std::cout<<"\n";
+ std::cout << "\n";
  
  for(int mes = 1; mes <=12; mes++)
  {
-  std::cout<<getMonthNames(mes)<<"\t\t       "<<ano<<"\nSun Mon Tue Wed Thu Fri Sat\n";
+  std::cout << getMonthNames(mes) << "\t\t       " << ano << "\nSun Mon Tue Wed Thu Fri Sat\n";
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   
   for(int i=0; i < primeiro; i++)
-  std::cout<<"    ";
+  std::cout << "    ";
   
   int dia_mes = getMonthDays(mes, ano);
   
@@ -64,23 +64,21 @@ void calendario(int ano)
   {
    printf("%3d ",dia);
    primeiro++;
-   if(primeiro%7 == 0)std::cout<<"\n";
+   if(primeiro%7 == 0)std::cout << "\n";
   }
-  std::cout<<"\n\n";
+  std::cout << "\n\n";
  }
 }
 
 //imprime calendario de mes especifico
 void calendario(int mes, int ano)
 {
-  std::cout<<"\n";
- 
-  std::cout<<getMonthNames(mes)<<"\t\t       "<<ano<<"\nSun Mon Tue Wed Thu Fri Sat\n";
+  std::cout << "\n" << getMonthNames(mes) << "\t\t       " << ano << "\nSun Mon Tue Wed Thu Fri Sat\n";
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   
   for(int i=0; i < primeiro; i++)
-  std::cout<<"    ";
+  std::cout << "    ";
   
   int dia_mes = getMonthDays(mes, ano);
   
@@ -88,7 +86,7 @@ void calendario(int mes, int ano)
   {
    printf("%3d ",dia);
    primeiro++;
-   if(primeiro%7 == 0)std::cout<<"\n";
+   if(primeiro%7 == 0)std::cout << "\n";
   }
-  std::cout<<"\n\n";
+  std::cout << "\n\n";
 }
