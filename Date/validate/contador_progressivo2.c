@@ -57,10 +57,8 @@ int main(void)
      
     #if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
      Sleep(1000); //tem a função de pausar a execução por um determinado tempo
-     sec++;
-    #else
-     sec++;
     #endif
+     sec++;
     
    }while(1); //condição para o loop infinito
    

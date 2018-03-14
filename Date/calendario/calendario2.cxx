@@ -11,9 +11,9 @@ int main()
  int mes, ano;
  
  std::cout << "\nDigite o mes e ano: ";
- std::cin >> mes >> ano;
+ std::cin >>ano;
  
- calendario(mes, ano);
+ calendario(ano);
  return 0;
 }
 
@@ -32,7 +32,7 @@ int getMonthDays(int mes, int ano)
 {
  int month_days[12] = {31, 28, 31, 30, 31, 30, 31 ,31 ,30, 31, 30, 31};
  
- month_days[1] = (ano%4 == 0 || ano%400 == 0 && ano%100 != 0) ? 29 : 28;
+ month_days[1] = (((ano % 4 == 0) && (ano % 100 != 0)) || (ano % 400 == 0)) ? 29 : 28;
  
  return month_days[mes-1];
 }
@@ -51,7 +51,7 @@ void calendario(int ano)
  
  for(int mes = 1; mes <=12; mes++)
  {
-  std::cout << getMonthNames(mes) << "\t\t       " << ano << "\nSun Mon Tue Wed Thu Fri Sat\n";
+  std::cout << getMonthNames(mes) << "-" << ano << "\nSun Mon Tue Wed Thu Fri Sat\n";
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   
@@ -73,7 +73,7 @@ void calendario(int ano)
 //imprime calendario de mes especifico
 void calendario(int mes, int ano)
 {
-  std::cout << "\n" << getMonthNames(mes) << "\t\t       " << ano << "\nSun Mon Tue Wed Thu Fri Sat\n";
+  std::cout << "\n" << getMonthNames(mes) << "-" << ano << "\nSun Mon Tue Wed Thu Fri Sat\n";
   
   int primeiro = primeiro_dia(mes, ano); //pega primeiro dia do mes
   

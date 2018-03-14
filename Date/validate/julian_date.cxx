@@ -4,7 +4,7 @@
 int GetDates(int day, int month, int year) // Function that calculates the julian date.
 {
  long intRes1((2 - year / 100) + (year / 400)); // Calculation formula.
- long dias_totais = (year%4 == 0 || year%400 == 0 && year%100 != 0) ? 366 : 365.25; 
+ long dias_totais = (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ? 366 : 365.25; 
  long intRes2((int)(dias_totais * year));
  long intRes3((int)(30.6001 * (month + 1)));
 
