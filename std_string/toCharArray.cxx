@@ -15,6 +15,17 @@ const char *csntchr(char* str)
  return const_char;
 }
 
+std::string chrcsntstdstr(const char* dat)
+{
+ return std::string(dat);
+}
+
+const char * strcsntchr(std::string my)
+{
+ const char *dat = my.c_str();
+ return dat;
+}
+
 int main()
 { 
  char *frase1;
@@ -28,5 +39,15 @@ int main()
  const char* frase2 = csntchr(frase1);
  
  printf("\n\t%s\n\n",frase2);
+ 
+ const char* dat = "my string!";
+ std::string instdstring = chrcsntstdstr(dat);
+ std::cout << "\n\t" << instdstring << "\n\n";
+ 
+ std::string my_string2="testing!";
+ 
+ dat = strcsntchr(my_string2);
+ std::cout << "\n\t" << dat << "\n\n";
+ 
  return 0;
 }
