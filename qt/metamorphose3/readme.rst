@@ -1,7 +1,7 @@
 **************
 Métamorphose 3
 **************
-Métamorphose File and Folder Renamer
+Métamorphose File and Folder Renamer. 
 A cross platform file and folder mass renamer,
 allows many different renaming operations in a GUI.
 
