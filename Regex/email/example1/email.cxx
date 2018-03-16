@@ -7,7 +7,7 @@ struct email
  
  ~email()
   {
-   if(_email.length() != 0) _email.clear();
+   if(!_email.empty()) _email.clear();
   }
  
  bool isMail()

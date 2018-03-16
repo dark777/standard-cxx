@@ -27,7 +27,7 @@ class email
  
  ~email()
   {
-   if(_mail.length() != 0)_mail.clear();  
+   if(!_email.empty())_mail.clear();  
   }
  
  bool isMail()
