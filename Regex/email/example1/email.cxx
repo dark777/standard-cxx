@@ -25,15 +25,14 @@ struct email
   return std::regex_match(_email, email_smatch, pattern);
  }
  
- std::string print()
+ void print()
  {
-   return "\n\tEmail: "+_email+(isMail()?" is Valid\n":" is Invalid\n"); 
+  std::cout << "\n\tEmail: "+_email+(isMail()?" is Valid\n":" is Invalid\n"); 
  }
  
  private:
   std::string _email;
 };
-
 
 int main()
 {
@@ -56,7 +55,7 @@ int main()
                            "regex_email@terra.com.br"    
                           };
  for(int i=0; i<16; i++)
-  std::cout << email(emails[i]).print();
+  email(emails[i]).print();
    std::cout << "\n";
  return 0;
 }
