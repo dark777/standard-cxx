@@ -2,8 +2,8 @@
 #include <exception>
 
 //https://gist.github.com/whoshuu/246b10cdd7341895453f
-#include "gtest/gtest.h"
-
+//#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include "range.hxx"
 
 TEST(RangeIntegerTests, ValueStopTest)
