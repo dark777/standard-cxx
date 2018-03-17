@@ -4,10 +4,6 @@
 #if defined(__linux__) || defined(__gnu_linux__)
 
  #include <stdio_ext.h>
- 
-#elif defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
-
- #include <stdio.h>
 
 #else
 
