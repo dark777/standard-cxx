@@ -19,9 +19,9 @@ struct Date
     if(smonth.length() == 1)
     smonth.insert(0,"0");
     
-    day = std::to_string(now->tm_mday);
+    day   = std::to_string(now->tm_mday);
     month = std::to_string(now->tm_mon+1);
-    year = std::to_string(now->tm_year+1900);
+    year  = std::to_string(now->tm_year+1900);
    }
    
    ~Date()

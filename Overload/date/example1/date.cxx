@@ -6,9 +6,9 @@ class date
    unsigned int _mes;
    unsigned int _ano;
    std::string _sep;
-   std::string diatmp="";
-   std::string mestmp="";
-   std::string anotmp="";
+   std::string diatmp = "";
+   std::string mestmp = "";
+   std::string anotmp = "";
    
    time_t _tm = time(NULL);
    tm* curtime = localtime(&_tm);
@@ -90,19 +90,21 @@ int main(void)
   unsigned int mes;
   unsigned int ano;
   
-  date sepdate( dia, mes, ano , "-" );
+  date sepdate(dia, mes, ano , "-");
   std::cout << "\n\tThe date sep "
-            << sepdate << std::flush;
+            << sepdate 
+            << std::flush;
    
-  date data( dia, mes, ano);
+  date data(dia, mes, ano);
   std::cout << "\n\tThe date default "
-            << data << std::flush;
+            << data 
+            << std::flush;
   
   date dt;
-  std::cout<<"\n\tDay......: "<<dt.day()
-           <<"\n\tMonth....: "<<dt.month()     
-           <<"\n\tYear.....: "<<dt.year()
-           <<"\n\tDateTime.: "<<dt.datetime()
-           <<"\n\n";
+  std::cout << "\n\tDay......: " << dt.day()
+            << "\n\tMonth....: " << dt.month()     
+            << "\n\tYear.....: " << dt.year()
+            << "\n\tDateTime.: " << dt.datetime()
+            << "\n\n";
   return 0;
 }
