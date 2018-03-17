@@ -4,7 +4,6 @@ https://www.vivaolinux.com.br/script/Validar-CPF-em-C-esse-funciona
 Modificação do Script Referência: http://leowgweb.wordpress.com/2012/05/06/algoritmo-de-validacao-de-cpf */
 
 #include <iostream>
-using namespace std;
 
 bool validaCPF(const int * const); //protótipo da função que checa o CPF, retorna true ou false
 
@@ -13,35 +12,32 @@ int main(void)
     int cpf[11];
     char input[12];
 
-    cout << "Digite o número do CPF sem pontos, espaços ou traços:" << endl;
-    cin.getline(input, 12, '\n');
+    std::cout << "\n\tDigite o número do CPF sem pontos, espaços ou traços: ";
+    std::cin.getline(input, 12, '\n');
 
     for(char i = 0; i < 11; i++)
     {
         cpf[i] = static_cast<int>(input[i] - 48); //Convertendo char para valor absoluto segundo tabela ASCII e passando para array de inteiros//
 
         if(cpf[i] < 0 || cpf[i] > 9){ //Validando a entrada de dados
-            cout << "ENTRADA INVÁLIDA" << endl;
+            std::cout << "\n\tENTRADA INVÁLIDA\n";
             return 1;}
     }
 
-    cout << "\nO CPF digitado foi: " << endl;
+    std::cout << "\n\tO CPF digitado foi: ";
     for(char i = 0; i < 11; i++)
     {
-        cout << cpf[i];
+        std::cout << cpf[i];
         if(i == 2 || i == 5)
-            cout << ".";
+            std::cout << ".";
         if(i == 8)
-            cout << "-";
+            std::cout << "-";
     }
 
-    cout << "\n\n";
-
-    if(validaCPF(cpf) == true)
-        cout << "O CPF digitado É válido" << endl;
-
+    if(validaCPF(cpf))
+        std::cout << "\n\n\tO CPF digitado É válido\n\n";
     else
-        cout << "O CPF digitado NÃO É VÁLIDO" << endl;
+        std::cout << "\n\n\tO CPF digitado NÃO É VÁLIDO\n\n";
 
     return 0;
 }
@@ -94,4 +90,4 @@ inline bool validaCPF(const int * const cpf)
         return true;
     else
         return false;
-} 
+}
