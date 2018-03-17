@@ -17,7 +17,7 @@ CXX=g++
 SRC=*.c*
 ESRC=%.c*
 
-NAME=std bin
+NAME=std_bin
 EBIN=%$(NAME)
 BIN=$(NAME)
 
