@@ -20,7 +20,7 @@ struct date
   
   /*//Regex valida anos bisextos e nao bisextos no formato dd/mm/yyyy ou dd/str/yyyy ou dd/Str/yyyy
   const std::regex pattern(
-                           R"(^(?:(?:(0?[1-9]|1\d|2[0-8])([-/.])(0?[1-9]|1[0-2]|[Jj](?:an|u[nl])|[Mm]a[ry]|[Aa](?:pr|ug)|[Ss]ep|[Oo]ct|[Nn]ov|[Dd]ec|[Ff]eb)|(29|30)([-/.])(0?[13-9]|1[0-2]|[Jj](?:an|u[nl])|[Mm]a[ry]|[Aa](?:pr|ug)|[Ss]ep|[Oo]ct|[Nn]ov|[Dd]ec)|(31)([-/.])(0?[13578]|1[02]|[Jj]an|[Mm]a[ry]|[Jj]ul|[Aa]ug|[Oo]ct|[Dd]ec))(?:\2|\5|\8)(0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|(29)([-/.])(0?2|[Ff]eb)\12(\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0?[48]|[13579][26]|[2468][048])00))$)"
+                           R"(^(?:(?:(0?[1-9]|1\d|2[0-8])([-/.])(0?[1-9]|1[0-2]|[Jj](?:an|u[nl])|[Mm]a[ry]|[Aa](?:pr|ug)|[Ss]ep|[Oo]ct|[Nn]ov|[Dd]ec|[Ff]eb)|(29|30)([-/.])(0?[13-9]|1[0-2]|[Jj](?:an|u[nl])|[Mm]a[ry]|[Aa](?:pr|ug)|[Ss]ep|[Oo]ct|[Nn]ov|[Dd]ec)|(31)([-/.])(0?[13578]|1[02]|[Jj]an|[Mm]a[ry]|[Jj]ul|[Aa]ug|[Oo]ct|[Dd]ec))(?:\2|\5|\8)(0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|(29)([-/.])(0?2|[Ff]eb)\12(\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[13579][26]|[2468][048])00))$)"
                           );
   */
   return std::regex_match(_date, date_smatch, pattern);
