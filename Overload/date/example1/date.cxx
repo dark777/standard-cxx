@@ -2,7 +2,9 @@
 
 class date 
 {
-   unsigned int _dia , _mes , _ano;
+   unsigned int _dia;
+   unsigned int _mes;
+   unsigned int _ano;
    std::string _sep;
    std::string diatmp="";
    std::string mestmp="";
