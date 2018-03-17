@@ -5,7 +5,7 @@
 # Script Name: Makefile based on java makefile                                                       
 # License: GNU/GPL V3                                                                                
 # DateTime: sex 16 mar 2018 22:41:10
-# echo "}oqo4gtutF gnuu4ius4hx" | perl -pe \ 's/(.)/chr(ord($1)-2*3)/ge'                             
+# echo "}oqo4gtutF_gnuu4ius4hx" | perl -pe \ 's/(.)/chr(ord($1)-2*3)/ge'                             
 # echo 'comhttps://slackwarewww' | sed 's@\(com\)\(https://\)\(slackware\)\(www\)@\2\4.\3.\1 ..!!!@' 
 #                                                                                                    
 #######################################################################################################
