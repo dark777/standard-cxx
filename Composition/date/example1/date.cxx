@@ -56,7 +56,6 @@ struct Date
    
    const std::string currentDateTime()
    {
-    char buf[80]; 
     tm  tstruct;
     time_t now = time(0);
         
@@ -93,7 +92,6 @@ int main()
            << "\n\tdate time..................: " << date.dateTime()
            << "\n\tThe day is.................: " << date.sday
            << "\n\tThe month is...............: " << date.smonth
-           << "\n\tThe year is................: " << date.year
            << "\n\tThe date String Format.....: " << date.toString() 
            << "\n\tThe date String Format Sep.: " << date.toString("-")
            << "\n\n";
