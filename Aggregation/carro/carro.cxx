@@ -4,11 +4,7 @@
 #include "carro.hxx"
 
 
-#if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
- void main()
-#elif defined(__linux__) || defined(__gnu_linux__)
- int main(void)
-#endif
+int main(void)
 {   
  int varIdMarca = 0;
  std::string varDescriMarca = "";
@@ -88,7 +84,6 @@
  (*car).motor = *mot;
  
  std::cout << "\n\t" << (*car).imprimeDadosCarro() << "\n\n";
-
+ 
+ return 0;
 }
-
-#endif
