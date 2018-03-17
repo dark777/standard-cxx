@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `Echeances` (
 --
 
 INSERT INTO `Echeances` (`id`, `nom`) VALUES
-(1, 'January'),
+(1,'January'),
 (2,'February'),
 (3,'March'),
 (4,'April'),
