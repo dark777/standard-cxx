@@ -12,15 +12,13 @@ struct url
   
   bool isUrl()
   {
-   std::smatch url_smatch;
-   
    const std::regex pattern(
                             "(?:(ftp|http[s]?:[//])?)?([w]{3}[.])?"
                             "(.*[.](com|php|net|org|br|dk|at|us|tv|info|uk|co.uk|biz|se)?)?"
                             "(.*[.](aspx|htm|html|HTM|HTML|jhtm|jhtml|JHTM|JHTML|xhtm|xhtml|XHTM|XHTML)?)?"
                            );
    
-   return std::regex_match(_url, url_smatch, pattern);
+   return std::regex_match(_url, pattern);
   }
   
   void print()

@@ -12,11 +12,10 @@ struct extensions
   
  bool isFile()
  {
-  std::smatch extensions_smatch;
   //validas arquivos com as extensoes da regex
   const std::regex pattern("^.*[.](aspx|p(hp|y)|java|rb|d|mp3|h?(h|pp|xx|\\++|tm|tml)|H?(H|PP|XX|\\++|TM|TML)|c?(c|pp|xx|\\++|ss|shtml)|C?(C|PP|XX|\\++|SS|SHTML))$");
   
-  return std::regex_match(_file, extensions_smatch, pattern);
+  return std::regex_match(_file, pattern);
  }
 
  void print()

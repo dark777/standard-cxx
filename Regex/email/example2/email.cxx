@@ -32,11 +32,9 @@ class email
  
  bool isMail()
  {
-  std::smatch email_smatch;
-  
   const std::regex pattern("^([a-zA-Z0-9._]+@((hotmail|terra|yahoo|uol|bol)[.](com[.]br))?((gmail)[.](com))?)$");
   
-  return std::regex_match(_mail, email_smatch, pattern);
+  return std::regex_match(_mail, pattern);
  }
  
  void print()

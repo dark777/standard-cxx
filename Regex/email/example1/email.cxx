@@ -12,8 +12,6 @@ struct email
  
  bool isMail()
  {
-  std::smatch email_smatch;
-  
   //valida todos os dominios e servidores de emails
   
   //const std::regex pattern("^([a-z0-9._]+@[a-z]+([.][a-z]{2,4}){1,2})$");
@@ -22,7 +20,7 @@ struct email
   //valida somente servidores @{hotmail,terra,yahoo,uol,bol} no dominio .com.br e servidor gmail no dominio .com
   const std::regex pattern("^([a-z0-9._]+@((?:hotmail|terra|yahoo|uol|bol)[.](?:com[.]br))?((?:gmail)[.](?:com))?)$");
    
-  return std::regex_match(_email, email_smatch, pattern);
+  return std::regex_match(_email, pattern);
  }
  
  void print()

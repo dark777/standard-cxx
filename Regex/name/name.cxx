@@ -12,8 +12,6 @@ struct name
    
  bool isName()
  {
-  std::smatch name_smatch;
-    
   const std::regex pattern(
                            "(?:[á-úA-Za-z]+[[:space:]]+[á-úA-Za-z.]{0,20})?" //valida nome e sobrenome
                            "(?:[[:space:]]+[á-úA-Za-z.]{0,10})?" // valida nome, nome composto e sobrenome
@@ -21,7 +19,7 @@ struct name
                            "(?:[[:space:]]+[á-úA-Za-z.]{0,10})?" // valida nome, 3 nomes composto e sobrenome
                           );
   
-  return std::regex_match(_name, name_smatch, pattern);
+  return std::regex_match(_name, pattern);
  }
  
  void print()
