@@ -106,6 +106,7 @@ int mini_fscanf(FILE *fp, char const *fmt, ...)
 
 int main()
 {
-  char * ip = in_ntoa(1921681001); // input: 1921681001 dyaplay format: 105.134.138.114
-  mini_printf("\n\t%s\n\n",ip);
+ char * ip = in_ntoa(1921681001); // input: 1921681001 dyaplay format: 105.134.138.114
+ mini_printf("\n\t%s\n\n",ip);
+ return 0;
 }
