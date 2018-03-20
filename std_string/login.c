@@ -44,11 +44,11 @@ int main()
      printf("\n\tDigite o Login: ");
      scanf("%s",&login);
  
-     if((strcmp(login, logins) == 0))break;
+     if(strcmp(login, logins) == 0)break;
      else
      printf("\tUsuario: %s Inválido..!!\n", login);
  
-     }while((strcmp(login, logins) != 0));
+     }while(strcmp(login, logins) != 0);
  
   do{
      printf("\n\tDigite sua senha: ");
@@ -58,12 +58,12 @@ int main()
      //snprintf(senha, 6, "%d", passwd);
        //itoa(passwd,senha);
  
-     if((strcmp(senha, senhas) == 0))
+     if(strcmp(senha, senhas) == 0)
      printf("\n\tUsuario e Senha Válidos\n\tAcesso autorizado..!!!\n\n");
        else
      printf("\tSenha: %s Inválida..!!\n", senha);
  
-    }while((strcmp(senha, senhas) != 0));
+    }while(strcmp(senha, senhas) != 0);
     
    return 0;
 }
