@@ -13,7 +13,7 @@ Data dia_janeiro(Data data)
         ano /= 100;
     if(ano % 4 == 0)
         bissexto = 1;
-
+    
     d.dia = 1;
     d.mes = 1;
     d.ano = data.ano;
@@ -29,9 +29,9 @@ Data dia_janeiro(Data data)
 int main()
 {
     Data pascoa;
-    pascoa.dia = 31;
-    pascoa.mes = 3;
-    pascoa.ano = 2013;
+    pascoa.dia = 1;
+    pascoa.mes = 4;
+    pascoa.ano = 2018;
     printf("Código do 1º de Janeiro: %d.\n", dia_janeiro(pascoa).cod_semana);
     return 0;
 } 
