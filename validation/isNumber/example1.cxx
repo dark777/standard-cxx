@@ -10,7 +10,7 @@ bool isOk(std::string x)
  
  int ini = x[0] == '-';
 
- for(int i=ini;i<x.size();i++)
+ for(int i=ini; i<x.size(); i++)
   if('0' <= x[i] && x[i] <= '9')
    continue;
    else
@@ -21,12 +21,11 @@ bool isOk(std::string x)
 int toNumber(std::string x)
 {
  std::string s;
- while(s.size() > 1 && x[0] == ' ')
-  x.erase(x.begin());
+ while(s.size() > 1 && x[0] == ' ')x.erase(x.begin());
     
   int ini = x[0] == '-', res = 0;
     
-  for(int i=ini;i<x.size();i++)
+  for(int i=ini; i<x.size(); i++)
    {
     res *= 10;
     res += x[i] - '0';
@@ -138,15 +137,13 @@ void getBool()
    }while(checkNumber(num) == 0);  
 }
 
-bool EsUnNumero(const char* cadena)
+bool isNumber(const char* input)
 {
-  for( ; *cadena; ++cadena )
-  {
-    // En cuanto un caracter no sea numérico
-    if( '0' > *cadena || '9' < *cadena )
-      return false;
+  for(; *input; ++input)
+  {// En cuanto un caracter no sea numérico
+   if('0' > *input || '9' < *input)return false;
   }
-
+  
   return true;
 }
 
@@ -176,8 +173,8 @@ int isInt()
 
 int main()
 {
- //getNum2();
+ getNum2();
   //getBool();
- getIntReg();
+ //getIntReg();
  return 0;
 }
