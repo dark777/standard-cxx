@@ -32,6 +32,9 @@ void carter(int ano)
 
 void oudin(int ano)
 {
+ //O Metodo de oudin permite calcular a data
+ //da pascoa para todos os anos a partir de 1900
+ 
  int sec = ( ano / 100 );
  int a = (ano - (19 * ( ano / 19)));
  int b = ((sec - 17) / 25);
@@ -50,6 +53,7 @@ void oudin(int ano)
 int main()
 {
  int ano;
+ 
  do{
     std::cout << "\n\tdigite um ano entre 1900 e 2099: ";
     std::cin >> ano;
