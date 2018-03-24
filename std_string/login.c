@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
- 
+
+#define MD5_PASSWD_LEN 35
+
+#define isMD5(passwd) (strncmp(passwd, "md5", 3) == 0 && strlen(passwd) == MD5_PASSWD_LEN)
+
 char*  itoa(int value, char* str)
 {
  char temp;
