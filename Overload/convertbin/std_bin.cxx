@@ -28,14 +28,12 @@ namespace std
    return *this;
   }
   
-#if defined(__linux__) || defined(__gnu_linux__) || defined(__unix__)
-
   std::ostream &operator<<(decltype(std::dec)& _Pfn)
   {
    return os << _Pfn;
   }
-  
-#elif defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
+/*  
+#if defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__)
   
   std::ostream& operator<<(std::ios_base& (__cdecl *_Pfn)(std::ios_base&))
   {
@@ -43,7 +41,7 @@ namespace std
   }
   
 #endif
-  
+*/
   private:
    std::ostream& os;
  };
