@@ -10,7 +10,7 @@
 
 
 
-#ifdef _cplusplus
+#ifdef __cplusplus
 
 extern "C" void cbuff(void);
 
@@ -18,7 +18,7 @@ extern "C" void cbuff(void);
 
 void cbuff(void);
 
-#endif  //_cplusplus
+#endif  //__cplusplus
 
 #if defined(__linux__) || defined(__gnu_linux__)
 
