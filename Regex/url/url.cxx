@@ -2,7 +2,7 @@
 #include <iostream>
 
 struct url
-{ 
+{
  url(std::string url): _url(url){}
  
  ~url()

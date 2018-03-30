@@ -2,7 +2,7 @@
 #include <iostream>
 
 struct name
-{  
+{
  name(std::string nome): _name(nome){}
    
  ~name()

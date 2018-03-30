@@ -2,7 +2,7 @@
 #include <iostream>
 
 struct phone
-{ 
+{
  phone(std::string tel): _tel(tel){}
  
  ~phone()
