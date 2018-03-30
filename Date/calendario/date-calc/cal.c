@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     if (argc != 4)
     {
-        fprintf(stderr, "Usage: %s <language> <month> <year>\n", self);
+        fprintf(stderr, "Usage: %s <language> <month> <year>\nExample: ./calc english 02 2000\n", self);
     }
     else
     {
