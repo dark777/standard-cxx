@@ -63,7 +63,7 @@ int main()
  else
  if(year == current_year && current_month == easter_month && current_day == easter_day)
   {
-   printf("\n\tToday %dth %s %04d is Easter Day",easter_day, months, year);
+   printf("\n\tToday %dth %s %04d is Easter Day\n\n",easter_day, months, year);
   }
  else
  if(year == current_year && current_month > easter_month)
