@@ -2,6 +2,10 @@
 #include <iostream>
 
 /*
+  https://gist.github.com/chaitanyav/5754292
+  
+  https://github.com/coreutils/coreutils/blob/master/src/uptime.c
+  
    int dias(daysDiff(d1,d2)); // diferença entre datas em dias contando anos bisextos
 
    int idade(dias/365); //idade em anos
