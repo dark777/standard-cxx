@@ -1,3 +1,4 @@
+#include <time.h>
 #include <stdio.h>
 
 /* Estrutura para representar uma DataHora */
@@ -110,9 +111,20 @@ unsigned long long calculaDiferencaEmDias(MinhaDataHora d1, MinhaDataHora d2)
 /* Função principal do programa */
 int main(int argc, char **argv)
 {
- MinhaDataHora d1, d2;
- defineDataHora(&d1, 23, 05, 00, 29, 03, 1987);
- defineDataHora(&d2, 03, 50, 00, 07, 03, 2018);
+ MinhaDataHora d1, d2; 
+ time_t datime = time(NULL);
+ struct tm* dt = localtime(&datime);
+ 
+ int hora = (dt->tm_hour);
+ int min = (dt->tm_min);
+ int sec = (dt->tm_sec);
+ int dia = (dt->tm_mday);
+ int mes = (dt->tm_mon+1);
+ int ano = (dt->tm_year+1900);
+ 
+ defineDataHora(&d1, 23, 05, 10, 29, 03, 1987);
+ 
+ defineDataHora(&d2, hora, min, sec, dia, mes, ano);
  
  printf("d1: ");
  imprimeDataHora(d1);
