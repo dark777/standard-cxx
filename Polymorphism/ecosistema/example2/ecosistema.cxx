@@ -1,5 +1,7 @@
 #include <iostream>
-     
+
+#define elif else if
+
 class Mamifero
 {
  public:
@@ -78,20 +80,17 @@ void emitirSom(Mamifero* animais)
    Boi *boi = dynamic_cast<Boi *>(animais);
    boi->somMamifero();
   }
- else 
- if(typeid(*animais) == typeid(Gato))
+ elif(typeid(*animais) == typeid(Gato))
   {
    Gato *gato = dynamic_cast<Gato *>(animais);
    gato->somMamifero();
   }
- else
- if(typeid(*animais) == typeid(Porco))
+ elif(typeid(*animais) == typeid(Porco))
   {
    Porco *porco = dynamic_cast<Porco *>(animais);
    porco->somMamifero();
   }
- else
- if(typeid(*animais) == typeid(Cachorro))
+ elif(typeid(*animais) == typeid(Cachorro))
   {
    Cachorro *cachorro = dynamic_cast<Cachorro *>(animais);
    cachorro->somMamifero();
