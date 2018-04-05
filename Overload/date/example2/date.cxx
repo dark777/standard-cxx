@@ -17,13 +17,8 @@
    
    Date::~Date()
    {
-    if(day.length() != 0)
     day.clear();
-    
-    if(month.length() != 0)
     month.clear();
-    
-    if(year.length() != 0)
     year.clear();
    }
    
@@ -34,9 +29,6 @@
     
     if(month.length() == 1)
     month.insert(0,"0");
-    
-    if(year.length() == 1)
-    year.insert(0,"0");
     
     return std::string(day+"/"+month+"/"+year);
    }

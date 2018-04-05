@@ -51,8 +51,6 @@ class date
    std::string year()
    {
     anotmp = std::to_string(_ano);
-    if(anotmp.length() == 1)
-    anotmp.insert(0, "0");
     return anotmp;
    }
    
@@ -75,9 +73,7 @@ class date
      
     std::string anotmp = "";
     anotmp = std::to_string(dt._ano);
-    if(anotmp.length() == 1)
-    anotmp.insert(0, "0");
-       
+    
     os << diatmp.c_str() << dt._sep << mestmp.c_str() << dt._sep << anotmp.c_str() << "\n";
            
     return os;
