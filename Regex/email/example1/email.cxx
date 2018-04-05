@@ -52,7 +52,7 @@ int main()
                            "regex_email@terra.com",
                            "regex_email@terra.com.br"    
                           };
- for(int i=0; i<16; i++)
+ for(int i = 0; i < 16; i++)
   email(emails[i]).print();
    std::cout << "\n";
  return 0;
