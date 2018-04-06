@@ -52,7 +52,8 @@ struct uol: validation
       std::cout << "\n\tEnter your uol e-mail: ";
       std::cin >> str;
       
-      is_val = std::unique_ptr<uol>(new uol(str));
+      is_val = std::make_unique<uol>(str);
+      //is_val = std::unique_ptr<uol>(new uol(str));
       
       std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
@@ -90,7 +91,8 @@ struct bol: validation
       std::cout << "\n\tEnter your bol e-mail: ";
       std::cin >> str;
       
-      is_val = std::unique_ptr<bol>(new bol(str));
+      is_val = std::make_unique<bol>(str);
+      //is_val = std::unique_ptr<bol>(new bol(str));
       
       std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
@@ -128,7 +130,8 @@ struct gmail: validation
       std::cout << "\n\tEnter your google e-mail: ";
       std::cin >> str;
       
-      is_val = std::unique_ptr<gmail>(new gmail(str));
+      is_val = std::make_unique<gmail>(str); 
+      //is_val = std::unique_ptr<gmail>(new gmail(str));
       
       std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
        
@@ -166,7 +169,8 @@ struct earth: validation
       std::cout << "\n\tEnter your earth e-mail: ";
       std::cin >> str;
       
-      is_val = std::unique_ptr<earth>(new earth(str));
+      is_val = std::make_unique<earth>(str);
+      //is_val = std::unique_ptr<earth>(new earth(str));
       
       std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
@@ -204,7 +208,8 @@ struct yahoo: validation
       std::cout << "\n\tEnter your yahoo e-mail: ";
       std::cin >> str;
       
-      is_val = std::unique_ptr<yahoo>(new yahoo(str));
+      is_val = std::make_unique<yahoo>(str);
+      //is_val = std::unique_ptr<yahoo>(new yahoo(str));
       
       std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
@@ -242,7 +247,8 @@ struct hotmail: validation
       std::cout << "\n\tEnter your hotmail e-mail: ";
       std::cin >> str;
       
-      is_val = std::unique_ptr<hotmail>(new hotmail(str));
+      is_val = std::make_unique<hotmail>(str); 
+      //is_val = std::unique_ptr<hotmail>(new hotmail(str));
       
       std::cout << "\n\tEmail: " << str << (is_val->isValid()?" is Valid.\n\n":" is Invalid.\n\n");
       
